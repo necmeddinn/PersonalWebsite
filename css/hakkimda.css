@@ -6,16 +6,25 @@
     color: white;
     padding: 8rem 0 4rem;
     text-align: center;
+    position: relative;
 }
 
 .page-header h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
 }
 
 .page-header p {
     font-size: 1.2rem;
     opacity: 0.9;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 /* About Section */
@@ -311,4 +320,111 @@
     text-align: center;
     color: var(--light-text);
     font-style: italic;
+}
+
+/* Dark Mode Styles for About Me Page */
+[data-theme="dark"] .page-header {
+    background: var(--gradient-secondary);
+}
+
+[data-theme="dark"] .page-header h1,
+[data-theme="dark"] .page-header p {
+    color: white;
+}
+
+[data-theme="dark"] .profile-card {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .profile-info h2 {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .profile-title {
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .profile-social a {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .profile-social a:hover {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .about-card {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .about-card:hover {
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--accent-color);
+}
+
+[data-theme="dark"] .about-card h3 {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .about-card h3::after {
+    background: var(--gradient-secondary);
+}
+
+[data-theme="dark"] .about-card p {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .timeline::before {
+    background: var(--gradient-secondary);
+}
+
+[data-theme="dark"] .timeline-dot {
+    background: var(--accent-color);
+    border: 3px solid var(--bg-secondary);
+}
+
+[data-theme="dark"] .timeline-content {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .timeline-content h4 {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .timeline-content p {
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .skill-item {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .skill-icon {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .skill-item h4 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .interest-tag {
+    background: var(--bg-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .interest-tag:hover {
+    background: var(--accent-color);
+    color: white;
 } 

@@ -33,6 +33,29 @@
     --font-weight-extra-bold: 700;
 }
 
+/* Dark Theme Variables - Improved for better readability and contrast */
+[data-theme="dark"] {
+    --primary-color: #ff4545;
+    --secondary-color: #e2e2e2;
+    --accent-color: #ff4545;
+    --text-color: #ffffff;
+    --light-text: #cccccc;
+    --bg-color: #121212;
+    --bg-secondary: #1e1e1e;
+    --border-color: #333333;
+    
+    /* Gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, #ff4545 0%, #cc0000 100%);
+    --gradient-secondary: linear-gradient(135deg, #ff4545 0%, #cc0000 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 12px rgba(0, 0, 0, 0.5);
+    
+    color-scheme: dark;
+}
+
 /* Reset & Base Styles */
 * {
     margin: 0;
@@ -51,6 +74,7 @@ body {
     line-height: 1.6;
     background-color: var(--bg-color);
     overflow-x: hidden;
+    transition: background-color 0.4s ease-in-out;
 }
 
 a {
@@ -473,8 +497,8 @@ footer {
     }
     
     .hero-content {
+        padding: 2rem;
         text-align: center;
-        padding: 4rem 2rem 2rem;
     }
     
     .cta-buttons {
@@ -482,35 +506,38 @@ footer {
     }
     
     .hero h1 {
-        font-size: 2.8rem;
+        font-size: 3rem;
     }
     
     .hero .subtitle {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .shape {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
 }
 
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
+        z-index: 1001;
     }
     
     .nav-menu {
         position: fixed;
-        top: 70px;
+        top: 0;
         left: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--bg-color);
         flex-direction: column;
-        width: 100%;
-        background-color: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        box-shadow: var(--shadow-md);
-        padding: 2rem 0;
+        justify-content: center;
+        padding: 2rem;
         transition: var(--transition-normal);
+        box-shadow: var(--shadow-lg);
+        z-index: 1000;
     }
     
     .nav-menu.active {
@@ -518,7 +545,7 @@ footer {
     }
     
     .nav-item {
-        margin: 1rem 0;
+        margin: 1.5rem 0;
     }
     
     .menu-toggle.active .bar:nth-child(1) {
@@ -534,21 +561,34 @@ footer {
     }
     
     .quote-container {
-        padding: 2rem;
+        padding: 1.5rem;
     }
     
     blockquote {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     
     .footer-content {
         flex-direction: column;
         gap: 1.5rem;
     }
+
+    .theme-toggle {
+        position: absolute;
+        right: 80px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 0;
+    }
+    
+    .theme-toggle button {
+        width: 35px;
+        height: 35px;
+    }
     
     .logo img {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
     }
     
     .footer-logo img {
@@ -567,12 +607,21 @@ footer {
     }
     
     .shape {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
     
     .links-grid {
         grid-template-columns: 1fr;
+    }
+
+    .theme-toggle {
+        right: 65px;
+    }
+    
+    .theme-toggle button {
+        width: 30px;
+        height: 30px;
     }
     
     .logo img {
@@ -581,7 +630,279 @@ footer {
     }
     
     .footer-logo img {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
     }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    margin-left: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle button {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: var(--transition-normal);
+}
+
+.theme-toggle button:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.theme-toggle .fa-sun {
+    display: inline-block;
+    color: #ff8800;
+}
+
+.theme-toggle .fa-moon {
+    display: none;
+    color: #5183f5;
+}
+
+/* Dark mode component styles - Fixed readability issues */
+[data-theme="dark"] .navbar {
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .logo img {
+    filter: brightness(0.95);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .bar {
+    background-color: var(--text-color);
+}
+
+[data-theme="dark"] .nav-item a:hover,
+[data-theme="dark"] .nav-item.active a {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .nav-item a::after {
+    background: var(--gradient-primary);
+}
+
+[data-theme="dark"] .hero {
+    background-color: var(--bg-color);
+}
+
+/* Fix for section background colors */
+[data-theme="dark"] section {
+    background-color: var(--bg-color);
+}
+
+[data-theme="dark"] .quote-section {
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .quote-container {
+    background-color: var(--bg-color);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .quote-icon {
+    color: var(--accent-color);
+}
+
+/* Fix for link cards */
+[data-theme="dark"] .link-card {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .link-card h3 {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .link-card p {
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .card-icon {
+    color: var(--accent-color);
+    background-color: rgba(255, 69, 69, 0.1);
+}
+
+/* Footer styles */
+[data-theme="dark"] footer {
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .footer-content {
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .social-links a {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .social-links a:hover {
+    color: var(--accent-color);
+    background-color: var(--bg-secondary);
+    transform: translateY(-3px);
+}
+
+/* Specific fix for Hakkımda page */
+[data-theme="dark"] .page-header {
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .page-header h1 {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .page-header .subtitle {
+    color: var(--secondary-color);
+}
+
+/* Button styles */
+[data-theme="dark"] .primary-btn {
+    background: var(--gradient-primary);
+    box-shadow: 0 4px 15px rgba(255, 69, 69, 0.2);
+    color: #ffffff;
+}
+
+[data-theme="dark"] .primary-btn:hover {
+    box-shadow: 0 6px 20px rgba(255, 69, 69, 0.3);
+    transform: translateY(-3px);
+}
+
+[data-theme="dark"] .secondary-btn {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+}
+
+[data-theme="dark"] .secondary-btn:hover {
+    background: rgba(255, 69, 69, 0.1);
+    color: var(--text-color);
+}
+
+/* Improved theme toggle button */
+[data-theme="dark"] .theme-toggle button {
+    background: transparent;
+}
+
+[data-theme="dark"] .theme-toggle button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .theme-toggle .fa-sun {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle .fa-moon {
+    display: inline-block;
+    color: #5183f5;
+}
+
+/* Smooth transitions for theme changes */
+body {
+    transition: background-color 0.4s ease-in-out;
+}
+
+.navbar, .hero, .quote-section, .quick-links, footer, .link-card, .quote-container, .btn {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Default for illustrations in dark mode */
+[data-theme="dark"] img:not(.logo img) {
+    filter: brightness(0.95) contrast(1.05);
+}
+
+/* Additional enhancements for dark mode */
+[data-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* Smooth scrollbar for dark mode */
+[data-theme="dark"]::-webkit-scrollbar {
+    width: 10px;
+}
+
+[data-theme="dark"]::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+[data-theme="dark"]::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Better focus styles for dark mode */
+[data-theme="dark"] *:focus {
+    outline-color: var(--accent-color);
+}
+
+/* Selection highlight color */
+[data-theme="dark"] ::selection {
+    background-color: rgba(255, 69, 69, 0.3);
+    color: var(--text-color);
+}
+
+/* Enhanced contrast for various elements */
+[data-theme="dark"] blockquote {
+    border-left: 3px solid var(--accent-color);
+    background-color: var(--bg-secondary);
+}
+
+[data-theme="dark"] .link-card h3,
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4 {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] strong {
+    color: var(--secondary-color);
+}
+
+/* Improved text contrast */
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] span:not(.interest-tag) {
+    color: var(--light-text);
+}
+
+/* Additional transition smoothness */
+.theme-toggle .fa-sun,
+.theme-toggle .fa-moon,
+a, button, input, textarea {
+    transition: var(--transition-normal);
 } 

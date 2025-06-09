@@ -6,16 +6,25 @@
     color: white;
     padding: 8rem 0 4rem;
     text-align: center;
+    position: relative;
 }
 
 .page-header h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
 }
 
 .page-header p {
     font-size: 1.2rem;
     opacity: 0.9;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 /* Notes Section */
@@ -387,4 +396,133 @@
     margin: 0 auto;
     color: var(--light-text);
     font-size: 1.1rem;
+}
+
+/* Dark Mode Styles for Notes Page */
+[data-theme="dark"] .page-header {
+    background: var(--gradient-secondary);
+}
+
+[data-theme="dark"] .notes-section {
+    background-color: var(--bg-color);
+}
+
+/* Dark Mode for Notes Content */
+[data-theme="dark"] .note-card {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .note-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .note-category {
+    background: var(--gradient-secondary);
+}
+
+[data-theme="dark"] .note-title {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .note-excerpt {
+    color: var(--light-text);
+}
+
+/* Dark Mode for Pagination */
+[data-theme="dark"] .page-link {
+    background-color: var(--bg-secondary);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .page-link:hover,
+[data-theme="dark"] .page-link.active {
+    background: var(--gradient-secondary);
+    color: white;
+    border: none;
+}
+
+/* Dark Mode for Sidebar Widgets */
+[data-theme="dark"] .sidebar-widget {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .sidebar-widget h3 {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .sidebar-widget h3::after {
+    background: var(--gradient-secondary);
+}
+
+/* Dark Mode for Search Widget */
+[data-theme="dark"] .search-form input {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .search-form input::placeholder {
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .search-form input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 69, 69, 0.2);
+}
+
+[data-theme="dark"] .search-form button {
+    background: var(--gradient-secondary);
+}
+
+/* Dark Mode for Categories Widget */
+[data-theme="dark"] .category-list li a {
+    color: var(--light-text);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .category-list li a:hover {
+    color: var(--accent-color);
+}
+
+/* Dark Mode for Tags Cloud */
+[data-theme="dark"] .tag {
+    background-color: var(--bg-color);
+    color: var(--light-text);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .tag:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+/* Dark Mode for Empty State */
+[data-theme="dark"] .empty-state {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .empty-icon {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .empty-state h3 {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .empty-state p {
+    color: var(--light-text);
+}
+
+/* Dark Theme Override */
+[data-theme="dark"] .page-header h1,
+[data-theme="dark"] .page-header p {
+    color: white;
 } 
