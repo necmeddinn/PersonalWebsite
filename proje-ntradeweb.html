@@ -60,12 +60,10 @@
                     <div class="project-text">
                         <h2>Proje Özeti</h2>
                         <p>
-                            Bu çalışma, Erciyes Üniversitesi Bilgisayar Mühendisliği Bölümü lisans bitirme projesi
-                             kapsamında geliştirilen, Borsa İstanbul (BIST) üzerinde işlem gören hisse senetlerinin
-                              gelecekteki fiyat hareketlerini tahmin edebilen derin öğrenme tabanlı bir karar destek
-                               sistemidir. Proje, zaman serisi analizlerinde güçlü performans sergileyen 
-                               Uzun Kısa Süreli Bellek (LSTM) mimarisini temel alarak, finansal piyasalardaki doğrusal
-                                olmayan trendleri modellemeyi hedefler.
+                            Bu çalışma, lisans bitirme projem kapsamında geliştirilen yapay zeka tabanlı bir hisse senedi fiyat tahmin sistemidir. 
+                            Uygulama, Borsa İstanbul’da işlem gören hisselerin bir sonraki işlem günü kapanış fiyatını tahmin etmek için 
+                            LSTM tabanlı derin öğrenme mimarisi kullanır. Sistem; veri toplama, ön işleme, modelleme ve görselleştirme adımlarını 
+                            kapsayan uçtan uca bir finansal analiz çözümü sunar.
                         </p>
                         <p>
                             Model, geçmiş 60 günlük kapanış fiyatı üzerinden öğrenme yapar ve çift katmanlı LSTM
@@ -74,13 +72,13 @@
                             edilen fiyat ve hata analizleriyle birlikte kullanıcıya sunulur.
                         </p>
 
-                        <h2>Öne Çıkan Özellikler</h2>
+                        <h2>Temel Özellikler</h2>
                         <ul class="feature-list">
-                            <li>LSTM tabanlı derin öğrenme mimarisi ile zaman serisi tahmini</li>
-                            <li>60 günlük kapanış fiyatına dayalı dinamik tahmin penceresi</li>
-                            <li>Bollinger Bantları ile volatilite ve risk görselleştirmesi</li>
-                            <li>Streamlit arayüzü ile etkileşimli veri analizi deneyimi</li>
-                            <li>Gerçek fiyat, tahmin edilen fiyat ve hata metriklerinin birlikte sunulması</li>
+                            <li>Gerçek zamanlı fiyat verilerinin yfinance ile otomatik alınması.</li>
+                            <li>60 günlük pencere yapısıyla eğitilmiş, 2 katmanlı 50 birimli LSTM mimarisi.</li>
+                            <li>RMSE, MAE ve R² metrikleriyle doğrulanmış yüksek tahmin performansı.</li>
+                            <li>Bollinger Bantları ve işlem hacmi gibi teknik analiz göstergeleriyle desteklenmiş veri sunumu.</li>
+                            <li>Streamlit tabanlı etkileşimli kullanıcı arayüzü.</li>
                         </ul>
 
                         <h2>Kullanılan Teknolojiler</h2>
@@ -113,7 +111,7 @@
                                 </iframe>
                             </div>
                             <p class="video-caption">
-                                Videoda, modelin mimarisi, veri işleme adımları ve arayüz üzerinden yapılan örnek
+                                Videoda, arayüz üzerinden yapılan örnek
                                 kullanım senaryoları adım adım gösterilmektedir.
                             </p>
                         </div>
