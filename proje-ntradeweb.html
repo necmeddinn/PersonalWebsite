@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTradeWeb | Yapay Zeka Destekli Hisse Senedi Fiyat Tahmin Uygulaması</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/proje-detay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo"><a href="index.html"><img src="NCLogo.jpeg" alt="NC Logo"></a></div>
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a href="hakkimda.html">Hakkımda</a></li>
+                    <li class="nav-item active"><a href="projelerim.html">Projelerim</a></li>
+                    <li class="nav-item"><a href="notlarim.html">Notlarım</a></li>
+                    <li class="nav-item"><a href="iletisim.html">İletişim</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" aria-label="Tema değiştir">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="project-detail-header">
+            <div class="container">
+                <a href="projelerim.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Projelere geri dön
+                </a>
+                <span class="project-badge">Bitirme Projesi · Yapay Zeka · Finans</span>
+                <h1>Yapay Zeka Destekli Hisse Senedi Fiyat Tahmin Uygulaması (Lisans Bitirme Projesi)</h1>
+                <p class="subtitle">
+                    Borsa İstanbul hisseleri için LSTM tabanlı derin öğrenme modelleriyle bir sonraki işlem gününün
+                    kapanış fiyatını tahmin eden, etkileşimli bir finansal veri bilimi platformu.
+                </p>
+            </div>
+        </header>
+
+        <!-- Project Detail Content -->
+        <main class="project-detail-main">
+            <div class="container">
+                <section class="project-detail-grid">
+                    <div class="project-text">
+                        <h2>Proje Özeti</h2>
+                        <p>
+                            Bu çalışma, Erciyes Üniversitesi Bilgisayar Mühendisliği Bölümü lisans bitirme projesi
+                             kapsamında geliştirilen, Borsa İstanbul (BIST) üzerinde işlem gören hisse senetlerinin
+                              gelecekteki fiyat hareketlerini tahmin edebilen derin öğrenme tabanlı bir karar destek
+                               sistemidir. Proje, zaman serisi analizlerinde güçlü performans sergileyen 
+                               Uzun Kısa Süreli Bellek (LSTM) mimarisini temel alarak, finansal piyasalardaki doğrusal
+                                olmayan trendleri modellemeyi hedefler.
+                        </p>
+                        <p>
+                            Model, geçmiş 60 günlük kapanış fiyatı üzerinden öğrenme yapar ve çift katmanlı LSTM
+                            mimarisi sayesinde zaman serisinin trendlerini, dalgalanmalarını ve uzun vadeli
+                            bağımlılıklarını etkili biçimde modelleyebilir. Tahmin sonuçları; gerçek fiyat, tahmin
+                            edilen fiyat ve hata analizleriyle birlikte kullanıcıya sunulur.
+                        </p>
+
+                        <h2>Öne Çıkan Özellikler</h2>
+                        <ul class="feature-list">
+                            <li>LSTM tabanlı derin öğrenme mimarisi ile zaman serisi tahmini</li>
+                            <li>60 günlük kapanış fiyatına dayalı dinamik tahmin penceresi</li>
+                            <li>Bollinger Bantları ile volatilite ve risk görselleştirmesi</li>
+                            <li>Streamlit arayüzü ile etkileşimli veri analizi deneyimi</li>
+                            <li>Gerçek fiyat, tahmin edilen fiyat ve hata metriklerinin birlikte sunulması</li>
+                        </ul>
+
+                        <h2>Kullanılan Teknolojiler</h2>
+                        <div class="tech-grid">
+                            <span class="tech-chip">Python</span>
+                            <span class="tech-chip">yfinance</span>
+                            <span class="tech-chip">NumPy</span>
+                            <span class="tech-chip">Pandas</span>
+                            <span class="tech-chip">Scikit-learn</span>
+                            <span class="tech-chip">TensorFlow / Keras (LSTM)</span>
+                            <span class="tech-chip">Matplotlib</span>
+                            <span class="tech-chip">Streamlit</span>
+                        </div>
+                    </div>
+
+                    <div class="project-media">
+                        <div class="video-card">
+                            <div class="video-header">
+                                <span class="video-badge"><i class="fab fa-youtube"></i> Tanıtım Videosu</span>
+                                <h2>NTradeWeb Proje Tanıtımı</h2>
+                            </div>
+                            <div class="video-wrapper">
+                                <iframe 
+                                    src="https://www.youtube.com/embed/3FCiwLvnG2A" 
+                                    title="NTradeWeb Tanıtım Videosu"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+                            <p class="video-caption">
+                                Videoda, modelin mimarisi, veri işleme adımları ve arayüz üzerinden yapılan örnek
+                                kullanım senaryoları adım adım gösterilmektedir.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo"><img src="NCLogo.jpeg" alt="NC Logo"></div>
+                    <div class="social-links">
+                        <a href="https://github.com/necmeddinn" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/necmeddincunedioglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/necmeddin_1?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/necmeddin_1?igsh=MTdobDNxcmhlMzJ6dg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@necmeddin_1" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="mailto:necmeddincunedioglu@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year">2023</span> Necmeddin Cunedioğlu. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
+
