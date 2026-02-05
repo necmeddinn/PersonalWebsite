@@ -200,6 +200,35 @@
     color: white;
 }
 
+/* Dark theme overrides for projects page */
+[data-theme="dark"] .projects-section {
+    background-color: var(--bg-color);
+}
+
+[data-theme="dark"] .project-card {
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .project-info h3 {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .project-info p {
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .project-links a {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .project-links a:hover {
+    background: var(--accent-color);
+    color: #ffffff;
+}
+
 /* Hide projects based on filter */
 .project-card.hide {
     display: none;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTradeWeb | Yapay Zeka Destekli Hisse Senedi Fiyat Tahmin Uygulaması</title>
+    <title>Yapay Zekâ Destekli Fizyoterapi Egzersizlerinin Gerçek Zamanlı Analizi ve Takibi</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/proje-detay.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -44,11 +44,12 @@
                 <a href="projelerim.html" class="back-link">
                     <i class="fas fa-arrow-left"></i> Projelere geri dön
                 </a>
-                <span class="project-badge">Bitirme Projesi · Yapay Zeka · Finans</span>
-                <h1>Yapay Zeka Destekli Hisse Senedi Fiyat Tahmin Uygulaması (Lisans Bitirme Projesi)</h1>
+                <span class="project-badge">Yapay Zeka · Computer Vision · Sağlık Teknolojileri</span>
+                <h1>Yapay Zeka Destekli Fizyoterapi Egzersizlerinin Gerçek Zamanlı Analizi ve Takibi</h1>
                 <p class="subtitle">
-                    Borsa İstanbul hisseleri için LSTM tabanlı derin öğrenme modelleriyle bir sonraki işlem gününün
-                    kapanış fiyatını tahmin eden, etkileşimli bir finansal veri bilimi platformu.
+                    MediaPipe tabanlı eklem noktası tespiti ve özel analiz algoritmaları ile fizyoterapi egzersizlerini
+                    gerçek zamanlı analiz eden, hastalara anlık geri bildirim ve fizyoterapistlere uzaktan takip imkânı
+                    sunan yapay zeka destekli dijital sağlık çözümü.
                 </p>
             </div>
         </header>
@@ -60,63 +61,71 @@
                     <div class="project-text">
                         <h2>Proje Özeti</h2>
                         <p>
-                            Bu çalışma, Erciyes Üniversitesi Bilgisayar Mühendisliği Bölümü lisans bitirme projesi
-                             kapsamında geliştirilen, Borsa İstanbul (BIST) üzerinde işlem gören hisse senetlerinin
-                              gelecekteki fiyat hareketlerini tahmin edebilen derin öğrenme tabanlı bir karar destek
-                               sistemidir. Proje, zaman serisi analizlerinde güçlü performans sergileyen 
-                               Uzun Kısa Süreli Bellek (LSTM) mimarisini temel alarak, finansal piyasalardaki doğrusal
-                                olmayan trendleri modellemeyi hedefler.
+                            Proje, modern görüntü işleme ve yapay zeka tekniklerini kullanarak fizyoterapi egzersizlerini
+                            doğru yapma oranını artırmayı hedeflemektedir. Sistem, kullanıcının kamerasından aldığı
+                            görüntüleri MediaPipe Pose modeliyle işleyerek eklem noktalarını çıkarır ve önceden
+                            belirlenmiş egzersiz kriterlerine göre analiz eder.
                         </p>
                         <p>
-                            Model, geçmiş 60 günlük kapanış fiyatı üzerinden öğrenme yapar ve çift katmanlı LSTM
-                            mimarisi sayesinde zaman serisinin trendlerini, dalgalanmalarını ve uzun vadeli
-                            bağımlılıklarını etkili biçimde modelleyebilir. Tahmin sonuçları; gerçek fiyat, tahmin
-                            edilen fiyat ve hata analizleriyle birlikte kullanıcıya sunulur.
+                            Giyilebilir sensör gerektirmeyen bu yerli dijital sağlık çözümü; hem hastaların kendi
+                            egzersizlerini doğru biçimde uygulamasını kolaylaştırmakta hem de fizyoterapistlerin tedavi
+                            süreçlerini uzaktan, veriye dayalı şekilde takip edebilmesine olanak tanımaktadır.
+                        </p>
+                        <p>
+                            Bu proje, TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri Destek Programı kapsamında
+                            desteklenmiştir. Bilimsel araştırmalara sunduğu katkılar için TÜBİTAK’a ve proje sürecindeki akademik
+                            rehberliği nedeniyle danışmanımız Arş. Gör. Gökhan Azizoğlu’na teşekkür ederiz.
                         </p>
 
-                        <h2>Öne Çıkan Özellikler</h2>
+                        <h2>Temel Özellikler</h2>
                         <ul class="feature-list">
-                            <li>LSTM tabanlı derin öğrenme mimarisi ile zaman serisi tahmini</li>
-                            <li>60 günlük kapanış fiyatına dayalı dinamik tahmin penceresi</li>
-                            <li>Bollinger Bantları ile volatilite ve risk görselleştirmesi</li>
-                            <li>Streamlit arayüzü ile etkileşimli veri analizi deneyimi</li>
-                            <li>Gerçek fiyat, tahmin edilen fiyat ve hata metriklerinin birlikte sunulması</li>
+                            <li>Gerçek zamanlı eklem açısı ve duruş analizi</li>
+                            <li>Hastanın egzersizi doğru yapıp yapmadığını anlık tespit edebilme</li>
+                            <li>Sesli ve görsel uyarılarla kullanıcıya anlık geri bildirim sağlama</li>
+                            <li>Fizyoterapist–hasta etkileşim modülü ile uzaktan takip</li>
+                            <li>Desktop + Web entegre mimari ile yönetim paneli ve ilerleme takibi</li>
+                            <li>Sensör gerektirmeyen, yalnızca kamera ile çalışan yerli sağlık teknolojisi çözümü</li>
                         </ul>
 
                         <h2>Kullanılan Teknolojiler</h2>
                         <div class="tech-grid">
-                            <span class="tech-chip">Python</span>
-                            <span class="tech-chip">yfinance</span>
-                            <span class="tech-chip">NumPy</span>
-                            <span class="tech-chip">Pandas</span>
-                            <span class="tech-chip">Scikit-learn</span>
-                            <span class="tech-chip">TensorFlow / Keras (LSTM)</span>
-                            <span class="tech-chip">Matplotlib</span>
-                            <span class="tech-chip">Streamlit</span>
+                            <span class="tech-chip">MediaPipe Pose</span>
+                            <span class="tech-chip">AI (Yapay Zeka)</span>
+                            <span class="tech-chip">Computer Vision (Bilgisayarlı Görü)</span>
+                            <span class="tech-chip">Java (Masaüstü Uygulaması)</span>
+                            <span class="tech-chip">ASP.NET Core (Web Platformu)</span>
+                            <span class="tech-chip">Eklem Açısı Analiz Algoritmaları</span>
+                            <span class="tech-chip">SignalR (Gerçek Zamanlı İletişim)</span>
+                            <span class="tech-chip">JSON Web Token (JWT)</span>
                         </div>
 
                         <p>
 
                         </p>
-                        
-                        <h2>Sonuç</h2>
-                        <p>
-                            Bu proje, finansal zaman serilerinin analizi için derin öğrenme yöntemlerinin gerçek piyasa verileri üzerinde nasıl 
-                            uygulanabileceğini gösteren modern bir FinTech prototipidir. BIST verilerini işleyebilen bu sistem, yatırımcılar ve 
-                            geliştiriciler için pratik bir karar destek altyapısı sunar.
-                        </p>
+                        <h2>Proje Bilgileri</h2>
+                        <ul class="feature-list">
+                            <li><strong>Proje Tarihleri:</strong> 20.05.2025 – 02.10.2025</li>
+
+                            <li><strong>Proje Ekibi:</strong>
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;• Necmeddin Cunedioğlu — Proje Yürütücüsü, (AI, Desktop, Mimari)
+                                <br>&nbsp;&nbsp;&nbsp;&nbsp;• Ceren Varkal — Ekip Üyesi, (Web, Mimari)
+                            </li>
+
+                            <li><strong>Proje Danışmanı:</strong> Arş. Gör. Gökhan Azizoğlu</li>
+                        </ul>
+
                     </div>
 
                     <div class="project-media">
                         <div class="video-card">
                             <div class="video-header">
                                 <span class="video-badge"><i class="fab fa-youtube"></i> Tanıtım Videosu</span>
-                                <h2>NTradeWeb Proje Tanıtımı</h2>
+                                <h2>PyhVision Proje Tanıtımı</h2>
                             </div>
                             <div class="video-wrapper">
                                 <iframe 
-                                    src="https://www.youtube.com/embed/3FCiwLvnG2A" 
-                                    title="NTradeWeb Tanıtım Videosu"
+                                    src="https://www.youtube.com/embed/7voz0SFNclM" 
+                                    title="PyhVision Proje Tanıtım Videosu"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen
@@ -124,8 +133,9 @@
                                 </iframe>
                             </div>
                             <p class="video-caption">
-                                Videoda, modelin mimarisi, veri işleme adımları ve arayüz üzerinden yapılan örnek
-                                kullanım senaryoları adım adım gösterilmektedir.
+                                Videoda, MediaPipe tabanlı eklem noktası tespiti, gerçek zamanlı analiz ekranları ve
+                                hem desktop hem web arayüzü üzerinden gerçekleştirilen örnek egzersiz senaryoları
+                                gösterilmektedir.
                             </p>
                         </div>
                     </div>

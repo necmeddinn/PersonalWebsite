@@ -78,6 +78,11 @@
     margin-bottom: 0.4rem;
 }
 
+/* Emphasized labels inside feature lists (e.g., Proje Tarihleri) */
+.project-text .feature-list strong {
+    color: var(--secondary-color);
+}
+
 .tech-grid {
     display: flex;
     flex-wrap: wrap;
@@ -145,6 +150,37 @@
     padding: 0.9rem 1.5rem 1.3rem;
     font-size: 0.9rem;
     color: var(--light-text);
+}
+
+/* Dark theme overrides for project detail page */
+[data-theme="dark"] .project-detail-header {
+    background: var(--gradient-secondary);
+}
+
+[data-theme="dark"] .project-detail-main {
+    background-color: var(--bg-color);
+}
+
+[data-theme="dark"] .project-media .video-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .project-text h2 {
+    color: var(--secondary-color);
+}
+
+[data-theme="dark"] .project-text p,
+[data-theme="dark"] .feature-list,
+[data-theme="dark"] .video-caption {
+    color: var(--light-text);
+}
+
+[data-theme="dark"] .tech-chip {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--secondary-color);
 }
 
 /* Responsive */
