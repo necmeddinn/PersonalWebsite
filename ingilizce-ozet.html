@@ -1,0 +1,2339 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İngilizce Özet — A1 · A2 · B1 Dil Bilgisi</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/proje-detay.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ══════════════════════════════════════════════════════
+   GLOBAL RESET & TAB NAVIGATION
+══════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: var(--font-family, 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.english-grammar-page {
+  padding: 6rem 0 4rem;
+  background-color: var(--bg-secondary);
+}
+
+.english-header {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 2.5rem 2rem 1.5rem;
+}
+
+.page-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8888a0;
+  margin-bottom: 20px;
+}
+.page-title strong {
+  color: #e8e8f0;
+  font-size: 18px;
+  display: block;
+  letter-spacing: -0.01em;
+}
+
+/* ── TABS ── */
+.tab-nav {
+  display: flex;
+  gap: 0;
+  align-items: flex-end;
+}
+
+.tab-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: none;
+  border-top: 3px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #8888a0;
+  position: relative;
+  bottom: -1px;
+}
+
+.tab-btn:hover {
+  color: #e8e8f0;
+  background: #16161c;
+}
+
+.tab-btn.active-a1 {
+  color: #f0c040;
+  border-top-color: #f0c040;
+  background: #16161c;
+}
+
+.tab-btn.active-a2 {
+  color: #40c8f0;
+  border-top-color: #40c8f0;
+  background: #16161c;
+}
+
+.tab-btn.active-b1 {
+  color: #C0392B;
+  border-top-color: #C0392B;
+  background: #F7F4EF;
+}
+
+.tab-btn.tab-b1.active-b1 {
+  border-top: 3px solid #C0392B;
+}
+
+/* ── TAB PANELS ── */
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+
+/* ═══════════════════════════════════════════════════════
+   A1 & A2 PANEL STYLES (dark theme)
+═══════════════════════════════════════════════════════ */
+#panel-a1a2 {
+  --bg: #0e0e12;
+  --surface: #16161c;
+  --surface2: #1e1e28;
+  --border: #2a2a38;
+  --a1: #f0c040;
+  --a1-dim: #a07c18;
+  --a2: #40c8f0;
+  --a2-dim: #1878a0;
+  --green: #4ef0a0;
+  --rose: #f05070;
+  --purple: #b090ff;
+  --text: #e8e8f0;
+  --muted: #8888a0;
+  --code-bg: #12121a;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Lora', serif;
+  padding: 40px 32px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── HEADER (A1A2) ── */
+#panel-a1a2 .header {
+  text-align: center;
+  padding: 48px 0 40px;
+  position: relative;
+  margin-bottom: 48px;
+}
+#panel-a1a2 .header::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), var(--a1), var(--a2), var(--border), transparent);
+  margin-top: 40px;
+}
+#panel-a1a2 .header-badge { display: inline-flex; gap: 10px; margin-bottom: 20px; }
+#panel-a1a2 .badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+#panel-a1a2 .badge-a1 { background: var(--a1); color: #0e0e12; }
+#panel-a1a2 .badge-a2 { background: var(--a2); color: #0e0e12; }
+#panel-a1a2 h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: #fff;
+}
+#panel-a1a2 h1 span.accent-a1 { color: var(--a1); }
+#panel-a1a2 h1 span.accent-a2 { color: var(--a2); }
+#panel-a1a2 .subtitle {
+  margin-top: 12px;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+/* ── LEGEND ── */
+#panel-a1a2 .legend {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+#panel-a1a2 .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+}
+#panel-a1a2 .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── SECTION HEADERS (A1A2) ── */
+#panel-a1a2 .section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#panel-a1a2 .section-title .level-tag { font-size: 10px; padding: 2px 7px; border-radius: 2px; font-weight: 600; }
+#panel-a1a2 .tag-a1 { background: var(--a1); color: #0e0e12; }
+#panel-a1a2 .tag-a2 { background: var(--a2); color: #0e0e12; }
+#panel-a1a2 .tag-both { background: linear-gradient(90deg, var(--a1) 0%, var(--a2) 100%); color: #0e0e12; }
+
+/* ── CARD (A1A2) ── */
+#panel-a1a2 .card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+#panel-a1a2 .card:hover { border-color: #3a3a50; }
+#panel-a1a2 .card.a1-card { border-left: 3px solid var(--a1); }
+#panel-a1a2 .card.a2-card { border-left: 3px solid var(--a2); }
+#panel-a1a2 .card.both-card { border-left: 3px solid var(--purple); }
+#panel-a1a2 .card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#panel-a1a2 .card-title .icon { font-size: 16px; }
+
+/* ── TABLES (A1A2) ── */
+#panel-a1a2 table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px; }
+#panel-a1a2 th {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+#panel-a1a2 td { padding: 8px 10px; border-bottom: 1px solid #1e1e28; vertical-align: top; line-height: 1.5; }
+#panel-a1a2 tr:last-child td { border-bottom: none; }
+#panel-a1a2 tr:hover td { background: #1a1a22; }
+
+#panel-a1a2 .en { color: var(--green); font-family: 'DM Mono', monospace; font-size: 12.5px; }
+#panel-a1a2 .tr { color: var(--muted); font-style: italic; font-size: 12px; }
+#panel-a1a2 .form { color: var(--a1); font-family: 'DM Mono', monospace; font-size: 12.5px; }
+#panel-a1a2 .form2 { color: var(--a2); font-family: 'DM Mono', monospace; font-size: 12.5px; }
+#panel-a1a2 .note { color: var(--rose); font-size: 11.5px; font-family: 'DM Mono', monospace; }
+#panel-a1a2 .ok { color: var(--green); font-size: 12px; }
+#panel-a1a2 .bad { color: var(--rose); font-size: 12px; text-decoration: line-through; }
+
+/* ── FORMULA (A1A2) ── */
+#panel-a1a2 .formula {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12.5px;
+  margin: 10px 0;
+  color: var(--text);
+  line-height: 1.8;
+}
+#panel-a1a2 .formula .subj { color: var(--a1); }
+#panel-a1a2 .formula .verb { color: var(--green); }
+#panel-a1a2 .formula .obj  { color: var(--a2); }
+#panel-a1a2 .formula .time { color: var(--purple); }
+#panel-a1a2 .formula .op   { color: var(--muted); }
+#panel-a1a2 .formula .neg  { color: var(--rose); }
+#panel-a1a2 .formula .q    { color: #ffa040; }
+
+/* ── EXAMPLES (A1A2) ── */
+#panel-a1a2 .ex { font-size: 13px; margin: 4px 0; padding-left: 14px; border-left: 2px solid var(--border); }
+#panel-a1a2 .ex .e { color: var(--green); font-family: 'DM Mono', monospace; font-size: 12px; }
+#panel-a1a2 .ex .t { color: var(--muted); font-size: 11.5px; font-style: italic; }
+
+/* ── PILL GRID (A1A2) ── */
+#panel-a1a2 .pill-grid { display: flex; flex-wrap: wrap; gap: 7px; margin: 10px 0; }
+#panel-a1a2 .pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11.5px;
+  color: var(--text);
+  line-height: 1.4;
+}
+#panel-a1a2 .pill span { color: var(--muted); font-size: 10.5px; display: block; }
+#panel-a1a2 .pill.highlight { background: #1a1a28; border-color: #3030a0; color: var(--purple); }
+
+/* ── GRID (A1A2) ── */
+#panel-a1a2 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+#panel-a1a2 .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 10px 0; }
+#panel-a1a2 .mini-box {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 10px 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11.5px;
+  color: var(--text);
+}
+#panel-a1a2 .mini-box .label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; font-weight: 600; }
+#panel-a1a2 .mini-box .val { color: var(--green); }
+#panel-a1a2 .mini-box .sub { color: var(--muted); font-size: 10.5px; margin-top: 2px; }
+
+/* ── LAYOUT (A1A2) ── */
+#panel-a1a2 .columns { display: grid; gap: 20px; }
+#panel-a1a2 .col2 { grid-template-columns: 1fr 1fr; }
+#panel-a1a2 .col3 { grid-template-columns: 1fr 1fr 1fr; }
+#panel-a1a2 .col-65-35 { grid-template-columns: 65fr 35fr; }
+#panel-a1a2 .col-40-60 { grid-template-columns: 40fr 60fr; }
+
+/* ── SEP ── */
+#panel-a1a2 .sep {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 40px 0;
+}
+
+#panel-a1a2 .big-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#panel-a1a2 .big-label .num {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: var(--muted);
+  font-weight: 400;
+}
+#panel-a1a2 .big-label.al1 { color: var(--a1); }
+#panel-a1a2 .big-label.al2 { color: var(--a2); }
+
+/* ── COMPARE ── */
+#panel-a1a2 .compare { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; margin: 8px 0; font-size: 12.5px; font-family: 'DM Mono', monospace; }
+#panel-a1a2 .compare .left { text-align: right; }
+#panel-a1a2 .compare .vs { color: var(--muted); font-size: 11px; text-align: center; white-space: nowrap; }
+#panel-a1a2 .compare .right { text-align: left; }
+
+/* ── TIMELINE ── */
+#panel-a1a2 .timeline { display: flex; align-items: center; gap: 0; margin: 12px 0; font-family: 'DM Mono', monospace; font-size: 11px; overflow-x: auto; padding-bottom: 4px; }
+#panel-a1a2 .tl-block { padding: 8px 14px; border: 1px solid var(--border); white-space: nowrap; text-align: center; min-width: 80px; }
+#panel-a1a2 .tl-block .tl-label { color: var(--muted); font-size: 9.5px; margin-bottom: 3px; }
+#panel-a1a2 .tl-block .tl-val { color: var(--text); font-size: 11px; }
+#panel-a1a2 .tl-past   { background: #1a1010; border-color: #3a1a1a; }
+#panel-a1a2 .tl-now    { background: #101a10; border-color: #1a3a1a; color: var(--green); }
+#panel-a1a2 .tl-future { background: #10101a; border-color: #1a1a3a; }
+#panel-a1a2 .tl-arrow  { color: var(--border); font-size: 16px; padding: 0 2px; }
+
+/* ── WARN & TIP (A1A2) ── */
+#panel-a1a2 .warn {
+  background: #1a1008;
+  border: 1px solid #4a2a08;
+  border-left: 3px solid #f0a040;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: #d0a060;
+  margin: 10px 0;
+  font-family: 'DM Mono', monospace;
+}
+#panel-a1a2 .warn::before { content: '⚠ '; }
+#panel-a1a2 .tip {
+  background: #081810;
+  border: 1px solid #0a3020;
+  border-left: 3px solid var(--green);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  color: #60c090;
+  margin: 10px 0;
+  font-family: 'DM Mono', monospace;
+}
+#panel-a1a2 .tip::before { content: '💡 '; }
+
+#panel-a1a2 footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  color: var(--muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  #panel-a1a2 .col2, #panel-a1a2 .col3, #panel-a1a2 .col-65-35, #panel-a1a2 .col-40-60 { grid-template-columns: 1fr; }
+  #panel-a1a2 .grid2, #panel-a1a2 .grid3 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  #panel-a1a2 .grid2, #panel-a1a2 .grid3 { grid-template-columns: 1fr; }
+  .tab-btn { padding: 10px 14px; font-size: 10px; }
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   B1 PANEL STYLES (light/paper theme)
+═══════════════════════════════════════════════════════ */
+#panel-b1 {
+  --bg:       #F7F4EF;
+  --paper:    #FDFCFA;
+  --paper2:   #F2EFE9;
+  --ink:      #1A1611;
+  --ink2:     #3D3830;
+  --muted:    #7A7268;
+  --line:     #DDD8CF;
+  --b1:       #C0392B;
+  --b1-light: #FDF0EE;
+  --b1-mid:   #E8948A;
+  --teal:     #1A6B6B;
+  --teal-l:   #E8F4F4;
+  --teal-m:   #7BBFBF;
+  --gold:     #A0620A;
+  --gold-l:   #FDF6E8;
+  --gold-m:   #D4A55A;
+  --purple:   #5B2D8E;
+  --purple-l: #F2EEF8;
+  --purple-m: #A882D4;
+  --green:    #1A6B3A;
+  --green-l:  #EBF7F0;
+  --green-m:  #6BBF94;
+  --navy:     #1A2B5E;
+  --navy-l:   #EBF0F8;
+  --navy-m:   #7A9ACF;
+  --rose:     #8B1A4A;
+  --rose-l:   #F8EBF2;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+#panel-b1 .page {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 40px 32px 60px;
+}
+
+/* ── HEADER (B1) ── */
+#panel-b1 header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 24px;
+  padding: 48px 0 32px;
+  border-bottom: 3px solid var(--ink);
+  margin-bottom: 48px;
+}
+#panel-b1 .level-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--b1);
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  margin-bottom: 16px;
+}
+#panel-b1 h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+#panel-b1 h1 em { font-style: italic; color: var(--b1); }
+#panel-b1 .header-sub { margin-top: 10px; color: var(--muted); font-size: 14px; font-weight: 300; max-width: 540px; }
+#panel-b1 .header-right { text-align: right; padding-bottom: 4px; }
+#panel-b1 .toc { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; }
+#panel-b1 .toc-item { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted); letter-spacing: 0.04em; }
+#panel-b1 .toc-item .num { color: var(--b1); margin-right: 6px; }
+
+/* ── SECTION DIVIDER (B1) ── */
+#panel-b1 .sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 52px 0 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--ink);
+}
+#panel-b1 .sec-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; }
+#panel-b1 .sec-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--ink); line-height: 1.1; }
+#panel-b1 .sec-level { margin-left: auto; font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: var(--b1); color: #fff; padding: 3px 9px; letter-spacing: 0.08em; font-weight: 500; }
+
+/* ── GRID LAYOUTS (B1) ── */
+#panel-b1 .g2  { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+#panel-b1 .g3  { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+#panel-b1 .g4  { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; }
+#panel-b1 .g23 { display: grid; grid-template-columns: 2fr 3fr; gap: 16px; }
+#panel-b1 .g32 { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; }
+#panel-b1 .g34 { display: grid; grid-template-columns: 3fr 4fr; gap: 16px; }
+
+/* ── CARD (B1) ── */
+#panel-b1 .card { background: var(--paper); border: 1.5px solid var(--line); padding: 18px 20px; position: relative; }
+#panel-b1 .card.accent-b1     { border-left: 4px solid var(--b1); }
+#panel-b1 .card.accent-teal   { border-left: 4px solid var(--teal); }
+#panel-b1 .card.accent-gold   { border-left: 4px solid var(--gold); }
+#panel-b1 .card.accent-purple { border-left: 4px solid var(--purple); }
+#panel-b1 .card.accent-green  { border-left: 4px solid var(--green); }
+#panel-b1 .card.accent-navy   { border-left: 4px solid var(--navy); }
+#panel-b1 .card.accent-rose   { border-left: 4px solid var(--rose); }
+#panel-b1 .card.fill-b1     { background: var(--b1-light); }
+#panel-b1 .card.fill-teal   { background: var(--teal-l); }
+#panel-b1 .card.fill-gold   { background: var(--gold-l); }
+#panel-b1 .card.fill-purple { background: var(--purple-l); }
+#panel-b1 .card.fill-green  { background: var(--green-l); }
+#panel-b1 .card.fill-navy   { background: var(--navy-l); }
+#panel-b1 .card-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── FORMULA (B1) ── */
+#panel-b1 .formula {
+  background: var(--ink);
+  color: #f0ede8;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  line-height: 2.0;
+  border-radius: 2px;
+}
+#panel-b1 .f-sub   { color: #7EC8C8; }
+#panel-b1 .f-verb  { color: #F0C040; }
+#panel-b1 .f-v2    { color: #80E080; }
+#panel-b1 .f-obj   { color: #C0A0F0; }
+#panel-b1 .f-neg   { color: #F08080; }
+#panel-b1 .f-q     { color: #F0A060; }
+#panel-b1 .f-time  { color: #A0C8F0; }
+#panel-b1 .f-con   { color: #F0C0A0; }
+#panel-b1 .f-dim   { color: #888; }
+
+/* ── TABLES (B1) ── */
+#panel-b1 table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+#panel-b1 th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 7px 10px;
+  text-align: left;
+  border-bottom: 1.5px solid var(--line);
+  background: var(--paper2);
+}
+#panel-b1 td { padding: 7px 10px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
+#panel-b1 tr:last-child td { border-bottom: none; }
+#panel-b1 tr:hover td { background: var(--paper2); }
+#panel-b1 .t-en    { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--teal); }
+#panel-b1 .t-form  { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--b1); font-weight: 500; }
+#panel-b1 .t-form2 { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--gold); }
+#panel-b1 .t-tr    { color: var(--muted); font-style: italic; font-size: 12px; }
+#panel-b1 .t-note  { color: var(--b1); font-size: 11px; font-family: 'IBM Plex Mono', monospace; }
+#panel-b1 .t-ok    { color: var(--green); font-size: 12px; font-family: 'IBM Plex Mono', monospace; }
+#panel-b1 .t-bad   { color: var(--b1); font-size: 12px; font-family: 'IBM Plex Mono', monospace; text-decoration: line-through; }
+#panel-b1 .t-purple { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--purple); }
+
+/* ── EXAMPLES (B1) ── */
+#panel-b1 .ex { margin: 5px 0; padding-left: 12px; border-left: 2px solid var(--line); }
+#panel-b1 .ex .e { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--teal); }
+#panel-b1 .ex .t { color: var(--muted); font-size: 11.5px; font-style: italic; }
+
+/* ── ALERTS (B1) ── */
+#panel-b1 .warn { background: #FDF6E8; border-left: 3px solid var(--gold); padding: 9px 13px; font-size: 12px; color: var(--gold); margin: 10px 0; font-family: 'IBM Plex Mono', monospace; }
+#panel-b1 .warn::before { content: '⚠ '; }
+#panel-b1 .tip { background: var(--green-l); border-left: 3px solid var(--green); padding: 9px 13px; font-size: 12px; color: var(--green); margin: 10px 0; font-family: 'IBM Plex Mono', monospace; }
+#panel-b1 .tip::before { content: '✦ '; }
+#panel-b1 .note { background: var(--navy-l); border-left: 3px solid var(--navy); padding: 9px 13px; font-size: 12px; color: var(--navy); margin: 10px 0; font-family: 'IBM Plex Mono', monospace; }
+#panel-b1 .note::before { content: '◆ '; }
+
+/* ── PILL (B1) ── */
+#panel-b1 .pills { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+#panel-b1 .pill { background: var(--paper2); border: 1px solid var(--line); padding: 3px 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: var(--ink2); white-space: nowrap; }
+#panel-b1 .pill.b1   { background: var(--b1-light); border-color: var(--b1-mid); color: var(--b1); }
+#panel-b1 .pill.teal { background: var(--teal-l); border-color: var(--teal-m); color: var(--teal); }
+#panel-b1 .pill.gold { background: var(--gold-l); border-color: var(--gold-m); color: var(--gold); }
+#panel-b1 .pill.pur  { background: var(--purple-l); border-color: var(--purple-m); color: var(--purple); }
+#panel-b1 .pill.grn  { background: var(--green-l); border-color: var(--green-m); color: var(--green); }
+#panel-b1 .pill.nav  { background: var(--navy-l); border-color: var(--navy-m); color: var(--navy); }
+
+/* ── VS GRID (B1) ── */
+#panel-b1 .vs-grid { display: grid; grid-template-columns: 1fr 2px 1fr; gap: 0; border: 1.5px solid var(--line); background: var(--paper); }
+#panel-b1 .vs-col { padding: 16px; }
+#panel-b1 .vs-col:first-child { background: var(--b1-light); }
+#panel-b1 .vs-col:last-child { background: var(--teal-l); }
+#panel-b1 .vs-div { background: var(--line); }
+#panel-b1 .vs-head { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+#panel-b1 .vs-head.b1   { color: var(--b1); }
+#panel-b1 .vs-head.teal { color: var(--teal); }
+
+/* ── TIMELINE (B1) ── */
+#panel-b1 .timeline { display: flex; align-items: stretch; border: 1.5px solid var(--line); overflow: hidden; font-family: 'IBM Plex Mono', monospace; font-size: 11px; margin: 10px 0; }
+#panel-b1 .tl-seg { flex: 1; padding: 10px 12px; text-align: center; border-right: 1px solid var(--line); }
+#panel-b1 .tl-seg:last-child { border-right: none; }
+#panel-b1 .tl-lbl { font-size: 9px; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+#panel-b1 .tl-val { font-weight: 500; }
+#panel-b1 .tl-past   { background: var(--b1-light); }
+#panel-b1 .tl-pp     { background: var(--purple-l); }
+#panel-b1 .tl-pres   { background: var(--teal-l); }
+#panel-b1 .tl-fut    { background: var(--navy-l); }
+
+/* ── STRUCT (B1) ── */
+#panel-b1 .struct { border: 1.5px solid var(--line); background: var(--paper); margin: 10px 0; }
+#panel-b1 .struct-head { background: var(--ink); color: #f0ede8; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.08em; padding: 7px 14px; text-transform: uppercase; }
+#panel-b1 .struct-body { padding: 12px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 2.0; }
+
+/* ── NTAG (B1) ── */
+#panel-b1 .ntag { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10px; background: var(--b1); color: #fff; padding: 1px 6px; margin-right: 6px; font-weight: 500; }
+#panel-b1 .ntag.teal { background: var(--teal); }
+#panel-b1 .ntag.gold { background: var(--gold); }
+#panel-b1 .ntag.purple { background: var(--purple); }
+#panel-b1 .ntag.green { background: var(--green); }
+#panel-b1 .ntag.navy { background: var(--navy); }
+
+/* ── SP (B1) ── */
+#panel-b1 .sp { height: 20px; }
+#panel-b1 .sp2 { height: 10px; }
+
+/* ── WIDE STRUCT (B1) ── */
+#panel-b1 .wide-struct { display: grid; border: 1.5px solid var(--line); overflow: hidden; margin: 10px 0; }
+#panel-b1 .ws-row { display: grid; border-bottom: 1px solid var(--line); }
+#panel-b1 .ws-row:last-child { border-bottom: none; }
+#panel-b1 .ws-cell { padding: 9px 13px; border-right: 1px solid var(--line); font-family: 'IBM Plex Mono', monospace; font-size: 12px; }
+#panel-b1 .ws-cell:last-child { border-right: none; }
+#panel-b1 .ws-head { font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); background: var(--paper2); padding: 7px 13px; border-right: 1px solid var(--line); }
+#panel-b1 .ws-head:last-child { border-right: none; }
+
+/* ── FOOTER (B1) ── */
+#panel-b1 footer { margin-top: 60px; padding-top: 20px; border-top: 2px solid var(--ink); display: flex; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--muted); }
+#panel-b1 footer strong { color: var(--b1); }
+
+@media(max-width:1000px) { #panel-b1 .g3, #panel-b1 .g4 { grid-template-columns: 1fr 1fr; } }
+@media(max-width:700px)  {
+  #panel-b1 .g2, #panel-b1 .g3, #panel-b1 .g4, #panel-b1 .g23, #panel-b1 .g32, #panel-b1 .g34 { grid-template-columns: 1fr; }
+  #panel-b1 header { grid-template-columns: 1fr; }
+  #panel-b1 .header-right { display: none; }
+}
+
+</style>
+</head>
+<body>
+<div class="page-container">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo"><a href="index.html"><img src="NCLogo.jpeg" alt="NC Logo"></a></div>
+      <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Ana Sayfa</a></li>
+        <li class="nav-item"><a href="hakkimda.html">Hakkımda</a></li>
+        <li class="nav-item"><a href="projelerim.html">Projelerim</a></li>
+        <li class="nav-item active"><a href="notlarim.html">Notlarım</a></li>
+        <li class="nav-item"><a href="iletisim.html">İletişim</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <button id="theme-toggle-btn" aria-label="Tema değiştir">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="project-detail-header">
+    <div class="container">
+      <a href="notlarim.html" class="back-link">
+        <i class="fas fa-arrow-left"></i> Notlara geri dön
+      </a>
+      <span class="project-badge">Dil Notları · İngilizce</span>
+      <h1>English Grammar Summary (A1 · A2 · B1)</h1>
+      <p class="subtitle">
+        A1, A2 ve B1 seviyeleri için derlenmiş kapsamlı İngilizce dil bilgisi özetleri ve örnek cümleler.
+      </p>
+    </div>
+  </header>
+
+  <!-- Detail Content -->
+  <main class="project-detail-main">
+    <div class="container">
+<!-- ══ PAGE HEADER & TAB NAVIGATION ══ -->
+<header class="english-header">
+  <div class="page-title">
+    <strong>İngilizce Özet</strong>
+    A1 · A2 · B1 Dil Bilgisi Başvuru Notları
+  </div>
+  <nav class="tab-nav">
+    <button class="tab-btn active-a1" onclick="switchTab('a1a2', this)" id="tab-a1a2">
+      A1 &amp; A2 — Başlangıç
+    </button>
+    <button class="tab-btn tab-b1" onclick="switchTab('b1', this)" id="tab-b1">
+      B1 — Orta Seviye
+    </button>
+  </nav>
+</header>
+
+
+<!-- ══ A1 & A2 PANEL ══════════════════════════════════════ -->
+<div id="panel-a1a2" class="tab-panel active">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-badge">
+    <span class="badge badge-a1">A1 Beginner</span>
+    <span class="badge badge-a2">A2 Elementary</span>
+  </div>
+  <h1><span class="accent-a1">English</span> Grammar<br><span class="accent-a2">Cheat Sheet</span></h1>
+  <p class="subtitle">Eksiksiz A1 &amp; A2 Dil Bilgisi Başvuru Kartı · Türkçe Açıklamalı</p>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--a1)"></div>A1 seviye kural</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--a2)"></div>A2 seviye kural</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>İngilizce örnek</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--muted)"></div>Türkçe çeviri</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--rose)"></div>Dikkat / Hata</div>
+</div>
+
+<!-- BÖLÜM 1: TO BE -->
+<div class="big-label al1"><span class="num">01</span> TO BE Fiili — am / is / are</div>
+<div class="columns col2">
+  <div>
+    <div class="card a1-card">
+      <div class="card-title"><span class="icon">📐</span> Olumlu Yapı (Affirmative)</div>
+      <div class="formula">
+        <span class="subj">Subject</span> <span class="op">+</span> <span class="verb">am/is/are</span> <span class="op">+</span> <span class="obj">complement</span>
+      </div>
+      <table>
+        <tr><th>Özne</th><th>Fiil</th><th>Kısaltma</th><th>Örnek</th></tr>
+        <tr><td>I</td><td class="form">am</td><td class="form2">'m</td><td class="en">I'm a student.</td></tr>
+        <tr><td>He / She / It</td><td class="form">is</td><td class="form2">'s</td><td class="en">She's happy.</td></tr>
+        <tr><td>You / We / They</td><td class="form">are</td><td class="form2">'re</td><td class="en">They're teachers.</td></tr>
+      </table>
+    </div>
+    <div class="card a1-card">
+      <div class="card-title"><span class="icon">🚫</span> Olumsuz Yapı (Negative)</div>
+      <div class="formula">
+        <span class="subj">Subject</span> <span class="op">+</span> <span class="neg">am/is/are + not</span>
+      </div>
+      <table>
+        <tr><th>Tam</th><th>Kısaltma</th><th>Türkçe</th></tr>
+        <tr><td class="en">I am not tired</td><td class="form2">I'm not tired</td><td class="tr">Yorgun değilim</td></tr>
+        <tr><td class="en">He is not here</td><td class="form2">He isn't here</td><td class="tr">O burada değil</td></tr>
+        <tr><td class="en">We are not late</td><td class="form2">We aren't late</td><td class="tr">Geç kalmadık</td></tr>
+      </table>
+      <div class="warn">I amn't → YANLIŞ. I'm not kullanılır!</div>
+    </div>
+  </div>
+  <div>
+    <div class="card a1-card">
+      <div class="card-title"><span class="icon">❓</span> Soru Yapısı (Question)</div>
+      <div class="formula">
+        <span class="q">Am/Is/Are</span> <span class="op">+</span> <span class="subj">subject</span> <span class="op">+</span> <span class="obj">complement?</span>
+      </div>
+      <table>
+        <tr><th>Soru</th><th>Kısa Cevap (+)</th><th>Kısa Cevap (–)</th></tr>
+        <tr><td class="en">Am I right?</td><td class="ok">Yes, you are.</td><td class="bad">No, you aren't.</td></tr>
+        <tr><td class="en">Is she at home?</td><td class="ok">Yes, she is.</td><td class="bad">No, she isn't.</td></tr>
+        <tr><td class="en">Are they friends?</td><td class="ok">Yes, they are.</td><td class="bad">No, they aren't.</td></tr>
+      </table>
+    </div>
+    <div class="card a1-card">
+      <div class="card-title"><span class="icon">👤</span> Kişi Zamirleri &amp; İyelik Sıfatları</div>
+      <table>
+        <tr><th>Özne</th><th>Nesne</th><th>İyelik Sıf.</th><th>İyelik Zam.</th></tr>
+        <tr><td class="form">I</td><td class="en">me</td><td class="form2">my</td><td class="en">mine</td></tr>
+        <tr><td class="form">you</td><td class="en">you</td><td class="form2">your</td><td class="en">yours</td></tr>
+        <tr><td class="form">he</td><td class="en">him</td><td class="form2">his</td><td class="en">his</td></tr>
+        <tr><td class="form">she</td><td class="en">her</td><td class="form2">her</td><td class="en">hers</td></tr>
+        <tr><td class="form">it</td><td class="en">it</td><td class="form2">its</td><td class="en">—</td></tr>
+        <tr><td class="form">we</td><td class="en">us</td><td class="form2">our</td><td class="en">ours</td></tr>
+        <tr><td class="form">they</td><td class="en">them</td><td class="form2">their</td><td class="en">theirs</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 2: SIMPLE PRESENT -->
+<div class="big-label al1"><span class="num">02</span> Simple Present Tense — Geniş Zaman</div>
+<div class="card a1-card">
+  <div class="card-title"><span class="icon">🔄</span> Ne Zaman Kullanılır?</div>
+  <div class="pill-grid">
+    <div class="pill">Alışkanlıklar<span>I walk every day.</span></div>
+    <div class="pill">Genel gerçekler<span>The sun rises in the east.</span></div>
+    <div class="pill">Programlar (A2)<span>The train leaves at 8.</span></div>
+    <div class="pill">Sevip sevmeme<span>She likes coffee.</span></div>
+    <div class="pill">Rutinler<span>He works at 9 am.</span></div>
+  </div>
+</div>
+<div class="columns col3">
+  <div class="card a1-card">
+    <div class="card-title">✅ Olumlu</div>
+    <div class="formula">
+      <span class="subj">I/You/We/They</span> <span class="op">+</span> <span class="verb">V1</span><br>
+      <span class="subj">He/She/It</span> <span class="op">+</span> <span class="verb">V1+s/es</span>
+    </div>
+    <div class="ex"><div class="e">I play football.</div><div class="t">Futbol oynarım.</div></div>
+    <div class="ex"><div class="e">She plays tennis.</div><div class="t">Tenis oynar.</div></div>
+    <div class="ex"><div class="e">He watches TV.</div><div class="t">TV izler.</div></div>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title">🚫 Olumsuz</div>
+    <div class="formula">
+      <span class="subj">I/You/We/They</span> <span class="neg">don't</span> <span class="verb">V1</span><br>
+      <span class="subj">He/She/It</span> <span class="neg">doesn't</span> <span class="verb">V1</span>
+    </div>
+    <div class="ex"><div class="e">I don't eat meat.</div><div class="t">Et yemem.</div></div>
+    <div class="ex"><div class="e">She doesn't drive.</div><div class="t">Araba sürmez.</div></div>
+    <div class="warn">doesn't + V1 (s/es yok!)</div>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title">❓ Soru</div>
+    <div class="formula">
+      <span class="q">Do</span> <span class="subj">I/You/We/They</span> <span class="verb">V1?</span><br>
+      <span class="q">Does</span> <span class="subj">He/She/It</span> <span class="verb">V1?</span>
+    </div>
+    <div class="ex"><div class="e">Do you like pizza?</div><div class="t">Pizzayı sever misin?</div></div>
+    <div class="ex"><div class="e">Does he work here?</div><div class="t">Burada çalışır mı?</div></div>
+  </div>
+</div>
+<div class="card a1-card">
+  <div class="card-title"><span class="icon">📝</span> He/She/It için +s / +es / +ies Kuralı</div>
+  <div class="columns col3">
+    <table>
+      <tr><th colspan="2">Genel → +s</th></tr>
+      <tr><td class="form">work</td><td class="form2">works</td></tr>
+      <tr><td class="form">play</td><td class="form2">plays</td></tr>
+      <tr><td class="form">eat</td><td class="form2">eats</td></tr>
+    </table>
+    <table>
+      <tr><th colspan="2">-ch/-sh/-s/-x/-o → +es</th></tr>
+      <tr><td class="form">watch</td><td class="form2">watches</td></tr>
+      <tr><td class="form">wash</td><td class="form2">washes</td></tr>
+      <tr><td class="form">go</td><td class="form2">goes</td></tr>
+    </table>
+    <table>
+      <tr><th colspan="2">Ünlü+y → +ies</th></tr>
+      <tr><td class="form">study</td><td class="form2">studies</td></tr>
+      <tr><td class="form">fly</td><td class="form2">flies</td></tr>
+      <tr><td class="form">carry</td><td class="form2">carries</td></tr>
+    </table>
+  </div>
+  <div class="tip">Düzensizler: have → has &nbsp;|&nbsp; be → is &nbsp;|&nbsp; do → does</div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 3: PRESENT CONTINUOUS -->
+<div class="big-label al2"><span class="num">03</span> Present Continuous — Şimdiki Zaman</div>
+<div class="columns col2">
+  <div>
+    <div class="card a2-card">
+      <div class="card-title"><span class="icon">🔄</span> Kullanım</div>
+      <div class="pill-grid">
+        <div class="pill">Şu an olan<span>I'm reading now.</span></div>
+        <div class="pill">Geçici durum<span>She's staying with us.</span></div>
+        <div class="pill">Yakın gelecek (A2)<span>I'm leaving tomorrow.</span></div>
+      </div>
+      <div class="formula">
+        <span class="subj">Subject</span> <span class="op">+</span> <span class="verb">am/is/are</span> <span class="op">+</span> <span class="verb">V-ing</span>
+      </div>
+      <div class="ex"><div class="e">I am reading a book.</div><div class="t">Kitap okuyorum.</div></div>
+      <div class="ex"><div class="e">She is not sleeping.</div><div class="t">Uyumuyur.</div></div>
+      <div class="ex"><div class="e">Are they coming?</div><div class="t">Geliyorlar mı?</div></div>
+    </div>
+  </div>
+  <div>
+    <div class="card a2-card">
+      <div class="card-title"><span class="icon">📝</span> -ing Ekleme Kuralları</div>
+      <table>
+        <tr><th>Kural</th><th>V1</th><th>V-ing</th></tr>
+        <tr><td class="tr">Genel</td><td class="form">work</td><td class="form2">working</td></tr>
+        <tr><td class="tr">-e ile bitenlerde e düşer</td><td class="form">write</td><td class="form2">writing</td></tr>
+        <tr><td class="tr">-ie → -ying</td><td class="form">lie</td><td class="form2">lying</td></tr>
+        <tr><td class="tr">Kısa: ünlü+ünsüz → çift</td><td class="form">run</td><td class="form2">running</td></tr>
+        <tr><td class="tr">Kısa: ünlü+ünsüz → çift</td><td class="form">sit</td><td class="form2">sitting</td></tr>
+        <tr><td class="tr">-y ile bitenlerde değişmez</td><td class="form">play</td><td class="form2">playing</td></tr>
+      </table>
+    </div>
+    <div class="card a2-card">
+      <div class="card-title"><span class="icon">⛔</span> Stative Verbs (–ing almaz)</div>
+      <div class="pill-grid">
+        <div class="pill highlight">like</div><div class="pill highlight">love</div><div class="pill highlight">hate</div>
+        <div class="pill highlight">know</div><div class="pill highlight">want</div><div class="pill highlight">need</div>
+        <div class="pill highlight">believe</div><div class="pill highlight">understand</div><div class="pill highlight">remember</div>
+        <div class="pill highlight">have (sahiplik)</div>
+      </div>
+      <div class="warn">I am wanting coffee → YANLIŞ<br>I want coffee → DOĞRU</div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 4: SIMPLE PAST -->
+<div class="big-label al2"><span class="num">04</span> Simple Past — Geçmiş Zaman</div>
+<div class="card a2-card">
+  <div class="card-title"><span class="icon">⏰</span> Ne Zaman? &nbsp; <span style="color:var(--muted);font-size:13px;font-weight:400">yesterday · last week · in 2020 · ago · when I was young</span></div>
+  <div class="columns col3">
+    <div>
+      <div class="formula"><b style="color:var(--a2)">Olumlu</b><br><span class="subj">Subject</span> <span class="op">+</span> <span class="verb">V2</span></div>
+      <div class="ex"><div class="e">I worked yesterday.</div></div>
+      <div class="ex"><div class="e">She went to Paris.</div></div>
+    </div>
+    <div>
+      <div class="formula"><b style="color:var(--rose)">Olumsuz</b><br><span class="subj">Subject</span> <span class="neg">didn't</span> <span class="verb">V1</span></div>
+      <div class="ex"><div class="e">I didn't work.</div></div>
+      <div class="tip" style="margin-top:8px">didn't + V1 (V2 değil!)</div>
+    </div>
+    <div>
+      <div class="formula"><b style="color:var(--a1)">Soru</b><br><span class="q">Did</span> <span class="subj">sub.</span> <span class="verb">V1?</span></div>
+      <div class="ex"><div class="e">Did you go?</div></div>
+      <div class="ex"><div class="e">Yes, I did. / No, I didn't.</div></div>
+    </div>
+  </div>
+</div>
+<div class="columns col2">
+  <div class="card a2-card">
+    <div class="card-title"><span class="icon">📋</span> Düzenli Fiiller (+ed)</div>
+    <table>
+      <tr><th>Kural</th><th>V1</th><th>V2 (Past)</th></tr>
+      <tr><td class="tr">Genel → +ed</td><td class="form">work</td><td class="form2">worked</td></tr>
+      <tr><td class="tr">-e ile biten → +d</td><td class="form">live</td><td class="form2">lived</td></tr>
+      <tr><td class="tr">Ünlü+ünsüz → çift+ed</td><td class="form">stop</td><td class="form2">stopped</td></tr>
+      <tr><td class="tr">Ünsüz+y → ied</td><td class="form">study</td><td class="form2">studied</td></tr>
+      <tr><td class="tr">Ünlü+y → +ed</td><td class="form">play</td><td class="form2">played</td></tr>
+    </table>
+  </div>
+  <div class="card a2-card">
+    <div class="card-title"><span class="icon">⚡</span> Düzensiz Fiiller (Temel Liste)</div>
+    <table>
+      <tr><th>V1</th><th>V2</th><th>Anlam</th></tr>
+      <tr><td class="form">go</td><td class="form2">went</td><td class="tr">gitmek</td></tr>
+      <tr><td class="form">come</td><td class="form2">came</td><td class="tr">gelmek</td></tr>
+      <tr><td class="form">see</td><td class="form2">saw</td><td class="tr">görmek</td></tr>
+      <tr><td class="form">have</td><td class="form2">had</td><td class="tr">sahip olmak</td></tr>
+      <tr><td class="form">get</td><td class="form2">got</td><td class="tr">almak/olmak</td></tr>
+      <tr><td class="form">make</td><td class="form2">made</td><td class="tr">yapmak</td></tr>
+      <tr><td class="form">take</td><td class="form2">took</td><td class="tr">almak</td></tr>
+      <tr><td class="form">buy</td><td class="form2">bought</td><td class="tr">satın almak</td></tr>
+      <tr><td class="form">eat</td><td class="form2">ate</td><td class="tr">yemek</td></tr>
+      <tr><td class="form">drink</td><td class="form2">drank</td><td class="tr">içmek</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 5: FUTURE -->
+<div class="big-label al2"><span class="num">05</span> Future — will &amp; going to</div>
+<div class="columns col2">
+  <div class="card a2-card">
+    <div class="card-title"><span class="icon">⚡</span> will — Anlık karar &amp; tahmin</div>
+    <div class="formula">
+      <span class="subj">Subject</span> <span class="op">+</span> <span class="verb">will / won't</span> <span class="op">+</span> <span class="verb">V1</span>
+    </div>
+    <div class="pill-grid">
+      <div class="pill">Anlık karar<span>I'll have the soup.</span></div>
+      <div class="pill">Tahmin<span>It will rain tomorrow.</span></div>
+      <div class="pill">Teklif/söz<span>I'll help you.</span></div>
+    </div>
+    <div class="ex"><div class="e">She will call you later.</div><div class="t">Seni sonra arayacak.</div></div>
+    <div class="ex"><div class="e">I won't forget it.</div><div class="t">Bunu unutmayacağım.</div></div>
+    <div class="ex"><div class="e">Will you help me?</div><div class="t">Bana yardım eder misin?</div></div>
+  </div>
+  <div class="card a2-card">
+    <div class="card-title"><span class="icon">📅</span> going to — Plan &amp; kanıt</div>
+    <div class="formula">
+      <span class="subj">Subject</span> <span class="op">+</span> <span class="verb">am/is/are going to</span> <span class="op">+</span> <span class="verb">V1</span>
+    </div>
+    <div class="pill-grid">
+      <div class="pill">Önceden planlanan<span>I'm going to visit her.</span></div>
+      <div class="pill">Kanıta dayalı tahmin<span>Look! It's going to rain.</span></div>
+    </div>
+    <div class="ex"><div class="e">We're going to buy a car.</div><div class="t">Araba alacağız. (plan)</div></div>
+    <div class="ex"><div class="e">She isn't going to come.</div><div class="t">Gelmeyecek.</div></div>
+    <div class="warn">will = anlık karar &nbsp;|&nbsp; going to = önceden planlanmış</div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 6: MODAL VERBS -->
+<div class="big-label al1"><span class="num">06</span> Modal Yardımcı Fiiller</div>
+<div class="card a1-card">
+  <div class="card-title"><span class="icon">🎯</span> Temel Modallar</div>
+  <table>
+    <tr><th>Modal</th><th>Anlam</th><th>Olumlu Örnek</th><th>Olumsuz / Soru</th></tr>
+    <tr><td class="form">can</td><td class="tr">yetenek / izin</td><td class="en">I can swim.</td><td class="form2">can't / Can you swim?</td></tr>
+    <tr><td class="form">can't</td><td class="tr">yasak / yetenek yok</td><td class="en">You can't park here.</td><td class="note">—</td></tr>
+    <tr><td class="form">must</td><td class="tr">zorunluluk (güçlü)</td><td class="en">You must wear a seatbelt.</td><td class="form2">mustn't = yasak!</td></tr>
+    <tr><td class="form">have to</td><td class="tr">zorunluluk (dışsal)</td><td class="en">I have to work today.</td><td class="form2">don't have to = gerek yok</td></tr>
+    <tr><td class="form">should</td><td class="tr">tavsiye</td><td class="en">You should sleep early.</td><td class="form2">shouldn't</td></tr>
+    <tr><td class="form">would like</td><td class="tr">kibarca istek</td><td class="en">I'd like a coffee.</td><td class="form2">Would you like...?</td></tr>
+    <tr><td class="form">may / might</td><td class="tr">olasılık (A2)</td><td class="en">It might rain.</td><td class="form2">might not</td></tr>
+  </table>
+  <div class="tip">Modalların ardından her zaman V1 (yalın mastar) gelir. Modal + to + V1 → sadece "ought to" ve "have to" istisnasıdır.</div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 7: ARTICLES -->
+<div class="big-label al1"><span class="num">07</span> Articles — a / an / the / ∅</div>
+<div class="columns col2">
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">📖</span> a / an — Belirsiz Tanım</div>
+    <table>
+      <tr><th>Kural</th><th>Örnek</th></tr>
+      <tr><td class="tr">Sessiz harfle başlayan → <span class="form">a</span></td><td class="en">a cat, a book, a university*</td></tr>
+      <tr><td class="tr">Sesli harfle başlayan → <span class="form">an</span></td><td class="en">an apple, an hour*, an egg</td></tr>
+      <tr><td class="tr">İlk kez bahsedilen</td><td class="en">I have <span class="form">a</span> dog.</td></tr>
+      <tr><td class="tr">Meslek</td><td class="en">She's <span class="form">a</span> doctor.</td></tr>
+    </table>
+    <div class="warn">university → /juː/ sesiyle başlar → "a university"<br>hour → /aʊ/ sesiyle başlar → "an hour"</div>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">🎯</span> the — Belirli Tanım &nbsp; | &nbsp; ∅ — Tanımsız</div>
+    <table>
+      <tr><th>the kullan</th><th>∅ (article yok)</th></tr>
+      <tr><td class="en">the sun, the moon</td><td class="en">I like <span class="form2">∅</span> music.</td></tr>
+      <tr><td class="en">Daha önce bahsedilen</td><td class="en"><span class="form2">∅</span> Tennis is fun.</td></tr>
+      <tr><td class="en">Tek olan şeyler</td><td class="en">I go to <span class="form2">∅</span> school.</td></tr>
+      <tr><td class="en">the + ülke grubu adı</td><td class="en">in <span class="form2">∅</span> Turkey</td></tr>
+    </table>
+    <div class="warn">the Turkey ❌ &nbsp;|&nbsp; the USA ✅ &nbsp;|&nbsp; the UK ✅</div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 8: NOUNS -->
+<div class="big-label al1"><span class="num">08</span> İsimler — Çoğul &amp; Sayılabilirlik</div>
+<div class="columns col2">
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">📝</span> Çoğul Yapım Kuralları</div>
+    <table>
+      <tr><th>Kural</th><th>Tekil</th><th>Çoğul</th></tr>
+      <tr><td class="tr">Genel → +s</td><td class="form">cat</td><td class="form2">cats</td></tr>
+      <tr><td class="tr">-ch/-sh/-s/-x/-z → +es</td><td class="form">watch</td><td class="form2">watches</td></tr>
+      <tr><td class="tr">Ünlü+y → +s</td><td class="form">day</td><td class="form2">days</td></tr>
+      <tr><td class="tr">Ünsüz+y → ies</td><td class="form">city</td><td class="form2">cities</td></tr>
+      <tr><td class="tr">-f/-fe → ves</td><td class="form">wife</td><td class="form2">wives</td></tr>
+      <tr><td class="tr">-o → +es (bazıları)</td><td class="form">tomato</td><td class="form2">tomatoes</td></tr>
+    </table>
+    <div class="tip">Düzensizler: man→men, woman→women, child→children, tooth→teeth, foot→feet, mouse→mice</div>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">⚖️</span> Countable vs Uncountable</div>
+    <div class="grid2">
+      <div class="mini-box">
+        <div class="label">Sayılabilir (Countable)</div>
+        <div class="val">a/an + s/es alır</div>
+        <div class="sub">cat, book, apple<br>two cats ✅</div>
+      </div>
+      <div class="mini-box">
+        <div class="label">Sayılamaz (Uncountable)</div>
+        <div class="val">a/an almaz, +s almaz</div>
+        <div class="sub">water, money, music<br>two waters ❌</div>
+      </div>
+    </div>
+    <table style="margin-top:10px">
+      <tr><th>Sayılabilir</th><th>Sayılamaz</th></tr>
+      <tr><td><span class="ok">many / a few</span></td><td><span class="form2">much / a little</span></td></tr>
+      <tr><td><span class="ok">How many cups?</span></td><td><span class="form2">How much water?</span></td></tr>
+      <tr><td colspan="2" style="text-align:center"><span class="en">some / any / a lot of</span> <span class="tr">— her ikisi için</span></td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 9: ADJECTIVES -->
+<div class="big-label al1"><span class="num">09</span> Sıfatlar &amp; Karşılaştırma</div>
+<div class="card a1-card">
+  <div class="card-title"><span class="icon">📏</span> Comparative &amp; Superlative</div>
+  <table>
+    <tr><th>Tür</th><th>Yalın</th><th>Comparative</th><th>Superlative</th><th>Türkçe</th></tr>
+    <tr><td class="tr">Kısa (1 hece)</td><td class="form">tall</td><td class="form2">taller than</td><td class="en">the tallest</td><td class="tr">daha uzun / en uzun</td></tr>
+    <tr><td class="tr">-e ile biten</td><td class="form">nice</td><td class="form2">nicer than</td><td class="en">the nicest</td><td class="tr">—</td></tr>
+    <tr><td class="tr">Kısa ünlü+ünsüz</td><td class="form">big</td><td class="form2">bigger than</td><td class="en">the biggest</td><td class="tr">—</td></tr>
+    <tr><td class="tr">Ünsüz+y → ier</td><td class="form">happy</td><td class="form2">happier than</td><td class="en">the happiest</td><td class="tr">—</td></tr>
+    <tr><td class="tr">Uzun (2+ hece)</td><td class="form">beautiful</td><td class="form2">more beautiful than</td><td class="en">the most beautiful</td><td class="tr">—</td></tr>
+    <tr><td class="tr">Düzensiz</td><td class="form">good</td><td class="form2">better than</td><td class="en">the best</td><td class="tr">daha iyi / en iyi</td></tr>
+    <tr><td class="tr">Düzensiz</td><td class="form">bad</td><td class="form2">worse than</td><td class="en">the worst</td><td class="tr">daha kötü / en kötü</td></tr>
+    <tr><td class="tr">Düzensiz</td><td class="form">far</td><td class="form2">farther/further</td><td class="en">the farthest/furthest</td><td class="tr">daha uzak</td></tr>
+  </table>
+  <div class="formula">
+    <span class="subj">A</span> <span class="op">is</span> <span class="verb">taller than</span> <span class="obj">B.</span> &nbsp;|&nbsp; <span class="subj">A</span> <span class="op">is</span> <span class="verb">as tall as</span> <span class="obj">B.</span> &nbsp;|&nbsp; <span class="subj">A</span> <span class="op">is</span> <span class="verb">the tallest</span> <span class="obj">in the class.</span>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 10: PREPOSITIONS -->
+<div class="big-label al1"><span class="num">10</span> Prepositions — Edatlar</div>
+<div class="columns col3">
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">⏰</span> Zaman Edatları</div>
+    <table>
+      <tr><th>Edat</th><th>Kullanım</th><th>Örnek</th></tr>
+      <tr><td class="form">at</td><td class="tr">Saat / tatil</td><td class="en">at 5pm, at Christmas</td></tr>
+      <tr><td class="form">on</td><td class="tr">Gün / tarih</td><td class="en">on Monday, on 5 May</td></tr>
+      <tr><td class="form">in</td><td class="tr">Ay / yıl / mevsim</td><td class="en">in July, in 2020, in summer</td></tr>
+      <tr><td class="form">for</td><td class="tr">Süre</td><td class="en">for 2 hours</td></tr>
+      <tr><td class="form">since</td><td class="tr">Başlangıç noktası</td><td class="en">since Monday</td></tr>
+      <tr><td class="form">ago</td><td class="tr">Geçmişe uzaklık</td><td class="en">3 days ago</td></tr>
+    </table>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">📍</span> Yer Edatları</div>
+    <table>
+      <tr><th>Edat</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td class="form">in</td><td class="tr">İçinde</td><td class="en">in the box, in Turkey</td></tr>
+      <tr><td class="form">on</td><td class="tr">Üzerinde</td><td class="en">on the table</td></tr>
+      <tr><td class="form">at</td><td class="tr">Bir noktada</td><td class="en">at school, at home</td></tr>
+      <tr><td class="form">under</td><td class="tr">Altında</td><td class="en">under the chair</td></tr>
+      <tr><td class="form">next to</td><td class="tr">Yanında</td><td class="en">next to the door</td></tr>
+      <tr><td class="form">between</td><td class="tr">Arasında</td><td class="en">between A and B</td></tr>
+      <tr><td class="form">in front of</td><td class="tr">Önünde</td><td class="en">in front of the school</td></tr>
+      <tr><td class="form">behind</td><td class="tr">Arkasında</td><td class="en">behind the tree</td></tr>
+    </table>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">➡️</span> Hareket Edatları</div>
+    <table>
+      <tr><th>Edat</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td class="form">to</td><td class="tr">–e doğru</td><td class="en">go to school</td></tr>
+      <tr><td class="form">from</td><td class="tr">–den</td><td class="en">come from Italy</td></tr>
+      <tr><td class="form">into</td><td class="tr">İçine</td><td class="en">walk into the room</td></tr>
+      <tr><td class="form">out of</td><td class="tr">Dışına</td><td class="en">get out of the car</td></tr>
+      <tr><td class="form">up</td><td class="tr">Yukarı</td><td class="en">go up the stairs</td></tr>
+      <tr><td class="form">down</td><td class="tr">Aşağı</td><td class="en">walk down the street</td></tr>
+      <tr><td class="form">across</td><td class="tr">Karşısına</td><td class="en">swim across the river</td></tr>
+      <tr><td class="form">through</td><td class="tr">İçinden geçerek</td><td class="en">walk through the park</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 11: QUESTION WORDS -->
+<div class="big-label al1"><span class="num">11</span> Soru Kelimeleri (Wh- Questions)</div>
+<div class="card a1-card">
+  <div class="card-title"><span class="icon">❓</span> Wh- + Yardımcı Fiil + Özne + Fiil</div>
+  <table>
+    <tr><th>Kelime</th><th>Anlam</th><th>Örnek Soru</th><th>Örnek Cevap</th></tr>
+    <tr><td class="form">What</td><td class="tr">Ne</td><td class="en">What do you do?</td><td class="en">I'm a teacher.</td></tr>
+    <tr><td class="form">Who</td><td class="tr">Kim</td><td class="en">Who is she?</td><td class="en">She's my sister.</td></tr>
+    <tr><td class="form">Where</td><td class="tr">Nerede / Nereye</td><td class="en">Where do you live?</td><td class="en">In Istanbul.</td></tr>
+    <tr><td class="form">When</td><td class="tr">Ne zaman</td><td class="en">When does it start?</td><td class="en">At 9 o'clock.</td></tr>
+    <tr><td class="form">Why</td><td class="tr">Neden</td><td class="en">Why are you sad?</td><td class="en">Because I'm tired.</td></tr>
+    <tr><td class="form">How</td><td class="tr">Nasıl</td><td class="en">How are you?</td><td class="en">I'm fine, thanks.</td></tr>
+    <tr><td class="form">How much</td><td class="tr">Ne kadar (fiyat/miktar)</td><td class="en">How much is it?</td><td class="en">It's 10 dollars.</td></tr>
+    <tr><td class="form">How many</td><td class="tr">Kaç tane</td><td class="en">How many cats do you have?</td><td class="en">Two.</td></tr>
+    <tr><td class="form">How old</td><td class="tr">Kaç yaşında</td><td class="en">How old are you?</td><td class="en">I'm 25.</td></tr>
+    <tr><td class="form">How often</td><td class="tr">Ne sıklıkla</td><td class="en">How often do you exercise?</td><td class="en">Twice a week.</td></tr>
+    <tr><td class="form">Which</td><td class="tr">Hangi</td><td class="en">Which bag is yours?</td><td class="en">The red one.</td></tr>
+    <tr><td class="form">Whose</td><td class="tr">Kimin</td><td class="en">Whose pen is this?</td><td class="en">It's mine.</td></tr>
+  </table>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 12: FREQUENCY ADVERBS -->
+<div class="big-label al1"><span class="num">12</span> Frequency Adverbs &amp; Zaman İfadeleri</div>
+<div class="columns col2">
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">📊</span> Sıklık Zarfları</div>
+    <div style="display:flex;flex-direction:column;gap:6px;margin:8px 0">
+      <div style="display:flex;align-items:center;gap:10px"><div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);width:50px;text-align:right">100%</div><div style="flex:1;background:var(--a1);height:6px;border-radius:3px"></div><div class="form" style="width:100px">always</div><div class="tr" style="font-size:11px">her zaman</div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);width:50px;text-align:right">90%</div><div style="flex:1;background:var(--a1);height:6px;border-radius:3px;opacity:0.8"></div><div class="form" style="width:100px">usually</div><div class="tr" style="font-size:11px">genellikle</div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);width:50px;text-align:right">70%</div><div style="flex:1;background:var(--a2);height:6px;border-radius:3px;opacity:0.9"></div><div class="form" style="width:100px">often</div><div class="tr" style="font-size:11px">sık sık</div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);width:50px;text-align:right">50%</div><div style="flex:1;background:var(--a2);height:6px;border-radius:3px;opacity:0.7"></div><div class="form" style="width:100px">sometimes</div><div class="tr" style="font-size:11px">bazen</div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);width:50px;text-align:right">30%</div><div style="flex:1;background:var(--purple);height:6px;border-radius:3px;opacity:0.7"></div><div class="form" style="width:100px">occasionally</div><div class="tr" style="font-size:11px">ara sıra</div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);width:50px;text-align:right">10%</div><div style="flex:1;background:var(--rose);height:6px;border-radius:3px;opacity:0.7"></div><div class="form" style="width:100px">rarely / seldom</div><div class="tr" style="font-size:11px">nadiren</div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);width:50px;text-align:right">0%</div><div style="flex:1;background:var(--rose);height:6px;border-radius:3px;opacity:0.5"></div><div class="form" style="width:100px">never</div><div class="tr" style="font-size:11px">hiçbir zaman</div></div>
+    </div>
+    <div class="formula">
+      <span class="subj">Subject</span> <span class="op">+</span> <span class="time">freq. adverb</span> <span class="op">+</span> <span class="verb">main verb</span><br>
+      <span class="subj">Subject</span> <span class="op">+</span> <span class="verb">am/is/are</span> <span class="op">+</span> <span class="time">freq. adverb</span><br>
+      <span class="note">I always eat breakfast. &nbsp;|&nbsp; She is never late.</span>
+    </div>
+  </div>
+  <div>
+    <div class="card a1-card">
+      <div class="card-title"><span class="icon">📅</span> Zaman İfadeleri</div>
+      <div class="grid2">
+        <div><div class="form" style="font-size:12px">Geçmiş için:</div>
+          <div class="ex" style="margin-top:6px"><div class="e">yesterday</div></div>
+          <div class="ex"><div class="e">last week / month / year</div></div>
+          <div class="ex"><div class="e">2 days ago</div></div>
+          <div class="ex"><div class="e">in 2019</div></div>
+        </div>
+        <div><div class="form2" style="font-size:12px">Gelecek için:</div>
+          <div class="ex" style="margin-top:6px"><div class="e">tomorrow</div></div>
+          <div class="ex"><div class="e">next week / month</div></div>
+          <div class="ex"><div class="e">in 3 days</div></div>
+          <div class="ex"><div class="e">soon</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="card a1-card">
+      <div class="card-title"><span class="icon">🔗</span> Conjunctions — Bağlaçlar</div>
+      <table>
+        <tr><th>Bağlaç</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="form">and</td><td class="tr">ve</td><td class="en">I like tea and coffee.</td></tr>
+        <tr><td class="form">but</td><td class="tr">ama</td><td class="en">She's smart but lazy.</td></tr>
+        <tr><td class="form">or</td><td class="tr">veya</td><td class="en">Tea or coffee?</td></tr>
+        <tr><td class="form">so</td><td class="tr">bu yüzden</td><td class="en">It's raining, so I'll stay.</td></tr>
+        <tr><td class="form">because</td><td class="tr">çünkü</td><td class="en">I'm tired because I worked late.</td></tr>
+        <tr><td class="form">when</td><td class="tr">–diğinde</td><td class="en">Call me when you arrive.</td></tr>
+        <tr><td class="form">if</td><td class="tr">eğer (A2)</td><td class="en">If it rains, I'll stay home.</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 13: THERE IS / THERE ARE -->
+<div class="big-label al1"><span class="num">13</span> There is / There are &nbsp;+&nbsp; Have got (A1/A2)</div>
+<div class="columns col2">
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">🏠</span> There is / There are</div>
+    <table>
+      <tr><th></th><th>Tekil</th><th>Çoğul</th></tr>
+      <tr><td class="tr">Olumlu</td><td class="en">There is a book.</td><td class="en">There are two cats.</td></tr>
+      <tr><td class="tr">Olumsuz</td><td class="en">There isn't a car.</td><td class="en">There aren't any shops.</td></tr>
+      <tr><td class="tr">Soru</td><td class="en">Is there a hotel?</td><td class="en">Are there any buses?</td></tr>
+    </table>
+    <div class="tip">some (olumlu) · any (olumsuz/soru) · no (olumsuz, güçlü)</div>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">🎒</span> Have / Have got</div>
+    <table>
+      <tr><th></th><th>have (genel)</th><th>have got (İng. İng.)</th></tr>
+      <tr><td class="tr">Olumlu</td><td class="en">I have a car.</td><td class="en">I've got a car.</td></tr>
+      <tr><td class="tr">Olumsuz</td><td class="en">I don't have a car.</td><td class="en">I haven't got a car.</td></tr>
+      <tr><td class="tr">Soru</td><td class="en">Do you have a car?</td><td class="en">Have you got a car?</td></tr>
+    </table>
+    <div class="warn">Have got → sadece sahiplikte. "I've got hungry" ❌</div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 14: IMPERATIVES -->
+<div class="big-label al1"><span class="num">14</span> Imperatives, Requests &amp; Offers</div>
+<div class="columns col3">
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">📣</span> Emir &amp; Yasak</div>
+    <div class="formula">
+      <b style="color:var(--green)">+</b> &nbsp;<span class="verb">V1</span> (özne yok)<br>
+      <b style="color:var(--rose)">–</b> &nbsp;<span class="neg">Don't</span> <span class="verb">+ V1</span>
+    </div>
+    <div class="ex"><div class="e">Open the window.</div><div class="t">Pencereyi aç.</div></div>
+    <div class="ex"><div class="e">Don't touch that!</div><div class="t">Ona dokunma!</div></div>
+    <div class="ex"><div class="e">Please sit down.</div><div class="t">Lütfen oturun.</div></div>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">🙏</span> Kibarca Rica</div>
+    <table>
+      <tr><th>İfade</th><th>Kullanım</th></tr>
+      <tr><td class="en">Can you...?</td><td class="tr">Yapabilir misin?</td></tr>
+      <tr><td class="en">Could you...?</td><td class="tr">Yapabilir misiniz? (kibar)</td></tr>
+      <tr><td class="en">Can I...?</td><td class="tr">...yapabilir miyim?</td></tr>
+      <tr><td class="en">May I...?</td><td class="tr">...yapabilir miyim? (resmi)</td></tr>
+      <tr><td class="en">Please + V1</td><td class="tr">Lütfen...</td></tr>
+    </table>
+  </div>
+  <div class="card a1-card">
+    <div class="card-title"><span class="icon">🎁</span> Teklif &amp; Öneri</div>
+    <table>
+      <tr><th>İfade</th><th>Örnek</th></tr>
+      <tr><td class="en">Would you like...?</td><td class="en">Would you like some tea?</td></tr>
+      <tr><td class="en">Shall I / we...?</td><td class="en">Shall I help you?</td></tr>
+      <tr><td class="en">Let's + V1</td><td class="en">Let's go to the cinema.</td></tr>
+      <tr><td class="en">Why don't we...?</td><td class="en">Why don't we eat out?</td></tr>
+      <tr><td class="en">How about + V-ing?</td><td class="en">How about going for a walk?</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 15: PRESENT PERFECT -->
+<div class="big-label al2"><span class="num">15</span> Present Perfect — have / has + V3 (A2)</div>
+<div class="columns col2">
+  <div class="card a2-card">
+    <div class="card-title"><span class="icon">🔗</span> Yapı &amp; Kullanım</div>
+    <div class="formula">
+      <span class="subj">Subject</span> <span class="op">+</span> <span class="verb">have/has</span> <span class="op">+</span> <span class="verb">V3 (past participle)</span>
+    </div>
+    <div class="pill-grid">
+      <div class="pill">Geçmiş deneyim<span>I have been to Paris.</span></div>
+      <div class="pill">Sonucu şimdi görülen<span>She has lost her keys.</span></div>
+      <div class="pill">ever / never ile<span>Have you ever tried sushi?</span></div>
+      <div class="pill">just / already / yet<span>I've just eaten.</span></div>
+    </div>
+    <table style="margin-top:10px">
+      <tr><th></th><th>have</th><th>has</th></tr>
+      <tr><td class="tr">Olumlu</td><td class="en">I/You/We/They <span class="form">'ve</span> eaten</td><td class="en">He/She/It <span class="form2">'s</span> eaten</td></tr>
+      <tr><td class="tr">Olumsuz</td><td class="en">I <span class="neg">haven't</span> eaten</td><td class="en">She <span class="neg">hasn't</span> eaten</td></tr>
+      <tr><td class="tr">Soru</td><td class="en"><span class="q">Have</span> you eaten?</td><td class="en"><span class="q">Has</span> she eaten?</td></tr>
+    </table>
+  </div>
+  <div>
+    <div class="card a2-card">
+      <div class="card-title"><span class="icon">⚡</span> Anahtar Kelimeler</div>
+      <div class="grid2">
+        <div class="mini-box">
+          <div class="label">Present Perfect</div>
+          <div class="val">ever / never</div>
+          <div class="sub">already / yet / just</div>
+          <div class="val" style="margin-top:6px">recently / so far</div>
+        </div>
+        <div class="mini-box">
+          <div class="label">Simple Past</div>
+          <div class="val">yesterday / ago</div>
+          <div class="sub">last week / in 2020</div>
+          <div class="val" style="margin-top:6px">when / then</div>
+        </div>
+      </div>
+      <div class="warn" style="margin-top:10px">I have gone yesterday ❌<br>I went yesterday ✅</div>
+    </div>
+    <div class="card a2-card">
+      <div class="card-title"><span class="icon">📋</span> V3 Örnekler</div>
+      <table>
+        <tr><td class="form">go</td><td class="form2">gone</td><td class="form">see</td><td class="form2">seen</td></tr>
+        <tr><td class="form">eat</td><td class="form2">eaten</td><td class="form">write</td><td class="form2">written</td></tr>
+        <tr><td class="form">do</td><td class="form2">done</td><td class="form">take</td><td class="form2">taken</td></tr>
+        <tr><td class="form">have</td><td class="form2">had</td><td class="form">make</td><td class="form2">made</td></tr>
+        <tr><td class="form">be</td><td class="form2">been</td><td class="form">give</td><td class="form2">given</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BÖLÜM 16: ZAMAN ÇİZELGESİ ÖZET -->
+<div class="big-label al1"><span class="num">16</span> Zaman Yapıları Özet</div>
+<div class="card both-card">
+  <div class="card-title"><span class="icon">📅</span> A1 &amp; A2 Zaman Yapıları Karşılaştırması</div>
+  <table>
+    <tr><th>Zaman</th><th>Yapı</th><th>Anahtar Kelime</th><th>Örnek</th><th>Seviye</th></tr>
+    <tr><td class="tr">Geniş Zaman</td><td class="form">V1 / V1+s</td><td class="en">every day, always, usually</td><td class="en">She works at 9.</td><td><span class="badge badge-a1" style="font-size:9px;padding:2px 6px">A1</span></td></tr>
+    <tr><td class="tr">Şimdiki Zaman</td><td class="form">am/is/are + V-ing</td><td class="en">now, at the moment, look!</td><td class="en">I'm eating now.</td><td><span class="badge badge-a1" style="font-size:9px;padding:2px 6px">A1</span></td></tr>
+    <tr><td class="tr">Geçmiş Zaman</td><td class="form">V2 / didn't + V1</td><td class="en">yesterday, ago, last year, in 2020</td><td class="en">I went to school.</td><td><span class="badge badge-a2" style="font-size:9px;padding:2px 6px">A2</span></td></tr>
+    <tr><td class="tr">Gelecek (will)</td><td class="form">will + V1</td><td class="en">tomorrow, next week, soon</td><td class="en">I'll call you.</td><td><span class="badge badge-a2" style="font-size:9px;padding:2px 6px">A2</span></td></tr>
+    <tr><td class="tr">Gelecek (going to)</td><td class="form">am/is/are going to + V1</td><td class="en">plan, intention, evidence</td><td class="en">I'm going to study.</td><td><span class="badge badge-a2" style="font-size:9px;padding:2px 6px">A2</span></td></tr>
+    <tr><td class="tr">Present Perfect</td><td class="form">have/has + V3</td><td class="en">ever, never, already, yet, just</td><td class="en">I have seen it.</td><td><span class="badge badge-a2" style="font-size:9px;padding:2px 6px">A2</span></td></tr>
+  </table>
+</div>
+
+<footer>
+  A1 &amp; A2 İngilizce Dil Bilgisi Cheat Sheet &nbsp;·&nbsp; Tüm temel ve orta-temel gramer kuralları &nbsp;·&nbsp; Türkçe açıklamalı
+</footer>
+
+</div><!-- /panel-a1a2 -->
+
+
+<!-- ══ B1 PANEL ════════════════════════════════════════════ -->
+<div id="panel-b1" class="tab-panel">
+<div class="page">
+
+<header>
+  <div class="header-left">
+    <div class="level-chip">B1 · Intermediate</div>
+    <h1>English<br>Grammar<br><em>Cheat Sheet</em></h1>
+    <p class="header-sub">Eksiksiz B1 Dil Bilgisi Başvuru Kartı — Türkçe açıklamalı, formüllü, örnekli</p>
+  </div>
+  <div class="header-right">
+    <div class="toc">
+      <div class="toc-item"><span class="num">01</span>Present Perfect Simple &amp; Continuous</div>
+      <div class="toc-item"><span class="num">02</span>Past Continuous &amp; Past Perfect</div>
+      <div class="toc-item"><span class="num">03</span>Future Forms</div>
+      <div class="toc-item"><span class="num">04</span>Conditionals — Type 0, 1, 2</div>
+      <div class="toc-item"><span class="num">05</span>Modal Verbs (ileri seviye)</div>
+      <div class="toc-item"><span class="num">06</span>Passive Voice</div>
+      <div class="toc-item"><span class="num">07</span>Reported Speech</div>
+      <div class="toc-item"><span class="num">08</span>Relative Clauses</div>
+      <div class="toc-item"><span class="num">09</span>Gerund &amp; Infinitive</div>
+      <div class="toc-item"><span class="num">10</span>Comparison (ileri)</div>
+      <div class="toc-item"><span class="num">11</span>Quantifiers &amp; Articles</div>
+      <div class="toc-item"><span class="num">12</span>Phrasal Verbs</div>
+      <div class="toc-item"><span class="num">13</span>Connectors &amp; Discourse Markers</div>
+      <div class="toc-item"><span class="num">14</span>Wish / If only</div>
+      <div class="toc-item"><span class="num">15</span>Used to / Would</div>
+      <div class="toc-item"><span class="num">16</span>Zaman Çizelgesi Özet</div>
+    </div>
+  </div>
+</header>
+
+<!-- 01 · PRESENT PERFECT SIMPLE & CONTINUOUS -->
+<div class="sec-head">
+  <span class="sec-num">01</span>
+  <span class="sec-title">Present Perfect Simple &amp; Continuous</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1 fill-b1">
+      <div class="card-title">Present Perfect Simple — have/has + V3</div>
+      <div class="formula">
+        <span class="f-sub">Sub</span> + <span class="f-verb">have/has</span> + <span class="f-v2">V3</span><br>
+        <span class="f-sub">Sub</span> + <span class="f-verb">have/has</span> <span class="f-neg">not</span> + <span class="f-v2">V3</span><br>
+        <span class="f-q">Have/Has</span> + <span class="f-sub">sub</span> + <span class="f-v2">V3</span>?
+      </div>
+      <table>
+        <tr><th>Kullanım</th><th>Anahtar Kelime</th><th>Örnek</th></tr>
+        <tr><td class="t-tr">Deneyim</td><td class="t-form">ever / never</td><td class="t-en">Have you ever been to Japan?</td></tr>
+        <tr><td class="t-tr">Yakın geçmiş</td><td class="t-form">just</td><td class="t-en">I've just finished it.</td></tr>
+        <tr><td class="t-tr">Beklenen eylem</td><td class="t-form">already / yet</td><td class="t-en">She hasn't arrived yet.</td></tr>
+        <tr><td class="t-tr">Kaç kez</td><td class="t-form">once / twice / 3 times</td><td class="t-en">He has called me twice.</td></tr>
+        <tr><td class="t-tr">Devam eden sonuç</td><td class="t-form">since / for</td><td class="t-en">I've lived here for 5 years.</td></tr>
+        <tr><td class="t-tr">Son/ilk kez</td><td class="t-form">the first/last time</td><td class="t-en">It's the best film I've seen.</td></tr>
+      </table>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-b1">
+      <div class="card-title">for vs since</div>
+      <table>
+        <tr><th>for</th><th>since</th></tr>
+        <tr><td class="t-en">for 3 years</td><td class="t-en">since 2019</td></tr>
+        <tr><td class="t-en">for a long time</td><td class="t-en">since Monday</td></tr>
+        <tr><td class="t-en">for two hours</td><td class="t-en">since I was a child</td></tr>
+        <tr><td class="t-tr">Süre uzunluğu</td><td class="t-tr">Başlangıç noktası</td></tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-teal fill-teal">
+      <div class="card-title">Present Perfect Continuous — have/has been + V-ing</div>
+      <div class="formula">
+        <span class="f-sub">Sub</span> + <span class="f-verb">have/has been</span> + <span class="f-v2">V-ing</span><br>
+        <span class="f-dim">→ Eylemin süresi veya devam etmesi vurgulanır</span>
+      </div>
+      <table>
+        <tr><th>Kullanım</th><th>Örnek</th></tr>
+        <tr><td class="t-tr">Hâlâ süren eylem</td><td class="t-en">I've been waiting for 2 hours.</td></tr>
+        <tr><td class="t-tr">Sonucu gözlemlenen eylem</td><td class="t-en">She's tired — she's been running.</td></tr>
+        <tr><td class="t-tr">Yakın zamanda biten eylem</td><td class="t-en">I've been cooking — the food is ready.</td></tr>
+      </table>
+      <div class="sp2"></div>
+      <div class="vs-grid" style="margin-top:10px;">
+        <div class="vs-col">
+          <div class="vs-head b1">Simple → Sonuç / Tamamlanma</div>
+          <div class="ex"><div class="e">I've read the book.</div><div class="t">Kitabı okudum. (bitti)</div></div>
+          <div class="ex"><div class="e">She has written 3 emails.</div><div class="t">3 e-posta yazdı.</div></div>
+        </div>
+        <div class="vs-div"></div>
+        <div class="vs-col">
+          <div class="vs-head teal">Continuous → Süreç / Devam</div>
+          <div class="ex"><div class="e">I've been reading all day.</div><div class="t">Tüm gün okuyorum.</div></div>
+          <div class="ex"><div class="e">She's been writing emails.</div><div class="t">E-posta yazıyor.</div></div>
+        </div>
+      </div>
+      <div class="warn">Stative verbs (know/love/want/believe) Perfect Continuous ile kullanılmaz!</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-gold fill-gold">
+      <div class="card-title">Present Perfect vs Simple Past — Kritik Fark</div>
+      <table>
+        <tr><th>Present Perfect</th><th>Simple Past</th></tr>
+        <tr><td class="t-en">I've lost my keys. (hâlâ yok)</td><td class="t-en">I lost my keys yesterday. (zaman belli)</td></tr>
+        <tr><td class="t-en">Have you ever seen it?</td><td class="t-en">Did you see it last night?</td></tr>
+        <tr><td class="t-tr">Zaman belirsiz, sonuç şimde etkili</td><td class="t-tr">Geçmişte tamamlanmış, zaman belirli</td></tr>
+      </table>
+      <div class="warn">I have gone there yesterday ❌ → I went there yesterday ✅</div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 · PAST CONTINUOUS & PAST PERFECT -->
+<div class="sec-head">
+  <span class="sec-num">02</span>
+  <span class="sec-title">Past Continuous &amp; Past Perfect</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-purple fill-purple">
+      <div class="card-title">Past Continuous — was/were + V-ing</div>
+      <div class="formula">
+        <span class="f-sub">Sub</span> + <span class="f-verb">was/were</span> + <span class="f-v2">V-ing</span><br>
+        <span class="f-dim">I/He/She/It → was &nbsp;|&nbsp; You/We/They → were</span>
+      </div>
+      <table>
+        <tr><th>Kullanım</th><th>Örnek</th></tr>
+        <tr><td class="t-tr">Geçmişte devam eden eylem</td><td class="t-en">At 8pm, I was watching TV.</td></tr>
+        <tr><td class="t-tr">Birini kesen eylem (when)</td><td class="t-en">I was sleeping when she called.</td></tr>
+        <tr><td class="t-tr">İki eş zamanlı eylem (while)</td><td class="t-en">While I was cooking, he was cleaning.</td></tr>
+        <tr><td class="t-tr">Geçmişte geçici durum</td><td class="t-en">She was living in Paris then.</td></tr>
+        <tr><td class="t-tr">Nezaket/kibarca istek</td><td class="t-en">I was wondering if you could help.</td></tr>
+      </table>
+      <div class="sp2"></div>
+      <div class="struct">
+        <div class="struct-head">when vs while</div>
+        <div class="struct-body">
+          <span class="f-q">When</span> + <span class="f-verb">Simple Past</span> <span class="f-dim">(kısa eylem)</span><br>
+          <span class="f-q">While</span> + <span class="f-verb">Past Continuous</span> <span class="f-dim">(devam eden)</span><br>
+          <span class="f-dim">→ I was reading when the phone rang.</span><br>
+          <span class="f-dim">→ While I was reading, he arrived.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-navy fill-navy">
+      <div class="card-title">Past Perfect — had + V3</div>
+      <div class="formula">
+        <span class="f-sub">Sub</span> + <span class="f-verb">had</span> + <span class="f-v2">V3</span><br>
+        <span class="f-sub">Sub</span> + <span class="f-verb">had</span> <span class="f-neg">not (hadn't)</span> + <span class="f-v2">V3</span><br>
+        <span class="f-q">Had</span> + <span class="f-sub">sub</span> + <span class="f-v2">V3</span>?
+      </div>
+      <table>
+        <tr><th>Kullanım</th><th>Örnek</th></tr>
+        <tr><td class="t-tr">Başka bir geçmiş eylemden önce olan</td><td class="t-en">When I arrived, she had already left.</td></tr>
+        <tr><td class="t-tr">Geçmişteki deneyim (by the time)</td><td class="t-en">By 2020, he had worked there for 10 years.</td></tr>
+        <tr><td class="t-tr">Neden açıklaması (because)</td><td class="t-en">I was tired because I hadn't slept.</td></tr>
+        <tr><td class="t-tr">3. tip koşul (Type 3)</td><td class="t-en">If I had studied, I would have passed.</td></tr>
+      </table>
+      <div class="timeline" style="margin-top:12px">
+        <div class="tl-seg tl-past"><div class="tl-lbl">Önce (Past Perfect)</div><div class="tl-val">had left</div></div>
+        <div class="tl-seg tl-past" style="background:#e8d4d4"><div class="tl-lbl">Sonra (Simple Past)</div><div class="tl-val">I arrived</div></div>
+        <div class="tl-seg tl-pres"><div class="tl-lbl">Şimdi</div><div class="tl-val">now</div></div>
+      </div>
+      <div class="tip">Anahtar kelimeler: already · just · never · before · after · when · by the time · because</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-rose">
+      <div class="card-title">Past Perfect Continuous — had been + V-ing</div>
+      <div class="formula"><span class="f-sub">Sub</span> + <span class="f-verb">had been</span> + <span class="f-v2">V-ing</span></div>
+      <div class="ex"><div class="e">She was tired because she had been working all day.</div><div class="t">Tüm gün çalıştığı için yorgundu.</div></div>
+      <div class="ex"><div class="e">He had been waiting for 2 hours when she finally arrived.</div><div class="t">O geldiğinde 2 saattir bekliyordu.</div></div>
+      <div class="note">→ Geçmişteki bir ana kadar süregelen eylemin süresi vurgulanır.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 · FUTURE FORMS -->
+<div class="sec-head">
+  <span class="sec-num">03</span>
+  <span class="sec-title">Future Forms</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="card">
+  <div class="card-title">Gelecek Zamanlar — Karşılaştırma Tablosu</div>
+  <div class="wide-struct">
+    <div class="ws-row" style="display:grid;grid-template-columns:1.2fr 1.5fr 1.8fr 2fr">
+      <div class="ws-head">Yapı</div><div class="ws-head">Ne zaman kullanılır?</div><div class="ws-head">Anahtar ipucu</div><div class="ws-head">Örnek</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.2fr 1.5fr 1.8fr 2fr">
+      <div class="ws-cell" style="color:var(--b1);font-weight:500">will + V1</div><div class="ws-cell t-tr">Anlık karar, tahmin, söz, teklif</div><div class="ws-cell t-note">I think / probably / I'm sure</div><div class="ws-cell t-en">I'll have the salad. (anlık karar)</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.2fr 1.5fr 1.8fr 2fr">
+      <div class="ws-cell" style="color:var(--teal);font-weight:500">going to + V1</div><div class="ws-cell t-tr">Önceden planlanan niyet, kanıta dayalı tahmin</div><div class="ws-cell t-note">Zaten karar verilmiş / kanıt var</div><div class="ws-cell t-en">I'm going to learn Spanish. (plan)</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.2fr 1.5fr 1.8fr 2fr">
+      <div class="ws-cell" style="color:var(--purple);font-weight:500">Present Continuous</div><div class="ws-cell t-tr">Kesinleşmiş yakın gelecek randevu/plan</div><div class="ws-cell t-note">Zaman ve yer belli, rezervasyon var</div><div class="ws-cell t-en">I'm meeting Tom at 6. (randevu)</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.2fr 1.5fr 1.8fr 2fr">
+      <div class="ws-cell" style="color:var(--gold);font-weight:500">Present Simple</div><div class="ws-cell t-tr">Zaman çizelgeli olaylar (tren/uçuş)</div><div class="ws-cell t-note">Resmi program / tarifeli sefer</div><div class="ws-cell t-en">The train leaves at 8:30 tomorrow.</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.2fr 1.5fr 1.8fr 2fr">
+      <div class="ws-cell" style="color:var(--navy);font-weight:500">Future Continuous</div><div class="ws-cell t-tr">Gelecekte devam edecek eylem</div><div class="ws-cell t-note">will be + V-ing</div><div class="ws-cell t-en">I'll be working at 9am tomorrow.</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.2fr 1.5fr 1.8fr 2fr">
+      <div class="ws-cell" style="color:var(--rose);font-weight:500">Future Perfect</div><div class="ws-cell t-tr">Gelecekteki bir ana kadar tamamlanacak eylem</div><div class="ws-cell t-note">will have + V3 / by the time</div><div class="ws-cell t-en">I'll have finished by Friday.</div>
+    </div>
+  </div>
+  <div class="tip">Future Perfect: <span style="font-family:'IBM Plex Mono',monospace">By the time + Simple Present → Future Perfect</span> → By the time you arrive, I'll have cooked dinner.</div>
+</div>
+
+<!-- 04 · CONDITIONALS -->
+<div class="sec-head">
+  <span class="sec-num">04</span>
+  <span class="sec-title">Conditional Sentences — Koşul Cümleleri</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1 fill-b1">
+      <div class="card-title">Type 0 — Evrensel Gerçek</div>
+      <div class="formula">
+        <span class="f-q">If</span> + <span class="f-verb">Simple Present</span>, <span class="f-v2">Simple Present</span><br>
+        <span class="f-dim">→ Her zaman doğru olan gerçekler, bilimsel kanunlar</span>
+      </div>
+      <div class="ex"><div class="e">If you heat water, it boils.</div><div class="t">Suyu ısıtırsan, kaynar.</div></div>
+      <div class="ex"><div class="e">If it rains, the ground gets wet.</div></div>
+      <div class="tip">if yerine when kullanılabilir: When you heat water, it boils.</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-teal fill-teal">
+      <div class="card-title">Type 1 — Gerçek / Olası Koşul</div>
+      <div class="formula">
+        <span class="f-q">If</span> + <span class="f-verb">Simple Present</span>, <span class="f-v2">will + V1</span><br>
+        <span class="f-dim">→ Gerçekleşmesi mümkün gelecek koşul</span>
+      </div>
+      <div class="ex"><div class="e">If it rains tomorrow, I will stay home.</div><div class="t">Yarın yağmur yağarsa evde kalacağım.</div></div>
+      <div class="ex"><div class="e">If you study hard, you'll pass the exam.</div></div>
+      <div class="note">will yerine: can / may / might / must / should da kullanılabilir</div>
+      <div class="warn">If it will rain ❌ → If it rains ✅ (if-clause'da will olmaz)</div>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-purple fill-purple">
+      <div class="card-title">Type 2 — Hayali / Olası Olmayan Koşul</div>
+      <div class="formula">
+        <span class="f-q">If</span> + <span class="f-verb">Simple Past</span>, <span class="f-v2">would + V1</span><br>
+        <span class="f-dim">→ Şu an gerçek olmayan varsayım / hayal</span>
+      </div>
+      <div class="ex"><div class="e">If I had a lot of money, I would travel the world.</div><div class="t">Çok param olsaydı, dünyayı gezerdim.</div></div>
+      <div class="ex"><div class="e">If she were here, she would help us.</div></div>
+      <div class="tip">were — Type 2'de tüm özneler için were kullanılabilir (resmi): If I were you...</div>
+      <div class="warn">would yerine: could / might de kullanılabilir.<br>If I were you = Senin yerinde olsaydım (tavsiye için çok yaygın)</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-gold fill-gold">
+      <div class="card-title">Unless &amp; Diğer Koşul Bağlaçları</div>
+      <div class="formula"><span class="f-q">Unless</span> = <span class="f-verb">if ... not</span></div>
+      <div class="ex"><div class="e">Unless you hurry, you'll miss the bus.</div><div class="t">Acele etmezsen otobüsü kaçırırsın.</div></div>
+      <div class="ex"><div class="e">= If you don't hurry, you'll miss the bus.</div></div>
+      <div class="sp2"></div>
+      <table>
+        <tr><th>Bağlaç</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="t-form">as long as</td><td class="t-tr">–dığı sürece</td><td class="t-en">I'll go as long as you come too.</td></tr>
+        <tr><td class="t-form">provided (that)</td><td class="t-tr">şartıyla ki</td><td class="t-en">I'll help provided that you're honest.</td></tr>
+        <tr><td class="t-form">in case</td><td class="t-tr">–e karşı, ihtimale</td><td class="t-en">Take an umbrella in case it rains.</td></tr>
+        <tr><td class="t-form">even if</td><td class="t-tr">–se bile</td><td class="t-en">I'll go even if it rains.</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 05 · MODAL VERBS -->
+<div class="sec-head">
+  <span class="sec-num">05</span>
+  <span class="sec-title">Modal Verbs — İleri Kullanım</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1">
+      <div class="card-title">Olasılık ve Çıkarım Modalleri</div>
+      <table>
+        <tr><th>Modal</th><th>Güç</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="t-form">must</td><td><span class="pill b1" style="padding:1px 6px;font-size:10px">%95+</span></td><td class="t-tr">kesinlikle öyledir</td><td class="t-en">She must be tired.</td></tr>
+        <tr><td class="t-form">should</td><td><span class="pill teal" style="padding:1px 6px;font-size:10px">%70</span></td><td class="t-tr">muhtemelen öyledir</td><td class="t-en">He should be home by now.</td></tr>
+        <tr><td class="t-form">may</td><td><span class="pill gold" style="padding:1px 6px;font-size:10px">%50</span></td><td class="t-tr">olabilir</td><td class="t-en">It may rain later.</td></tr>
+        <tr><td class="t-form">might</td><td><span class="pill gold" style="padding:1px 6px;font-size:10px">%30</span></td><td class="t-tr">belki olabilir</td><td class="t-en">He might come tonight.</td></tr>
+        <tr><td class="t-form">can't</td><td><span class="pill b1" style="padding:1px 6px;font-size:10px">%95+</span></td><td class="t-tr">kesinlikle değildir</td><td class="t-en">That can't be true!</td></tr>
+      </table>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-teal">
+      <div class="card-title">Geçmişe Ait Modal + have + V3</div>
+      <table>
+        <tr><th>Yapı</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="t-form">must have V3</td><td class="t-tr">kesinlikle öyleydi</td><td class="t-en">She must have forgotten.</td></tr>
+        <tr><td class="t-form">might have V3</td><td class="t-tr">belki öyleydi</td><td class="t-en">He might have missed the bus.</td></tr>
+        <tr><td class="t-form">can't have V3</td><td class="t-tr">kesinlikle değildi</td><td class="t-en">She can't have done that.</td></tr>
+        <tr><td class="t-form">should have V3</td><td class="t-tr">yapmalıydın (pişmanlık)</td><td class="t-en">You should have called me.</td></tr>
+        <tr><td class="t-form">could have V3</td><td class="t-tr">yapabilirdin ama yapmadın</td><td class="t-en">You could have been hurt.</td></tr>
+        <tr><td class="t-form">needn't have V3</td><td class="t-tr">gerekmiyordu ama yaptın</td><td class="t-en">You needn't have bought flowers.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-gold">
+      <div class="card-title">Zorunluluk, Gereklilik, Tavsiye</div>
+      <table>
+        <tr><th>Modal</th><th>Türkçe</th><th>Örnek</th></tr>
+        <tr><td class="t-form">must</td><td class="t-tr">zorunlu (kendi kararı)</td><td class="t-en">I must see a doctor.</td></tr>
+        <tr><td class="t-form">have to</td><td class="t-tr">zorunlu (dışarıdan)</td><td class="t-en">You have to wear a uniform.</td></tr>
+        <tr><td class="t-form">don't have to</td><td class="t-tr">gerekmez (serbest)</td><td class="t-en">You don't have to come.</td></tr>
+        <tr><td class="t-form">mustn't</td><td class="t-tr">yasak</td><td class="t-en">You mustn't smoke here.</td></tr>
+        <tr><td class="t-form">should/ought to</td><td class="t-tr">tavsiye / ahlaki yükümlülük</td><td class="t-en">You ought to apologise.</td></tr>
+        <tr><td class="t-form">had better</td><td class="t-tr">daha iyi edersin (uyarı)</td><td class="t-en">You'd better leave now.</td></tr>
+        <tr><td class="t-form">need not</td><td class="t-tr">gerek yok</td><td class="t-en">You needn't wait for me.</td></tr>
+      </table>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-purple">
+      <div class="card-title">Ability — can / could / be able to</div>
+      <table>
+        <tr><th>Zaman</th><th>Yapı</th><th>Örnek</th></tr>
+        <tr><td class="t-tr">Şimdi</td><td class="t-form">can / am able to</td><td class="t-en">I can swim.</td></tr>
+        <tr><td class="t-tr">Geçmiş</td><td class="t-form">could / was able to</td><td class="t-en">I could swim at 5.</td></tr>
+        <tr><td class="t-tr">Tek seferlik geçmiş başarı</td><td class="t-form2">was able to</td><td class="t-en">I was able to escape. ✅<br>I could escape. ❌ (tek seferlik)</td></tr>
+        <tr><td class="t-tr">Gelecek</td><td class="t-form">will be able to</td><td class="t-en">I'll be able to drive soon.</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 06 · PASSIVE VOICE -->
+<div class="sec-head">
+  <span class="sec-num">06</span>
+  <span class="sec-title">Passive Voice — Edilgen Yapı</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="card">
+  <div class="card-title">Passive = am/is/are/was/were/been/being + V3</div>
+  <div class="wide-struct" style="margin-top:10px">
+    <div class="ws-row" style="display:grid;grid-template-columns:1.5fr 2fr 2fr 2fr">
+      <div class="ws-head">Zaman</div><div class="ws-head">Aktif (Active)</div><div class="ws-head">Edilgen (Passive)</div><div class="ws-head">Yapı</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.5fr 2fr 2fr 2fr">
+      <div class="ws-cell t-tr">Simple Present</div><div class="ws-cell t-en">They clean the office.</div><div class="ws-cell t-en">The office is cleaned.</div><div class="ws-cell t-form">is/are + V3</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.5fr 2fr 2fr 2fr">
+      <div class="ws-cell t-tr">Simple Past</div><div class="ws-cell t-en">They built this bridge.</div><div class="ws-cell t-en">This bridge was built.</div><div class="ws-cell t-form">was/were + V3</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.5fr 2fr 2fr 2fr">
+      <div class="ws-cell t-tr">Present Continuous</div><div class="ws-cell t-en">They are repairing it.</div><div class="ws-cell t-en">It is being repaired.</div><div class="ws-cell t-form">is/are being + V3</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.5fr 2fr 2fr 2fr">
+      <div class="ws-cell t-tr">Present Perfect</div><div class="ws-cell t-en">They have stolen the car.</div><div class="ws-cell t-en">The car has been stolen.</div><div class="ws-cell t-form">has/have been + V3</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.5fr 2fr 2fr 2fr">
+      <div class="ws-cell t-tr">Future (will)</div><div class="ws-cell t-en">They will announce it.</div><div class="ws-cell t-en">It will be announced.</div><div class="ws-cell t-form">will be + V3</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1.5fr 2fr 2fr 2fr">
+      <div class="ws-cell t-tr">Modal</div><div class="ws-cell t-en">You must submit the form.</div><div class="ws-cell t-en">The form must be submitted.</div><div class="ws-cell t-form">modal + be + V3</div>
+    </div>
+  </div>
+  <div class="g2" style="margin-top:12px">
+    <div class="tip">Eylem yapanı (agent) belirtmek için by + agent kullanılır:<br>"The cake was made by my mother."<br>Agent bilinmiyorsa veya önemsizse by eklenmez.</div>
+    <div class="note">Passive ne zaman kullanılır?<br>• Özne bilinmiyorsa: My bike was stolen.<br>• Özne önemsizse veya açıksa: He was arrested.<br>• Nesneyi ön plana çıkarmak için: English is spoken worldwide.</div>
+  </div>
+</div>
+
+<!-- 07 · REPORTED SPEECH -->
+<div class="sec-head">
+  <span class="sec-num">07</span>
+  <span class="sec-title">Reported Speech — Dolaylı Anlatım</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1">
+      <div class="card-title">Zaman Kayması (Backshift)</div>
+      <table>
+        <tr><th>Direct (Doğrudan)</th><th>Reported (Dolaylı)</th></tr>
+        <tr><td class="t-en">"I <span style="color:var(--b1)">work</span> here."</td><td class="t-en">She said she <span style="color:var(--teal)">worked</span> there.</td></tr>
+        <tr><td class="t-en">"I <span style="color:var(--b1)">am working</span>."</td><td class="t-en">She said she <span style="color:var(--teal)">was working</span>.</td></tr>
+        <tr><td class="t-en">"I <span style="color:var(--b1)">worked</span> yesterday."</td><td class="t-en">She said she <span style="color:var(--teal)">had worked</span>.</td></tr>
+        <tr><td class="t-en">"I <span style="color:var(--b1)">have worked</span>."</td><td class="t-en">She said she <span style="color:var(--teal)">had worked</span>.</td></tr>
+        <tr><td class="t-en">"I <span style="color:var(--b1)">will work</span>."</td><td class="t-en">She said she <span style="color:var(--teal)">would work</span>.</td></tr>
+        <tr><td class="t-en">"I <span style="color:var(--b1)">can</span> swim."</td><td class="t-en">She said she <span style="color:var(--teal)">could</span> swim.</td></tr>
+        <tr><td class="t-en">"I <span style="color:var(--b1)">must</span> go."</td><td class="t-en">She said she <span style="color:var(--teal)">had to</span> go.</td></tr>
+      </table>
+      <div class="warn">would / could / should / might → değişmez!</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-gold">
+      <div class="card-title">Zaman &amp; Yer İfadelerinin Değişimi</div>
+      <table>
+        <tr><th>Direct</th><th>Reported</th></tr>
+        <tr><td class="t-form">now</td><td class="t-form2">then / at that moment</td></tr>
+        <tr><td class="t-form">today</td><td class="t-form2">that day</td></tr>
+        <tr><td class="t-form">yesterday</td><td class="t-form2">the day before</td></tr>
+        <tr><td class="t-form">tomorrow</td><td class="t-form2">the next day / the following day</td></tr>
+        <tr><td class="t-form">last week</td><td class="t-form2">the week before</td></tr>
+        <tr><td class="t-form">next year</td><td class="t-form2">the following year</td></tr>
+        <tr><td class="t-form">here</td><td class="t-form2">there</td></tr>
+        <tr><td class="t-form">this</td><td class="t-form2">that</td></tr>
+        <tr><td class="t-form">these</td><td class="t-form2">those</td></tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-teal">
+      <div class="card-title">Soru Cümleleri (Reported Questions)</div>
+      <div class="formula">
+        <b style="color:#7EC8C8">Wh- soru:</b><br>
+        <span class="f-dim">He asked</span> + <span class="f-q">where</span> + <span class="f-sub">she</span> + <span class="f-verb">lived</span><br>
+        <span class="f-dim">"Where do you live?" → He asked where she lived.</span><br><br>
+        <b style="color:#F0A060">Yes/No soru:</b><br>
+        <span class="f-dim">She asked</span> + <span class="f-q">if/whether</span> + <span class="f-sub">he</span> + <span class="f-verb">was tired</span><br>
+        <span class="f-dim">"Are you tired?" → She asked if he was tired.</span>
+      </div>
+      <div class="warn">Reported sorularda sözcük sırası düz cümle gibi olur (yardımcı fiil önde olmaz)!</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-purple">
+      <div class="card-title">Emir &amp; Rica (Reported Commands)</div>
+      <div class="formula">
+        <span class="f-q">tell/ask/order</span> + <span class="f-sub">sb</span> + <span class="f-verb">to + V1</span><br>
+        <span class="f-q">tell/ask</span> + <span class="f-sub">sb</span> + <span class="f-neg">not to</span> + <span class="f-v2">V1</span>
+      </div>
+      <div class="ex"><div class="e">"Sit down!" → He told me to sit down.</div></div>
+      <div class="ex"><div class="e">"Don't be late." → She told him not to be late.</div></div>
+      <div class="ex"><div class="e">"Can you help me?" → She asked me to help her.</div></div>
+      <div class="sp2"></div>
+      <div class="card-title" style="margin-top:10px">Reporting Verbs</div>
+      <div class="pills">
+        <span class="pill b1">say</span><span class="pill b1">tell</span>
+        <span class="pill teal">ask</span><span class="pill teal">wonder</span>
+        <span class="pill gold">explain</span><span class="pill gold">suggest</span>
+        <span class="pill pur">admit</span><span class="pill pur">deny</span>
+        <span class="pill grn">promise</span><span class="pill grn">offer</span>
+        <span class="pill nav">warn</span><span class="pill nav">order</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 08 · RELATIVE CLAUSES -->
+<div class="sec-head">
+  <span class="sec-num">08</span>
+  <span class="sec-title">Relative Clauses — İlgi Cümleleri</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1">
+      <div class="card-title">Relative Pronouns</div>
+      <table>
+        <tr><th>Zamir</th><th>Kullanım</th><th>Örnek</th></tr>
+        <tr><td class="t-form">who</td><td class="t-tr">insan (özne)</td><td class="t-en">The man who called you is here.</td></tr>
+        <tr><td class="t-form">whom</td><td class="t-tr">insan (nesne, resmi)</td><td class="t-en">The woman whom I met was kind.</td></tr>
+        <tr><td class="t-form">which</td><td class="t-tr">nesne / hayvan</td><td class="t-en">The book which I bought is great.</td></tr>
+        <tr><td class="t-form">that</td><td class="t-tr">insan veya nesne (defining)</td><td class="t-en">The car that I drive is old.</td></tr>
+        <tr><td class="t-form">whose</td><td class="t-tr">iyelik</td><td class="t-en">The girl whose bag was stolen cried.</td></tr>
+        <tr><td class="t-form">where</td><td class="t-tr">yer</td><td class="t-en">The city where I was born is small.</td></tr>
+        <tr><td class="t-form">when</td><td class="t-tr">zaman</td><td class="t-en">The day when we met was rainy.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-teal">
+      <div class="card-title">Defining vs Non-defining</div>
+      <div class="vs-grid">
+        <div class="vs-col">
+          <div class="vs-head b1">Defining (virgülsüz)</div>
+          <div class="ex" style="margin-top:8px"><div class="e">The woman who lives next door is a doctor.</div><div class="t">Komşu kadın (hangisi olduğunu belirtiyor)</div></div>
+          <div style="margin-top:8px;font-size:12px;color:var(--muted)">• that kullanılabilir<br>• Çıkarılırsa anlam bozulur<br>• Virgül yok</div>
+        </div>
+        <div class="vs-div"></div>
+        <div class="vs-col">
+          <div class="vs-head teal">Non-defining (virgüllü)</div>
+          <div class="ex" style="margin-top:8px"><div class="e">My sister, who lives in Paris, is a teacher.</div><div class="t">Ek bilgi, çıkarılabilir</div></div>
+          <div style="margin-top:8px;font-size:12px;color:var(--muted)">• that kullanılamaz<br>• Virgülle ayrılır<br>• Çıkarılırsa temel anlam bozulmaz</div>
+        </div>
+      </div>
+      <div class="sp2"></div>
+      <div class="card-title" style="margin-top:10px">Zamir Çıkarma (Zero Relative)</div>
+      <div class="note">Relative pronoun nesne görevindeyse çıkarılabilir:<br>"The book (that/which) I read was great." ✅<br>Özne görevindeyse çıkarılamaz:<br>"The man who called me..." ❌ → who çıkarılamaz</div>
+    </div>
+  </div>
+</div>
+
+<!-- 09 · GERUND & INFINITIVE -->
+<div class="sec-head">
+  <span class="sec-num">09</span>
+  <span class="sec-title">Gerund &amp; Infinitive</span>
+  <span class="sec-level">B1 Core</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1 fill-b1">
+      <div class="card-title">Gerund (V-ing) — İsim Gibi Kullanılan Fiil</div>
+      <table>
+        <tr><th>Kullanım</th><th>Örnek</th></tr>
+        <tr><td class="t-tr">Cümle öznesi</td><td class="t-en">Swimming is good for you.</td></tr>
+        <tr><td class="t-tr">Preposition'dan sonra</td><td class="t-en">I'm good at cooking.</td></tr>
+        <tr><td class="t-tr">Belirli fiillerden sonra</td><td class="t-en">I enjoy playing chess.</td></tr>
+      </table>
+      <div class="sp2"></div>
+      <div class="card-title">Gerund alan fiiller</div>
+      <div class="pills" style="margin-top:6px">
+        <span class="pill b1">enjoy</span><span class="pill b1">avoid</span><span class="pill b1">finish</span>
+        <span class="pill b1">mind</span><span class="pill b1">keep</span><span class="pill b1">suggest</span>
+        <span class="pill b1">practise</span><span class="pill b1">miss</span><span class="pill b1">consider</span>
+        <span class="pill b1">give up</span><span class="pill b1">deny</span><span class="pill b1">admit</span>
+        <span class="pill b1">can't help</span><span class="pill b1">can't stand</span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-teal fill-teal">
+      <div class="card-title">Infinitive (to + V1)</div>
+      <table>
+        <tr><th>Kullanım</th><th>Örnek</th></tr>
+        <tr><td class="t-tr">Amaç bildirme</td><td class="t-en">I went there to see her.</td></tr>
+        <tr><td class="t-tr">Belirli fiillerden sonra</td><td class="t-en">She wants to leave.</td></tr>
+        <tr><td class="t-tr">Sıfattan sonra</td><td class="t-en">It's easy to learn.</td></tr>
+        <tr><td class="t-tr">too/enough ile</td><td class="t-en">He's too tired to work.</td></tr>
+      </table>
+      <div class="sp2"></div>
+      <div class="card-title">Infinitive alan fiiller</div>
+      <div class="pills" style="margin-top:6px">
+        <span class="pill teal">want</span><span class="pill teal">decide</span><span class="pill teal">hope</span>
+        <span class="pill teal">plan</span><span class="pill teal">promise</span><span class="pill teal">refuse</span>
+        <span class="pill teal">agree</span><span class="pill teal">offer</span><span class="pill teal">manage</span>
+        <span class="pill teal">seem</span><span class="pill teal">afford</span><span class="pill teal">expect</span>
+        <span class="pill teal">forget*</span><span class="pill teal">remember*</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sp2"></div>
+<div class="card accent-gold">
+  <div class="card-title">İkisi de Alabilen Fiiller — Anlam Farkı Önemli!</div>
+  <div class="wide-struct">
+    <div class="ws-row" style="display:grid;grid-template-columns:1fr 2fr 2fr">
+      <div class="ws-head">Fiil</div><div class="ws-head">+ Gerund (V-ing)</div><div class="ws-head">+ Infinitive (to V1)</div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1fr 2fr 2fr">
+      <div class="ws-cell t-form">remember</div>
+      <div class="ws-cell t-en">I remember locking the door. <span class="t-tr">(geçmişi hatırlama)</span></div>
+      <div class="ws-cell t-en">Remember to lock the door. <span class="t-tr">(yapmayı hatırla)</span></div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1fr 2fr 2fr">
+      <div class="ws-cell t-form">forget</div>
+      <div class="ws-cell t-en">I'll never forget meeting you. <span class="t-tr">(geçmişi unutma)</span></div>
+      <div class="ws-cell t-en">I forgot to call her. <span class="t-tr">(yapmayı unutma)</span></div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1fr 2fr 2fr">
+      <div class="ws-cell t-form">stop</div>
+      <div class="ws-cell t-en">I stopped smoking. <span class="t-tr">(bırakmak)</span></div>
+      <div class="ws-cell t-en">I stopped to smoke. <span class="t-tr">(durdu, sigara içmek için)</span></div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1fr 2fr 2fr">
+      <div class="ws-cell t-form">try</div>
+      <div class="ws-cell t-en">Try adding salt. <span class="t-tr">(denemek, bir çözüm olarak)</span></div>
+      <div class="ws-cell t-en">I tried to open it. <span class="t-tr">(zorlu bir şeyi yapmaya çalışmak)</span></div>
+    </div>
+    <div class="ws-row" style="display:grid;grid-template-columns:1fr 2fr 2fr">
+      <div class="ws-cell t-form">like / love / hate</div>
+      <div class="ws-cell t-en">I like swimming. <span class="t-tr">(genel zevk)</span></div>
+      <div class="ws-cell t-en">I'd like to swim now. <span class="t-tr">(şu an istek — would ile)</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 10 · COMPARISON -->
+<div class="sec-head">
+  <span class="sec-num">10</span>
+  <span class="sec-title">Comparison — İleri Karşılaştırma</span>
+  <span class="sec-level">B1</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1">
+      <div class="card-title">Comparative Yapılar</div>
+      <table>
+        <tr><th>Yapı</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="t-form">much/far/a lot + -er</td><td class="t-tr">çok daha</td><td class="t-en">She's far taller than me.</td></tr>
+        <tr><td class="t-form">a bit/slightly + -er</td><td class="t-tr">biraz daha</td><td class="t-en">It's a bit colder today.</td></tr>
+        <tr><td class="t-form">not as ... as</td><td class="t-tr">o kadar ... değil</td><td class="t-en">He's not as tall as his brother.</td></tr>
+        <tr><td class="t-form">the + -er, the + -er</td><td class="t-tr">ne kadar ... o kadar</td><td class="t-en">The more you practise, the better you get.</td></tr>
+        <tr><td class="t-form">-er and -er</td><td class="t-tr">giderek daha</td><td class="t-en">It's getting colder and colder.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-teal">
+      <div class="card-title">Superlative &amp; Diğer Karşılaştırmalar</div>
+      <table>
+        <tr><th>Yapı</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="t-form">by far the + est</td><td class="t-tr">açık ara en</td><td class="t-en">She's by far the best student.</td></tr>
+        <tr><td class="t-form">one of the + est</td><td class="t-tr">en ... lerden biri</td><td class="t-en">It's one of the oldest cities.</td></tr>
+        <tr><td class="t-form">the same as</td><td class="t-tr">aynı</td><td class="t-en">My bag is the same as yours.</td></tr>
+        <tr><td class="t-form">similar to</td><td class="t-tr">benzer</td><td class="t-en">This is similar to that one.</td></tr>
+        <tr><td class="t-form">different from</td><td class="t-tr">farklı</td><td class="t-en">My idea is different from yours.</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 11 · QUANTIFIERS -->
+<div class="sec-head">
+  <span class="sec-num">11</span>
+  <span class="sec-title">Quantifiers — Nicelik Belirteçleri</span>
+  <span class="sec-level">B1</span>
+</div>
+<div class="card">
+  <div class="card-title">Quantifier Kullanım Tablosu</div>
+  <table>
+    <tr><th>Quantifier</th><th>Sayılabilir (+)</th><th>Sayılabilir (–/soru)</th><th>Sayılamaz (+)</th><th>Sayılamaz (–/soru)</th></tr>
+    <tr><td class="t-form">some</td><td class="t-ok">✔ some books</td><td class="t-bad">✗</td><td class="t-ok">✔ some water</td><td class="t-bad">✗</td></tr>
+    <tr><td class="t-form">any</td><td class="t-bad">✗</td><td class="t-ok">✔ any books?</td><td class="t-bad">✗</td><td class="t-ok">✔ any water?</td></tr>
+    <tr><td class="t-form">many</td><td class="t-ok">✔ many books</td><td class="t-ok">✔ many books?</td><td class="t-bad">✗</td><td class="t-bad">✗</td></tr>
+    <tr><td class="t-form">much</td><td class="t-bad">✗</td><td class="t-bad">✗</td><td class="t-ok">✔ much time</td><td class="t-ok">✔ much time?</td></tr>
+    <tr><td class="t-form">a few</td><td class="t-ok">✔ a few days</td><td class="t-bad">✗</td><td class="t-bad">✗</td><td class="t-bad">✗</td></tr>
+    <tr><td class="t-form">a little</td><td class="t-bad">✗</td><td class="t-bad">✗</td><td class="t-ok">✔ a little milk</td><td class="t-bad">✗</td></tr>
+    <tr><td class="t-form">few / little</td><td class="t-ok">few friends (az, yetersiz)</td><td class="t-bad">✗</td><td class="t-ok">little money (az, yetersiz)</td><td class="t-bad">✗</td></tr>
+    <tr><td class="t-form">a lot of / lots of</td><td class="t-ok">✔ a lot of cars</td><td class="t-ok">✔</td><td class="t-ok">✔ a lot of money</td><td class="t-ok">✔</td></tr>
+    <tr><td class="t-form">plenty of</td><td class="t-ok">✔ plenty of chairs</td><td class="t-bad">✗</td><td class="t-ok">✔ plenty of time</td><td class="t-bad">✗</td></tr>
+    <tr><td class="t-form">enough</td><td class="t-ok">✔ enough books</td><td class="t-ok">✔</td><td class="t-ok">✔ enough money</td><td class="t-ok">✔</td></tr>
+    <tr><td class="t-form">no</td><td class="t-ok">✔ no cars</td><td class="t-bad">✗</td><td class="t-ok">✔ no time</td><td class="t-bad">✗</td></tr>
+  </table>
+  <div class="g2" style="margin-top:12px">
+    <div class="warn">few/little (olumsuz anlam) → I have few friends. (az, hüzünlü)<br>a few/a little (olumlu anlam) → I have a few friends. (birkaç tane var, yeterli)</div>
+    <div class="tip">enough + isim: "I have enough time."<br>yeterince + sıfat: "She is old enough to vote."<br>too + sıfat: "It's too hot to go out."</div>
+  </div>
+</div>
+
+<!-- 12 · PHRASAL VERBS -->
+<div class="sec-head">
+  <span class="sec-num">12</span>
+  <span class="sec-title">Phrasal Verbs — Öbekli Fiiller</span>
+  <span class="sec-level">B1</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1">
+      <div class="card-title">Ayrılabilir (Separable) vs Ayrılamaz</div>
+      <div class="note">Ayrılabilir: nesne araya girebilir<br>Turn off the light. = Turn the light off. ✅<br>Turn it off. ✅ (zamir mutlaka araya girer!)<br><br>Ayrılamaz: nesne araya giremez<br>I ran into my teacher. ✅<br>I ran my teacher into. ❌</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-teal">
+      <div class="card-title">Temel Phrasal Verbs (up / down / out / off)</div>
+      <table>
+        <tr><th>Phrasal Verb</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="t-form">give up</td><td class="t-tr">vazgeçmek, bırakmak</td><td class="t-en">She gave up smoking.</td></tr>
+        <tr><td class="t-form">put off</td><td class="t-tr">ertelemek</td><td class="t-en">Don't put it off.</td></tr>
+        <tr><td class="t-form">take off</td><td class="t-tr">çıkarmak / havalanmak</td><td class="t-en">Take off your shoes.</td></tr>
+        <tr><td class="t-form">turn on/off</td><td class="t-tr">açmak / kapatmak</td><td class="t-en">Turn on the light.</td></tr>
+        <tr><td class="t-form">find out</td><td class="t-tr">öğrenmek, keşfetmek</td><td class="t-en">I found out the truth.</td></tr>
+        <tr><td class="t-form">carry out</td><td class="t-tr">gerçekleştirmek</td><td class="t-en">They carried out the plan.</td></tr>
+        <tr><td class="t-form">set up</td><td class="t-tr">kurmak</td><td class="t-en">He set up a business.</td></tr>
+        <tr><td class="t-form">bring up</td><td class="t-tr">yetiştirmek / gündeme taşımak</td><td class="t-en">She was brought up in Rome.</td></tr>
+        <tr><td class="t-form">look up</td><td class="t-tr">araştırmak (sözlük vb.)</td><td class="t-en">Look up the word.</td></tr>
+        <tr><td class="t-form">break down</td><td class="t-tr">bozulmak</td><td class="t-en">My car broke down.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-gold">
+      <div class="card-title">Yaygın Phrasal Verbs (get / look / come / go)</div>
+      <table>
+        <tr><th>Phrasal Verb</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="t-form">get on with</td><td class="t-tr">geçinmek, iyi olmak</td><td class="t-en">I get on with my boss.</td></tr>
+        <tr><td class="t-form">get over</td><td class="t-tr">atlatmak (hastalık, ayrılık)</td><td class="t-en">She got over the flu.</td></tr>
+        <tr><td class="t-form">get away</td><td class="t-tr">kaçmak, tatile çıkmak</td><td class="t-en">I need to get away.</td></tr>
+        <tr><td class="t-form">look after</td><td class="t-tr">bakmak, ilgilenmek</td><td class="t-en">She looks after her sister.</td></tr>
+        <tr><td class="t-form">look forward to</td><td class="t-tr">dört gözle beklemek</td><td class="t-en">I look forward to seeing you.</td></tr>
+        <tr><td class="t-form">look into</td><td class="t-tr">araştırmak, incelemek</td><td class="t-en">Police looked into the case.</td></tr>
+        <tr><td class="t-form">come across</td><td class="t-tr">rastlamak</td><td class="t-en">I came across an old photo.</td></tr>
+        <tr><td class="t-form">come up with</td><td class="t-tr">bulmak, geliştirmek (fikir)</td><td class="t-en">She came up with a solution.</td></tr>
+        <tr><td class="t-form">go through</td><td class="t-tr">geçirmek (zor süreç)</td><td class="t-en">She went through a difficult time.</td></tr>
+        <tr><td class="t-form">go ahead</td><td class="t-tr">devam etmek, ilerlemek</td><td class="t-en">Please go ahead.</td></tr>
+      </table>
+    </div>
+    <div class="sp2"></div>
+    <div class="warn">look forward to → after this: V-ing not infinitive!<br>"I look forward to hearing from you." ✅<br>"I look forward to hear from you." ❌</div>
+  </div>
+</div>
+
+<!-- 13 · CONNECTORS -->
+<div class="sec-head">
+  <span class="sec-num">13</span>
+  <span class="sec-title">Connectors &amp; Discourse Markers</span>
+  <span class="sec-level">B1</span>
+</div>
+<div class="g3">
+  <div class="card accent-b1">
+    <div class="card-title">Karşıtlık / Zıtlık</div>
+    <table>
+      <tr><th>Bağlaç</th><th>Konum</th><th>Örnek</th></tr>
+      <tr><td class="t-form">although / even though</td><td class="t-tr">cümle başı/ortası</td><td class="t-en">Although it was cold, I went out.</td></tr>
+      <tr><td class="t-form">however</td><td class="t-tr">yeni cümle başı</td><td class="t-en">I was tired. However, I kept going.</td></tr>
+      <tr><td class="t-form">but</td><td class="t-tr">cümle ortası</td><td class="t-en">She's rich but unhappy.</td></tr>
+      <tr><td class="t-form">despite / in spite of</td><td class="t-tr">cümle başı/ortası + noun</td><td class="t-en">Despite the rain, we went out.</td></tr>
+      <tr><td class="t-form">on the other hand</td><td class="t-tr">yeni cümle başı</td><td class="t-en">It's expensive. On the other hand, it's good quality.</td></tr>
+      <tr><td class="t-form">whereas / while</td><td class="t-tr">karşılaştırma</td><td class="t-en">He's tall, whereas she's short.</td></tr>
+    </table>
+  </div>
+  <div class="card accent-teal">
+    <div class="card-title">Sebep / Sonuç</div>
+    <table>
+      <tr><th>Bağlaç</th><th>Kullanım</th><th>Örnek</th></tr>
+      <tr><td class="t-form">because / as / since</td><td class="t-tr">sebep</td><td class="t-en">I stayed because I was tired.</td></tr>
+      <tr><td class="t-form">because of / due to</td><td class="t-tr">sebep + isim</td><td class="t-en">Due to the traffic, I was late.</td></tr>
+      <tr><td class="t-form">so / therefore</td><td class="t-tr">sonuç</td><td class="t-en">It was raining, so I stayed.</td></tr>
+      <tr><td class="t-form">as a result</td><td class="t-tr">sonuç (resmi)</td><td class="t-en">As a result, he lost his job.</td></tr>
+      <tr><td class="t-form">consequently</td><td class="t-tr">sonuç (resmi)</td><td class="t-en">He was rude; consequently, they left.</td></tr>
+    </table>
+    <div class="warn">despite/because of + noun/V-ing (to-infinitive değil!)<br>despite being tired ✅ &nbsp;|&nbsp; despite to be tired ❌</div>
+  </div>
+  <div class="card accent-gold">
+    <div class="card-title">Sıralama / Eklem / Koşul</div>
+    <table>
+      <tr><th>Bağlaç</th><th>Anlam</th><th>Örnek</th></tr>
+      <tr><td class="t-form">first / firstly</td><td class="t-tr">birincisi</td><td class="t-en">Firstly, we need to plan.</td></tr>
+      <tr><td class="t-form">then / after that</td><td class="t-tr">sonra</td><td class="t-en">Then, we'll start working.</td></tr>
+      <tr><td class="t-form">finally / in the end</td><td class="t-tr">sonunda</td><td class="t-en">Finally, we finished.</td></tr>
+      <tr><td class="t-form">in addition / moreover</td><td class="t-tr">bunun yanı sıra</td><td class="t-en">Moreover, it's cheaper.</td></tr>
+      <tr><td class="t-form">for example / such as</td><td class="t-tr">örneğin</td><td class="t-en">For example, cats and dogs.</td></tr>
+      <tr><td class="t-form">in conclusion / to sum up</td><td class="t-tr">sonuç olarak</td><td class="t-en">To sum up, it was a success.</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 14 · WISH / IF ONLY -->
+<div class="sec-head">
+  <span class="sec-num">14</span>
+  <span class="sec-title">Wish / If only — Dilek &amp; Pişmanlık</span>
+  <span class="sec-level">B1</span>
+</div>
+<div class="g3">
+  <div class="card accent-b1 fill-b1">
+    <div class="card-title">Şimdiki / Geleceğe Dilek</div>
+    <div class="formula">
+      <span class="f-q">wish/if only</span> + <span class="f-verb">Simple Past</span><br>
+      <span class="f-dim">(Şu anki gerçeğin tersi)</span>
+    </div>
+    <div class="ex"><div class="e">I wish I had a car.</div><div class="t">Keşke arabam olsaydı. (yok)</div></div>
+    <div class="ex"><div class="e">If only I were taller!</div><div class="t">Keşke daha uzun olsaydım!</div></div>
+    <div class="ex"><div class="e">I wish she would stop talking.</div><div class="t">Keşke konuşmayı bıraksa.</div></div>
+    <div class="tip">were, tüm özneler için kullanılabilir: I wish I were...</div>
+  </div>
+  <div class="card accent-purple fill-purple">
+    <div class="card-title">Geçmişe Pişmanlık</div>
+    <div class="formula">
+      <span class="f-q">wish/if only</span> + <span class="f-verb">Past Perfect</span><br>
+      <span class="f-dim">(Geçmişte yapılan/yapılmayan için pişmanlık)</span>
+    </div>
+    <div class="ex"><div class="e">I wish I had studied harder.</div><div class="t">Keşke daha çok çalışmış olsaydım.</div></div>
+    <div class="ex"><div class="e">If only I hadn't said that.</div><div class="t">Keşke bunu söylememiş olsaydım.</div></div>
+    <div class="warn">wish + would → başkasının değişmesini isteme (I wish you would be quiet!) sadece başka kişi için, kendimiz için değil.</div>
+  </div>
+  <div class="card accent-teal fill-teal">
+    <div class="card-title">Wish vs Hope &amp; would rather / had better</div>
+    <table>
+      <tr><th>wish</th><th>hope</th></tr>
+      <tr><td class="t-tr">Gerçekleşmesi zor/imkansız dilekler</td><td class="t-tr">Gerçekleşebilir beklentiler</td></tr>
+      <tr><td class="t-en">I wish I could fly.</td><td class="t-en">I hope it doesn't rain.</td></tr>
+      <tr><td class="t-en">I wish I were rich.</td><td class="t-en">I hope you feel better soon.</td></tr>
+      <tr><td class="t-form">+ Past / Past Perfect</td><td class="t-form2">+ Present/Future</td></tr>
+    </table>
+    <div class="sp2"></div>
+    <div class="ex"><div class="e">I'd rather stay home. (tercih)</div><div class="t">Evde kalmayı tercih ederim.</div></div>
+    <div class="ex"><div class="e">I'd rather you didn't smoke. (başkası için)</div></div>
+    <div class="ex"><div class="e">You'd better call her now. (uyarı)</div><div class="t">Onu şimdi aramalısın (yoksa...)</div></div>
+  </div>
+</div>
+
+<!-- 15 · USED TO / WOULD -->
+<div class="sec-head">
+  <span class="sec-num">15</span>
+  <span class="sec-title">Used to / Would / Be used to / Get used to</span>
+  <span class="sec-level">B1</span>
+</div>
+<div class="g2">
+  <div>
+    <div class="card accent-b1 fill-b1">
+      <div class="card-title">used to + V1 — Geçmiş Alışkanlık</div>
+      <div class="formula">
+        <span class="f-sub">Sub</span> + <span class="f-verb">used to</span> + <span class="f-v2">V1</span><br>
+        <span class="f-sub">Sub</span> + <span class="f-neg">didn't use to</span> + <span class="f-v2">V1</span><br>
+        <span class="f-q">Did</span> + <span class="f-sub">sub</span> + <span class="f-verb">use to</span> + <span class="f-v2">V1?</span>
+      </div>
+      <div class="ex"><div class="e">I used to play the piano.</div><div class="t">Piyano çalardım. (artık çalmıyorum)</div></div>
+      <div class="ex"><div class="e">She didn't use to eat meat.</div><div class="t">Et yemezdi.</div></div>
+      <div class="tip">used to → sadece geçmiş alışkanlık veya geçmiş durum (artık değişti)</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-gold">
+      <div class="card-title">would + V1 — Geçmiş Tekrarlayan Eylem</div>
+      <div class="formula">
+        <span class="f-sub">Sub</span> + <span class="f-verb">would</span> + <span class="f-v2">V1</span><br>
+        <span class="f-dim">→ Geçmişte düzenli tekrarlanan eylemler</span>
+      </div>
+      <div class="ex"><div class="e">When I was young, we would go to the park every Sunday.</div><div class="t">Küçükken her Pazar parka giderdik.</div></div>
+      <div class="warn">would → sadece eylemler için. Durum bildiren fiillerle kullanılmaz:<br>I would be shy ❌ → I used to be shy ✅</div>
+    </div>
+  </div>
+  <div>
+    <div class="card accent-teal fill-teal">
+      <div class="card-title">be used to / get used to — Alışkın Olmak</div>
+      <table>
+        <tr><th>Yapı</th><th>Anlam</th><th>Zaman</th></tr>
+        <tr><td class="t-form">be used to + V-ing/noun</td><td class="t-tr">alışkın olmak</td><td class="t-tr">her zaman</td></tr>
+        <tr><td class="t-form">get used to + V-ing/noun</td><td class="t-tr">alışmak (süreç)</td><td class="t-tr">değişen süreç</td></tr>
+      </table>
+      <div class="ex" style="margin-top:10px"><div class="e">I'm used to waking up early.</div><div class="t">Erken kalkmaya alışkınım.</div></div>
+      <div class="ex"><div class="e">She's getting used to the new job.</div><div class="t">Yeni işe alışıyor.</div></div>
+      <div class="ex"><div class="e">I'm not used to the cold weather.</div><div class="t">Soğuk havaya alışkın değilim.</div></div>
+      <div class="warn">be used to + V-ING (to = preposition, infinitive değil!)<br>I'm used to drive ❌ → I'm used to driving ✅</div>
+    </div>
+    <div class="sp2"></div>
+    <div class="card accent-purple">
+      <div class="card-title">Özet Karşılaştırma</div>
+      <table>
+        <tr><th>Yapı</th><th>Anlam</th><th>Örnek</th></tr>
+        <tr><td class="t-form">used to + V1</td><td class="t-tr">geçmişte alışkanlık/durum (artık yok)</td><td class="t-en">I used to live in Ankara.</td></tr>
+        <tr><td class="t-form">would + V1</td><td class="t-tr">geçmişte tekrarlayan eylem</td><td class="t-en">We would visit grandma on Sundays.</td></tr>
+        <tr><td class="t-form">be used to + V-ing</td><td class="t-tr">şu an alışkın</td><td class="t-en">I'm used to driving.</td></tr>
+        <tr><td class="t-form">get used to + V-ing</td><td class="t-tr">alışma süreci</td><td class="t-en">I'm getting used to it.</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 16 · ZAMAN ÇİZELGESİ ÖZET -->
+<div class="sec-head">
+  <span class="sec-num">16</span>
+  <span class="sec-title">Tüm Zaman Yapıları — B1 Özet</span>
+  <span class="sec-level">B1 Reference</span>
+</div>
+<div class="card">
+  <div class="card-title">Zaman Yapıları Karşılaştırma Tablosu</div>
+  <table>
+    <tr><th>Zaman</th><th>Yapı</th><th>Anahtar Kelime</th><th>Örnek</th></tr>
+    <tr><td class="t-tr">Simple Present</td><td class="t-form">V1 / V1+s</td><td class="t-en">always, every day, usually</td><td class="t-en">She works every day.</td></tr>
+    <tr><td class="t-tr">Present Continuous</td><td class="t-form">am/is/are + V-ing</td><td class="t-en">now, at the moment, these days</td><td class="t-en">I'm reading now.</td></tr>
+    <tr><td class="t-tr">Simple Past</td><td class="t-form">V2 / didn't V1</td><td class="t-en">yesterday, ago, last year, in 2020</td><td class="t-en">I went to Rome.</td></tr>
+    <tr><td class="t-tr">Past Continuous</td><td class="t-form">was/were + V-ing</td><td class="t-en">while, when, at 8pm yesterday</td><td class="t-en">I was sleeping when she called.</td></tr>
+    <tr><td class="t-tr">Present Perfect Simple</td><td class="t-form">have/has + V3</td><td class="t-en">ever, never, already, yet, just, for, since</td><td class="t-en">I've lived here for 5 years.</td></tr>
+    <tr><td class="t-tr">Present Perfect Continuous</td><td class="t-form">have/has been + V-ing</td><td class="t-en">for, since, how long, lately</td><td class="t-en">I've been waiting for 2 hours.</td></tr>
+    <tr><td class="t-tr">Past Perfect</td><td class="t-form">had + V3</td><td class="t-en">already, by the time, before, after</td><td class="t-en">She had left when I arrived.</td></tr>
+    <tr><td class="t-tr">Past Perfect Continuous</td><td class="t-form">had been + V-ing</td><td class="t-en">for, since (geçmişteki ana kadar)</td><td class="t-en">He had been running for an hour.</td></tr>
+    <tr><td class="t-tr">Future (will)</td><td class="t-form">will + V1</td><td class="t-en">I think, probably, I'm sure, soon</td><td class="t-en">I'll call you later.</td></tr>
+    <tr><td class="t-tr">Future (going to)</td><td class="t-form">am/is/are going to + V1</td><td class="t-en">plan, intention, evidence</td><td class="t-en">I'm going to study law.</td></tr>
+    <tr><td class="t-tr">Future Continuous</td><td class="t-form">will be + V-ing</td><td class="t-en">at this time tomorrow, when you arrive</td><td class="t-en">I'll be working at 9 tomorrow.</td></tr>
+    <tr><td class="t-tr">Future Perfect</td><td class="t-form">will have + V3</td><td class="t-en">by Friday / by the time</td><td class="t-en">I'll have finished by Monday.</td></tr>
+  </table>
+</div>
+
+<footer>
+  <div><strong>B1 İngilizce Dil Bilgisi Cheat Sheet</strong> · Eksiksiz Orta Seviye Başvuru Kartı · Türkçe Açıklamalı</div>
+  <div>Present Perfect · Past Continuous · Conditionals · Passive · Reported Speech · Gerund &amp; Infinitive · ve daha fazlası</div>
+</footer>
+
+ </div><!-- /page -->
+</div><!-- /panel-b1 -->
+
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"><img src="NCLogo.jpeg" alt="NC Logo"></div>
+        <div class="social-links">
+          <a href="https://github.com/necmeddinn" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/necmeddincunedioglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/necmeddin_1?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/necmeddin_1?igsh=MTdobDNxcmhlMzJ6dg==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@necmeddin_1" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="mailto:necmeddincunedioglu@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2023</span> Necmeddin Cunedioğlu. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+</div><!-- /page-container -->
+
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+<script>
+function switchTab(panel, btn) {
+  // Hide all panels
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  // Deactivate all buttons
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.remove('active-a1', 'active-a2', 'active-b1');
+  });
+  // Show selected panel
+  document.getElementById('panel-' + panel).classList.add('active');
+  // Activate button
+  if (panel === 'a1a2') {
+    btn.classList.add('active-a1');
+    document.body.style.background = '#0e0e12';
+  } else if (panel === 'b1') {
+    btn.classList.add('active-b1');
+    document.body.style.background = '#F7F4EF';
+  }
+  // Scroll to top of content
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>

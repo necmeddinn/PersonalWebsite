@@ -398,6 +398,7 @@
     font-size: 1.1rem;
 }
 
+
 /* Dark Mode Styles for Notes Page */
 [data-theme="dark"] .page-header {
     background: var(--gradient-secondary);
