@@ -423,6 +423,16 @@ body {
 }
 @media (max-width: 600px) {
   #panel-a1a2 .grid2, #panel-a1a2 .grid3 { grid-template-columns: 1fr; }
+  #panel-a1a2 { padding: 24px 14px 40px; }
+  #panel-a1a2 table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #panel-a1a2 th,
+  #panel-a1a2 td {
+    white-space: nowrap;
+  }
   .tab-btn { padding: 10px 14px; font-size: 10px; }
 }
 
@@ -773,6 +783,25 @@ body {
   #panel-b1 .g2, #panel-b1 .g3, #panel-b1 .g4, #panel-b1 .g23, #panel-b1 .g32, #panel-b1 .g34 { grid-template-columns: 1fr; }
   #panel-b1 header { grid-template-columns: 1fr; }
   #panel-b1 .header-right { display: none; }
+}
+
+/* Extra mobile tuning for B1 panel */
+@media(max-width:600px) {
+  #panel-b1 .page {
+    padding: 24px 14px 40px;
+    border-radius: 12px;
+  }
+
+  #panel-b1 table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #panel-b1 th,
+  #panel-b1 td {
+    white-space: nowrap;
+  }
 }
 
 </style>
