@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRSGNV3GF5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QRSGNV3GF5');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Cheat Sheet | Necmeddin Cunedioglu</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/proje-detay.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Python Cheat Sheet — theme variables from site */
+  .python-cheatsheet-page {
+    --py-surface: var(--bg-secondary);
+    --py-surface2: var(--border-color);
+    --py-accent: #c9a227;
+    --py-accent2: #0d7ea4;
+    --py-accent3: #2e7d32;
+    --py-accent4: #c62828;
+    --py-accent5: #7b1fa2;
+    --py-keyword: #c9a227;
+    --py-func: #0d7ea4;
+    --py-string: #2e7d32;
+    --py-comment: var(--light-text);
+    --py-number: #c62828;
+    --py-type: #7b1fa2;
+  }
+  [data-theme="dark"] .python-cheatsheet-page {
+    --py-surface: #1a1a1a;
+    --py-surface2: #252525;
+    --py-accent: #f0c040;
+    --py-accent2: #4fc3f7;
+    --py-accent3: #a5d6a7;
+    --py-accent4: #ef9a9a;
+    --py-accent5: #ce93d8;
+    --py-keyword: #f0c040;
+    --py-func: #4fc3f7;
+    --py-string: #a5d6a7;
+    --py-comment: #6b7280;
+    --py-number: #ef9a9a;
+    --py-type: #ce93d8;
+  }
+
+  .python-cheatsheet-page * { box-sizing: border-box; }
+
+  .python-cheatsheet-page .py-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+  .python-cheatsheet-page .py-toc a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-size: 11px;
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .python-cheatsheet-page .py-toc a:hover {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+  }
+
+  .python-cheatsheet-page main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 20px;
+    align-items: start;
+  }
+
+  .python-cheatsheet-page .card {
+    background: var(--py-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+    min-width: 0;
+  }
+  .python-cheatsheet-page .card:hover { border-color: var(--light-text); }
+  .python-cheatsheet-page .card.wide { grid-column: 1 / -1; }
+
+  .python-cheatsheet-page .card-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--py-surface2);
+  }
+  .python-cheatsheet-page .card-header .tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(201,162,39,0.15);
+    color: var(--py-accent);
+    border: 1px solid rgba(201,162,39,0.3);
+  }
+  [data-theme="dark"] .python-cheatsheet-page .card-header .tag {
+    background: rgba(240,192,64,0.1);
+    border-color: rgba(240,192,64,0.2);
+  }
+  .python-cheatsheet-page .card-header .tag.blue {
+    background: rgba(13,126,164,0.15);
+    color: var(--py-accent2);
+    border-color: rgba(13,126,164,0.3);
+  }
+  [data-theme="dark"] .python-cheatsheet-page .card-header .tag.blue {
+    background: rgba(79,195,247,0.1);
+    color: var(--py-accent2);
+    border-color: rgba(79,195,247,0.2);
+  }
+  .python-cheatsheet-page .card-header .tag.green {
+    background: rgba(46,125,50,0.15);
+    color: var(--py-accent3);
+    border-color: rgba(46,125,50,0.3);
+  }
+  [data-theme="dark"] .python-cheatsheet-page .card-header .tag.green {
+    background: rgba(165,214,167,0.1);
+    color: var(--py-accent3);
+    border-color: rgba(165,214,167,0.2);
+  }
+  .python-cheatsheet-page .card-header .tag.red {
+    background: rgba(198,40,40,0.15);
+    color: var(--py-accent4);
+    border-color: rgba(198,40,40,0.3);
+  }
+  [data-theme="dark"] .python-cheatsheet-page .card-header .tag.red {
+    background: rgba(239,154,154,0.1);
+    color: var(--py-accent4);
+    border-color: rgba(239,154,154,0.2);
+  }
+  .python-cheatsheet-page .card-header .tag.purple {
+    background: rgba(123,31,162,0.15);
+    color: var(--py-accent5);
+    border-color: rgba(123,31,162,0.3);
+  }
+  [data-theme="dark"] .python-cheatsheet-page .card-header .tag.purple {
+    background: rgba(206,147,216,0.1);
+    color: var(--py-accent5);
+    border-color: rgba(206,147,216,0.2);
+  }
+  .python-cheatsheet-page .card-header h2 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+  }
+  .python-cheatsheet-page .card-body { padding: 0; }
+
+  .python-cheatsheet-page pre {
+    padding: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    line-height: 1.8;
+    overflow-x: auto;
+    tab-size: 4;
+    background: var(--py-surface);
+    color: var(--text-color);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .python-cheatsheet-page .kw { color: var(--py-keyword); font-weight: 600; }
+  .python-cheatsheet-page .fn { color: var(--py-func); }
+  .python-cheatsheet-page .st { color: var(--py-string); }
+  .python-cheatsheet-page .cm { color: var(--py-comment); font-style: italic; }
+  .python-cheatsheet-page .nm { color: var(--py-number); }
+  .python-cheatsheet-page .tp { color: var(--py-type); }
+  .python-cheatsheet-page .op { color: var(--light-text); }
+  .python-cheatsheet-page .pn { color: var(--text-color); }
+
+  .python-cheatsheet-page .divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 0;
+  }
+
+  .python-cheatsheet-page table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    min-width: 320px;
+  }
+  .python-cheatsheet-page th {
+    background: var(--py-surface2);
+    padding: 8px 16px;
+    text-align: left;
+    color: var(--light-text);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .python-cheatsheet-page td {
+    padding: 9px 16px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+  .python-cheatsheet-page tr:last-child td { border-bottom: none; }
+  .python-cheatsheet-page td:first-child { color: var(--py-accent2); }
+  .python-cheatsheet-page td:nth-child(2) { color: var(--light-text); font-size: 11px; }
+  .python-cheatsheet-page tr:hover td { background: var(--bg-color); opacity: 0.95; }
+
+  .python-cheatsheet-page .info {
+    margin: 0;
+    padding: 14px 20px;
+    background: rgba(201,162,39,0.08);
+    border-left: 3px solid var(--py-accent);
+    font-size: 12px;
+    color: var(--light-text);
+    line-height: 1.7;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  [data-theme="dark"] .python-cheatsheet-page .info {
+    background: rgba(240,192,64,0.05);
+  }
+  .python-cheatsheet-page .info strong { color: var(--secondary-color); }
+
+  @media (max-width: 900px) {
+    .python-cheatsheet-page main {
+      grid-template-columns: 1fr;
+      padding: 1.5rem 1rem 2rem;
+    }
+    .python-cheatsheet-page .card.wide { grid-column: 1; }
+  }
+
+  @media (max-width: 600px) {
+    .python-cheatsheet-page main { padding: 1rem 12px 2rem; }
+    .python-cheatsheet-page .card-header,
+    .python-cheatsheet-page pre { padding: 12px 14px; }
+    .python-cheatsheet-page pre { font-size: 11.5px; }
+    .python-cheatsheet-page table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .python-cheatsheet-page th,
+    .python-cheatsheet-page td { white-space: nowrap; }
+  }
+</style>
+</head>
+<body>
+<div class="page-container">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo"><a href="index.html"><img src="NCLogo.jpeg" alt="NC Logo"></a></div>
+      <div class="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html">Ana Sayfa</a></li>
+        <li class="nav-item"><a href="hakkimda.html">Hakkımda</a></li>
+        <li class="nav-item"><a href="projelerim.html">Projelerim</a></li>
+        <li class="nav-item active"><a href="notlarim.html">Notlarım</a></li>
+        <li class="nav-item"><a href="iletisim.html">İletişim</a></li>
+      </ul>
+      <div class="theme-toggle">
+        <button id="theme-toggle-btn" aria-label="Tema değiştir">
+          <i class="fas fa-sun"></i>
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="project-detail-header">
+    <div class="container">
+      <a href="notlarim.html" class="back-link"><i class="fas fa-arrow-left"></i> Notlarım</a>
+      <span class="project-badge">Not</span>
+      <h1>Python Cheat Sheet</h1>
+      <p class="subtitle">Python programlama dili için kapsamlı referans ve hızlı ipuçları rehberi.</p>
+    </div>
+  </header>
+
+  <div class="project-detail-main">
+    <div class="python-cheatsheet-page">
+<main>
+
+  <!-- VERİ TİPLERİ -->
+  <div class="card" id="veri-tipleri">
+    <div class="card-header"><span class="tag">temel</span><h2>Veri Tipleri</h2></div>
+    <div class="card-body">
+      <table>
+        <tr><th>Tip</th><th>Örnek</th><th>Açıklama</th></tr>
+        <tr><td>int</td><td>42, -7, 0</td><td>Tam sayı</td></tr>
+        <tr><td>float</td><td>3.14, -0.5</td><td>Ondalıklı sayı</td></tr>
+        <tr><td>str</td><td>"merhaba"</td><td>Metin</td></tr>
+        <tr><td>bool</td><td>True, False</td><td>Mantıksal</td></tr>
+        <tr><td>list</td><td>[1, 2, 3]</td><td>Sıralı, değiştirilebilir</td></tr>
+        <tr><td>tuple</td><td>(1, 2, 3)</td><td>Sıralı, değiştirilemez</td></tr>
+        <tr><td>dict</td><td>{"a": 1}</td><td>Anahtar-değer çifti</td></tr>
+        <tr><td>set</td><td>{1, 2, 3}</td><td>Benzersiz elemanlar</td></tr>
+        <tr><td>None</td><td>None</td><td>Boş değer (null)</td></tr>
+      </table>
+      <hr class="divider">
+      <pre><span class="cm"># Tip öğrenme ve dönüştürme</span>
+<span class="fn">type</span>(<span class="nm">42</span>)          <span class="cm"># &lt;class 'int'&gt;</span>
+<span class="fn">int</span>(<span class="st">"10"</span>)        <span class="cm"># 10</span>
+<span class="fn">float</span>(<span class="nm">5</span>)         <span class="cm"># 5.0</span>
+<span class="fn">str</span>(<span class="nm">3.14</span>)        <span class="cm"># "3.14"</span>
+<span class="fn">bool</span>(<span class="nm">0</span>)          <span class="cm"># False  (0, "", [], None → False)</span>
+<span class="fn">list</span>((<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>)) <span class="cm"># [1, 2, 3]</span></pre>
+    </div>
+  </div>
+
+  <!-- STRING -->
+  <div class="card" id="string">
+    <div class="card-header"><span class="tag">temel</span><h2>String İşlemleri</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Tanımlama</span>
+s <span class="op">=</span> <span class="st">"Merhaba Dünya"</span>
+s <span class="op">=</span> <span class="st">'tek tırnak da çalışır'</span>
+s <span class="op">=</span> <span class="st">"""çok
+satırlı"""</span>
+
+<span class="cm"># f-string (en çok kullanılan)</span>
+isim <span class="op">=</span> <span class="st">"Ahmet"</span>
+yas <span class="op">=</span> <span class="nm">22</span>
+<span class="fn">print</span>(<span class="st">f"Merhaba </span><span class="op">{</span>isim<span class="op">}</span><span class="st">, yaşın </span><span class="op">{</span>yas<span class="op">}</span><span class="st">"</span>)
+
+<span class="cm"># Önemli metodlar</span>
+s<span class="op">.</span><span class="fn">upper</span>()          <span class="cm"># "MERHABA DÜNYA"</span>
+s<span class="op">.</span><span class="fn">lower</span>()          <span class="cm"># "merhaba dünya"</span>
+s<span class="op">.</span><span class="fn">strip</span>()          <span class="cm"># baştaki/sondaki boşlukları sil</span>
+s<span class="op">.</span><span class="fn">split</span>(<span class="st">" "</span>)       <span class="cm"># ["Merhaba", "Dünya"]</span>
+s<span class="op">.</span><span class="fn">replace</span>(<span class="st">"a"</span>, <span class="st">"@"</span>) <span class="cm"># değiştir</span>
+s<span class="op">.</span><span class="fn">startswith</span>(<span class="st">"M"</span>)  <span class="cm"># True</span>
+s<span class="op">.</span><span class="fn">endswith</span>(<span class="st">"a"</span>)   <span class="cm"># True</span>
+s<span class="op">.</span><span class="fn">find</span>(<span class="st">"Dünya"</span>)    <span class="cm"># 8 (index)</span>
+s<span class="op">.</span><span class="fn">count</span>(<span class="st">"a"</span>)       <span class="cm"># 3</span>
+<span class="st">","</span><span class="op">.</span><span class="fn">join</span>([<span class="st">"a"</span>,<span class="st">"b"</span>]) <span class="cm"># "a,b"</span>
+
+<span class="cm"># Dilimleme (slicing)</span>
+s[<span class="nm">0</span>]              <span class="cm"># "M"</span>
+s[<span class="op">-</span><span class="nm">1</span>]             <span class="cm"># "a" (son karakter)</span>
+s[<span class="nm">0</span>:<span class="nm">7</span>]            <span class="cm"># "Merhaba"</span>
+s[::<span class="op">-</span><span class="nm">1</span>]           <span class="cm"># ters çevir</span>
+<span class="fn">len</span>(s)            <span class="cm"># 13</span></pre>
+    </div>
+  </div>
+
+  <!-- LİSTELER -->
+  <div class="card" id="listeler">
+    <div class="card-header"><span class="tag blue">koleksiyon</span><h2>Listeler</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Tanımlama</span>
+sayilar <span class="op">=</span> [<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>, <span class="nm">4</span>, <span class="nm">5</span>]
+karisik <span class="op">=</span> [<span class="nm">1</span>, <span class="st">"iki"</span>, <span class="nm">3.0</span>, <span class="kw">True</span>]
+
+<span class="cm"># Erişim ve dilimleme</span>
+sayilar[<span class="nm">0</span>]        <span class="cm"># 1</span>
+sayilar[<span class="op">-</span><span class="nm">1</span>]       <span class="cm"># 5</span>
+sayilar[<span class="nm">1</span>:<span class="nm">3</span>]      <span class="cm"># [2, 3]</span>
+
+<span class="cm"># Ekleme / Silme</span>
+sayilar<span class="op">.</span><span class="fn">append</span>(<span class="nm">6</span>)       <span class="cm"># sona ekle</span>
+sayilar<span class="op">.</span><span class="fn">insert</span>(<span class="nm">0</span>, <span class="nm">0</span>)    <span class="cm"># index 0'a ekle</span>
+sayilar<span class="op">.</span><span class="fn">remove</span>(<span class="nm">3</span>)       <span class="cm"># değere göre sil</span>
+sayilar<span class="op">.</span><span class="fn">pop</span>()            <span class="cm"># sonuncuyu sil ve döndür</span>
+sayilar<span class="op">.</span><span class="fn">pop</span>(<span class="nm">0</span>)          <span class="cm"># index'e göre sil</span>
+<span class="kw">del</span> sayilar[<span class="nm">2</span>]          <span class="cm"># index'e göre sil</span>
+sayilar<span class="op">.</span><span class="fn">clear</span>()         <span class="cm"># tümünü sil</span>
+
+<span class="cm"># Sıralama / Arama</span>
+sayilar<span class="op">.</span><span class="fn">sort</span>()            <span class="cm"># artan sırala (yerinde)</span>
+sayilar<span class="op">.</span><span class="fn">sort</span>(reverse<span class="op">=</span><span class="kw">True</span>) <span class="cm"># azalan</span>
+<span class="fn">sorted</span>(sayilar)          <span class="cm"># yeni liste döndürür</span>
+sayilar<span class="op">.</span><span class="fn">reverse</span>()        <span class="cm"># ters çevir</span>
+sayilar<span class="op">.</span><span class="fn">index</span>(<span class="nm">3</span>)         <span class="cm"># index bul</span>
+sayilar<span class="op">.</span><span class="fn">count</span>(<span class="nm">2</span>)         <span class="cm"># kaç tane var</span>
+<span class="nm">3</span> <span class="kw">in</span> sayilar            <span class="cm"># var mı? True/False</span>
+
+<span class="cm"># Birleştirme</span>
+a <span class="op">+</span> b                   <span class="cm"># iki listeyi birleştir</span>
+a<span class="op">.</span><span class="fn">extend</span>(b)             <span class="cm"># a'ya b'yi ekle</span>
+<span class="fn">len</span>(sayilar)            <span class="cm"># eleman sayısı</span>
+<span class="fn">min</span>(sayilar), <span class="fn">max</span>(sayilar), <span class="fn">sum</span>(sayilar)</pre>
+    </div>
+  </div>
+
+  <!-- TUPLE & SET -->
+  <div class="card" id="tuple">
+    <div class="card-header"><span class="tag blue">koleksiyon</span><h2>Tuple & Set</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># TUPLE — değiştirilemez liste</span>
+koordinat <span class="op">=</span> (<span class="nm">41.0</span>, <span class="nm">28.9</span>)
+tek_eleman <span class="op">=</span> (<span class="nm">1</span>,)        <span class="cm"># virgül şart!</span>
+x, y <span class="op">=</span> koordinat         <span class="cm"># unpacking</span>
+a, b, <span class="op">*</span>rest <span class="op">=</span> (<span class="nm">1</span>,<span class="nm">2</span>,<span class="nm">3</span>,<span class="nm">4</span>) <span class="cm"># rest=[3,4]</span>
+
+<span class="cm"># Tuple metodları</span>
+koordinat<span class="op">.</span><span class="fn">count</span>(<span class="nm">41.0</span>)   <span class="cm"># kaç tane</span>
+koordinat<span class="op">.</span><span class="fn">index</span>(<span class="nm">28.9</span>)   <span class="cm"># index bul</span>
+<span class="fn">len</span>(koordinat)           <span class="cm"># 2</span></pre>
+      <hr class="divider">
+      <pre><span class="cm"># SET — benzersiz elemanlar, sırasız</span>
+renkler <span class="op">=</span> {<span class="st">"kırmızı"</span>, <span class="st">"mavi"</span>, <span class="st">"yeşil"</span>}
+renkler<span class="op">.</span><span class="fn">add</span>(<span class="st">"sarı"</span>)
+renkler<span class="op">.</span><span class="fn">remove</span>(<span class="st">"mavi"</span>)
+renkler<span class="op">.</span><span class="fn">discard</span>(<span class="st">"mor"</span>)   <span class="cm"># hata vermez</span>
+
+<span class="cm"># Küme işlemleri</span>
+a <span class="op">=</span> {<span class="nm">1</span>,<span class="nm">2</span>,<span class="nm">3</span>}; b <span class="op">=</span> {<span class="nm">2</span>,<span class="nm">3</span>,<span class="nm">4</span>}
+a <span class="op">&amp;</span> b    <span class="cm"># {2,3} — kesişim</span>
+a <span class="op">|</span> b    <span class="cm"># {1,2,3,4} — birleşim</span>
+a <span class="op">-</span> b    <span class="cm"># {1} — fark</span>
+a <span class="op">^</span> b    <span class="cm"># {1,4} — simetrik fark</span>
+<span class="cm"># Tekrar elemanları temizlemek için:</span>
+<span class="fn">list</span>(<span class="fn">set</span>([<span class="nm">1</span>,<span class="nm">2</span>,<span class="nm">2</span>,<span class="nm">3</span>,<span class="nm">3</span>])) <span class="cm"># [1, 2, 3]</span></pre>
+    </div>
+  </div>
+
+  <!-- SÖZLÜK -->
+  <div class="card" id="sozluk">
+    <div class="card-header"><span class="tag blue">koleksiyon</span><h2>Sözlük (Dictionary)</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Tanımlama</span>
+kisi <span class="op">=</span> {
+    <span class="st">"isim"</span>: <span class="st">"Ahmet"</span>,
+    <span class="st">"yas"</span>: <span class="nm">22</span>,
+    <span class="st">"aktif"</span>: <span class="kw">True</span>
+}
+
+<span class="cm"># Erişim</span>
+kisi[<span class="st">"isim"</span>]              <span class="cm"># "Ahmet"</span>
+kisi<span class="op">.</span><span class="fn">get</span>(<span class="st">"yas"</span>)           <span class="cm"># 22 (key yoksa None döner)</span>
+kisi<span class="op">.</span><span class="fn">get</span>(<span class="st">"boy"</span>, <span class="nm">175</span>)      <span class="cm"># default değer</span>
+
+<span class="cm"># Ekleme / Güncelleme / Silme</span>
+kisi[<span class="st">"sehir"</span>] <span class="op">=</span> <span class="st">"İstanbul"</span>  <span class="cm"># ekle veya güncelle</span>
+kisi<span class="op">.</span><span class="fn">update</span>({<span class="st">"yas"</span>: <span class="nm">23</span>, <span class="st">"boy"</span>: <span class="nm">180</span>})
+<span class="kw">del</span> kisi[<span class="st">"aktif"</span>]
+kisi<span class="op">.</span><span class="fn">pop</span>(<span class="st">"sehir"</span>)          <span class="cm"># sil ve döndür</span>
+
+<span class="cm"># Döngü</span>
+<span class="kw">for</span> key <span class="kw">in</span> kisi<span class="op">.</span><span class="fn">keys</span>():   <span class="cm"># anahtarlar</span>
+    <span class="fn">print</span>(key)
+<span class="kw">for</span> val <span class="kw">in</span> kisi<span class="op">.</span><span class="fn">values</span>(): <span class="cm"># değerler</span>
+    <span class="fn">print</span>(val)
+<span class="kw">for</span> k, v <span class="kw">in</span> kisi<span class="op">.</span><span class="fn">items</span>(): <span class="cm"># ikisi birden</span>
+    <span class="fn">print</span>(<span class="st">f"</span><span class="op">{</span>k<span class="op">}</span><span class="st">: </span><span class="op">{</span>v<span class="op">}</span><span class="st">"</span>)
+
+<span class="cm"># Kontrol</span>
+<span class="st">"isim"</span> <span class="kw">in</span> kisi           <span class="cm"># True</span>
+<span class="fn">len</span>(kisi)               <span class="cm"># key sayısı</span></pre>
+    </div>
+  </div>
+
+  <!-- KOŞULLAR -->
+  <div class="card" id="kosullar">
+    <div class="card-header"><span class="tag green">kontrol akışı</span><h2>Koşullar</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Temel if/elif/else</span>
+yas <span class="op">=</span> <span class="nm">20</span>
+<span class="kw">if</span> yas <span class="op">&gt;=</span> <span class="nm">18</span>:
+    <span class="fn">print</span>(<span class="st">"Yetişkin"</span>)
+<span class="kw">elif</span> yas <span class="op">&gt;=</span> <span class="nm">13</span>:
+    <span class="fn">print</span>(<span class="st">"Genç"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="st">"Çocuk"</span>)
+
+<span class="cm"># Ternary (tek satır)</span>
+durum <span class="op">=</span> <span class="st">"Yetişkin"</span> <span class="kw">if</span> yas <span class="op">&gt;=</span> <span class="nm">18</span> <span class="kw">else</span> <span class="st">"Küçük"</span>
+
+<span class="cm"># Karşılaştırma operatörleri</span>
+<span class="cm"># ==  !=  &gt;  &lt;  &gt;=  &lt;=</span>
+<span class="cm"># and  or  not</span>
+<span class="cm"># is  (kimlik),  in  (içinde mi)</span>
+
+<span class="kw">if</span> <span class="nm">18</span> <span class="op">&lt;=</span> yas <span class="op">&lt;=</span> <span class="nm">65</span>:     <span class="cm"># zincirleme</span>
+    <span class="fn">print</span>(<span class="st">"Çalışma çağı"</span>)
+
+<span class="kw">if</span> yas <span class="kw">and</span> isim:         <span class="cm"># boş değil mi?</span>
+    <span class="fn">print</span>(<span class="st">"Her ikisi de var"</span>)
+
+<span class="cm"># match-case (Python 3.10+, switch gibi)</span>
+<span class="kw">match</span> yas:
+    <span class="kw">case</span> <span class="nm">18</span>: <span class="fn">print</span>(<span class="st">"Tam 18"</span>)
+    <span class="kw">case</span> x <span class="kw">if</span> x <span class="op">&gt;</span> <span class="nm">18</span>: <span class="fn">print</span>(<span class="st">"18 üstü"</span>)
+    <span class="kw">case</span> _: <span class="fn">print</span>(<span class="st">"Diğer"</span>)</pre>
+    </div>
+  </div>
+
+  <!-- DÖNGÜLER -->
+  <div class="card" id="donguler">
+    <div class="card-header"><span class="tag green">kontrol akışı</span><h2>Döngüler</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># for döngüsü</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">5</span>):         <span class="cm"># 0,1,2,3,4</span>
+    <span class="fn">print</span>(i)
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">1</span>, <span class="nm">6</span>):     <span class="cm"># 1,2,3,4,5</span>
+    <span class="fn">print</span>(i)
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">0</span>, <span class="nm">10</span>, <span class="nm">2</span>): <span class="cm"># 0,2,4,6,8</span>
+    <span class="fn">print</span>(i)
+
+<span class="cm"># Liste üzerinde döngü</span>
+meyveler <span class="op">=</span> [<span class="st">"elma"</span>, <span class="st">"armut"</span>, <span class="st">"muz"</span>]
+<span class="kw">for</span> meyve <span class="kw">in</span> meyveler:
+    <span class="fn">print</span>(meyve)
+
+<span class="cm"># enumerate — index + değer</span>
+<span class="kw">for</span> i, meyve <span class="kw">in</span> <span class="fn">enumerate</span>(meyveler):
+    <span class="fn">print</span>(<span class="st">f"</span><span class="op">{</span>i<span class="op">}</span><span class="st">: </span><span class="op">{</span>meyve<span class="op">}</span><span class="st">"</span>)
+
+<span class="cm"># zip — iki listeyi birlikte</span>
+isimler <span class="op">=</span> [<span class="st">"Ali"</span>, <span class="st">"Ayşe"</span>]
+yaslar <span class="op">=</span> [<span class="nm">25</span>, <span class="nm">30</span>]
+<span class="kw">for</span> isim, yas <span class="kw">in</span> <span class="fn">zip</span>(isimler, yaslar):
+    <span class="fn">print</span>(<span class="st">f"</span><span class="op">{</span>isim<span class="op">}</span><span class="st">: </span><span class="op">{</span>yas<span class="op">}</span><span class="st">"</span>)
+
+<span class="cm"># while döngüsü</span>
+sayac <span class="op">=</span> <span class="nm">0</span>
+<span class="kw">while</span> sayac <span class="op">&lt;</span> <span class="nm">5</span>:
+    <span class="fn">print</span>(sayac)
+    sayac <span class="op">+=</span> <span class="nm">1</span>
+
+<span class="cm"># break / continue / else</span>
+<span class="kw">for</span> i <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">10</span>):
+    <span class="kw">if</span> i <span class="op">==</span> <span class="nm">3</span>: <span class="kw">continue</span>  <span class="cm"># 3'ü atla</span>
+    <span class="kw">if</span> i <span class="op">==</span> <span class="nm">7</span>: <span class="kw">break</span>     <span class="cm"># 7'de dur</span>
+    <span class="fn">print</span>(i)
+<span class="kw">else</span>:                   <span class="cm"># break olmadan bittiyse</span>
+    <span class="fn">print</span>(<span class="st">"Tamamlandı"</span>)</pre>
+    </div>
+  </div>
+
+  <!-- FONKSİYONLAR -->
+  <div class="card" id="fonksiyonlar">
+    <div class="card-header"><span class="tag purple">fonksiyon</span><h2>Fonksiyonlar</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Temel fonksiyon</span>
+<span class="kw">def</span> <span class="fn">selamla</span>(isim):
+    <span class="kw">return</span> <span class="st">f"Merhaba </span><span class="op">{</span>isim<span class="op">}</span><span class="st">"</span>
+
+<span class="cm"># Varsayılan parametre</span>
+<span class="kw">def</span> <span class="fn">guc</span>(taban, us<span class="op">=</span><span class="nm">2</span>):
+    <span class="kw">return</span> taban <span class="op">**</span> us
+
+<span class="fn">guc</span>(<span class="nm">3</span>)        <span class="cm"># 9</span>
+<span class="fn">guc</span>(<span class="nm">3</span>, <span class="nm">3</span>)     <span class="cm"># 27</span>
+
+<span class="cm"># Keyword argüman</span>
+<span class="fn">guc</span>(us<span class="op">=</span><span class="nm">3</span>, taban<span class="op">=</span><span class="nm">2</span>) <span class="cm"># sıra önemli değil</span>
+
+<span class="cm"># *args — değişken sayıda argüman</span>
+<span class="kw">def</span> <span class="fn">topla</span>(<span class="op">*</span>sayilar):
+    <span class="kw">return</span> <span class="fn">sum</span>(sayilar)
+
+<span class="fn">topla</span>(<span class="nm">1</span>, <span class="nm">2</span>, <span class="nm">3</span>, <span class="nm">4</span>) <span class="cm"># 10</span>
+
+<span class="cm"># **kwargs — isimli değişken argümanlar</span>
+<span class="kw">def</span> <span class="fn">bilgi</span>(<span class="op">**</span>kwargs):
+    <span class="kw">for</span> k, v <span class="kw">in</span> kwargs<span class="op">.</span><span class="fn">items</span>():
+        <span class="fn">print</span>(<span class="st">f"</span><span class="op">{</span>k<span class="op">}</span><span class="st">: </span><span class="op">{</span>v<span class="op">}</span><span class="st">"</span>)
+
+<span class="fn">bilgi</span>(isim<span class="op">=</span><span class="st">"Ali"</span>, yas<span class="op">=</span><span class="nm">25</span>)
+
+<span class="cm"># Type hints (iyi pratik)</span>
+<span class="kw">def</span> <span class="fn">bol</span>(a: <span class="tp">float</span>, b: <span class="tp">float</span>) <span class="op">-&gt;</span> <span class="tp">float</span>:
+    <span class="kw">return</span> a / b
+
+<span class="cm"># Birden fazla değer döndür</span>
+<span class="kw">def</span> <span class="fn">minmax</span>(liste):
+    <span class="kw">return</span> <span class="fn">min</span>(liste), <span class="fn">max</span>(liste)
+
+mn, mx <span class="op">=</span> <span class="fn">minmax</span>([<span class="nm">3</span>,<span class="nm">1</span>,<span class="nm">4</span>,<span class="nm">1</span>,<span class="nm">5</span>])</pre>
+    </div>
+  </div>
+
+  <!-- LIST COMPREHENSION & LAMBDA -->
+  <div class="card" id="list-comp">
+    <div class="card-header"><span class="tag purple">fonksiyon</span><h2>List Comprehension & Lambda</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># List Comprehension — kısa liste oluşturma</span>
+kareler <span class="op">=</span> [x<span class="op">**</span><span class="nm">2</span> <span class="kw">for</span> x <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">10</span>)]
+<span class="cm"># [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]</span>
+
+cifler <span class="op">=</span> [x <span class="kw">for</span> x <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">20</span>) <span class="kw">if</span> x <span class="op">%</span> <span class="nm">2</span> <span class="op">==</span> <span class="nm">0</span>]
+<span class="cm"># [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</span>
+
+buyuk <span class="op">=</span> [s<span class="op">.</span><span class="fn">upper</span>() <span class="kw">for</span> s <span class="kw">in</span> [<span class="st">"ali"</span>, <span class="st">"veli"</span>]]
+<span class="cm"># ['ALI', 'VELİ']</span>
+
+<span class="cm"># Dict Comprehension</span>
+kare_dict <span class="op">=</span> {x: x<span class="op">**</span><span class="nm">2</span> <span class="kw">for</span> x <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">5</span>)}
+<span class="cm"># {0:0, 1:1, 2:4, 3:9, 4:16}</span>
+
+<span class="cm"># Set Comprehension</span>
+tek_harfler <span class="op">=</span> {c <span class="kw">for</span> c <span class="kw">in</span> <span class="st">"merhaba"</span>}
+</pre>
+      <hr class="divider">
+      <pre><span class="cm"># Lambda — isimsiz kısa fonksiyon</span>
+kare <span class="op">=</span> <span class="kw">lambda</span> x: x<span class="op">**</span><span class="nm">2</span>
+<span class="fn">kare</span>(<span class="nm">5</span>)  <span class="cm"># 25</span>
+
+topla <span class="op">=</span> <span class="kw">lambda</span> a, b: a <span class="op">+</span> b
+<span class="fn">topla</span>(<span class="nm">3</span>, <span class="nm">4</span>)  <span class="cm"># 7</span>
+
+<span class="cm"># Çoğunlukla sorted/map/filter ile kullanılır</span>
+kisiler <span class="op">=</span> [{<span class="st">"isim"</span>:<span class="st">"Ali"</span>,<span class="st">"yas"</span>:<span class="nm">30</span>},{<span class="st">"isim"</span>:<span class="st">"Buse"</span>,<span class="st">"yas"</span>:<span class="nm">25</span>}]
+<span class="fn">sorted</span>(kisiler, key<span class="op">=</span><span class="kw">lambda</span> k: k[<span class="st">"yas"</span>])
+
+sayilar <span class="op">=</span> [<span class="nm">1</span>,<span class="nm">2</span>,<span class="nm">3</span>,<span class="nm">4</span>,<span class="nm">5</span>]
+<span class="fn">list</span>(<span class="fn">map</span>(<span class="kw">lambda</span> x: x<span class="op">*</span><span class="nm">2</span>, sayilar))   <span class="cm"># [2,4,6,8,10]</span>
+<span class="fn">list</span>(<span class="fn">filter</span>(<span class="kw">lambda</span> x: x<span class="op">&gt;</span><span class="nm">2</span>, sayilar)) <span class="cm"># [3,4,5]</span></pre>
+    </div>
+  </div>
+
+  <!-- OOP -->
+  <div class="card wide" id="oop">
+    <div class="card-header"><span class="tag red">OOP</span><h2>Nesne Yönelimli Programlama</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Temel Class</span>
+<span class="kw">class</span> <span class="tp">Arac</span>:
+    uretici <span class="op">=</span> <span class="st">"Bilinmiyor"</span>  <span class="cm"># class değişkeni (tüm nesnelerde ortak)</span>
+
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, marka: <span class="tp">str</span>, yil: <span class="tp">int</span>, hiz: <span class="tp">float</span> <span class="op">=</span> <span class="nm">0</span>):
+        <span class="kw">self</span><span class="op">.</span>marka <span class="op">=</span> marka    <span class="cm"># instance değişkeni</span>
+        <span class="kw">self</span><span class="op">.</span>yil <span class="op">=</span> yil
+        <span class="kw">self</span><span class="op">.</span>hiz <span class="op">=</span> hiz
+        <span class="kw">self</span><span class="op">.</span>_km <span class="op">=</span> <span class="nm">0</span>          <span class="cm"># _ ile başlayan = "private" (konvansiyon)</span>
+
+    <span class="kw">def</span> <span class="fn">hizlan</span>(<span class="kw">self</span>, artis):
+        <span class="kw">self</span><span class="op">.</span>hiz <span class="op">+=</span> artis
+        <span class="kw">return</span> <span class="kw">self</span>           <span class="cm"># method chaining için</span>
+
+    <span class="kw">def</span> <span class="fn">fren</span>(<span class="kw">self</span>):
+        <span class="kw">self</span><span class="op">.</span>hiz <span class="op">=</span> <span class="fn">max</span>(<span class="nm">0</span>, <span class="kw">self</span><span class="op">.</span>hiz <span class="op">-</span> <span class="nm">20</span>)
+
+    <span class="kw">def</span> <span class="fn">__str__</span>(<span class="kw">self</span>):        <span class="cm"># print() için</span>
+        <span class="kw">return</span> <span class="st">f"</span><span class="op">{</span><span class="kw">self</span><span class="op">.</span>marka<span class="op">}</span><span class="st"> (</span><span class="op">{</span><span class="kw">self</span><span class="op">.</span>yil<span class="op">}</span><span class="st">) - Hız: </span><span class="op">{</span><span class="kw">self</span><span class="op">.</span>hiz<span class="op">}</span><span class="st"> km/h"</span>
+
+    <span class="kw">def</span> <span class="fn">__repr__</span>(<span class="kw">self</span>):       <span class="cm"># debug için</span>
+        <span class="kw">return</span> <span class="st">f"Arac(marka=</span><span class="op">{</span><span class="kw">self</span><span class="op">.</span>marka<span class="op">!r}</span><span class="st">, yil=</span><span class="op">{</span><span class="kw">self</span><span class="op">.</span>yil<span class="op">}</span><span class="st">)"</span>
+
+    <span class="kw">def</span> <span class="fn">__len__</span>(<span class="kw">self</span>):        <span class="cm"># len() için</span>
+        <span class="kw">return</span> <span class="kw">self</span><span class="op">.</span>yil
+
+    <span class="kw">@classmethod</span>
+    <span class="kw">def</span> <span class="fn">olustur</span>(cls, bilgi: <span class="tp">str</span>):  <span class="cm"># factory method</span>
+        marka, yil <span class="op">=</span> bilgi<span class="op">.</span><span class="fn">split</span>(<span class="st">"-"</span>)
+        <span class="kw">return</span> <span class="fn">cls</span>(marka, <span class="fn">int</span>(yil))
+
+    <span class="kw">@staticmethod</span>
+    <span class="kw">def</span> <span class="fn">gecerli_yil_mi</span>(yil: <span class="tp">int</span>) <span class="op">-&gt;</span> <span class="tp">bool</span>:  <span class="cm"># self yok</span>
+        <span class="kw">return</span> <span class="nm">1886</span> <span class="op">&lt;=</span> yil <span class="op">&lt;=</span> <span class="nm">2025</span>
+
+<span class="cm"># Kalıtım (Inheritance)</span>
+<span class="kw">class</span> <span class="tp">ElektrikliArac</span>(<span class="tp">Arac</span>):
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, marka, yil, batarya_kwh):
+        <span class="fn">super</span>()<span class="op">.</span><span class="fn">__init__</span>(marka, yil)   <span class="cm"># üst class'ı çağır</span>
+        <span class="kw">self</span><span class="op">.</span>batarya <span class="op">=</span> batarya_kwh
+
+    <span class="kw">def</span> <span class="fn">__str__</span>(<span class="kw">self</span>):
+        <span class="kw">return</span> <span class="fn">super</span>()<span class="op">.</span><span class="fn">__str__</span>() <span class="op">+</span> <span class="st">f" | Batarya: </span><span class="op">{</span><span class="kw">self</span><span class="op">.</span>batarya<span class="op">}</span><span class="st"> kWh"</span>
+
+<span class="cm"># Kullanım</span>
+araba <span class="op">=</span> <span class="fn">Arac</span>(<span class="st">"Toyota"</span>, <span class="nm">2020</span>)
+araba<span class="op">.</span><span class="fn">hizlan</span>(<span class="nm">50</span>)<span class="op">.</span><span class="fn">hizlan</span>(<span class="nm">30</span>)  <span class="cm"># chaining</span>
+<span class="fn">print</span>(araba)
+
+tesla <span class="op">=</span> <span class="fn">ElektrikliArac</span>(<span class="st">"Tesla"</span>, <span class="nm">2023</span>, <span class="nm">100</span>)
+<span class="fn">isinstance</span>(tesla, Arac)  <span class="cm"># True</span></pre>
+    </div>
+  </div>
+
+  <!-- HATA YÖNETİMİ -->
+  <div class="card" id="hata">
+    <div class="card-header"><span class="tag red">hata yönetimi</span><h2>Exception Handling</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Temel try/except</span>
+<span class="kw">try</span>:
+    sayi <span class="op">=</span> <span class="fn">int</span>(<span class="fn">input</span>(<span class="st">"Sayı: "</span>))
+    sonuc <span class="op">=</span> <span class="nm">10</span> <span class="op">/</span> sayi
+<span class="kw">except</span> <span class="tp">ValueError</span>:
+    <span class="fn">print</span>(<span class="st">"Sayı girilmedi"</span>)
+<span class="kw">except</span> <span class="tp">ZeroDivisionError</span>:
+    <span class="fn">print</span>(<span class="st">"Sıfıra bölünemez"</span>)
+<span class="kw">except</span> <span class="tp">Exception</span> <span class="kw">as</span> e:
+    <span class="fn">print</span>(<span class="st">f"Beklenmedik hata: </span><span class="op">{</span>e<span class="op">}</span><span class="st">"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="st">"Hata yok!"</span>)    <span class="cm"># hata yoksa çalışır</span>
+<span class="kw">finally</span>:
+    <span class="fn">print</span>(<span class="st">"Her zaman çalışır"</span>)  <span class="cm"># temizlik için</span>
+
+<span class="cm"># Özel exception</span>
+<span class="kw">class</span> <span class="tp">YasHatasi</span>(<span class="tp">Exception</span>):
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="kw">self</span>, yas):
+        <span class="fn">super</span>()<span class="op">.</span><span class="fn">__init__</span>(<span class="st">f"Geçersiz yaş: </span><span class="op">{</span>yas<span class="op">}</span><span class="st">"</span>)
+        <span class="kw">self</span><span class="op">.</span>yas <span class="op">=</span> yas
+
+<span class="kw">def</span> <span class="fn">yas_dogrula</span>(yas):
+    <span class="kw">if</span> yas <span class="op">&lt;</span> <span class="nm">0</span> <span class="kw">or</span> yas <span class="op">&gt;</span> <span class="nm">150</span>:
+        <span class="kw">raise</span> <span class="fn">YasHatasi</span>(yas)
+    <span class="kw">return</span> <span class="kw">True</span>
+
+<span class="kw">try</span>:
+    <span class="fn">yas_dogrula</span>(<span class="op">-</span><span class="nm">5</span>)
+<span class="kw">except</span> <span class="tp">YasHatasi</span> <span class="kw">as</span> e:
+    <span class="fn">print</span>(e)</pre>
+      <hr class="divider">
+      <table>
+        <tr><th>Exception</th><th>Ne zaman?</th></tr>
+        <tr><td>ValueError</td><td>Yanlış değer (int("abc"))</td></tr>
+        <tr><td>TypeError</td><td>Yanlış tip ("a" + 1)</td></tr>
+        <tr><td>KeyError</td><td>Sözlükte key yok</td></tr>
+        <tr><td>IndexError</td><td>Listede index yok</td></tr>
+        <tr><td>ZeroDivisionError</td><td>Sıfıra bölme</td></tr>
+        <tr><td>FileNotFoundError</td><td>Dosya bulunamadı</td></tr>
+        <tr><td>AttributeError</td><td>Özellik/metod yok</td></tr>
+        <tr><td>ImportError</td><td>Modül bulunamadı</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DOSYA İŞLEMLERİ -->
+  <div class="card" id="dosya">
+    <div class="card-header"><span class="tag">dosya</span><h2>Dosya İşlemleri</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Temel okuma/yazma (with = otomatik kapat)</span>
+<span class="kw">with</span> <span class="fn">open</span>(<span class="st">"dosya.txt"</span>, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="kw">as</span> f:
+    f<span class="op">.</span><span class="fn">write</span>(<span class="st">"Merhaba\n"</span>)
+    f<span class="op">.</span><span class="fn">writelines</span>([<span class="st">"Satır 1\n"</span>, <span class="st">"Satır 2\n"</span>])
+
+<span class="kw">with</span> <span class="fn">open</span>(<span class="st">"dosya.txt"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="kw">as</span> f:
+    icerik <span class="op">=</span> f<span class="op">.</span><span class="fn">read</span>()           <span class="cm"># tüm içerik</span>
+    satirlar <span class="op">=</span> f<span class="op">.</span><span class="fn">readlines</span>()   <span class="cm"># liste olarak</span>
+    <span class="kw">for</span> satir <span class="kw">in</span> f:             <span class="cm"># satır satır</span>
+        <span class="fn">print</span>(satir<span class="op">.</span><span class="fn">strip</span>())
+
+<span class="cm"># Modlar</span>
+<span class="cm"># "r"  → okuma (varsayılan)</span>
+<span class="cm"># "w"  → yazma (üzerine yazar)</span>
+<span class="cm"># "a"  → ekleme (sona ekler)</span>
+<span class="cm"># "x"  → oluştur (varsa hata)</span>
+<span class="cm"># "rb" → binary okuma</span>
+</pre>
+      <hr class="divider">
+      <pre><span class="cm"># JSON işlemleri (API'lerde çok kullanılır!)</span>
+<span class="kw">import</span> json
+
+veri <span class="op">=</span> {<span class="st">"isim"</span>: <span class="st">"Ali"</span>, <span class="st">"yaslar"</span>: [<span class="nm">1</span>,<span class="nm">2</span>,<span class="nm">3</span>]}
+
+<span class="cm"># Python → JSON dosyası</span>
+<span class="kw">with</span> <span class="fn">open</span>(<span class="st">"veri.json"</span>, <span class="st">"w"</span>) <span class="kw">as</span> f:
+    json<span class="op">.</span><span class="fn">dump</span>(veri, f, indent<span class="op">=</span><span class="nm">4</span>, ensure_ascii<span class="op">=</span><span class="kw">False</span>)
+
+<span class="cm"># JSON dosyası → Python</span>
+<span class="kw">with</span> <span class="fn">open</span>(<span class="st">"veri.json"</span>, <span class="st">"r"</span>) <span class="kw">as</span> f:
+    veri <span class="op">=</span> json<span class="op">.</span><span class="fn">load</span>(f)
+
+<span class="cm"># String dönüşümleri</span>
+json_str <span class="op">=</span> json<span class="op">.</span><span class="fn">dumps</span>(veri)   <span class="cm"># dict → string</span>
+veri <span class="op">=</span> json<span class="op">.</span><span class="fn">loads</span>(json_str)   <span class="cm"># string → dict</span></pre>
+    </div>
+  </div>
+
+  <!-- MODÜLLER -->
+  <div class="card" id="moduller">
+    <div class="card-header"><span class="tag">modüller</span><h2>Modüller & Import</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Import yöntemleri</span>
+<span class="kw">import</span> math
+<span class="kw">import</span> math <span class="kw">as</span> m
+<span class="kw">from</span> math <span class="kw">import</span> sqrt, pi
+<span class="kw">from</span> math <span class="kw">import</span> <span class="op">*</span>          <span class="cm"># (kaçın!)</span>
+
+<span class="cm"># Kendi modülünü import et</span>
+<span class="cm"># yardimci.py dosyandan:</span>
+<span class="kw">from</span> yardimci <span class="kw">import</span> fonksiyon</pre>
+      <hr class="divider">
+      <table>
+        <tr><th>Modül</th><th>Ne işe yarar?</th></tr>
+        <tr><td>math</td><td>sqrt, ceil, floor, pi, log</td></tr>
+        <tr><td>random</td><td>randint, choice, shuffle, sample</td></tr>
+        <tr><td>datetime</td><td>tarih/saat işlemleri</td></tr>
+        <tr><td>os</td><td>dosya sistemi, path, env</td></tr>
+        <tr><td>sys</td><td>sistem işlemleri, argv</td></tr>
+        <tr><td>json</td><td>JSON okuma/yazma</td></tr>
+        <tr><td>re</td><td>regex (düzenli ifadeler)</td></tr>
+        <tr><td>collections</td><td>Counter, defaultdict, deque</td></tr>
+        <tr><td>itertools</td><td>chain, product, combinations</td></tr>
+        <tr><td>pathlib</td><td>modern dosya yolu işlemleri</td></tr>
+        <tr><td>time</td><td>sleep, zaman ölçme</td></tr>
+      </table>
+      <hr class="divider">
+      <pre><span class="cm"># Sık kullanılan örnekler</span>
+<span class="kw">import</span> random
+random<span class="op">.</span><span class="fn">randint</span>(<span class="nm">1</span>, <span class="nm">100</span>)
+random<span class="op">.</span><span class="fn">choice</span>([<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>])
+random<span class="op">.</span><span class="fn">shuffle</span>(liste)
+
+<span class="kw">from</span> datetime <span class="kw">import</span> datetime, date
+<span class="fn">datetime</span><span class="op">.</span><span class="fn">now</span>()
+<span class="fn">date</span><span class="op">.</span><span class="fn">today</span>()
+<span class="fn">datetime</span><span class="op">.</span><span class="fn">now</span>()<span class="op">.</span><span class="fn">strftime</span>(<span class="st">"%Y-%m-%d"</span>)
+
+<span class="kw">from</span> pathlib <span class="kw">import</span> Path
+p <span class="op">=</span> <span class="fn">Path</span>(<span class="st">"klasor/dosya.txt"</span>)
+p<span class="op">.</span><span class="fn">exists</span>()    <span class="cm"># var mı?</span>
+p<span class="op">.</span><span class="fn">read_text</span>() <span class="cm"># oku</span>
+p<span class="op">.</span><span class="fn">write_text</span>(<span class="st">"içerik"</span>)</pre>
+    </div>
+  </div>
+
+  <!-- BUILT-IN FONKSİYONLAR -->
+  <div class="card" id="builtin">
+    <div class="card-header"><span class="tag green">built-in</span><h2>Önemli Built-in Fonksiyonlar</h2></div>
+    <div class="card-body">
+      <table>
+        <tr><th>Fonksiyon</th><th>Ne yapar?</th></tr>
+        <tr><td>print(*args, end, sep)</td><td>Ekrana yazdır</td></tr>
+        <tr><td>input(prompt)</td><td>Kullanıcıdan giriş al (string döner)</td></tr>
+        <tr><td>len(obj)</td><td>Uzunluk/eleman sayısı</td></tr>
+        <tr><td>range(start, stop, step)</td><td>Sayı dizisi üret</td></tr>
+        <tr><td>type(obj)</td><td>Tipi öğren</td></tr>
+        <tr><td>isinstance(obj, type)</td><td>Tip kontrolü (True/False)</td></tr>
+        <tr><td>int/float/str/bool/list/dict/set</td><td>Tip dönüştürme</td></tr>
+        <tr><td>min/max/sum/abs</td><td>Matematik işlemleri</td></tr>
+        <tr><td>round(n, ndigits)</td><td>Yuvarla</td></tr>
+        <tr><td>sorted(iterable, key, reverse)</td><td>Sıralı yeni liste döndür</td></tr>
+        <tr><td>enumerate(iterable, start=0)</td><td>Index + değer çifti</td></tr>
+        <tr><td>zip(*iterables)</td><td>Birden fazlasını birleştir</td></tr>
+        <tr><td>map(func, iterable)</td><td>Her elemana fonksiyon uygula</td></tr>
+        <tr><td>filter(func, iterable)</td><td>Koşula uyanları filtrele</td></tr>
+        <tr><td>any(iterable)</td><td>En az biri True ise True</td></tr>
+        <tr><td>all(iterable)</td><td>Hepsi True ise True</td></tr>
+        <tr><td>open(file, mode)</td><td>Dosya aç</td></tr>
+        <tr><td>vars(obj)</td><td>Nesnenin __dict__'ini döndür</td></tr>
+        <tr><td>dir(obj)</td><td>Tüm metodları/özellikleri listele</td></tr>
+        <tr><td>help(obj)</td><td>Dokümantasyonu göster</td></tr>
+        <tr><td>id(obj)</td><td>Bellek adresini döndür</td></tr>
+        <tr><td>hash(obj)</td><td>Hash değerini döndür</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- İPUÇLARI -->
+  <div class="card wide">
+    <div class="card-header"><span class="tag green">ipuçları</span><h2>Pythonic Yazım & İyi Pratikler</h2></div>
+    <div class="card-body">
+      <pre><span class="cm"># Swap — iki değişkeni değiştir</span>
+a, b <span class="op">=</span> b, a
+
+<span class="cm"># Çoklu atama</span>
+x <span class="op">=</span> y <span class="op">=</span> z <span class="op">=</span> <span class="nm">0</span>
+
+<span class="cm"># Walrus operatörü (Python 3.8+)</span>
+<span class="kw">if</span> (n <span class="op">:=</span> <span class="fn">len</span>(liste)) <span class="op">&gt;</span> <span class="nm">10</span>:
+    <span class="fn">print</span>(<span class="st">f"</span><span class="op">{</span>n<span class="op">}</span><span class="st"> eleman var, çok fazla"</span>)
+
+<span class="cm"># String çoğaltma</span>
+<span class="st">"-"</span> <span class="op">*</span> <span class="nm">30</span>    <span class="cm"># "------------------------------"</span>
+[<span class="nm">0</span>] <span class="op">*</span> <span class="nm">5</span>    <span class="cm"># [0, 0, 0, 0, 0]</span>
+
+<span class="cm"># Boş kontrolü</span>
+<span class="kw">if</span> <span class="kw">not</span> liste:   <span class="cm"># if len(liste) == 0 yerine</span>
+    <span class="fn">print</span>(<span class="st">"Boş"</span>)
+
+<span class="cm"># Dictionary'den default değer alma</span>
+d<span class="op">.</span><span class="fn">get</span>(<span class="st">"key"</span>, <span class="st">"default"</span>)  <span class="cm"># KeyError vermez</span>
+
+<span class="cm"># setdefault — key yoksa ekle, varsa döndür</span>
+d<span class="op">.</span><span class="fn">setdefault</span>(<span class="st">"sayac"</span>, <span class="nm">0</span>)
+
+<span class="cm"># Varlık kontrolü</span>
+<span class="st">"key"</span> <span class="kw">in</span> dict_obj      <span class="cm"># O(1) — hızlı</span>
+eleman <span class="kw">in</span> set_obj       <span class="cm"># O(1) — hızlı</span>
+eleman <span class="kw">in</span> list_obj      <span class="cm"># O(n) — yavaş</span>
+
+<span class="cm"># Tek satırda hata fırlat</span>
+<span class="kw">assert</span> yas <span class="op">&gt;=</span> <span class="nm">0</span>, <span class="st">"Yaş negatif olamaz"</span>
+
+<span class="cm"># __name__ kontrolü (modül/script ayrımı)</span>
+<span class="kw">if</span> __name__ <span class="op">==</span> <span class="st">"__main__"</span>:
+    main()  <span class="cm"># sadece direkt çalıştırılınca</span></pre>
+    </div>
+  </div>
+
+</main>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo"><img src="NCLogo.jpeg" alt="NC Logo"></div>
+        <div class="social-links">
+          <a href="https://github.com/necmeddinn" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/necmeddincunedioglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/necmeddin_1?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/necmeddin_1?igsh=MTdobDNxcmhlMzJ6dg==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@necmeddin_1" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="mailto:necmeddincunedioglu@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2023</span> Necmeddin Cunedioğlu. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/theme.js"></script>
+</body>
+</html>
