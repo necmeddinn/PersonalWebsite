@@ -11,7 +11,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yapay Zekâ Destekli Fizyoterapi Egzersizlerinin Gerçek Zamanlı Analizi ve Takibi</title>
+    <title>UseToolSuite | Üretkenlik Araçları Platformu</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/proje-detay.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,12 +54,12 @@
                 <a href="projelerim.html" class="back-link">
                     <i class="fas fa-arrow-left"></i> Projelere geri dön
                 </a>
-                <span class="project-badge">Yapay Zeka · Computer Vision · Sağlık Teknolojileri</span>
-                <h1>Yapay Zeka Destekli Fizyoterapi Egzersizlerinin Gerçek Zamanlı Analizi ve Takibi</h1>
+                <span class="project-badge">Web Platformu · SaaS · Üretkenlik Araçları</span>
+                <h1>UseToolSuite — Üretkenlik Araçlarını Tek Çatı Altında Birleştiren Platform</h1>
                 <p class="subtitle">
-                    MediaPipe tabanlı eklem noktası tespiti ve özel analiz algoritmaları ile fizyoterapi egzersizlerini
-                    gerçek zamanlı analiz eden, hastalara anlık geri bildirim ve fizyoterapistlere uzaktan takip imkânı
-                    sunan yapay zeka destekli dijital sağlık çözümü.
+                    Geliştiriciler, ürün ekipleri ve içerik üreticileri için günlük iş akışlarını hızlandıran, seçilmiş
+                    üretkenlik araçlarını tek bir arayüzde toplayan modern bir web platformu.
+                    Zaman içerisinde platformdaki araç sayısı artırılacaktır.
                 </p>
             </div>
         </header>
@@ -71,81 +71,63 @@
                     <div class="project-text">
                         <h2>Proje Özeti</h2>
                         <p>
-                            Proje, modern görüntü işleme ve yapay zeka tekniklerini kullanarak fizyoterapi egzersizlerini
-                            doğru yapma oranını artırmayı hedeflemektedir. Sistem, kullanıcının kamerasından aldığı
-                            görüntüleri MediaPipe Pose modeliyle işleyerek eklem noktalarını çıkarır ve önceden
-                            belirlenmiş egzersiz kriterlerine göre analiz eder.
+                            UseToolSuite, tarayıcı üzerinde çalışan ücretsiz geliştirici araçlarının bir koleksiyonudur.
+                            JSON biçimlendirme ve doğrulama, Base64 ve URL encode/decode, hash üretimi, regex testleri,
+                            tarih/saat dönüştürme, UUID ve parola üretimi, renk ve metin dönüştürme gibi günlük işlerde
+                            sık kullanılan yardımcı araçları tek bir sitede bir araya getirir.
                         </p>
                         <p>
-                            Giyilebilir sensör gerektirmeyen bu yerli dijital sağlık çözümü; hem hastaların kendi
-                            egzersizlerini doğru biçimde uygulamasını kolaylaştırmakta hem de fizyoterapistlerin tedavi
-                            süreçlerini uzaktan, veriye dayalı şekilde takip edebilmesine olanak tanımaktadır.
-                        </p>
-                        <p>
-                            Bu proje, TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri Destek Programı kapsamında
-                            desteklenmiştir. Bilimsel araştırmalara sunduğu katkılar için TÜBİTAK’a ve proje sürecindeki akademik
-                            rehberliği nedeniyle danışmanımız Arş. Gör. Gökhan Azizoğlu’na teşekkür ederiz.
+                            Tüm araçlar %100 tarayıcı tabanlı çalışır; veri sunucuya gönderilmeden, doğrudan kullanıcının
+                            cihazında işlenir. Böylece özellikle hassas verilerle çalışırken gizlilik korunurken,
+                            ek kurulum gerektirmeden hızlı bir deneyim sunulur.
                         </p>
 
-                        <h2>Temel Özellikler</h2>
+                        <h2>Öne Çıkan Özellikler</h2>
                         <ul class="feature-list">
-                            <li>Gerçek zamanlı eklem açısı ve duruş analizi</li>
-                            <li>Hastanın egzersizi doğru yapıp yapmadığını anlık tespit edebilme</li>
-                            <li>Sesli ve görsel uyarılarla kullanıcıya anlık geri bildirim sağlama</li>
-                            <li>Fizyoterapist–hasta etkileşim modülü ile uzaktan takip</li>
-                            <li>Desktop + Web entegre mimari ile yönetim paneli ve ilerleme takibi</li>
-                            <li>Sensör gerektirmeyen, yalnızca kamera ile çalışan yerli sağlık teknolojisi çözümü</li>
+                            <li>JSON, HTML, CSS ve JavaScript için biçimlendirme ve dönüştürme araçları</li>
+                            <li>Base64 / URL encode–decode, hash üretimi ve JWT çözümleme gibi encoding yardımcıları</li>
+                            <li>Regex test aracı, metin biçim dönüştürücü ve diff karşılaştırma gibi metin odaklı araçlar</li>
+                            <li>Unix timestamp dönüştürücü ve cron ifade çözücü gibi zaman/takvim yardımcıları</li>
+                            <li>UUID, parola ve QR kod üreticileriyle pratik generator araçları</li>
+                            <li>Tamamen tarayıcıda çalışan, hızlı ve gizliliğe önem veren yapı (veri sunucuya gönderilmez)</li>
                         </ul>
 
                         <h2>Kullanılan Teknolojiler</h2>
                         <div class="tech-grid">
-                            <span class="tech-chip">MediaPipe Pose</span>
-                            <span class="tech-chip">AI (Yapay Zeka)</span>
-                            <span class="tech-chip">Computer Vision (Bilgisayarlı Görü)</span>
-                            <span class="tech-chip">Java (Masaüstü Uygulaması)</span>
-                            <span class="tech-chip">ASP.NET Core (Web Platformu)</span>
-                            <span class="tech-chip">Eklem Açısı Analiz Algoritmaları</span>
-                            <span class="tech-chip">SignalR (Gerçek Zamanlı İletişim)</span>
-                            <span class="tech-chip">JSON Web Token (JWT)</span>
+                            <span class="tech-chip">JavaScript</span>
+                            <span class="tech-chip">HTML & CSS</span>
+                            <span class="tech-chip">Web API’leri</span>
+                            <span class="tech-chip">Responsive Web Arayüzü</span>
                         </div>
 
                         <p>
-
+                            
                         </p>
-                        <h2>Proje Bilgileri</h2>
-                        <ul class="feature-list">
-                            <li><strong>Proje Tarihleri:</strong> 20.05.2025 – 02.10.2025</li>
-
-                            <li><strong>Proje Ekibi:</strong>
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;• Necmeddin Cunedioğlu — Proje Yürütücüsü, (AI, Desktop, Mimari)
-                                <br>&nbsp;&nbsp;&nbsp;&nbsp;• Ceren Varkal — Ekip Üyesi, (Web, Mimari)
-                            </li>
-
-                            <li><strong>Proje Danışmanı:</strong> Arş. Gör. Gökhan Azizoğlu</li>
-                        </ul>
-
+                        <h2>Ürün Vizyonu</h2>
+                        <p>
+                            UseToolSuite, bugün çok kullanılan temel geliştirici araçlarını tek bir yerde sunarken,
+                            kullanıcı geri bildirimlerine göre hem mevcut araçları iyileştirmeyi hem de yeni araçlar
+                            ekleyerek koleksiyonu büyütmeyi hedefler. Böylece, zaman içerisinde platformdaki araç sayısı
+                            artırılacaktır ve geliştiricilerin “her iş için ayrı küçük site açma” ihtiyacı, tek ve odaklı
+                            bir ürünle karşılanmış olacaktır.
+                        </p>
                     </div>
 
                     <div class="project-media">
                         <div class="video-card">
                             <div class="video-header">
-                                <span class="video-badge"><i class="fab fa-youtube"></i> Tanıtım Videosu</span>
-                                <h2>PyhVision Proje Tanıtımı</h2>
+                                <span class="video-badge"><i class="fas fa-globe"></i> Canlı Platform</span>
+                                <h2>UseToolSuite Web Platformu</h2>
                             </div>
                             <div class="video-wrapper">
-                                <iframe 
-                                    src="https://www.youtube.com/embed/7voz0SFNclM" 
-                                    title="PyhVision Proje Tanıtım Videosu"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen
-                                    loading="lazy">
-                                </iframe>
+                                <a href="https://usetoolsuite.com/" target="_blank" rel="noopener noreferrer" class="btn primary-btn" style="display:inline-flex;align-items:center;gap:0.5rem;justify-content:center;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>UseToolSuite’i Aç</span>
+                                </a>
                             </div>
                             <p class="video-caption">
-                                Videoda, MediaPipe tabanlı eklem noktası tespiti, gerçek zamanlı analiz ekranları ve
-                                hem desktop hem web arayüzü üzerinden gerçekleştirilen örnek egzersiz senaryoları
-                                gösterilmektedir.
+                                UseToolSuite, farklı üretkenlik araçlarını tek arayüzde bir araya getiren canlı bir web platformudur.
+                                Yeni araçlar ve geliştirmeler, kullanıcı geri bildirimlerine göre kademeli olarak eklenecektir.
                             </p>
                         </div>
                     </div>
