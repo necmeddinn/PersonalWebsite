@@ -11,7 +11,7 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UseToolSuite | Üretkenlik Araçları Platformu</title>
+    <title>UseToolSuite</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/proje-detay.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,12 +54,11 @@
                 <a href="projelerim.html" class="back-link">
                     <i class="fas fa-arrow-left"></i> Projelere geri dön
                 </a>
-                <span class="project-badge">Web Platformu · SaaS · Üretkenlik Araçları</span>
-                <h1>UseToolSuite — Üretkenlik Araçlarını Tek Çatı Altında Birleştiren Platform</h1>
+                <span class="project-badge">50 Araç · %100 Client-side</span>
+                <h1>UseToolSuite</h1>
                 <p class="subtitle">
-                    Geliştiriciler, ürün ekipleri ve içerik üreticileri için günlük iş akışlarını hızlandıran, seçilmiş
-                    üretkenlik araçlarını tek bir arayüzde toplayan modern bir web platformu.
-                    Zaman içerisinde platformdaki araç sayısı artırılacaktır.
+                    UseToolSuite, tamamen tarayıcı üzerinde çalışan ve geliştiricilerin günlük iş akışını hızlandırmak için tasarlanmış kapsamlı bir araç platformudur.
+                    Platform, 50 farklı aracı tek bir çatı altında sunarak, geliştiricilerin farklı siteler arasında geçiş yapma ihtiyacını ortadan kaldırır.
                 </p>
             </div>
         </header>
@@ -71,63 +70,102 @@
                     <div class="project-text">
                         <h2>Proje Özeti</h2>
                         <p>
-                            UseToolSuite, tarayıcı üzerinde çalışan ücretsiz geliştirici araçlarının bir koleksiyonudur.
-                            JSON biçimlendirme ve doğrulama, Base64 ve URL encode/decode, hash üretimi, regex testleri,
-                            tarih/saat dönüştürme, UUID ve parola üretimi, renk ve metin dönüştürme gibi günlük işlerde
-                            sık kullanılan yardımcı araçları tek bir sitede bir araya getirir.
-                        </p>
-                        <p>
-                            Tüm araçlar %100 tarayıcı tabanlı çalışır; veri sunucuya gönderilmeden, doğrudan kullanıcının
-                            cihazında işlenir. Böylece özellikle hassas verilerle çalışırken gizlilik korunurken,
-                            ek kurulum gerektirmeden hızlı bir deneyim sunulur.
+                            Tüm işlemler %100 client-side olarak gerçekleştirilir; hiçbir veri sunucuya gönderilmez. Bu yaklaşım hem maksimum performans hem de yüksek gizlilik sağlar.
                         </p>
 
-                        <h2>Öne Çıkan Özellikler</h2>
+                        <h2>Problem &amp; Çözüm</h2>
+                        <p>
+                            Modern geliştirme süreçlerinde küçük ama sık yapılan işlemler (formatlama, dönüştürme, encoding vb.) ciddi zaman kaybına yol açar.
+                        </p>
                         <ul class="feature-list">
-                            <li>JSON, HTML, CSS ve JavaScript için biçimlendirme ve dönüştürme araçları</li>
-                            <li>Base64 / URL encode–decode, hash üretimi ve JWT çözümleme gibi encoding yardımcıları</li>
-                            <li>Regex test aracı, metin biçim dönüştürücü ve diff karşılaştırma gibi metin odaklı araçlar</li>
-                            <li>Unix timestamp dönüştürücü ve cron ifade çözücü gibi zaman/takvim yardımcıları</li>
-                            <li>UUID, parola ve QR kod üreticileriyle pratik generator araçları</li>
-                            <li>Tamamen tarayıcıda çalışan, hızlı ve gizliliğe önem veren yapı (veri sunucuya gönderilmez)</li>
+                            <li>Tek noktadan erişilebilir araçlar</li>
+                            <li>Anlık işlem (zero-latency hissi)</li>
+                            <li>Veri gizliliği garantisi</li>
+                        </ul>
+
+                        <h2>Temel Özellikler</h2>
+                        <ul class="feature-list">
+                            <li>50 farklı geliştirici aracı (format, encode, generate, convert)</li>
+                            <li>%100 tarayıcı tabanlı çalışma (server bağımsız)</li>
+                            <li>Gerçek zamanlı işlem (client-side execution)</li>
+                            <li>Modüler ve genişletilebilir tool mimarisi</li>
+                            <li>SEO optimize edilmiş sayfa yapısı</li>
+                            <li>Klavye kısayolları ile hızlı kullanım (Ctrl+Enter, Ctrl+L)</li>
+                            <li>Responsive ve erişilebilir arayüz</li>
+                        </ul>
+
+                        <h2>Teknik Mimari</h2>
+                        <ul class="feature-list">
+                            <li><strong>Astro (Static-first architecture):</strong> Minimum JavaScript, maksimum hız</li>
+                            <li><strong>Client-side processing:</strong> Canvas API, FileReader, Blob gibi native Web API’ler kullanıldı</li>
+                            <li><strong>Zero dependency tool logic:</strong> Tüm araç algoritmaları harici kütüphane olmadan geliştirildi</li>
+                            <li><strong>Component-based yapı:</strong> Yeniden kullanılabilir UI bileşenleri</li>
+                            <li><strong>Type-safe geliştirme:</strong> TypeScript ile güçlü tip kontrolü</li>
                         </ul>
 
                         <h2>Kullanılan Teknolojiler</h2>
                         <div class="tech-grid">
-                            <span class="tech-chip">JavaScript</span>
-                            <span class="tech-chip">HTML & CSS</span>
-                            <span class="tech-chip">Web API’leri</span>
-                            <span class="tech-chip">Responsive Web Arayüzü</span>
+                            <span class="tech-chip">Astro v5</span>
+                            <span class="tech-chip">TypeScript</span>
+                            <span class="tech-chip">Tailwind CSS v4</span>
+                            <span class="tech-chip">Lucide Icons</span>
+                            <span class="tech-chip">Cloudflare Pages</span>
                         </div>
 
+                        <h2>Araç Kategorileri</h2>
+                        <ul class="feature-list">
+                            <li>Format &amp; Convert</li>
+                            <li>Generators</li>
+                            <li>Encoding</li>
+                            <li>Color &amp; CSS</li>
+                            <li>String &amp; Text</li>
+                            <li>Time &amp; Date</li>
+                        </ul>
+
+                        <h2>Sistem Tasarımı</h2>
+                        <ul class="feature-list">
+                            <li>Tool logic katmanı (pure TypeScript)</li>
+                            <li>UI bileşen katmanı (reusable components)</li>
+                            <li>İçerik ve SEO katmanı (dynamic pages + metadata)</li>
+                            <li>Kategori bazlı sayfa üretimi (dynamic routing)</li>
+                        </ul>
+
+                        <h2>Öne Çıkan Mühendislik Kararları</h2>
+                        <ul class="feature-list">
+                            <li>Server bağımlılığı tamamen kaldırıldı</li>
+                            <li>Performans için gereksiz JS minimize edildi</li>
+                            <li>Tüm araçlar bağımsız modüller olarak tasarlandı</li>
+                            <li>ZIP/ICO gibi işlemler sıfırdan implement edildi</li>
+                        </ul>
+
+                        <h2>Gelecek Geliştirmeler</h2>
+                        <ul class="feature-list">
+                            <li>Yeni tool modülleri (özellikle AI destekli araçlar)</li>
+                            <li>Kullanıcı tercihleri ve kişiselleştirme</li>
+                            <li>Progressive Web App (PWA) desteği</li>
+                            <li>Gelişmiş arama ve filtreleme sistemi</li>
+                        </ul>
+
+                        <h2>Canlı Proje</h2>
                         <p>
-                            
-                        </p>
-                        <h2>Ürün Vizyonu</h2>
-                        <p>
-                            UseToolSuite, bugün çok kullanılan temel geliştirici araçlarını tek bir yerde sunarken,
-                            kullanıcı geri bildirimlerine göre hem mevcut araçları iyileştirmeyi hem de yeni araçlar
-                            ekleyerek koleksiyonu büyütmeyi hedefler. Böylece, zaman içerisinde platformdaki araç sayısı
-                            artırılacaktır ve geliştiricilerin “her iş için ayrı küçük site açma” ihtiyacı, tek ve odaklı
-                            bir ürünle karşılanmış olacaktır.
+                            <a href="https://usetoolsuite.com/" target="_blank" rel="noopener noreferrer">https://usetoolsuite.com</a>
                         </p>
                     </div>
 
                     <div class="project-media">
                         <div class="video-card">
                             <div class="video-header">
-                                <span class="video-badge"><i class="fas fa-globe"></i> Canlı Platform</span>
-                                <h2>UseToolSuite Web Platformu</h2>
+                            <span class="video-badge"><i class="fas fa-globe"></i> Canlı Proje</span>
+                                <h2>UseToolSuite</h2>
                             </div>
                             <div class="video-wrapper">
                                 <a href="https://usetoolsuite.com/" target="_blank" rel="noopener noreferrer" class="btn primary-btn" style="display:inline-flex;align-items:center;gap:0.5rem;justify-content:center;">
                                     <i class="fas fa-external-link-alt"></i>
-                                    <span>UseToolSuite’i Aç</span>
+                                    <span>Canlı Proje</span>
                                 </a>
                             </div>
                             <p class="video-caption">
-                                UseToolSuite, farklı üretkenlik araçlarını tek arayüzde bir araya getiren canlı bir web platformudur.
-                                Yeni araçlar ve geliştirmeler, kullanıcı geri bildirimlerine göre kademeli olarak eklenecektir.
+                                https://usetoolsuite.com
                             </p>
                         </div>
                     </div>
