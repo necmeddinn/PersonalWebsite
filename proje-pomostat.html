@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRSGNV3GF5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QRSGNV3GF5');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PomoStat — Pomodoro Zamanlayıcı, Ortam Sesleri ve Analiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/proje-detay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo"><a href="index.html"><img src="NCLogo.jpeg" alt="NC Logo"></a></div>
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a href="hakkimda.html">Hakkımda</a></li>
+                    <li class="nav-item active"><a href="projelerim.html">Projelerim</a></li>
+                    <!-- Notlarım sekmesi geçici olarak gizlendi
+                    <li class="nav-item"><a href="notlarim.html">Notlarım</a></li>
+                    -->
+                    <li class="nav-item"><a href="iletisim.html">İletişim</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" aria-label="Tema değiştir">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="project-detail-header">
+            <div class="container">
+                <a href="projelerim.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Projelere geri dön
+                </a>
+                <span class="project-badge">Pomodoro · Analiz · Grafikler</span>
+                <h1>PomoStat</h1>
+                <p class="subtitle">
+                    Pomodoro zamanlayıcı ve analiz ekranını birleştirerek, zamanın nasıl geçtiğini grafiklerle görünür kılan kişisel odak/alışkanlık takip uygulaması.
+                </p>
+            </div>
+        </header>
+
+        <!-- Project Detail Content -->
+        <main class="project-detail-main">
+            <div class="container">
+                <section class="project-detail-grid">
+                    <div class="project-text">
+                        <h2>Proje Özeti</h2>
+                        <p>
+                            PomoStat, tamamen kişisel ihtiyaçlar doğrultusunda geliştirilen bir Pomodoro ve analiz uygulamasıdır.
+                            Amaç, çalışma/odak seanslarını sadece başlatıp bitirmek değil; günler/haftalar boyunca zamanın nereye gittiğini
+                            grafiklerle analiz ederek sürdürülebilir bir alışkanlığa dönüştürmektir.
+                        </p>
+
+                        <h2>Temel Özellikler</h2>
+                        <ul class="feature-list">
+                            <li>Pomodoro zamanlayıcı (Focus / Short Break / Long Break akışı)</li>
+                            <li>Çalışma senaryoları/preset’ler (örn. Deep Work, Study, Reading)</li>
+                            <li>Analiz ekranı: zaman kullanımını grafiklerle görselleştirme</li>
+                            <li>Oturum/alışkanlık takibi: zamanın nasıl geçtiğini netleştiren metrikler</li>
+                            <li>PWA deneyimi (manifest + service worker ile uygulama hissi)</li>
+                        </ul>
+
+                        <h2>Kullanılan Teknolojiler</h2>
+                        <div class="tech-grid">
+                            <span class="tech-chip">React</span>
+                            <span class="tech-chip">Vite</span>
+                            <span class="tech-chip">Supabase (Auth/DB)</span>
+                            <span class="tech-chip">D3.js (Grafikler)</span>
+                            <span class="tech-chip">PWA (Service Worker)</span>
+                            <span class="tech-chip">Cloudflare</span>
+                        </div>
+                    </div>
+
+                    <div class="project-media">
+                        <div class="video-card">
+                            <div class="video-header">
+                            <span class="video-badge"><i class="fas fa-globe"></i> Canlı Proje</span>
+                                <h2>PomoStat</h2>
+                            </div>
+                            <div class="video-wrapper">
+                                <a href="https://pomostat.com/" target="_blank" rel="noopener noreferrer" class="btn primary-btn" style="display:inline-flex;align-items:center;gap:0.5rem;justify-content:center;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Canlı Proje</span>
+                                </a>
+                            </div>
+                            <p class="video-caption">
+                                https://pomostat.com
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo"><img src="NCLogo.jpeg" alt="NC Logo"></div>
+                    <div class="social-links">
+                        <a href="https://github.com/necmeddinn" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/necmeddincunedioglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/necmeddin_1?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/necmeddin_1?igsh=MTdobDNxcmhlMzJ6dg==" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@necmeddin_1" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="mailto:necmeddincunedioglu@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year">2023</span> Necmeddin Cunedioğlu. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
+
