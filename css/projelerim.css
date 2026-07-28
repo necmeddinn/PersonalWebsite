@@ -29,7 +29,8 @@
 
 /* Dark Theme Override */
 [data-theme="dark"] .page-header {
-    background: var(--gradient-secondary);
+    background: linear-gradient(135deg, #16241d 0%, #0f1512 100%);
+    border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .page-header h1,

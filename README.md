@@ -1,76 +1,61 @@
-# Modern Kişisel Web Sitesi
+# necmeddincunedioglu.com — Kişisel Web Sitesi
 
-Bu proje, modern ve yenilikçi tasarıma sahip kişisel bir web sitesidir. HTML, CSS ve JavaScript kullanılarak oluşturulmuştur.
+Necmeddin Cunedioğlu'nun kişisel portfolyo sitesi. HTML, CSS ve JavaScript ile
+statik olarak geliştirilmiştir; herhangi bir build adımı gerektirmez.
 
 ## İçerik
 
-- **Ana Sayfa**: Günlük motive edici sözler ve hızlı erişim linkleri
-- **Hakkımda**: Kişisel bilgiler, eğitim, deneyim ve yetenekler
-- **Projelerim**: GitHub projelerine bağlantılar ve açıklamalar
-- **Notlarım**: DSA, OOP ve diğer teknik konulardaki yazılar
-- **İletişim**: İletişim bilgileri ve mesaj formu
+- **Ana Sayfa**: Tanıtım, öne çıkan projeler ve günün sözü
+- **Hakkımda**: Hikaye, deneyim & projeler, eğitim, yetenekler
+- **Projelerim**: Filtrelenebilir proje galerisi (Yapay Zeka / Web Uygulaması) ve proje detay sayfaları
+- **İletişim**: İletişim bilgileri ve sosyal medya bağlantıları
 
-## Özellikler
+## Tasarım
 
-- Modern ve yenilikçi tasarım
-- Her bölüm için ayrı sayfalar
-- Ana sayfada her gün güncellenen motive edici sözler
-- Tamamen responsive tasarım (tüm cihazlarda uyumlu)
-- Animasyonlu geçişler ve etkileşimler
-- Filtrelenebilir projeler galerisi
-- Blog yazıları için arama ve kategori filtreleme
-- İletişim formu
+- Renk paleti NC logosundan türetilmiştir: koyu orman yeşili (`#16241d`) + altın/krem (`#a8842e` / `#c9a961`)
+- Başlıklarda Playfair Display (serif), metinlerde Poppins
+- Açık/koyu tema desteği (`js/theme.js` + `<head>` içindeki FOUC önleyici inline script; sistem temasına da uyar)
+- Tamamen responsive
 
-## Teknolojiler
+## SEO & Paylaşım
 
-- HTML5
-- CSS3 (CSS değişkenleri, Flexbox, Grid)
-- JavaScript (ES6+)
-- Font Awesome ikonları
-- Google Fonts
+- Her sayfada `meta description`, canonical, Open Graph ve Twitter Card etiketleri
+- `img/og-cover.jpg` — sosyal medya paylaşım görseli (1200×630)
+- `favicon.png`, `apple-touch-icon.png`
+- `sitemap.xml` ve `robots.txt`
+- Ana sayfada JSON-LD `Person` şeması
+- Google Analytics (gtag)
 
 ## Dosya Yapısı
 
 ```
 /
-├── index.html              # Ana Sayfa
-├── hakkimda.html           # Hakkımda Sayfası
-├── projelerim.html         # Projeler Sayfası
-├── notlarim.html           # Notlar/Blog Sayfası
-├── iletisim.html           # İletişim Sayfası
+├── index.html               # Ana sayfa
+├── hakkimda.html            # Hakkımda
+├── projelerim.html          # Proje galerisi
+├── proje-*.html             # Proje detay sayfaları
+├── iletisim.html            # İletişim
+├── notlarim.html            # (yayında değil — nav'dan gizli, noindex)
+├── favicon.png / apple-touch-icon.png
+├── sitemap.xml / robots.txt
+├── img/                     # Optimize edilmiş görseller (kapaklar, profil, logo, og)
 ├── css/
-│   ├── style.css           # Ana stil dosyası
-│   ├── hakkimda.css        # Hakkımda sayfası stilleri
-│   ├── projelerim.css      # Projeler sayfası stilleri
-│   ├── notlarim.css        # Notlar sayfası stilleri
-│   └── iletisim.css        # İletişim sayfası stilleri
-├── js/
-│   ├── script.js           # Ana JavaScript dosyası
-│   ├── projelerim.js       # Projeler sayfası işlevselliği
-│   └── iletisim.js         # İletişim formu işlevselliği
-└── README.md               # Proje açıklaması
+│   ├── style.css            # Palet, tipografi, navbar, hero, featured, footer, dark tema
+│   ├── hakkimda.css
+│   ├── projelerim.css
+│   ├── proje-detay.css
+│   ├── iletisim.css
+│   └── notlarim.css
+└── js/
+    ├── script.js            # Menü, navbar scroll, kart animasyonları, yıl güncelleme
+    ├── theme.js             # Tema değiştirici
+    ├── quotes.js            # Günün sözü (quotes.json)
+    └── projelerim.js        # Proje filtreleme
 ```
 
-## Kullanım
+## Notlar
 
-1. Siteyi görüntülemek için `index.html` dosyasını bir web tarayıcısında açın.
-2. Kendi bilgilerinizle kişiselleştirmek için:
-   - HTML dosyalarındaki metinleri değiştirin
-   - Sosyal medya bağlantılarını güncelleyin
-   - Profil ve proje görsellerini kendi görsellerinizle değiştirin
-   - Proje ve not içeriklerini kendi içeriklerinizle güncelleyin
-
-## Özelleştirme
-
-- `css/style.css` dosyasındaki renk değişkenlerini değiştirerek sitenin renklerini özelleştirebilirsiniz
-- Font ailesini ve diğer stil özelliklerini CSS dosyalarında güncelleyebilirsiniz
-- Günlük motivasyon sözlerini `js/script.js` dosyasında düzenleyebilirsiniz
-
-## Responsive Tasarım
-
-Site, aşağıdaki ekran boyutları için optimize edilmiştir:
-- Masaüstü (1200px ve üzeri)
-- Tablet (992px - 1199px)
-- Küçük Tablet (768px - 991px)
-- Mobil (576px - 767px)
-- Küçük Mobil (576px altı) 
+- Kaynak görseller (`NCLogo.jpeg`, `NewProfilPhoto.png`) depoda tutulur ama sayfalarda
+  optimize edilmiş `img/` kopyaları kullanılır.
+- Proje kapakları: canlı sitelerin ekran görüntüleri (PomoStat, UseToolSuite) ve
+  YouTube tanıtım videolarının kapakları (NTradeWeb, Fizyoterapi AI).

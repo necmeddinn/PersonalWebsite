@@ -11,24 +11,74 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Necmeddin Cunedioğlu | Ana Sayfa</title>
+    <meta name="description" content="Yapay zeka, bilgisayarlı görü ve web uygulamaları geliştiren bilgisayar mühendisi. TÜBİTAK destekli fizyoterapi analizi, LSTM tabanlı fiyat tahmini, PomoStat ve UseToolSuite projeleri.">
+    <link rel="canonical" href="https://necmeddincunedioglu.com/">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#16241d">
+    <link rel="preload" as="image" href="img/profile-800.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Necmeddin Cunedioğlu">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:title" content="Necmeddin Cunedioğlu — Bilgisayar Mühendisi & Yazılım Geliştirici">
+    <meta property="og:description" content="Yapay zeka, bilgisayarlı görü ve web uygulamaları geliştiren bilgisayar mühendisi. TÜBİTAK destekli fizyoterapi analizi, LSTM tabanlı fiyat tahmini, PomoStat ve UseToolSuite projeleri.">
+    <meta property="og:url" content="https://necmeddincunedioglu.com/">
+    <meta property="og:image" content="https://necmeddincunedioglu.com/img/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Necmeddin Cunedioğlu — Bilgisayar Mühendisi & Yazılım Geliştirici">
+    <meta name="twitter:description" content="Yapay zeka, bilgisayarlı görü ve web uygulamaları geliştiren bilgisayar mühendisi. TÜBİTAK destekli fizyoterapi analizi, LSTM tabanlı fiyat tahmini, PomoStat ve UseToolSuite projeleri.">
+    <meta name="twitter:image" content="https://necmeddincunedioglu.com/img/og-cover.jpg">
+    <title>Necmeddin Cunedioğlu — Bilgisayar Mühendisi & Yazılım Geliştirici</title>
+    <script>
+      // Tema tercihini stiller yüklenmeden uygula (koyu temada beyaz parlamayı önler)
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Necmeddin Cunedioğlu",
+      "url": "https://necmeddincunedioglu.com",
+      "image": "https://necmeddincunedioglu.com/img/profile-400.jpg",
+      "jobTitle": "Yazılım Geliştirici",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Erciyes Üniversitesi"
+      },
+      "knowsAbout": ["Yapay Zeka", "Bilgisayarlı Görü", "Derin Öğrenme", "Web Geliştirme", "Python", "React"],
+      "sameAs": [
+        "https://github.com/necmeddinn",
+        "https://www.linkedin.com/in/necmeddincunedioglu/",
+        "https://x.com/necmeddin_1",
+        "https://www.youtube.com/@necmeddin_1"
+      ]
+    }
+    </script>
 </head>
 <body>
     <div class="page-container">
         <!-- Navigation -->
         <nav class="navbar">
             <div class="navbar-container">
-                <div class="logo"><a href="index.html"><img src="NCLogo.jpeg" alt="NC Logo"></a></div>
-                <div class="menu-toggle">
+                <div class="logo"><a href="index.html"><img src="img/logo-160.jpg" alt="NC Logo" width="65" height="65"></a></div>
+                <button class="menu-toggle" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false">
                     <div class="bar"></div>
                     <div class="bar"></div>
                     <div class="bar"></div>
-                </div>
+                </button>
                 <ul class="nav-menu">
                     <li class="nav-item active"><a href="index.html">Ana Sayfa</a></li>
                     <li class="nav-item"><a href="hakkimda.html">Hakkımda</a></li>
@@ -51,14 +101,64 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Necmeddin Cunedioğlu</h1>
-                <p class="subtitle">Yazılım Geliştirici & Teknoloji Tutkunu</p>
+                <p class="subtitle">Yapay Zeka &amp; Web Uygulamaları Geliştiricisi</p>
+                <p class="hero-tagline">
+                    Bilgisayar mühendisiyim. TÜBİTAK destekli bilgisayarlı görü projesinden LSTM tabanlı
+                    finansal tahmin modellerine, yayında olan PomoStat ve UseToolSuite ürünlerine kadar
+                    fikirleri çalışan yazılımlara dönüştürüyorum.
+                </p>
                 <div class="cta-buttons">
-                    <a href="hakkimda.html" class="btn primary-btn">Hakkımda</a>
-                    <a href="iletisim.html" class="btn secondary-btn">İletişim</a>
+                    <a href="projelerim.html" class="btn primary-btn">Projelerimi İncele</a>
+                    <a href="iletisim.html" class="btn secondary-btn">İletişime Geç</a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="shape"></div>
+                <div class="shape" role="img" aria-label="Necmeddin Cunedioğlu"></div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section class="featured-projects">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Öne Çıkan Projeler</h2>
+                    <p>Yapay zekadan web ürünlerine, üzerinde çalıştığım işlerden bir seçki</p>
+                </div>
+                <div class="featured-grid">
+                    <a href="proje-fizyoterapi-ai.html" class="featured-card">
+                        <img src="img/fizyoterapi-cover.jpg" alt="Yapay zeka destekli fizyoterapi egzersiz analizi ekranı" width="960" height="540" loading="lazy">
+                        <div class="featured-body">
+                            <h3>Fizyoterapi Egzersizlerinin Yapay Zeka ile Analizi</h3>
+                            <p>MediaPipe tabanlı eklem tespiti ile egzersizleri gerçek zamanlı analiz eden TÜBİTAK 2209-A destekli sistem.</p>
+                            <div class="featured-tags">
+                                <span>TÜBİTAK 2209-A</span><span>Computer Vision</span><span>Python</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="proje-ntradeweb.html" class="featured-card">
+                        <img src="img/ntradeweb-cover.jpg" alt="NTradeWeb hisse fiyat tahmin uygulaması ekranı" width="960" height="540" loading="lazy">
+                        <div class="featured-body">
+                            <h3>NTradeWeb — Hisse Fiyat Tahmini</h3>
+                            <p>Borsa İstanbul hisseleri için LSTM tabanlı derin öğrenme modelleriyle fiyat tahmini yapan bitirme projesi.</p>
+                            <div class="featured-tags">
+                                <span>LSTM</span><span>TensorFlow</span><span>Streamlit</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="proje-pomostat.html" class="featured-card">
+                        <img src="img/pomostat-cover.jpg" alt="PomoStat odak zamanlayıcısı arayüzü" width="960" height="540" loading="lazy">
+                        <div class="featured-body">
+                            <h3>PomoStat — Odak &amp; İstatistik</h3>
+                            <p>Pomodoro tekniğini analiz ekranıyla birleştiren, yayında olan odak takip uygulaması.</p>
+                            <div class="featured-tags">
+                                <span>React</span><span>Supabase</span><span>D3.js</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="featured-more">
+                    <a href="projelerim.html" class="btn secondary-btn">Tüm Projeleri Gör</a>
+                </div>
             </div>
         </section>
 
@@ -79,49 +179,18 @@
             </div>
         </section>
 
-        <!-- Quick Links Section -->
-        <section class="quick-links">
-            <div class="container">
-                <h2>Hızlı Erişim</h2>
-                <div class="links-grid">
-                    <a href="hakkimda.html" class="link-card">
-                        <div class="card-icon"><i class="fas fa-user"></i></div>
-                        <h3>Hakkımda</h3>
-                        <p>Deneyimlerim ve yeteneklerim hakkında bilgi edinin.</p>
-                    </a>
-                    <a href="projelerim.html" class="link-card">
-                        <div class="card-icon"><i class="fas fa-code"></i></div>
-                        <h3>Projelerim</h3>
-                        <p>Geliştirdiğim projeleri keşfedin.</p>
-                    </a>
-                    <!-- Notlarım hızlı erişim kartı geçici olarak gizlendi
-                    <a href="notlarim.html" class="link-card">
-                        <div class="card-icon"><i class="fas fa-book"></i></div>
-                        <h3>Notlarım</h3>
-                        <p>Teknik yazılarım ve öğrenimlerim.</p>
-                    </a>
-                    -->
-                    <a href="iletisim.html" class="link-card">
-                        <div class="card-icon"><i class="fas fa-envelope"></i></div>
-                        <h3>İletişim</h3>
-                        <p>Benimle iletişime geçin.</p>
-                    </a>
-                </div>
-            </div>
-        </section>
-
         <!-- Footer -->
         <footer>
             <div class="container">
                 <div class="footer-content">
-                    <div class="footer-logo"><img src="NCLogo.jpeg" alt="NC Logo"></div>
+                    <div class="footer-logo"><img src="img/logo-160.jpg" alt="NC Logo" width="65" height="65"></div>
                     <div class="social-links">
-                        <a href="https://github.com/necmeddinn" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/necmeddincunedioglu/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/necmeddin_1?s=21" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/necmeddin_1?igsh=MTdobDNxcmhlMzJ6dg==" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@necmeddin_1" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="mailto:necmeddincunedioglu@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/necmeddinn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/necmeddincunedioglu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/necmeddin_1?s=21" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/necmeddin_1?igsh=MTdobDNxcmhlMzJ6dg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@necmeddin_1" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="mailto:necmeddincunedioglu@gmail.com" aria-label="E-posta gönder"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="footer-bottom">

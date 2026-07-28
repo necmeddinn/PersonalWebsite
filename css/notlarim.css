@@ -131,7 +131,7 @@
 .page-link.active {
     background: var(--gradient-primary);
     color: white;
-    box-shadow: 0 4px 10px rgba(108, 99, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(168, 132, 46, 0.3);
 }
 
 .page-dots {
@@ -191,7 +191,7 @@
 .search-form input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(168, 132, 46, 0.2);
 }
 
 .search-form button {
@@ -401,7 +401,8 @@
 
 /* Dark Mode Styles for Notes Page */
 [data-theme="dark"] .page-header {
-    background: var(--gradient-secondary);
+    background: linear-gradient(135deg, #16241d 0%, #0f1512 100%);
+    border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .notes-section {
@@ -474,7 +475,7 @@
 
 [data-theme="dark"] .search-form input:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(255, 69, 69, 0.2);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.2);
 }
 
 [data-theme="dark"] .search-form button {

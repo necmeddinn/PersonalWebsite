@@ -1,31 +1,33 @@
 /* Modern CSS with Variables */
 :root {
-    /* Main Colors - Updated to match logo colors exactly */
-    --primary-color: #000000;
-    --secondary-color: #333333;
-    --accent-color: #ff0000;
-    --text-color: #2d3748;
-    --light-text: #718096;
+    /* Main Colors - drawn from the NC logo: deep forest green + cream/gold */
+    --primary-color: #16241d;
+    --secondary-color: #2e463a;
+    --accent-color: #a8842e;
+    --accent-soft: rgba(168, 132, 46, 0.12);
+    --text-color: #24312b;
+    --light-text: #5c6b62;
     --bg-color: #ffffff;
-    --bg-secondary: #f7fafc;
-    --border-color: #e2e8f0;
-    
-    /* Gradients - Updated to match logo colors */
-    --gradient-primary: linear-gradient(135deg, #000000 0%, #333333 100%);
-    --gradient-secondary: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
-    
+    --bg-secondary: #f6f5f0;
+    --border-color: #e5e3da;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #16241d 0%, #2e463a 100%);
+    --gradient-secondary: linear-gradient(135deg, #a8842e 0%, #c9a961 100%);
+
     /* Shadows */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-    
+    --shadow-sm: 0 1px 3px rgba(22, 36, 29, 0.08);
+    --shadow-md: 0 4px 10px rgba(22, 36, 29, 0.09);
+    --shadow-lg: 0 12px 28px rgba(22, 36, 29, 0.12);
+
     /* Transitions */
     --transition-fast: all 0.2s ease;
     --transition-normal: all 0.3s ease;
     --transition-slow: all 0.5s ease;
-    
+
     /* Fonts */
     --font-family: 'Poppins', sans-serif;
+    --font-display: 'Playfair Display', Georgia, serif;
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
@@ -33,26 +35,27 @@
     --font-weight-extra-bold: 700;
 }
 
-/* Dark Theme Variables - Improved for better readability and contrast */
+/* Dark Theme Variables */
 [data-theme="dark"] {
-    --primary-color: #ff4545;
-    --secondary-color: #e2e2e2;
-    --accent-color: #ff4545;
-    --text-color: #ffffff;
-    --light-text: #cccccc;
-    --bg-color: #121212;
-    --bg-secondary: #1e1e1e;
-    --border-color: #333333;
-    
+    --primary-color: #c9a961;
+    --secondary-color: #ece5d3;
+    --accent-color: #c9a961;
+    --accent-soft: rgba(201, 169, 97, 0.12);
+    --text-color: #ede9dd;
+    --light-text: #aab3a9;
+    --bg-color: #0f1512;
+    --bg-secondary: #161f1a;
+    --border-color: #263129;
+
     /* Gradients for dark mode */
-    --gradient-primary: linear-gradient(135deg, #ff4545 0%, #cc0000 100%);
-    --gradient-secondary: linear-gradient(135deg, #ff4545 0%, #cc0000 100%);
-    
+    --gradient-primary: linear-gradient(135deg, #c9a961 0%, #a8842e 100%);
+    --gradient-secondary: linear-gradient(135deg, #c9a961 0%, #a8842e 100%);
+
     /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 12px rgba(0, 0, 0, 0.5);
-    
+
     color-scheme: dark;
 }
 
@@ -75,6 +78,11 @@ body {
     background-color: var(--bg-color);
     overflow-x: hidden;
     transition: background-color 0.4s ease-in-out;
+}
+
+h1, h2 {
+    font-family: var(--font-display);
+    letter-spacing: 0.2px;
 }
 
 a {
@@ -116,13 +124,13 @@ ul {
 
 .primary-btn {
     background: var(--gradient-primary);
-    color: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    color: #f6f3ea;
+    box-shadow: 0 4px 15px rgba(22, 36, 29, 0.28);
 }
 
 .primary-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 6px 20px rgba(22, 36, 29, 0.38);
 }
 
 .secondary-btn {
@@ -221,6 +229,9 @@ ul {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .bar {
@@ -279,14 +290,33 @@ ul {
     position: relative;
 }
 
+.hero-image::before {
+    content: '';
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border: 2px solid var(--accent-color);
+    opacity: 0.45;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    animation: morph 10s ease-in-out infinite reverse;
+}
+
 .shape {
-    width: 300px;
-    height: 300px;
-    background: var(--gradient-primary);
+    width: 340px;
+    height: 340px;
+    background: url('../img/profile-800.jpg') center top / cover no-repeat, var(--gradient-primary);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     animation: morph 8s ease-in-out infinite;
     position: relative;
     transition: var(--transition-slow);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-tagline {
+    max-width: 540px;
+    color: var(--light-text);
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
 }
 
 @keyframes morph {
@@ -310,7 +340,7 @@ ul {
 /* Quote Section */
 .quote-section {
     padding: 5rem 0;
-    background-color: var(--bg-color);
+    background-color: var(--bg-secondary);
     text-align: center;
 }
 
@@ -336,7 +366,7 @@ ul {
     max-width: 800px;
     margin: 0 auto;
     padding: 3rem;
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-color);
     border-radius: 15px;
     box-shadow: var(--shadow-md);
     position: relative;
@@ -438,6 +468,111 @@ blockquote {
     color: var(--light-text);
 }
 
+/* Featured Projects (home) */
+.featured-projects {
+    padding: 5rem 0;
+    background-color: var(--bg-color);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+    font-size: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    bottom: -10px;
+    left: 25%;
+    background: var(--gradient-secondary);
+    border-radius: 2px;
+}
+
+.section-heading p {
+    margin-top: 1.4rem;
+    color: var(--light-text);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.featured-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+    color: var(--text-color);
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.featured-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.featured-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.featured-card .featured-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+}
+
+.featured-card h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.featured-card p {
+    color: var(--light-text);
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.featured-tags span {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 50px;
+    background-color: var(--accent-soft);
+    color: var(--accent-color);
+    font-weight: var(--font-weight-medium);
+}
+
+.featured-more {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
@@ -512,10 +647,20 @@ footer {
     .hero .subtitle {
         font-size: 1.2rem;
     }
-    
+
+    .hero-image {
+        min-height: 380px;
+        padding-bottom: 3rem;
+    }
+
     .shape {
         width: 300px;
         height: 300px;
+    }
+
+    .hero-image::before {
+        width: 320px;
+        height: 320px;
     }
 }
 
@@ -605,10 +750,15 @@ footer {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .shape {
         width: 250px;
         height: 250px;
+    }
+
+    .hero-image::before {
+        width: 265px;
+        height: 265px;
     }
     
     .links-grid {
@@ -664,17 +814,17 @@ footer {
 
 .theme-toggle .fa-sun {
     display: inline-block;
-    color: #ff8800;
+    color: #a8842e;
 }
 
 .theme-toggle .fa-moon {
     display: none;
-    color: #5183f5;
+    color: #c9a961;
 }
 
 /* Dark mode component styles - Fixed readability issues */
 [data-theme="dark"] .navbar {
-    background-color: rgba(18, 18, 18, 0.95);
+    background-color: rgba(15, 21, 18, 0.92);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
@@ -745,7 +895,7 @@ footer {
 
 [data-theme="dark"] .card-icon {
     color: var(--accent-color);
-    background-color: rgba(255, 69, 69, 0.1);
+    background-color: var(--accent-soft);
 }
 
 /* Footer styles */
@@ -768,10 +918,11 @@ footer {
     transform: translateY(-3px);
 }
 
-/* Specific fix for Hakkımda page */
+/* Page headers keep the deep-green identity in dark mode (gradient-primary turns gold there) */
 [data-theme="dark"] .page-header {
-    background-color: var(--bg-secondary);
+    background: linear-gradient(135deg, #16241d 0%, #0f1512 100%);
     color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .page-header h1 {
@@ -785,12 +936,12 @@ footer {
 /* Button styles */
 [data-theme="dark"] .primary-btn {
     background: var(--gradient-primary);
-    box-shadow: 0 4px 15px rgba(255, 69, 69, 0.2);
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.18);
     color: #ffffff;
 }
 
 [data-theme="dark"] .primary-btn:hover {
-    box-shadow: 0 6px 20px rgba(255, 69, 69, 0.3);
+    box-shadow: 0 6px 20px rgba(201, 169, 97, 0.3);
     transform: translateY(-3px);
 }
 
@@ -801,7 +952,7 @@ footer {
 }
 
 [data-theme="dark"] .secondary-btn:hover {
-    background: rgba(255, 69, 69, 0.1);
+    background: var(--accent-soft);
     color: var(--text-color);
 }
 
@@ -820,7 +971,7 @@ footer {
 
 [data-theme="dark"] .theme-toggle .fa-moon {
     display: inline-block;
-    color: #5183f5;
+    color: #c9a961;
 }
 
 /* Smooth transitions for theme changes */
@@ -870,7 +1021,7 @@ body {
 
 /* Selection highlight color */
 [data-theme="dark"] ::selection {
-    background-color: rgba(255, 69, 69, 0.3);
+    background-color: rgba(201, 169, 97, 0.3);
     color: var(--text-color);
 }
 

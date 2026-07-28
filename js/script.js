@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.addEventListener('click', function() {
             menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', menuToggle.classList.contains('active') ? 'true' : 'false');
         });
     }
     
@@ -31,43 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('header nav a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetSection.offsetTop - 70,
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-    // Add active class to navigation links based on scroll position
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY;
-        
-        document.querySelectorAll('.section').forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                document.querySelector(`header nav a[href="#${sectionId}"]`).classList.add('active');
-            } else {
-                document.querySelector(`header nav a[href="#${sectionId}"]`).classList.remove('active');
-            }
-        });
-    });
-    
     // Add animation for project and note cards
     const animateOnScroll = () => {
-        const cards = document.querySelectorAll('.project-card, .note-card, .link-card');
+        const cards = document.querySelectorAll('.project-card, .note-card, .link-card, .featured-card');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -87,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add CSS for animation
         const style = document.createElement('style');
         style.textContent = `
-            .project-card.visible, .note-card.visible, .link-card.visible {
+            .project-card.visible, .note-card.visible, .link-card.visible, .featured-card.visible {
                 opacity: 1 !important;
                 transform: translateY(0) !important;
             }

@@ -117,7 +117,7 @@
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: #e53e3e;
+    color: var(--accent-color);
 }
 
 .video-badge i {
@@ -137,13 +137,21 @@
     overflow: hidden;
 }
 
-.video-wrapper iframe {
+.video-wrapper iframe,
+.video-wrapper img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: 0;
+    object-fit: cover;
+    object-position: top;
+}
+
+.video-actions {
+    padding: 1.25rem 1.5rem 0.5rem;
+    text-align: center;
 }
 
 .video-caption {
@@ -154,7 +162,8 @@
 
 /* Dark theme overrides for project detail page */
 [data-theme="dark"] .project-detail-header {
-    background: var(--gradient-secondary);
+    background: linear-gradient(135deg, #16241d 0%, #0f1512 100%);
+    border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .project-detail-main {
