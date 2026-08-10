@@ -83,7 +83,7 @@
                 <span class="project-badge">React · Clean Architecture</span>
                 <h1>Come Back</h1>
                 <p class="subtitle">
-                    WhatsApp ile eski müşteri geri kazanım SaaS'ının web paneli. Bu proje, Clean Architecture ve React + TypeScript kullanılarak ileriye dönük genişlemeye uygun modern bir mimariyle geliştirilmiştir.
+                    WhatsApp ile eski müşteri geri kazanım SaaS'ının web paneli. Claude Design prototipinden (Come Back Panel.dc.html) gerçek, çalışan bir React + TypeScript uygulamasına dönüştürülmüş; Clean Architecture ile ileriye dönük genişlemeye uygun şekilde geliştirilmiştir.
                 </p>
             </div>
         </header>
@@ -96,36 +96,37 @@
                     <div class="project-text">
                         <h2>Proje Özeti</h2>
                         <p>
-                            Come Back, işletmelerin (ör. oto servis, güzellik salonu vb.) mevcut müşterilerini WhatsApp üzerinden kişiselleştirilmiş kampanyalarla yeniden kazanmasını sağlayan bir SaaS platformudur. "Uyumlu (İYS/KVKK) geri kazanım" stratejisiyle, müşterilerin hukuki güvenliğini birinci sınıf bir özellik olarak sunar.
+                            Come Back, işletmelerin (oto servis, güzellik salonu vb.) mevcut müşterilerini WhatsApp üzerinden kişiselleştirilmiş kampanyalarla yeniden kazanmasını sağlayan bir SaaS platformunun web panelidir.
+                            Savunulabilir farkı <strong>uyumlu (İYS/KVKK) geri kazanım</strong>, utility/marketing mesaj ayrımı ve somut ROI kanıtıdır; yasal güvenlik birinci sınıf bir ürün özelliği olarak tasarlanmıştır.
                         </p>
 
                         <h2>Problem &amp; Çözüm</h2>
                         <p>
-                            Mevcut müşterileri geri kazanmak yeni müşteri bulmaktan çok daha kârlıdır. Ancak bu süreçte yasal uyumluluk (İYS/KVKK) genelde göz ardı edilir. Come Back, bu sorunu çözerek pazarlama ve hizmet (utility) mesajlarını net çizgilerle ayırır, her gönderimde yasal uygunluğu kontrol eder.
+                            Mevcut müşterileri geri kazanmak yeni müşteri bulmaktan çok daha kârlıdır; ancak bu süreçte İYS/KVKK uyumu çoğu zaman göz ardı edilir.
+                            Come Back, pazarlama ve hizmet (utility) mesajlarını net çizgilerle ayırır; her gönderimde <code>MessagingCompliancePolicy</code> üzerinden yasal uygunluğu tek kaynaktan kontrol eder.
                         </p>
                         <ul class="feature-list">
-                            <li>KVKK ve İYS uyumlu mesajlaşma</li>
-                            <li>Geri kazanılan müşterilerin anlık ROI takibi</li>
-                            <li>Kişiselleştirilmiş otomasyon kuralları</li>
+                            <li>Onay (consent) birinci sınıf alan: marketingConsent (granted / pending / none)</li>
+                            <li>Şablon ve kurallarda utility / marketing kategorisi; pazarlama seçilince uygun hedef kitlesi anında gösterilir</li>
+                            <li>Uyum ekranı: onay hunisi, geri kazanım erişimi ve Meta TR ücretleriyle tahmini aylık mesaj maliyeti</li>
                         </ul>
 
                         <h2>Temel Özellikler</h2>
                         <ul class="feature-list">
-                            <li>Müşteri bazlı onay (consent) yönetimi</li>
-                            <li>ROI Analitiği: İşletmenin abonelik bedelini ne zaman amorte ettiğini gösteren canlı göstergeler</li>
-                            <li>Kural ve şablon oluşturma (CRUD)</li>
-                            <li>localStorage üzerinden kalıcı (persistent) durum yönetimi</li>
-                            <li>Gelişmiş hata yakalama (ErrorBoundary)</li>
-                            <li>Tam responsive tasarım (Mobil, Tablet, Masaüstü)</li>
-                            <li>Erişilebilirlik (A11y) standartlarına uygun bileşenler</li>
+                            <li><strong>Değer kanıtı (ROI):</strong> ValueProofService ile geri kazanılan ciro, işletmenin gerçek plan fiyatına bağlanır; panoda amortisman bandı gösterilir</li>
+                            <li><strong>Kural &amp; şablon CRUD:</strong> Yeni kural/şablon oluşturma; pazarlama şablonunda onay kapısı otomatik uygulanır</li>
+                            <li><strong>Aktivasyon kontrol listesi:</strong> ActivationService kurulum tamamlanma oranını hesaplar; sıradaki adım panoda gösterilir</li>
+                            <li><strong>Kalıcılık:</strong> Kural aç/kapa, şablon düzenleme ve yeni oluşturulan varlıklar localStorage'a yazılır; sayfa yenilense bile korunur</li>
+                            <li><strong>Demo işletmeler:</strong> Mert Usta Oto Servis ve Lina Güzellik ile tek tıkla giriş</li>
+                            <li><strong>UX &amp; A11y:</strong> Tam responsive (mobil off-canvas sidebar), ToastProvider geri bildirimleri, ErrorBoundary, form/label/aria standartları</li>
                         </ul>
 
                         <h2>Teknik Mimari</h2>
                         <ul class="feature-list">
-                            <li><strong>Clean / Hexagonal Architecture:</strong> Bağımlılıkların dıştan içe doğru (presentation → application → domain) aktığı sağlam yapı</li>
-                            <li><strong>SOLID Prensipleri:</strong> Single Responsibility, Open/Closed ve Interface Segregation'ın aktif olarak kullanıldığı tasarımlar</li>
-                            <li><strong>Tasarım Desenleri (Design Patterns):</strong> Repository, Strategy (örn. BillingStrategy), Composition Root, Aggregate Root</li>
-                            <li><strong>Birim Testleri (Unit Tests):</strong> Domain ve application katmanları için %100 kapsama hedefli 38 Vitest birim testi</li>
+                            <li><strong>Katmanlı yapı:</strong> presentation → application → domain; infrastructure yalnızca domain arabirimlerini uygular</li>
+                            <li><strong>SOLID:</strong> CustomerQueryService, BillingStrategy ve entity'ler tek sorumlulukla ayrıştırılmıştır</li>
+                            <li><strong>Tasarım desenleri:</strong> Repository, Strategy (BillingStrategy, TemplateRenderer), Composition Root, Aggregate Root (Tenant), Policy (PlanCtaPolicy)</li>
+                            <li><strong>Testler:</strong> Domain ve application katmanları için 38 Vitest birim testi (uyum politikası, fiyatlama, ROI, kalıcılık gidiş-dönüşü dahil)</li>
                         </ul>
 
                         <h2>Kullanılan Teknolojiler</h2>
@@ -135,13 +136,22 @@
                             <span class="tech-chip">Vite</span>
                             <span class="tech-chip">Vitest</span>
                             <span class="tech-chip">Clean Architecture</span>
+                            <span class="tech-chip">localStorage (DIP)</span>
                         </div>
 
                         <h2>Öne Çıkan Mühendislik Kararları</h2>
                         <ul class="feature-list">
                             <li>Arayüz katmanının iş kurallarından (domain) tamamen izole edilmesi</li>
-                            <li>Olası backend entegrasyonlarına (örn. HTTP, API) hazır bir InMemory repository mimarisi</li>
-                            <li>İşletme planlarına dinamik olarak uyum sağlayan BillingStrategy deseni</li>
+                            <li>InMemory repository'ler; gerçek backend için yalnızca <code>container.ts</code> değişikliği yeterli</li>
+                            <li>BillingStrategy ile plan/faturalama döngüsünün Open/Closed prensibiyle genişletilebilir olması</li>
+                            <li>Yasal uygunluk kararının ekranlara dağıtılmaması; tek policy kaynağı (MessagingCompliancePolicy)</li>
+                        </ul>
+
+                        <h2>İleriye Dönük Genişleme</h2>
+                        <ul class="feature-list">
+                            <li>HTTP tabanlı repository ile gerçek backend entegrasyonu</li>
+                            <li><code>IMessageGateway</code> arabirimi üzerinden gerçek WhatsApp API bağlantısı</li>
+                            <li>Yeni plan, sektör ve otomasyon türleri mevcut ekran kodunu bozmadan eklenebilir</li>
                         </ul>
                     </div>
 

@@ -96,40 +96,49 @@
                     <div class="project-text">
                         <h2>Proje Özeti</h2>
                         <p>
-                            Görüntü veya video akışları üzerinden araç plakalarını yüksek doğruluk ve optimize bellek kullanımıyla tespit edip okuyan iki aşamalı yapay zeka pipeline'ı. Sokak tabelaları, reklam panoları gibi gürültüleri filtreleyerek sadece gerçek araç plakalarına odaklanır.
+                            Görüntü veya video akışları üzerinden araç plakalarını yüksek doğruluk ve optimize bellek kullanımıyla tespit edip okuyan (ALPR) iki aşamalı yapay zeka pipeline'ı.
+                            Önce aracı izole eder, ardından yalnızca araç bölgesinde plaka arar; sokak tabelaları ve reklam panoları gibi çevresel gürültüyü filtreler.
                         </p>
 
                         <h2>Problem &amp; Çözüm</h2>
                         <p>
-                            Tek aşamalı plaka tanıma modelleri çoğu zaman çevredeki metinleri ve şekilleri plaka olarak algılayabilir. Bu proje, önce aracı tespit eden, ardından sadece tespit edilen araç bölgesi (ROI) içerisinde plaka arayan iki aşamalı bir çözüm sunarak yanılma payını minimize eder.
+                            Tek aşamalı plaka tanıma modelleri çoğu zaman çevredeki metinleri plaka sanabilir.
+                            Bu proje, COCO pre-trained YOLOv8n ile araç tespiti yaptıktan sonra özel eğitilmiş ikinci YOLO modeliyle yalnızca araç ROI'sinde plaka konumlandırır; EasyOCR ile karakter okuma aşamasına geçer.
                         </p>
                         <ul class="feature-list">
-                            <li>Çevresel gürültülerden izolasyon</li>
-                            <li>Gereksiz matris kopyalamaları engelleyerek bellek tasarrufu</li>
-                            <li>Yüksek FPS'te gerçek zamanlı işleme</li>
+                            <li>Çevresel gürültülerden izolasyon (arka plan filtreleme)</li>
+                            <li>ROI koordinat referansı ile gereksiz matris kopyalarının engellenmesi</li>
+                            <li>Canlı kamera, tek görüntü ve video dosyası desteği</li>
+                        </ul>
+
+                        <h2>Pipeline Aşamaları</h2>
+                        <ul class="feature-list">
+                            <li><strong>Aşama 1 — Araç tespiti:</strong> YOLOv8n (COCO) ile car, motorcycle, bus, truck sınıfları; OpenCV ile araç bölgesi kırpılır</li>
+                            <li><strong>Aşama 2 — Plaka konumlandırma:</strong> Özel eğitilmiş <code>plate_detector.pt</code> modeli; fiziksel crop yerine ROI koordinatları tutulur</li>
+                            <li><strong>Aşama 3 — OCR:</strong> EasyOCR + CLAHE, gürültü azaltma ve kontrast artırma; Türk plaka formatına uygun karakter düzeltme (O→0, I→1)</li>
                         </ul>
 
                         <h2>Temel Özellikler</h2>
                         <ul class="feature-list">
-                            <li><strong>Aşama 1 (Araç Tespiti):</strong> COCO pre-trained YOLOv8n modeli ile araçları tespit eder.</li>
-                            <li><strong>Aşama 2 (Plaka Konumlandırma):</strong> Özel eğitilmiş ikinci YOLO modeli ile plaka ROI'sini bulur.</li>
-                            <li><strong>Aşama 3 (OCR):</strong> EasyOCR motoru ve ön işleme (CLAHE) teknikleriyle plaka karakterlerini okur.</li>
-                            <li>Türk plaka formatına uygun karakter düzeltme (O→0, I→1) ve doğrulama.</li>
-                            <li>Canlı kamera arayüzü ve video işleme desteği.</li>
+                            <li><strong>Canlı kamera arayüzü (varsayılan):</strong> Sol tarafta bounding box'lı canlı görüntü, sağ tarafta plaka, güven skoru ve FPS</li>
+                            <li>CLI ile tek görüntü ve video işleme; çıktı kaydetme desteği</li>
+                            <li><code>config/settings.yaml</code> üzerinden model yolları, eşikler, OCR ve frame skipping ayarları</li>
+                            <li>Modüler Python mimarisi: vehicle_detector, plate_detector, ocr_reader, preprocessor, postprocessor</li>
                         </ul>
 
-                        <h2>Teknik Mimari</h2>
+                        <h2>Bellek Optimizasyonları</h2>
                         <ul class="feature-list">
-                            <li><strong>YOLO Pipeline:</strong> İki farklı YOLOv8 modelinin birbirine entegre çalıştığı ardışık sistem.</li>
-                            <li><strong>Bellek Optimizasyonu:</strong> Fiziksel resim kırpma (crop) yerine koordinat referansı (ROI) tutularak bellek verimliliği sağlanır.</li>
-                            <li><strong>Donanım Hızlandırma:</strong> Apple Silicon işlemcileri için PyTorch (MPS - Metal Performance Shaders) optimizasyonu.</li>
-                            <li>Frame skipping ve model katman birleştirme (fuse) ile hız optimizasyonu.</li>
+                            <li>ROI referansı — plaka bölgesi kesilmez, koordinat tutulur</li>
+                            <li><code>stream=True</code> — video frame sonuçları bellekte birikmez</li>
+                            <li>Frame skipping — varsayılan her 3 frame'de bir işlem</li>
+                            <li><code>model.fuse()</code> — Conv+BN katman birleştirme</li>
+                            <li>MPS backend — Apple Silicon native GPU hızlandırma</li>
                         </ul>
 
                         <h2>Kullanılan Teknolojiler</h2>
                         <div class="tech-grid">
                             <span class="tech-chip">Python 3.10+</span>
-                            <span class="tech-chip">YOLOv8</span>
+                            <span class="tech-chip">YOLOv8 (Ultralytics)</span>
                             <span class="tech-chip">PyTorch (MPS)</span>
                             <span class="tech-chip">OpenCV</span>
                             <span class="tech-chip">EasyOCR</span>
@@ -137,9 +146,10 @@
 
                         <h2>Öne Çıkan Mühendislik Kararları</h2>
                         <ul class="feature-list">
-                            <li>Video işleme sırasında `stream=True` argümanıyla bellek sızıntılarının (memory leak) önüne geçilmesi.</li>
-                            <li>Her 3 frame'de bir işleme (Frame Skipping) yapılarak video/kamera akışının akıcı tutulması.</li>
-                            <li>Tamamen modüler, nesne yönelimli, config güdümlü kod mimarisi.</li>
+                            <li>İki aşamalı pipeline ile false positive oranının düşürülmesi</li>
+                            <li>Video akışında bellek sızıntısını önlemek için <code>stream=True</code> kullanımı</li>
+                            <li>Frame skipping ile gerçek zamanlı kamera deneyiminde akıcılık</li>
+                            <li>Tamamen modüler, nesne yönelimli ve config güdümlü kod yapısı</li>
                         </ul>
                     </div>
 
