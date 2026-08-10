@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRSGNV3GF5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QRSGNV3GF5');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Görüntü veya video akışları üzerinden araç plakalarını yüksek doğruluk ve optimize bellek kullanımıyla tespit edip okuyan iki aşamalı yapay zeka pipeline'ı.">
+    <link rel="canonical" href="https://necmeddincunedioglu.com/proje-plakatanima.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#16241d">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Necmeddin Cunedioğlu">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:title" content="İki Aşamalı YOLO Tabanlı Plaka Tanıma Sistemi | Necmeddin Cunedioğlu">
+    <meta property="og:description" content="Görüntü veya video akışları üzerinden araç plakalarını yüksek doğruluk ve optimize bellek kullanımıyla tespit edip okuyan iki aşamalı yapay zeka pipeline'ı.">
+    <meta property="og:url" content="https://necmeddincunedioglu.com/proje-plakatanima.html">
+    <meta property="og:image" content="https://necmeddincunedioglu.com/img/plakatanima-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="İki Aşamalı YOLO Tabanlı Plaka Tanıma Sistemi | Necmeddin Cunedioğlu">
+    <meta name="twitter:description" content="Görüntü veya video akışları üzerinden araç plakalarını yüksek doğruluk ve optimize bellek kullanımıyla tespit edip okuyan iki aşamalı yapay zeka pipeline'ı.">
+    <meta name="twitter:image" content="https://necmeddincunedioglu.com/img/plakatanima-cover.png">
+    <title>İki Aşamalı YOLO Tabanlı Plaka Tanıma Sistemi | Necmeddin Cunedioğlu</title>
+    <script>
+      // Tema tercihini stiller yüklenmeden uygula (koyu temada beyaz parlamayı önler)
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/proje-detay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo"><a href="index.html"><img src="img/logo-160.jpg" alt="NC Logo" width="65" height="65"></a></div>
+                <button class="menu-toggle" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a href="hakkimda.html">Hakkımda</a></li>
+                    <li class="nav-item active"><a href="projelerim.html">Projelerim</a></li>
+                    <!-- Notlarım sekmesi geçici olarak gizlendi
+                    <li class="nav-item"><a href="notlarim.html">Notlarım</a></li>
+                    -->
+                    <li class="nav-item"><a href="iletisim.html">İletişim</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" aria-label="Tema değiştir">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="project-detail-header">
+            <div class="container">
+                <a href="projelerim.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Projelere geri dön
+                </a>
+                <span class="project-badge">YOLOv8 · Python</span>
+                <h1>Plaka Tanıma Sistemi</h1>
+                <p class="subtitle">
+                    Görüntü veya video akışları üzerinden araç plakalarını yüksek doğruluk ve optimize bellek kullanımıyla tespit edip okuyan (ALPR) iki aşamalı YOLO tabanlı derin öğrenme projesi.
+                </p>
+            </div>
+        </header>
+
+        <!-- Project Detail Content -->
+        <main class="project-detail-main">
+            <div class="container">
+                <section class="project-detail-grid">
+                    <div class="project-text">
+                        <h2>Proje Özeti</h2>
+                        <p>
+                            Geleneksel plaka tanıma sistemlerindeki çevresel gürültü (reklam panoları vb.) problemlerini çözmek için geliştirilen, YOLOv8 ile önce aracı tespit edip ardından plakayı konumlandıran iki aşamalı bir mimariye sahip yapay zeka pipeline'ı.
+                        </p>
+
+                        <h2>Problem &amp; Çözüm</h2>
+                        <p>
+                            Modern geliştirme süreçlerinde küçük ama sık yapılan işlemler (formatlama, dönüştürme, encoding vb.) ciddi zaman kaybına yol açar.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Tek noktadan erişilebilir araçlar</li>
+                            <li>Anlık işlem (zero-latency hissi)</li>
+                            <li>Veri gizliliği garantisi</li>
+                        </ul>
+
+                        <h2>Temel Özellikler</h2>
+                        <ul class="feature-list">
+                            <li>50 farklı geliştirici aracı (format, encode, generate, convert)</li>
+                            <li>%100 tarayıcı tabanlı çalışma (server bağımsız)</li>
+                            <li>Gerçek zamanlı işlem (client-side execution)</li>
+                            <li>Modüler ve genişletilebilir tool mimarisi</li>
+                            <li>SEO optimize edilmiş sayfa yapısı</li>
+                            <li>Klavye kısayolları ile hızlı kullanım (Ctrl+Enter, Ctrl+L)</li>
+                            <li>Responsive ve erişilebilir arayüz</li>
+                        </ul>
+
+                        <h2>Teknik Mimari</h2>
+                        <ul class="feature-list">
+                            <li><strong>Astro (Static-first architecture):</strong> Minimum JavaScript, maksimum hız</li>
+                            <li><strong>Client-side processing:</strong> Canvas API, FileReader, Blob gibi native Web API’ler kullanıldı</li>
+                            <li><strong>Zero dependency tool logic:</strong> Tüm araç algoritmaları harici kütüphane olmadan geliştirildi</li>
+                            <li><strong>Component-based yapı:</strong> Yeniden kullanılabilir UI bileşenleri</li>
+                            <li><strong>Type-safe geliştirme:</strong> TypeScript ile güçlü tip kontrolü</li>
+                        </ul>
+
+                        <h2>Kullanılan Teknolojiler</h2>
+                        <div class="tech-grid">
+                            <span class="tech-chip">Astro v5</span>
+                            <span class="tech-chip">TypeScript</span>
+                            <span class="tech-chip">Tailwind CSS v4</span>
+                            <span class="tech-chip">Lucide Icons</span>
+                            <span class="tech-chip">Cloudflare Pages</span>
+                        </div>
+
+                        <h2>Araç Kategorileri</h2>
+                        <ul class="feature-list">
+                            <li>Format &amp; Convert</li>
+                            <li>Generators</li>
+                            <li>Encoding</li>
+                            <li>Color &amp; CSS</li>
+                            <li>String &amp; Text</li>
+                            <li>Time &amp; Date</li>
+                        </ul>
+
+                        <h2>Sistem Tasarımı</h2>
+                        <ul class="feature-list">
+                            <li>Tool logic katmanı (pure TypeScript)</li>
+                            <li>UI bileşen katmanı (reusable components)</li>
+                            <li>İçerik ve SEO katmanı (dynamic pages + metadata)</li>
+                            <li>Kategori bazlı sayfa üretimi (dynamic routing)</li>
+                        </ul>
+
+                        <h2>Öne Çıkan Mühendislik Kararları</h2>
+                        <ul class="feature-list">
+                            <li>Server bağımlılığı tamamen kaldırıldı</li>
+                            <li>Performans için gereksiz JS minimize edildi</li>
+                            <li>Tüm araçlar bağımsız modüller olarak tasarlandı</li>
+                            <li>ZIP/ICO gibi işlemler sıfırdan implement edildi</li>
+                        </ul>
+
+                        <h2>Gelecek Geliştirmeler</h2>
+                        <ul class="feature-list">
+                            <li>Yeni tool modülleri (özellikle AI destekli araçlar)</li>
+                            <li>Kullanıcı tercihleri ve kişiselleştirme</li>
+                            <li>Progressive Web App (PWA) desteği</li>
+                            <li>Gelişmiş arama ve filtreleme sistemi</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-media">
+                        <div class="video-card">
+                            <div class="video-header">
+                            <span class="video-badge"><i class="fas fa-globe"></i> Canlı Proje</span>
+                                <h2>Plaka Tanıma Sistemi</h2>
+                            </div>
+                            <div class="video-wrapper">
+                                <img src="img/plakatanima-cover.png" alt="Plaka Tanıma Sistemi platformunun ana sayfası" width="960" height="540" loading="lazy">
+                            </div>
+                            <div class="video-actions">
+                                <a href="https://usetoolsuite.com/" target="_blank" rel="noopener noreferrer" class="btn primary-btn" style="display:inline-flex;align-items:center;gap:0.5rem;justify-content:center;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Canlı Projeyi Aç</span>
+                                </a>
+                            </div>
+                            <p class="video-caption">
+                                usetoolsuite.com — tamamen tarayıcıda çalışan 180+ üretkenlik aracı
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo"><img src="img/logo-160.jpg" alt="NC Logo" width="65" height="65"></div>
+                    <div class="social-links">
+                        <a href="https://github.com/necmeddinn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/necmeddincunedioglu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/necmeddin_1?s=21" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/necmeddin_1?igsh=MTdobDNxcmhlMzJ6dg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@necmeddin_1" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="mailto:necmeddincunedioglu@gmail.com" aria-label="E-posta gönder"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year">2023</span> Necmeddin Cunedioğlu. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>
+
