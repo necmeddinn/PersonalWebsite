@@ -89,6 +89,7 @@
         </header>
 
         <!-- Project Detail Content -->
+        
         <main class="project-detail-main">
             <div class="container">
                 <section class="project-detail-grid">
@@ -100,101 +101,68 @@
 
                         <h2>Problem &amp; Çözüm</h2>
                         <p>
-                            Modern geliştirme süreçlerinde küçük ama sık yapılan işlemler (formatlama, dönüştürme, encoding vb.) ciddi zaman kaybına yol açar.
+                            Mevcut müşterileri geri kazanmak yeni müşteri bulmaktan çok daha kârlıdır. Ancak bu süreçte yasal uyumluluk (İYS/KVKK) genelde göz ardı edilir. Come Back, bu sorunu çözerek pazarlama ve hizmet (utility) mesajlarını net çizgilerle ayırır, her gönderimde yasal uygunluğu kontrol eder.
                         </p>
                         <ul class="feature-list">
-                            <li>Tek noktadan erişilebilir araçlar</li>
-                            <li>Anlık işlem (zero-latency hissi)</li>
-                            <li>Veri gizliliği garantisi</li>
+                            <li>KVKK ve İYS uyumlu mesajlaşma</li>
+                            <li>Geri kazanılan müşterilerin anlık ROI takibi</li>
+                            <li>Kişiselleştirilmiş otomasyon kuralları</li>
                         </ul>
 
                         <h2>Temel Özellikler</h2>
                         <ul class="feature-list">
-                            <li>50 farklı geliştirici aracı (format, encode, generate, convert)</li>
-                            <li>%100 tarayıcı tabanlı çalışma (server bağımsız)</li>
-                            <li>Gerçek zamanlı işlem (client-side execution)</li>
-                            <li>Modüler ve genişletilebilir tool mimarisi</li>
-                            <li>SEO optimize edilmiş sayfa yapısı</li>
-                            <li>Klavye kısayolları ile hızlı kullanım (Ctrl+Enter, Ctrl+L)</li>
-                            <li>Responsive ve erişilebilir arayüz</li>
+                            <li>Müşteri bazlı onay (consent) yönetimi</li>
+                            <li>ROI Analitiği: İşletmenin abonelik bedelini ne zaman amorte ettiğini gösteren canlı göstergeler</li>
+                            <li>Kural ve şablon oluşturma (CRUD)</li>
+                            <li>localStorage üzerinden kalıcı (persistent) durum yönetimi</li>
+                            <li>Gelişmiş hata yakalama (ErrorBoundary)</li>
+                            <li>Tam responsive tasarım (Mobil, Tablet, Masaüstü)</li>
+                            <li>Erişilebilirlik (A11y) standartlarına uygun bileşenler</li>
                         </ul>
 
                         <h2>Teknik Mimari</h2>
                         <ul class="feature-list">
-                            <li><strong>Astro (Static-first architecture):</strong> Minimum JavaScript, maksimum hız</li>
-                            <li><strong>Client-side processing:</strong> Canvas API, FileReader, Blob gibi native Web API’ler kullanıldı</li>
-                            <li><strong>Zero dependency tool logic:</strong> Tüm araç algoritmaları harici kütüphane olmadan geliştirildi</li>
-                            <li><strong>Component-based yapı:</strong> Yeniden kullanılabilir UI bileşenleri</li>
-                            <li><strong>Type-safe geliştirme:</strong> TypeScript ile güçlü tip kontrolü</li>
+                            <li><strong>Clean / Hexagonal Architecture:</strong> Bağımlılıkların dıştan içe doğru (presentation → application → domain) aktığı sağlam yapı</li>
+                            <li><strong>SOLID Prensipleri:</strong> Single Responsibility, Open/Closed ve Interface Segregation'ın aktif olarak kullanıldığı tasarımlar</li>
+                            <li><strong>Tasarım Desenleri (Design Patterns):</strong> Repository, Strategy (örn. BillingStrategy), Composition Root, Aggregate Root</li>
+                            <li><strong>Birim Testleri (Unit Tests):</strong> Domain ve application katmanları için %100 kapsama hedefli 38 Vitest birim testi</li>
                         </ul>
 
                         <h2>Kullanılan Teknolojiler</h2>
                         <div class="tech-grid">
-                            <span class="tech-chip">Astro v5</span>
+                            <span class="tech-chip">React</span>
                             <span class="tech-chip">TypeScript</span>
-                            <span class="tech-chip">Tailwind CSS v4</span>
-                            <span class="tech-chip">Lucide Icons</span>
-                            <span class="tech-chip">Cloudflare Pages</span>
+                            <span class="tech-chip">Vite</span>
+                            <span class="tech-chip">Vitest</span>
+                            <span class="tech-chip">Clean Architecture</span>
                         </div>
-
-                        <h2>Araç Kategorileri</h2>
-                        <ul class="feature-list">
-                            <li>Format &amp; Convert</li>
-                            <li>Generators</li>
-                            <li>Encoding</li>
-                            <li>Color &amp; CSS</li>
-                            <li>String &amp; Text</li>
-                            <li>Time &amp; Date</li>
-                        </ul>
-
-                        <h2>Sistem Tasarımı</h2>
-                        <ul class="feature-list">
-                            <li>Tool logic katmanı (pure TypeScript)</li>
-                            <li>UI bileşen katmanı (reusable components)</li>
-                            <li>İçerik ve SEO katmanı (dynamic pages + metadata)</li>
-                            <li>Kategori bazlı sayfa üretimi (dynamic routing)</li>
-                        </ul>
 
                         <h2>Öne Çıkan Mühendislik Kararları</h2>
                         <ul class="feature-list">
-                            <li>Server bağımlılığı tamamen kaldırıldı</li>
-                            <li>Performans için gereksiz JS minimize edildi</li>
-                            <li>Tüm araçlar bağımsız modüller olarak tasarlandı</li>
-                            <li>ZIP/ICO gibi işlemler sıfırdan implement edildi</li>
-                        </ul>
-
-                        <h2>Gelecek Geliştirmeler</h2>
-                        <ul class="feature-list">
-                            <li>Yeni tool modülleri (özellikle AI destekli araçlar)</li>
-                            <li>Kullanıcı tercihleri ve kişiselleştirme</li>
-                            <li>Progressive Web App (PWA) desteği</li>
-                            <li>Gelişmiş arama ve filtreleme sistemi</li>
+                            <li>Arayüz katmanının iş kurallarından (domain) tamamen izole edilmesi</li>
+                            <li>Olası backend entegrasyonlarına (örn. HTTP, API) hazır bir InMemory repository mimarisi</li>
+                            <li>İşletme planlarına dinamik olarak uyum sağlayan BillingStrategy deseni</li>
                         </ul>
                     </div>
 
                     <div class="project-media">
                         <div class="video-card">
                             <div class="video-header">
-                            <span class="video-badge"><i class="fas fa-globe"></i> Canlı Proje</span>
-                                <h2>Come Back</h2>
+                            <span class="video-badge"><i class="fas fa-desktop"></i> Proje Arayüzü</span>
+                                <h2>Come Back Panel</h2>
                             </div>
                             <div class="video-wrapper">
-                                <img src="img/come-back-cover.png" alt="Come Back platformunun ana sayfası" width="960" height="540" loading="lazy">
-                            </div>
-                            <div class="video-actions">
-                                <a href="https://usetoolsuite.com/" target="_blank" rel="noopener noreferrer" class="btn primary-btn" style="display:inline-flex;align-items:center;gap:0.5rem;justify-content:center;">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Canlı Projeyi Aç</span>
-                                </a>
+                                <img src="img/come-back-cover.png" alt="Come Back Platformu paneli" width="960" height="540" loading="lazy">
                             </div>
                             <p class="video-caption">
-                                usetoolsuite.com — tamamen tarayıcıda çalışan 180+ üretkenlik aracı
+                                İşletmeler için geri kazanım oranlarını ve ROI istatistiklerini gösteren modern dashboard arayüzü
                             </p>
                         </div>
                     </div>
                 </section>
             </div>
         </main>
+
 
         <!-- Footer -->
         <footer>

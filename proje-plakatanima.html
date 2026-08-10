@@ -89,112 +89,78 @@
         </header>
 
         <!-- Project Detail Content -->
+        
         <main class="project-detail-main">
             <div class="container">
                 <section class="project-detail-grid">
                     <div class="project-text">
                         <h2>Proje Özeti</h2>
                         <p>
-                            Geleneksel plaka tanıma sistemlerindeki çevresel gürültü (reklam panoları vb.) problemlerini çözmek için geliştirilen, YOLOv8 ile önce aracı tespit edip ardından plakayı konumlandıran iki aşamalı bir mimariye sahip yapay zeka pipeline'ı.
+                            Görüntü veya video akışları üzerinden araç plakalarını yüksek doğruluk ve optimize bellek kullanımıyla tespit edip okuyan iki aşamalı yapay zeka pipeline'ı. Sokak tabelaları, reklam panoları gibi gürültüleri filtreleyerek sadece gerçek araç plakalarına odaklanır.
                         </p>
 
                         <h2>Problem &amp; Çözüm</h2>
                         <p>
-                            Modern geliştirme süreçlerinde küçük ama sık yapılan işlemler (formatlama, dönüştürme, encoding vb.) ciddi zaman kaybına yol açar.
+                            Tek aşamalı plaka tanıma modelleri çoğu zaman çevredeki metinleri ve şekilleri plaka olarak algılayabilir. Bu proje, önce aracı tespit eden, ardından sadece tespit edilen araç bölgesi (ROI) içerisinde plaka arayan iki aşamalı bir çözüm sunarak yanılma payını minimize eder.
                         </p>
                         <ul class="feature-list">
-                            <li>Tek noktadan erişilebilir araçlar</li>
-                            <li>Anlık işlem (zero-latency hissi)</li>
-                            <li>Veri gizliliği garantisi</li>
+                            <li>Çevresel gürültülerden izolasyon</li>
+                            <li>Gereksiz matris kopyalamaları engelleyerek bellek tasarrufu</li>
+                            <li>Yüksek FPS'te gerçek zamanlı işleme</li>
                         </ul>
 
                         <h2>Temel Özellikler</h2>
                         <ul class="feature-list">
-                            <li>50 farklı geliştirici aracı (format, encode, generate, convert)</li>
-                            <li>%100 tarayıcı tabanlı çalışma (server bağımsız)</li>
-                            <li>Gerçek zamanlı işlem (client-side execution)</li>
-                            <li>Modüler ve genişletilebilir tool mimarisi</li>
-                            <li>SEO optimize edilmiş sayfa yapısı</li>
-                            <li>Klavye kısayolları ile hızlı kullanım (Ctrl+Enter, Ctrl+L)</li>
-                            <li>Responsive ve erişilebilir arayüz</li>
+                            <li><strong>Aşama 1 (Araç Tespiti):</strong> COCO pre-trained YOLOv8n modeli ile araçları tespit eder.</li>
+                            <li><strong>Aşama 2 (Plaka Konumlandırma):</strong> Özel eğitilmiş ikinci YOLO modeli ile plaka ROI'sini bulur.</li>
+                            <li><strong>Aşama 3 (OCR):</strong> EasyOCR motoru ve ön işleme (CLAHE) teknikleriyle plaka karakterlerini okur.</li>
+                            <li>Türk plaka formatına uygun karakter düzeltme (O→0, I→1) ve doğrulama.</li>
+                            <li>Canlı kamera arayüzü ve video işleme desteği.</li>
                         </ul>
 
                         <h2>Teknik Mimari</h2>
                         <ul class="feature-list">
-                            <li><strong>Astro (Static-first architecture):</strong> Minimum JavaScript, maksimum hız</li>
-                            <li><strong>Client-side processing:</strong> Canvas API, FileReader, Blob gibi native Web API’ler kullanıldı</li>
-                            <li><strong>Zero dependency tool logic:</strong> Tüm araç algoritmaları harici kütüphane olmadan geliştirildi</li>
-                            <li><strong>Component-based yapı:</strong> Yeniden kullanılabilir UI bileşenleri</li>
-                            <li><strong>Type-safe geliştirme:</strong> TypeScript ile güçlü tip kontrolü</li>
+                            <li><strong>YOLO Pipeline:</strong> İki farklı YOLOv8 modelinin birbirine entegre çalıştığı ardışık sistem.</li>
+                            <li><strong>Bellek Optimizasyonu:</strong> Fiziksel resim kırpma (crop) yerine koordinat referansı (ROI) tutularak bellek verimliliği sağlanır.</li>
+                            <li><strong>Donanım Hızlandırma:</strong> Apple Silicon işlemcileri için PyTorch (MPS - Metal Performance Shaders) optimizasyonu.</li>
+                            <li>Frame skipping ve model katman birleştirme (fuse) ile hız optimizasyonu.</li>
                         </ul>
 
                         <h2>Kullanılan Teknolojiler</h2>
                         <div class="tech-grid">
-                            <span class="tech-chip">Astro v5</span>
-                            <span class="tech-chip">TypeScript</span>
-                            <span class="tech-chip">Tailwind CSS v4</span>
-                            <span class="tech-chip">Lucide Icons</span>
-                            <span class="tech-chip">Cloudflare Pages</span>
+                            <span class="tech-chip">Python 3.10+</span>
+                            <span class="tech-chip">YOLOv8</span>
+                            <span class="tech-chip">PyTorch (MPS)</span>
+                            <span class="tech-chip">OpenCV</span>
+                            <span class="tech-chip">EasyOCR</span>
                         </div>
-
-                        <h2>Araç Kategorileri</h2>
-                        <ul class="feature-list">
-                            <li>Format &amp; Convert</li>
-                            <li>Generators</li>
-                            <li>Encoding</li>
-                            <li>Color &amp; CSS</li>
-                            <li>String &amp; Text</li>
-                            <li>Time &amp; Date</li>
-                        </ul>
-
-                        <h2>Sistem Tasarımı</h2>
-                        <ul class="feature-list">
-                            <li>Tool logic katmanı (pure TypeScript)</li>
-                            <li>UI bileşen katmanı (reusable components)</li>
-                            <li>İçerik ve SEO katmanı (dynamic pages + metadata)</li>
-                            <li>Kategori bazlı sayfa üretimi (dynamic routing)</li>
-                        </ul>
 
                         <h2>Öne Çıkan Mühendislik Kararları</h2>
                         <ul class="feature-list">
-                            <li>Server bağımlılığı tamamen kaldırıldı</li>
-                            <li>Performans için gereksiz JS minimize edildi</li>
-                            <li>Tüm araçlar bağımsız modüller olarak tasarlandı</li>
-                            <li>ZIP/ICO gibi işlemler sıfırdan implement edildi</li>
-                        </ul>
-
-                        <h2>Gelecek Geliştirmeler</h2>
-                        <ul class="feature-list">
-                            <li>Yeni tool modülleri (özellikle AI destekli araçlar)</li>
-                            <li>Kullanıcı tercihleri ve kişiselleştirme</li>
-                            <li>Progressive Web App (PWA) desteği</li>
-                            <li>Gelişmiş arama ve filtreleme sistemi</li>
+                            <li>Video işleme sırasında `stream=True` argümanıyla bellek sızıntılarının (memory leak) önüne geçilmesi.</li>
+                            <li>Her 3 frame'de bir işleme (Frame Skipping) yapılarak video/kamera akışının akıcı tutulması.</li>
+                            <li>Tamamen modüler, nesne yönelimli, config güdümlü kod mimarisi.</li>
                         </ul>
                     </div>
 
                     <div class="project-media">
                         <div class="video-card">
                             <div class="video-header">
-                            <span class="video-badge"><i class="fas fa-globe"></i> Canlı Proje</span>
+                            <span class="video-badge"><i class="fas fa-microchip"></i> AI Pipeline</span>
                                 <h2>Plaka Tanıma Sistemi</h2>
                             </div>
                             <div class="video-wrapper">
-                                <img src="img/plakatanima-cover.png" alt="Plaka Tanıma Sistemi platformunun ana sayfası" width="960" height="540" loading="lazy">
-                            </div>
-                            <div class="video-actions">
-                                <a href="https://usetoolsuite.com/" target="_blank" rel="noopener noreferrer" class="btn primary-btn" style="display:inline-flex;align-items:center;gap:0.5rem;justify-content:center;">
-                                    <i class="fas fa-external-link-alt"></i>
-                                    <span>Canlı Projeyi Aç</span>
-                                </a>
+                                <img src="img/plakatanima-cover.png" alt="Plaka Tanıma Sistemi arayüzü" width="960" height="540" loading="lazy">
                             </div>
                             <p class="video-caption">
-                                usetoolsuite.com — tamamen tarayıcıda çalışan 180+ üretkenlik aracı
+                                İki aşamalı YOLO pipeline'ı ile tespit edilen aracın üzerinden yüksek doğrulukla konumlandırılan ve OCR'den geçirilen plaka verisi
                             </p>
                         </div>
                     </div>
                 </section>
             </div>
         </main>
+
 
         <!-- Footer -->
         <footer>
