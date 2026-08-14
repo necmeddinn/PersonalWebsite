@@ -108,14 +108,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 currentIndex = (currentIndex + 1) % totalSlides;
                 updateGallery();
             });
         }
         
         if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                 updateGallery();
             });
