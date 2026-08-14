@@ -71,43 +71,55 @@ document.addEventListener('DOMContentLoaded', function() {
         footerYear.innerHTML = footerYear.innerHTML.replace('2023', currentYear);
     }
     
-    // Gallery Slider Logic
-    const galleryWrapper = document.getElementById('comeback-gallery');
-    if (galleryWrapper) {
-        const slides = document.querySelectorAll('.gallery-slide');
-        const prevBtn = document.getElementById('gallery-prev');
-        const nextBtn = document.getElementById('gallery-next');
-        const indicators = document.querySelectorAll('#comeback-indicators .indicator');
+    // Gallery Slider Logic (Generic)
+    const galleries = document.querySelectorAll('.gallery-container');
+    
+    galleries.forEach(gallery => {
+        const wrapper = gallery.querySelector('.gallery-wrapper');
+        const slides = gallery.querySelectorAll('.gallery-slide');
+        const prevBtn = gallery.querySelector('.gallery-nav.prev');
+        const nextBtn = gallery.querySelector('.gallery-nav.next');
+        const indicatorsContainer = gallery.querySelector('.gallery-indicators');
         
+        if (!wrapper || slides.length === 0) return;
+        
+        // Dynamically create indicators based on slides count
+        if (indicatorsContainer) {
+            indicatorsContainer.innerHTML = ''; // Clear existing
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('indicator');
+                if (index === 0) dot.classList.add('active');
+                dot.setAttribute('data-index', index);
+                indicatorsContainer.appendChild(dot);
+            });
+        }
+        
+        const indicators = gallery.querySelectorAll('.indicator');
         let currentIndex = 0;
         const totalSlides = slides.length;
         
         function updateGallery() {
-            // Update wrapper position
-            galleryWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
-            
-            // Update indicators
+            wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
             indicators.forEach((ind, index) => {
-                if (index === currentIndex) {
-                    ind.classList.add('active');
-                } else {
-                    ind.classList.remove('active');
-                }
+                if (index === currentIndex) ind.classList.add('active');
+                else ind.classList.remove('active');
             });
         }
         
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            updateGallery();
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateGallery();
+            });
         }
         
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-            updateGallery();
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateGallery();
+            });
         }
-        
-        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
         
         indicators.forEach(indicator => {
             indicator.addEventListener('click', (e) => {
@@ -115,8 +127,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateGallery();
             });
         });
-        
-        // Optional: Auto-play the gallery
-        // setInterval(nextSlide, 5000);
-    }
+    });
 }); 
