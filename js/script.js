@@ -70,4 +70,53 @@ document.addEventListener('DOMContentLoaded', function() {
     if (footerYear) {
         footerYear.innerHTML = footerYear.innerHTML.replace('2023', currentYear);
     }
+    
+    // Gallery Slider Logic
+    const galleryWrapper = document.getElementById('comeback-gallery');
+    if (galleryWrapper) {
+        const slides = document.querySelectorAll('.gallery-slide');
+        const prevBtn = document.getElementById('gallery-prev');
+        const nextBtn = document.getElementById('gallery-next');
+        const indicators = document.querySelectorAll('#comeback-indicators .indicator');
+        
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        
+        function updateGallery() {
+            // Update wrapper position
+            galleryWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update indicators
+            indicators.forEach((ind, index) => {
+                if (index === currentIndex) {
+                    ind.classList.add('active');
+                } else {
+                    ind.classList.remove('active');
+                }
+            });
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateGallery();
+        }
+        
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateGallery();
+        }
+        
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', (e) => {
+                currentIndex = parseInt(e.target.getAttribute('data-index'));
+                updateGallery();
+            });
+        });
+        
+        // Optional: Auto-play the gallery
+        // setInterval(nextSlide, 5000);
+    }
 }); 
