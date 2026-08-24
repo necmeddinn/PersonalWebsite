@@ -1,4 +1,4 @@
-/* Yazılar, Notlar, Şimdi ve tekil yazı sayfaları için ortak stiller */
+/* Yazılar, Teknik ve tekil içerik sayfaları için ortak stiller */
 
 /* Sayfa başlığı */
 .page-header {
@@ -316,28 +316,6 @@
     border-top: 1px solid var(--border-color);
     color: var(--light-text);
     font-size: 0.95rem;
-}
-
-/* "Şimdi" sayfası */
-.now-block {
-    margin-bottom: 2.5rem;
-}
-
-.now-block h2 {
-    font-family: var(--font-display);
-    font-size: 1.45rem;
-    margin-bottom: 0.9rem;
-}
-
-.now-updated {
-    display: inline-block;
-    font-size: 0.85rem;
-    color: var(--light-text);
-    margin-bottom: 2rem;
-    padding: 0.3rem 0.9rem;
-    border-radius: 50px;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
 }
 
 /* Ana sayfadaki "son yazılar" bloğu */

@@ -28,6 +28,20 @@ function kur(liste, icerikler) {
     let kapsam = icerikler.filter((i) => tur === 'hepsi' || i.tur === tur);
     if (limit > 0) kapsam = kapsam.slice(0, limit);
 
+    // Hiç içerik yoksa: ana sayfada bölümü tamamen gizle, liste sayfasında boş durum göster
+    if (!kapsam.length) {
+        const bolum = liste.closest('section');
+        if (limit > 0 && bolum) {
+            bolum.hidden = true;
+        } else {
+            const suzgec = document.querySelector('.post-filters');
+            if (suzgec) suzgec.hidden = true;
+            liste.innerHTML =
+                '<p class="post-empty">Burası şimdilik boş. İlk içerik hazır olduğunda burada olacak.</p>';
+        }
+        return;
+    }
+
     const adres = new URLSearchParams(window.location.search);
     let aktifEtiket = adres.get('etiket') || 'hepsi';
     let arama = '';
@@ -108,7 +122,7 @@ function kart(i) {
         : '';
     const sure = i.sure ? `<span>${i.sure} dk okuma</span>` : '';
 
-    const liste = i.tur === 'not' ? 'notlar.html' : 'yazilar.html';
+    const liste = i.tur === 'teknik' ? 'teknik.html' : 'yazilar.html';
     const etiketler = (i.etiketler || [])
         .map((e) => `<a href="${liste}?etiket=${encodeURIComponent(e)}">${e}</a>`)
         .join('');

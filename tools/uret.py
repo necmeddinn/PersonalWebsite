@@ -17,11 +17,9 @@ BASE = "https://necmeddincunedioglu.com/"
 SABIT_SAYFALAR = [
     ("", "1.0"),
     ("yazilar.html", "0.9"),
-    ("notlar.html", "0.9"),
+    ("teknik.html", "0.9"),
     ("hakkimda.html", "0.8"),
     ("projelerim.html", "0.8"),
-    ("simdi.html", "0.8"),
-    ("iletisim.html", "0.6"),
     ("proje-fizyoterapi-ai.html", "0.7"),
     ("proje-ntradeweb.html", "0.7"),
     ("proje-usetoolsuite.html", "0.7"),

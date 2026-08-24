@@ -5,13 +5,13 @@ JavaScript ile statik olarak geliştirilmiştir; herhangi bir build adımı gere
 
 ## İçerik
 
-- **Ana Sayfa**: Kısa tanıtım, son yazılar ve günün sözü
-- **Yazılar**: Bitmiş yazıların tek akışı; etiketle süzülebilir ve aranabilir
-- **Notlar**: Bitmemiş, büyümeye devam eden notlar (olgunluk: fikir / gelişiyor / olgun)
-- **Şimdi**: Şu an ne yaptığımı anlatan `/now` sayfası
+- **Ana Sayfa**: Kısa tanıtım, son yazılar (içerik varsa) ve hızlı erişim kartları
+- **Yazılar**: Teknik olmayan yazıların akışı; etiketle süzülebilir ve aranabilir
+- **Teknik**: Yazılım tarafındaki yazılar ve notlar; aynı süzgeç/arama düzeni
 - **Hakkımda**: Hikaye, deneyim & projeler, eğitim, yetenekler
 - **Projelerim**: Filtrelenebilir proje galerisi (Yapay Zeka / Web Uygulaması) ve proje detay sayfaları
-- **İletişim**: İletişim bilgileri ve sosyal medya bağlantıları
+
+İletişim kanalları ayrı bir sayfada değil, her sayfanın altındaki footer'da.
 
 ## Yeni yazı / not eklemek
 
@@ -36,11 +36,12 @@ Tüm içerik listesi tek bir dosyadan okunur: `data/posts.json`.
 }
 ```
 
-- `tur`: `"yazi"` (bitmiş yazı) veya `"not"` (büyüyen not).
-- Notlarda ayrıca `durum` alanı kullanılır: `fikir` | `gelisiyor` | `olgun`,
-  istersen `guncelleme` tarihi de eklenebilir.
+- `tur`: `"yazi"` (Yazılar sayfası) veya `"teknik"` (Teknik sayfası).
+- İsteğe bağlı `durum` alanı içeriğin olgunluğunu gösterir: `fikir` | `gelisiyor` | `olgun`.
+  `guncelleme` tarihi de eklenebilir.
 - Kayıt eklendiği anda ana sayfadaki "Son Yazılar", `yazilar.html` ve `notlar.html`
   listeleri kendiliğinden güncellenir; etiket süzgeci de etiketlerden otomatik üretilir.
+- İçerik listesi boşken ana sayfadaki "Son Yazılar" bölümü kendiliğinden gizlenir.
 5. `python3 tools/uret.py` çalıştır — `sitemap.xml` ve `rss.xml` yeniden üretilir.
 
 ## Tasarım
@@ -69,13 +70,10 @@ Tüm içerik listesi tek bir dosyadan okunur: `data/posts.json`.
 ├── projelerim.html          # Proje galerisi
 ├── proje-*.html             # Proje detay sayfaları
 ├── yazilar.html             # Yazı listesi (etiket süzgeci + arama)
-├── notlar.html              # Not listesi (olgunluk etiketli)
-├── simdi.html               # /now sayfası
-├── yazi-*.html              # Tekil yazı sayfaları
-├── not-*.html               # Tekil not sayfaları
+├── teknik.html              # Teknik içerik listesi (aynı düzen)
+├── yazi-*.html              # Tekil içerik sayfaları (şablondan üretilir)
 ├── sablon-yazi.html         # Yeni yazı şablonu (noindex)
-├── iletisim.html            # İletişim
-├── notlarim.html            # notlar.html'e yönlendirme (eski adres)
+├── notlarim.html            # teknik.html'e yönlendirme (eski adres)
 ├── data/posts.json          # Tüm yazı ve notların listesi
 ├── tools/uret.py            # sitemap.xml + rss.xml üreteci
 ├── rss.xml                  # (üretilir — elle düzenleme)
@@ -87,19 +85,17 @@ Tüm içerik listesi tek bir dosyadan okunur: `data/posts.json`.
 │   ├── hakkimda.css
 │   ├── projelerim.css
 │   ├── proje-detay.css
-│   ├── iletisim.css
 │   └── blog.css             # Yazı/not listeleri, süzgeçler, okuma düzeni, /now
 └── js/
     ├── script.js            # Menü, navbar scroll, kart animasyonları, yıl güncelleme
     ├── theme.js             # Tema değiştirici
     ├── quotes.js            # Günün sözü (quotes.json)
     ├── projelerim.js        # Proje filtreleme
-    └── posts.js             # data/posts.json'u okuyup listeleri basar; etiket süzgeci
+    └── posts.js             # data/posts.json'u okuyup listeleri basar; etiket süzgeci, boş durum
 ```
 
 ## Notlar
 
-- Kaynak görseller (`NCLogo.jpeg`, `NewProfilPhoto.png`) depoda tutulur ama sayfalarda
-  optimize edilmiş `img/` kopyaları kullanılır.
+- Sitede kişisel fotoğraf kullanılmıyor; görsel kimlik NC logosu ve yeşil/altın palet üzerinden kurulu.
 - Proje kapakları: canlı sitelerin ekran görüntüleri (PomoStat, UseToolSuite) ve
   YouTube tanıtım videolarının kapakları (NTradeWeb, Fizyoterapi AI).

@@ -11,26 +11,25 @@
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Necmeddin Cunedioğlu'nun kişisel sitesi. Yazılım ve yapay zekadan tamamen alakasız konulara kadar yazılar, büyümeye devam eden notlar ve şu an ne yaptığım.">
+    <meta name="description" content="Necmeddin Cunedioğlu'nun kişisel sitesi. İlgimi çeken konular üzerine yazılar, yazılım tarafında teknik notlar ve geliştirdiğim projeler.">
     <link rel="canonical" href="https://necmeddincunedioglu.com/">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="theme-color" content="#16241d">
-    <link rel="preload" as="image" href="img/profile-800.jpg">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Necmeddin Cunedioğlu">
     <meta property="og:locale" content="tr_TR">
-    <meta property="og:title" content="Necmeddin Cunedioğlu — Yazılar, Notlar, Denemeler">
-    <meta property="og:description" content="Necmeddin Cunedioğlu'nun kişisel sitesi. Yazılım ve yapay zekadan tamamen alakasız konulara kadar yazılar, büyümeye devam eden notlar ve şu an ne yaptığım.">
+    <meta property="og:title" content="Necmeddin Cunedioğlu — Yazılar ve Teknik Notlar">
+    <meta property="og:description" content="Necmeddin Cunedioğlu'nun kişisel sitesi. İlgimi çeken konular üzerine yazılar, yazılım tarafında teknik notlar ve geliştirdiğim projeler.">
     <meta property="og:url" content="https://necmeddincunedioglu.com/">
     <meta property="og:image" content="https://necmeddincunedioglu.com/img/og-cover.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Necmeddin Cunedioğlu — Yazılar, Notlar, Denemeler">
-    <meta name="twitter:description" content="Necmeddin Cunedioğlu'nun kişisel sitesi. Yazılım ve yapay zekadan tamamen alakasız konulara kadar yazılar, büyümeye devam eden notlar ve şu an ne yaptığım.">
+    <meta name="twitter:title" content="Necmeddin Cunedioğlu — Yazılar ve Teknik Notlar">
+    <meta name="twitter:description" content="Necmeddin Cunedioğlu'nun kişisel sitesi. İlgimi çeken konular üzerine yazılar, yazılım tarafında teknik notlar ve geliştirdiğim projeler.">
     <meta name="twitter:image" content="https://necmeddincunedioglu.com/img/og-cover.jpg">
-    <title>Necmeddin Cunedioğlu — Yazılar, Notlar, Denemeler</title>
+    <title>Necmeddin Cunedioğlu — Yazılar ve Teknik Notlar</title>
     <script>
       // Tema tercihini stiller yüklenmeden uygula (koyu temada beyaz parlamayı önler)
       (function () {
@@ -41,7 +40,7 @@
         } catch (e) {}
       })();
     </script>
-    <link rel="alternate" type="application/rss+xml" title="Necmeddin Cunedioğlu — Yazılar ve Notlar" href="rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="Necmeddin Cunedioğlu — Yazılar ve Teknik Notlar" href="rss.xml">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,7 +53,6 @@
       "@type": "Person",
       "name": "Necmeddin Cunedioğlu",
       "url": "https://necmeddincunedioglu.com",
-      "image": "https://necmeddincunedioglu.com/img/profile-400.jpg",
       "jobTitle": "Yazılım Geliştirici",
       "alumniOf": {
         "@type": "CollegeOrUniversity",
@@ -83,11 +81,9 @@
                 </button>
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="yazilar.html">Yazılar</a></li>
-                    <li class="nav-item"><a href="notlar.html">Notlar</a></li>
-                    <li class="nav-item"><a href="simdi.html">Şimdi</a></li>
+                    <li class="nav-item"><a href="teknik.html">Teknik</a></li>
                     <li class="nav-item"><a href="hakkimda.html">Hakkımda</a></li>
                     <li class="nav-item"><a href="projelerim.html">Projeler</a></li>
-                    <li class="nav-item"><a href="iletisim.html">İletişim</a></li>
                 </ul>
                 <div class="theme-toggle">
                     <button id="theme-toggle-btn" aria-label="Tema değiştir">
@@ -99,7 +95,7 @@
         </nav>
 
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero hero-centered">
             <div class="hero-content">
                 <h1>Necmeddin Cunedioğlu</h1>
                 <p class="subtitle">Yazıyorum, not tutuyorum, bir şeyler geliştiriyorum</p>
@@ -109,38 +105,53 @@
                     yazıya döktüğüm yer.
                 </p>
                 <div class="cta-buttons">
-                    <a href="yazilar.html" class="btn primary-btn">Yazıları Oku</a>
-                    <a href="simdi.html" class="btn secondary-btn">Şimdi Ne Yapıyorum?</a>
+                    <a href="yazilar.html" class="btn primary-btn">Yazılar</a>
+                    <a href="teknik.html" class="btn secondary-btn">Teknik</a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <div class="shape" role="img" aria-label="Necmeddin Cunedioğlu"></div>
             </div>
         </section>
 
-        <!-- Latest Posts Section -->
+        <!-- Latest Posts Section (içerik eklendiğinde kendiliğinden görünür) -->
         <section class="latest-posts">
             <div class="container">
                 <div class="section-heading">
                     <h2>Son Yazılar</h2>
-                    <p>Yazılımdan alakasız konulara, üzerine düşünüp yazdıklarım</p>
+                    <p>Üzerine düşünüp yazdıklarım</p>
                 </div>
                 <div class="post-list" data-post-list data-tur="hepsi" data-limit="5"></div>
                 <div class="latest-more">
                     <a href="yazilar.html" class="btn secondary-btn">Tüm Yazılar</a>
-                    <a href="notlar.html" class="btn secondary-btn">Notlar</a>
+                    <a href="teknik.html" class="btn secondary-btn">Teknik</a>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Strip -->
-        <section class="projects-strip">
+        <!-- Quick Links Section -->
+        <section class="quick-links">
             <div class="container">
-                <p>
-                    Geliştirdiğim işleri merak ediyorsan &mdash; TÜBİTAK destekli bilgisayarlı görü
-                    projesinden yayında olan ürünlere kadar &mdash;
-                    <a href="projelerim.html">projeler sayfasında</a> hepsi duruyor.
-                </p>
+                <h2>Sitede Ne Var?</h2>
+                <div class="links-grid">
+                    <a href="yazilar.html" class="link-card">
+                        <div class="card-icon"><i class="fas fa-pen-nib"></i></div>
+                        <h3>Yazılar</h3>
+                        <p>İlgimi çeken konular üzerine yazdıklarım.</p>
+                    </a>
+                    <a href="teknik.html" class="link-card">
+                        <div class="card-icon"><i class="fas fa-code"></i></div>
+                        <h3>Teknik</h3>
+                        <p>Yazılım tarafındaki notlar ve çözümler.</p>
+                    </a>
+                    <a href="projelerim.html" class="link-card">
+                        <div class="card-icon"><i class="fas fa-cubes"></i></div>
+                        <h3>Projeler</h3>
+                        <p>Fikirden yayına geliştirdiğim işler.</p>
+                    </a>
+                    <a href="hakkimda.html" class="link-card">
+                        <div class="card-icon"><i class="fas fa-user"></i></div>
+                        <h3>Hakkımda</h3>
+                        <p>Kim olduğum ve nelerle ilgilendiğim.</p>
+                    </a>
+                </div>
             </div>
         </section>
 
