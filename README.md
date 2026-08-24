@@ -73,7 +73,6 @@ Tüm içerik listesi tek bir dosyadan okunur: `data/posts.json`.
 ├── teknik.html              # Teknik içerik listesi (aynı düzen)
 ├── yazi-*.html              # Tekil içerik sayfaları (şablondan üretilir)
 ├── sablon-yazi.html         # Yeni yazı şablonu (noindex)
-├── notlarim.html            # teknik.html'e yönlendirme (eski adres)
 ├── data/posts.json          # Tüm yazı ve notların listesi
 ├── tools/uret.py            # sitemap.xml + rss.xml üreteci
 ├── rss.xml                  # (üretilir — elle düzenleme)
