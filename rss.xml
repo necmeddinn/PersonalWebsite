@@ -5,7 +5,15 @@
     <link>https://necmeddincunedioglu.com/</link>
     <description>Yazılım, yapay zeka ve ilgimi çeken diğer konular üzerine yazılar ve notlar.</description>
     <language>tr</language>
-    <lastBuildDate>Mon, 24 Aug 2026 18:26:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 18:56:03 +0000</lastBuildDate>
     <atom:link href="https://necmeddincunedioglu.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Yetenek, Formüldeki En Küçük Harf</title>
+      <link>https://necmeddincunedioglu.com/yazi-nasil-konusulur.html</link>
+      <guid isPermaLink="true">https://necmeddincunedioglu.com/yazi-nasil-konusulur.html</guid>
+      <pubDate>Tue, 25 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Yazı</category>
+      <description>Patrick Winston'ın MIT'de kırk yılı aşkın süredir tekrarladığı "How to Speak" dersinin omurgası: açılışta güçlendirme sözü, dikkati yöneten dört teknik, slayt kuralları ve kapanış. İzleme notları dizisinin ilki.</description>
+    </item>
   </channel>
 </rss>

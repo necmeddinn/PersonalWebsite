@@ -44,6 +44,29 @@ Tüm içerik listesi tek bir dosyadan okunur: `data/posts.json`.
 - İçerik listesi boşken ana sayfadaki "Son Yazılar" bölümü kendiliğinden gizlenir.
 5. `python3 tools/uret.py` çalıştır — `sitemap.xml` ve `rss.xml` yeniden üretilir.
 
+## Uzun yazı ve izleme notu düzeni
+
+Uzun yazılar için ek bir okuma düzeni var. Kullanmak için sayfaya `css/okuma.css` ile
+`js/okuma.js` ekle ve makaleyi `<article class="post-article okuma">` olarak aç. Örnek:
+`yazi-nasil-konusulur.html`.
+
+Hazır parçalar:
+
+| Parça | Nasıl kullanılır |
+| --- | --- |
+| Okuma ilerleme çubuğu | `<div class="reading-progress"><span></span></div>` — `<body>`in ilk çocuğu |
+| Dizi rozeti | `<span class="post-kicker">…</span>` — başlığın üstünde |
+| Giriş cümlesi | `<p class="post-dek">…</p>` |
+| İçindekiler | `<nav class="post-toc">` + `<ol>` içinde `#kimlik` bağlantıları; geniş ekranda sola sabitlenir, dar ekranda kart olur. Bölüm `<h2>`lerine `id` vermeyi unutma |
+| Video kartı | `<div class="watch-card">` içinde `<div class="video-embed" data-video="YT_KIMLIK">`; kapak görseline tıklanana kadar YouTube yüklenmez |
+| Zaman damgası | `<a class="stamp" href="https://youtu.be/…?t=255">` — paragraf içinde videoya derin bağlantı |
+| Not kutusu | `<div class="note-block"><span class="note-label">Kendime not</span>…</div>` |
+| Vurgu alıntısı | `<blockquote class="pull-quote">… <cite>Kaynak</cite></blockquote>` |
+| Kapanış listesi | `<div class="takeaways"><h2>…</h2><ol>…</ol></div>` |
+| Kaynak notu | `<p class="source-note">…</p>` |
+
+Bölüm `<h2>`leri kendiliğinden `01`, `02` diye numaralanır; `.takeaways` içindeki başlık numaralanmaz.
+
 ## Tasarım
 
 - Renk paleti NC logosundan türetilmiştir: koyu orman yeşili (`#16241d`) + altın/krem (`#a8842e` / `#c9a961`)
@@ -84,13 +107,15 @@ Tüm içerik listesi tek bir dosyadan okunur: `data/posts.json`.
 │   ├── hakkimda.css
 │   ├── projelerim.css
 │   ├── proje-detay.css
-│   └── blog.css             # Yazı/not listeleri, süzgeçler, okuma düzeni, /now
+│   ├── blog.css             # Yazı/not listeleri, süzgeçler, okuma düzeni
+│   └── okuma.css            # Uzun yazı düzeni (ilerleme çubuğu, içindekiler, video kartı)
 └── js/
     ├── script.js            # Menü, navbar scroll, kart animasyonları, yıl güncelleme
     ├── theme.js             # Tema değiştirici
     ├── quotes.js            # Günün sözü (quotes.json)
     ├── projelerim.js        # Proje filtreleme
-    └── posts.js             # data/posts.json'u okuyup listeleri basar; etiket süzgeci, boş durum
+    ├── posts.js             # data/posts.json'u okuyup listeleri basar; etiket süzgeci, boş durum
+    └── okuma.js             # Okuma ilerleme çubuğu, içindekiler takibi, tıklayınca yüklenen video
 ```
 
 ## Notlar

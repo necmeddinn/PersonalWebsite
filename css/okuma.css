@@ -1,0 +1,450 @@
+/* Okuma deneyimi — uzun yazılar ve izleme notları için ek düzen.
+   Sadece <article class="post-article okuma"> kullanan sayfalarda yüklenir. */
+
+/* ---------- Okuma ilerleme çubuğu ---------- */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 1200;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.reading-progress span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--gradient-secondary);
+    border-radius: 0 3px 3px 0;
+}
+
+/* ---------- Başlık bölgesi ---------- */
+.okuma .post-header {
+    text-align: left;
+}
+
+.post-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: var(--font-weight-medium);
+    color: var(--accent-color);
+    background-color: var(--accent-soft);
+    border: 1px solid var(--accent-color);
+    border-radius: 50px;
+    padding: 0.3rem 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.okuma .post-header h1 {
+    font-size: 2.7rem;
+    letter-spacing: -0.4px;
+}
+
+.post-dek {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--light-text);
+    margin: 0 0 1.4rem;
+    max-width: 44ch;
+}
+
+/* ---------- Video kartı ---------- */
+.watch-card {
+    margin: 0 0 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: var(--bg-secondary);
+    box-shadow: var(--shadow-sm);
+}
+
+.video-embed {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background-color: #0f1512;
+}
+
+.video-embed iframe,
+.video-embed img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    object-fit: cover;
+}
+
+.video-embed-play {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    background: none;
+}
+
+.video-embed-play img {
+    transition: var(--transition-normal);
+}
+
+.video-embed-play::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 21, 18, 0.55), rgba(15, 21, 18, 0.05));
+}
+
+.video-embed-cta {
+    position: absolute;
+    left: 1.1rem;
+    bottom: 1.1rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1.1rem 0.55rem 0.6rem;
+    border-radius: 50px;
+    color: #16241d;
+    background: var(--gradient-secondary);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    font-size: 0.88rem;
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition-normal);
+}
+
+.video-embed-cta i {
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: rgba(22, 36, 29, 0.16);
+    font-size: 0.72rem;
+}
+
+.video-embed-play:hover .video-embed-cta,
+.video-embed-play:focus-visible .video-embed-cta {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+}
+
+.video-embed-play:hover img {
+    transform: scale(1.02);
+}
+
+.watch-meta {
+    padding: 1.1rem 1.3rem 1.2rem;
+}
+
+.watch-meta h2 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin: 0 0 0.35rem;
+}
+
+.watch-meta p {
+    margin: 0 0 0.7rem;
+    font-size: 0.88rem;
+    color: var(--light-text);
+}
+
+.watch-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+/* ---------- Zaman damgası rozetleri ---------- */
+.stamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-variant-numeric: tabular-nums;
+    padding: 0.18rem 0.65rem;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--light-text);
+    white-space: nowrap;
+    transition: var(--transition-fast);
+}
+
+a.stamp:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background-color: var(--accent-soft);
+}
+
+.post-body a.stamp {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-body a.stamp:hover {
+    border-bottom-color: var(--accent-color);
+}
+
+/* ---------- İçindekiler ---------- */
+.post-toc {
+    margin: 0 0 3rem;
+    padding: 1.1rem 1.3rem 1.2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--bg-secondary);
+}
+
+.post-toc-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light-text);
+    margin: 0 0 0.7rem;
+}
+
+.post-toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: toc;
+}
+
+.post-toc li {
+    margin: 0 0 0.4rem;
+}
+
+.post-toc a {
+    display: block;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: var(--light-text);
+    border-bottom: 0;
+}
+
+.post-toc a::before {
+    counter-increment: toc;
+    content: counter(toc, decimal-leading-zero);
+    font-size: 0.72rem;
+    color: var(--accent-color);
+    margin-right: 0.55rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.post-toc a:hover,
+.post-toc a.active {
+    color: var(--accent-color);
+}
+
+@media (min-width: 1280px) {
+    .post-toc {
+        position: fixed;
+        top: 50%;
+        left: calc(50% - 610px);
+        width: 225px;
+        transform: translateY(-50%);
+        margin: 0;
+        max-height: 70vh;
+        overflow-y: auto;
+        background-color: transparent;
+        border: 0;
+        border-left: 1px solid var(--border-color);
+        border-radius: 0;
+        padding: 0.2rem 0 0.2rem 1rem;
+        z-index: 900;
+    }
+
+    .post-toc a.active {
+        font-weight: var(--font-weight-medium);
+    }
+}
+
+/* ---------- Gövde ince ayarları ---------- */
+.okuma .post-body {
+    counter-reset: bolum;
+}
+
+.okuma .post-body h2 {
+    line-height: 1.3;
+    margin-top: 3.2rem;
+    scroll-margin-top: 6rem;
+}
+
+.okuma .post-body h2::before {
+    counter-increment: bolum;
+    content: counter(bolum, decimal-leading-zero);
+    display: block;
+    font-family: var(--font-family);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.okuma .post-body > p:first-of-type {
+    font-size: 1.14rem;
+    line-height: 1.8;
+}
+
+.okuma .post-body strong {
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color);
+}
+
+/* ---------- Not kutusu ---------- */
+.note-block {
+    margin: 2.2rem 0;
+    padding: 1.2rem 1.4rem;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-color);
+    border-radius: 0 10px 10px 0;
+    background-color: var(--bg-secondary);
+}
+
+.note-block p:last-child {
+    margin-bottom: 0;
+}
+
+.note-label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-medium);
+}
+
+/* ---------- Vurgu alıntısı ---------- */
+.pull-quote {
+    margin: 2.8rem 0;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    font-family: var(--font-display);
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 1.45;
+    color: var(--text-color);
+}
+
+.pull-quote::before {
+    content: '';
+    display: block;
+    width: 46px;
+    height: 2px;
+    margin: 0 auto 1.3rem;
+    background: var(--gradient-secondary);
+}
+
+.pull-quote::after {
+    content: '';
+    display: block;
+    width: 46px;
+    height: 2px;
+    margin: 1.3rem auto 0;
+    background: var(--gradient-secondary);
+}
+
+.pull-quote cite {
+    display: block;
+    margin-top: 0.9rem;
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    font-style: normal;
+    color: var(--light-text);
+}
+
+/* ---------- Kapanış kartı ---------- */
+.takeaways {
+    margin: 3rem 0 0;
+    padding: 1.6rem 1.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background-color: var(--bg-secondary);
+}
+
+.takeaways h2 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin: 0 0 1rem;
+}
+
+.okuma .post-body .takeaways h2::before {
+    content: none;
+}
+
+.takeaways ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: alinti;
+}
+
+.takeaways li {
+    position: relative;
+    padding-left: 2.2rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.99rem;
+    line-height: 1.7;
+}
+
+.takeaways li:last-child {
+    margin-bottom: 0;
+}
+
+.takeaways li::before {
+    counter-increment: alinti;
+    content: counter(alinti, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    font-size: 0.78rem;
+    color: var(--accent-color);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Kaynak notu ---------- */
+.source-note {
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--light-text);
+}
+
+@media (max-width: 768px) {
+    .okuma .post-header h1 {
+        font-size: 1.9rem;
+    }
+
+    .post-dek {
+        font-size: 1.02rem;
+    }
+
+    .pull-quote {
+        font-size: 1.22rem;
+    }
+
+    .video-embed-cta {
+        left: 0.75rem;
+        bottom: 0.75rem;
+        font-size: 0.8rem;
+        padding: 0.45rem 0.9rem 0.45rem 0.5rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .video-embed-play:hover img,
+    .video-embed-play:hover .video-embed-cta {
+        transform: none;
+    }
+}

@@ -1,4 +1,21 @@
 {
   "_aciklama": "Sitedeki tüm içeriğin kaynağı. Yeni içerik eklemek için bu listeye bir nesne ekleyip ilgili HTML dosyasını oluştur, sonra tools/uret.py çalıştır. tur: 'yazi' (Yazılar sayfası) veya 'teknik' (Teknik sayfası). durum alanı isteğe bağlıdır: fikir | gelisiyor | olgun.",
-  "icerikler": []
+  "icerikler": [
+    {
+      "slug": "nasil-konusulur",
+      "url": "yazi-nasil-konusulur.html",
+      "tur": "yazi",
+      "baslik": "Yetenek, Formüldeki En Küçük Harf",
+      "ozet": "Patrick Winston'ın MIT'de kırk yılı aşkın süredir tekrarladığı \"How to Speak\" dersinin omurgası: açılışta güçlendirme sözü, dikkati yöneten dört teknik, slayt kuralları ve kapanış. İzleme notları dizisinin ilki.",
+      "tarih": "2026-08-25",
+      "etiketler": [
+        "izleme notu",
+        "sunum",
+        "iletişim",
+        "öğrenme"
+      ],
+      "sure": 6,
+      "durum": "olgun"
+    }
+  ]
 }
