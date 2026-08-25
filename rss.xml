@@ -5,8 +5,16 @@
     <link>https://necmeddincunedioglu.com/</link>
     <description>Yazılım, yapay zeka ve ilgimi çeken diğer konular üzerine yazılar ve notlar.</description>
     <language>tr</language>
-    <lastBuildDate>Tue, 25 Aug 2026 18:56:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 20:18:53 +0000</lastBuildDate>
     <atom:link href="https://necmeddincunedioglu.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Kısıt Altında İnşa Etmek</title>
+      <link>https://necmeddincunedioglu.com/yazi-muhendislik-temelleri.html</link>
+      <guid isPermaLink="true">https://necmeddincunedioglu.com/yazi-muhendislik-temelleri.html</guid>
+      <pubDate>Tue, 25 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Not</category>
+      <description>Mühendislik bir hesap mı, yoksa bir karar mı? Bir projede tek bir sayıya karar vermek zorunda kaldığımda anladıklarım: seçim yapmak, katmanların sızdığı yerler, aşılamayan duvarlar ve kırılan sistemlerden geriye kalanlar.</description>
+    </item>
     <item>
       <title>Yetenek, Formüldeki En Küçük Harf</title>
       <link>https://necmeddincunedioglu.com/yazi-nasil-konusulur.html</link>

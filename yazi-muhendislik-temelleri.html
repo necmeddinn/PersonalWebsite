@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QRSGNV3GF5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QRSGNV3GF5');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mühendislik nedir, bir hesap mı yoksa bir karar mı? Kısıtlar, soyutlama, aşılmaz duvarlar ve başarısızlıklar üzerine yedi madde — yazılımdan örneklerle ve iki etkileşimli şekille.">
+    <link rel="canonical" href="https://necmeddincunedioglu.com/yazi-muhendislik-temelleri.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#16241d">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Necmeddin Cunedioğlu">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:title" content="Kısıt Altında İnşa Etmek | Necmeddin Cunedioğlu">
+    <meta property="og:description" content="Mühendislik nedir, bir hesap mı yoksa bir karar mı? Kısıtlar, soyutlama, aşılmaz duvarlar ve başarısızlıklar üzerine yedi madde — yazılımdan örneklerle ve iki etkileşimli şekille.">
+    <meta property="og:url" content="https://necmeddincunedioglu.com/yazi-muhendislik-temelleri.html">
+    <meta property="og:image" content="https://necmeddincunedioglu.com/img/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="article:published_time" content="2026-08-25">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kısıt Altında İnşa Etmek | Necmeddin Cunedioğlu">
+    <meta name="twitter:description" content="Mühendislik nedir, bir hesap mı yoksa bir karar mı? Kısıtlar, soyutlama, aşılmaz duvarlar ve başarısızlıklar üzerine yedi madde — yazılımdan örneklerle ve iki etkileşimli şekille.">
+    <meta name="twitter:image" content="https://necmeddincunedioglu.com/img/og-cover.jpg">
+    <title>Kısıt Altında İnşa Etmek | Necmeddin Cunedioğlu</title>
+    <script>
+      // Tema tercihini stiller yüklenmeden uygula (koyu temada beyaz parlamayı önler)
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
+    <link rel="alternate" type="application/rss+xml" title="Necmeddin Cunedioğlu — Yazılar ve Teknik Notlar" href="rss.xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/okuma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Kısıt Altında İnşa Etmek",
+      "description": "Mühendislik nedir, bir hesap mı yoksa bir karar mı? Kısıtlar, soyutlama, aşılmaz duvarlar ve başarısızlıklar üzerine yedi madde — yazılımdan örneklerle ve iki etkileşimli şekille.",
+      "datePublished": "2026-08-25",
+      "inLanguage": "tr-TR",
+      "author": {
+        "@type": "Person",
+        "name": "Necmeddin Cunedioğlu",
+        "url": "https://necmeddincunedioglu.com"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Necmeddin Cunedioğlu"
+      },
+      "mainEntityOfPage": "https://necmeddincunedioglu.com/yazi-muhendislik-temelleri.html",
+      "image": "https://necmeddincunedioglu.com/img/og-cover.jpg",
+      "keywords": "mühendislik, temeller, soyutlama, sistem tasarımı"
+    }
+    </script>
+</head>
+<body>
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+
+    <div class="page-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo"><a href="index.html"><img src="img/logo-160.jpg" alt="NC Logo" width="65" height="65"></a></div>
+                <button class="menu-toggle" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </button>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="yazilar.html">Yazılar</a></li>
+                    <li class="nav-item active"><a href="teknik.html">Teknik</a></li>
+                    <li class="nav-item"><a href="hakkimda.html">Hakkımda</a></li>
+                    <li class="nav-item"><a href="projelerim.html">Projeler</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" aria-label="Tema değiştir">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <article class="post-article okuma">
+            <div class="container">
+                <div class="post-header">
+                    <a href="teknik.html" class="post-back">&larr; Teknik</a>
+                    <span class="post-kicker"><i class="fas fa-compass-drafting"></i> Temeller</span>
+                    <h1>Kısıt Altında İnşa Etmek</h1>
+                    <p class="post-dek">
+                        Okulda bize hesap yapmayı öğrettiler ama mühendisliğin ne olduğunu kimse anlatmadı.
+                        Ben bunu, bir projede tek başıma bir sayıya karar vermek zorunda kaldığımda
+                        anladım.
+                    </p>
+                    <div class="post-meta">
+                        <time datetime="2026-08-25">25 Ağustos 2026</time>
+                        <span>9 dk okuma</span>
+                    </div>
+                    <div class="post-tags">
+                        <a href="teknik.html?etiket=m%C3%BChendislik">mühendislik</a>
+                        <a href="teknik.html?etiket=temeller">temeller</a>
+                        <a href="teknik.html?etiket=soyutlama">soyutlama</a>
+                        <a href="teknik.html?etiket=sistem%20tasar%C4%B1m%C4%B1">sistem tasarımı</a>
+                    </div>
+                </div>
+
+                <div class="post-body">
+                    <p>
+                        TÜBİTAK projemde, fizyoterapi hastalarının egzersizlerini kameradan takip eden bir
+                        sistem yazdım. Sistem hareketi izliyor ve doğru yapılıp yapılmadığını söylüyordu.
+                    </p>
+
+                    <p>
+                        Bir noktada tek bir sayıya karar vermem gerekti. Hastanın kolu, olması gereken açıdan
+                        kaç derece saparsa "yanlış yaptın" diyecektim? 5 derece mi, 15 derece mi?
+                    </p>
+
+                    <p>
+                        Bu sayı hiçbir kitapta yazmıyor. Küçük tutarsan sistem sürekli hata veriyor, hasta
+                        sıkılıp bırakıyor. Büyük tutarsan yanlış hareketi de onaylıyorsun, sistem işe yaramaz
+                        hale geliyor.
+                    </p>
+
+                    <p>
+                        Sonunda birkaç deneme yaptım, bir sayı seçtim, neden onu seçtiğimi yazdım ve
+                        sonucuna katlandım.
+                    </p>
+
+                    <p>
+                        İşte mühendislik tam olarak bu. Yaptığım şey bir hesap değildi, bir karardı. Aşağıda,
+                        o günden beri biriktirdiğim yedi madde var.
+                    </p>
+
+                    <nav class="post-toc" aria-label="Bu yazının bölümleri">
+                        <p class="post-toc-title">Bu yazıda</p>
+                        <ol>
+                            <li><a href="#dogru-cevap">Doğru cevabın olmadığı yerde</a></li>
+                            <li><a href="#vazgecmek">Her seçim, bir şeyden vazgeçmek</a></li>
+                            <li><a href="#katmanlar">Her katman altındakini saklar</a></li>
+                            <li><a href="#duvarlar">Bazı duvarlar gerçek</a></li>
+                            <li><a href="#karmasiklik">Karmaşıklık faiz gibi birikir</a></li>
+                            <li><a href="#kirilinca">Bir şeyler kırılınca öğreniyoruz</a></li>
+                            <li><a href="#yeterince-iyi">Yeterince iyi olan, iyidir</a></li>
+                            <li><a href="#devami">Devamını okumak istersen</a></li>
+                        </ol>
+                    </nav>
+
+                    <h2 id="dogru-cevap">Doğru cevabın olmadığı yerde</h2>
+
+                    <p>Bilim "ne var?" diye sorar. Mühendislik "ne yapmalıyım?" diye sorar.</p>
+
+                    <p>
+                        Aradaki fark önemli. Bilimde bir doğru cevap vardır; bulana kadar ararsın.
+                        Mühendislikte çoğu zaman doğru cevap yoktur. Ama yine de bugün bir şey seçmen
+                        gerekir.
+                    </p>
+
+                    <p>
+                        Billy Vaughn Koen'in tarifi bunu iyi anlatıyor: mühendislik, tam olarak anlamadığın
+                        bir durumu, elindeki imkânlarla iyileştirmeye çalışmaktır. Üç şeye dikkat: tam bilgin
+                        yok, sınırsız zamanın yok ve kullandığın kuralların çoğu kanıtlanmış değil. Sadece
+                        bugüne kadar işe yaramışlar.
+                    </p>
+
+                    <p>
+                        Yazılımda bu fark şurada görünüyor. "Sıralama şu hızdan daha hızlı yapılamaz" bir
+                        matematik teoremidir, tartışılmaz. Ama "400 milyon satırı 8 GB bellekle nasıl
+                        sıralarım" sorusunun cevabı o teoremde yok. Cevap ölçümde, kullandığın donanımda ve
+                        kabul etmeye razı olduğun hata payında.
+                    </p>
+
+                    <h2 id="vazgecmek">Her seçim, bir şeyden vazgeçmek</h2>
+
+                    <p>
+                        Vitruvius iki bin yıl önce iyi bir yapının üç şartını yazmış: sağlam olacak, işe
+                        yarayacak, güzel görünecek. Bugün listeye maliyet, süre ve güvenlik de eklendi. Ama
+                        değişmeyen bir kural var: hepsini birden en üste çıkaramazsın. Birini yükseltirken
+                        başka birini indirirsin.
+                    </p>
+
+                    <p>Yazılımda bu takasları görmek kolay:</p>
+
+                    <ul>
+                        <li>İstekleri toplu işlersen sunucu daha çok iş yapar. Karşılığında tek bir kullanıcı cevabını daha geç alır.</li>
+                        <li>Önbellek kullanırsan aynı hesabı tekrar tekrar yapmazsın. Karşılığında bellek harcarsın.</li>
+                        <li>Ağ koptuğunda ya herkese aynı veriyi gösterirsin ya da servisi ayakta tutarsın. İkisi birden olmuyor.</li>
+                        <li>Her yeni ayar seçeneği, test etmen gereken bir kombinasyon daha demek.</li>
+                    </ul>
+
+                    <p>
+                        Bu yüzden bir tasarım için "daha iyi" demek bana bir şey anlatmıyor. Anlatan cümle
+                        şöyle: <em>Şunu kazanmak için şundan vazgeçiyorum ve bu iş için buna değer,
+                        çünkü…</em>
+                    </p>
+
+                    <div class="note-block">
+                        <span class="note-label">Kendi ölçütüm</span>
+                        <p>
+                            Birinin tasarım kararını dinlerken tek şeye bakıyorum: neyden vazgeçtiğini
+                            söyleyebiliyor mu? Söyleyemiyorsa ortada bir karar yok. Sadece öylece olmuş bir
+                            şey var.
+                        </p>
+                    </div>
+
+                    <h2 id="katmanlar">Her katman altındakini saklar</h2>
+
+                    <p>
+                        Karmaşık şeyler kurabiliyoruz çünkü her şeyi aynı anda düşünmüyoruz. Bir web isteği
+                        atarken kablodan geçen paketleri düşünmüyorum. Veritabanına sorgu yazarken diskin
+                        nasıl döndüğünü düşünmüyorum.
+                    </p>
+
+                    <p>
+                        Buna <strong>soyutlama</strong> deniyor. Her katman altındaki karmaşayı saklıyor ve
+                        sana basit bir söz veriyor: "Sen şunu iste, gerisini ben hallederim."
+                    </p>
+
+                    <p>
+                        Sorun şu ki bu bir söz, garanti değil. Joel Spolsky'nin dediği gibi, işe yarayan her
+                        soyutlama bir yerinden sızar. Yani sakladığı karmaşa bir gün mutlaka yüzüne vurur.
+                        Genelde iki durumda oluyor: bir şey yavaşladığında ve bir şey bozulduğunda.
+                    </p>
+
+                    <figure class="figure" data-katmanlar>
+                        <div class="figure-head">
+                            <p class="figure-title">Şekil 1 &mdash; Etkileşimli</p>
+                            <p>Basit bir web isteği altı katmandan geçiyor. Katmana tıkla: sana ne söz veriyor, neyi saklıyor ve nerede seni yarı yolda bırakıyor?</p>
+                        </div>
+                        <div class="layer-stack">
+                            <div class="layer">
+                                <button class="layer-toggle" type="button" aria-expanded="false" aria-controls="katman-1">
+                                    <span class="layer-index">01</span>
+                                    <span class="layer-name">Ağ</span>
+                                    <span class="layer-hint">API çağrısı</span>
+                                </button>
+                                <div class="layer-body" id="katman-1" hidden>
+                                    <dl>
+                                        <dt>Sana verdiği söz</dt>
+                                        <dd>"Uzaktaki veriyi, kendi bilgisayarındaymış gibi çağır."</dd>
+                                        <dt>Sakladığı</dt>
+                                        <dd>Verinin paketlere bölünüp kablolardan geçmesi, yolda kaybolması, tekrar gönderilmesi.</dd>
+                                        <dt>Sızdığı yer</dt>
+                                        <dd>Cevap hiç gelmeyebilir. Ya da iki kez gelebilir. "Ya çalışır ya çalışmaz" diye düşünürsün ama üçüncü bir durum vardır: <em>ne olduğunu bilmiyorsun.</em></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="layer">
+                                <button class="layer-toggle" type="button" aria-expanded="false" aria-controls="katman-2">
+                                    <span class="layer-index">02</span>
+                                    <span class="layer-name">Hazır kütüphaneler</span>
+                                    <span class="layer-hint">veritabanı aracı</span>
+                                </button>
+                                <div class="layer-body" id="katman-2" hidden>
+                                    <dl>
+                                        <dt>Sana verdiği söz</dt>
+                                        <dd>"Veritabanını düşünme, sen nesnelerle çalış."</dd>
+                                        <dt>Sakladığı</dt>
+                                        <dd>Arka planda yazılan sorgular ve açılan bağlantılar.</dd>
+                                        <dt>Sızdığı yer</dt>
+                                        <dd>Basit bir döngü yazarsın, farkında olmadan yüzlerce sorgu atılır. Kod tertemiz görünür ama veritabanı boğulur.</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="layer">
+                                <button class="layer-toggle" type="button" aria-expanded="false" aria-controls="katman-3">
+                                    <span class="layer-index">03</span>
+                                    <span class="layer-name">Programlama dili</span>
+                                    <span class="layer-hint">bellek yönetimi</span>
+                                </button>
+                                <div class="layer-body" id="katman-3" hidden>
+                                    <dl>
+                                        <dt>Sana verdiği söz</dt>
+                                        <dd>"Belleği ben yönetirim, sen kodunu yaz."</dd>
+                                        <dt>Sakladığı</dt>
+                                        <dd>Bellek nereden alınıyor, ne zaman geri veriliyor.</dd>
+                                        <dt>Sızdığı yer</dt>
+                                        <dd>Bellek temizliği çalışırken program bir anlığına duruyor; kullanıcı bunu takılma olarak görüyor. Ya da unuttuğun bir bağlantı yüzünden bellek sessizce şişiyor.</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="layer">
+                                <button class="layer-toggle" type="button" aria-expanded="false" aria-controls="katman-4">
+                                    <span class="layer-index">04</span>
+                                    <span class="layer-name">İşletim sistemi</span>
+                                    <span class="layer-hint">Windows, Linux</span>
+                                </button>
+                                <div class="layer-body" id="katman-4" hidden>
+                                    <dl>
+                                        <dt>Sana verdiği söz</dt>
+                                        <dd>"Bu makine tamamen senin. Kesintisiz bir işlemcin ve kocaman bir belleğin var."</dd>
+                                        <dt>Sakladığı</dt>
+                                        <dd>Aslında işlemciyi başka programlarla sırayla paylaşıyorsun. Bellek de göründüğü kadar büyük değil.</dd>
+                                        <dt>Sızdığı yer</dt>
+                                        <dd>Aynı kod, aynı makinede iki farklı sürede biter. Sıra sende değilse beklersin ve bunu göremezsin.</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="layer">
+                                <button class="layer-toggle" type="button" aria-expanded="false" aria-controls="katman-5">
+                                    <span class="layer-index">05</span>
+                                    <span class="layer-name">İşlemci</span>
+                                    <span class="layer-hint">önbellek</span>
+                                </button>
+                                <div class="layer-body" id="katman-5" hidden>
+                                    <dl>
+                                        <dt>Sana verdiği söz</dt>
+                                        <dd>"Komutlar yazdığın sırayla, hep aynı hızda çalışır."</dd>
+                                        <dt>Sakladığı</dt>
+                                        <dd>Veriyi nereden aldığı. İşlemcinin içindeki küçük hafızadan okumak, dışarıdaki büyük bellekten okumaktan onlarca kat hızlıdır.</dd>
+                                        <dt>Sızdığı yer</dt>
+                                        <dd>Aynı işi yapan iki döngü arasında on kat fark olabilir. Biri veriyi sırayla okuyordur, öteki rastgele.</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="layer">
+                                <button class="layer-toggle" type="button" aria-expanded="false" aria-controls="katman-6">
+                                    <span class="layer-index">06</span>
+                                    <span class="layer-name">Transistör</span>
+                                    <span class="layer-hint">elektrik ve ısı</span>
+                                </button>
+                                <div class="layer-body" id="katman-6" hidden>
+                                    <dl>
+                                        <dt>Sana verdiği söz</dt>
+                                        <dd>"Dünyada iki değer var: 0 ve 1."</dd>
+                                        <dt>Sakladığı</dt>
+                                        <dd>Aslında ortada elektrik var. 0 ve 1 dediğimiz şey, belirlenmiş gerilim aralıkları.</dd>
+                                        <dt>Sızdığı yer</dt>
+                                        <dd>İşlemci ısınınca kendi hızını düşürür. Çok nadiren de olsa bir bit kendiliğinden değişebilir. En altta bile kesin garanti yok; sadece çok küçük bir hata ihtimali var.</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <figcaption class="figure-caption">
+                            Bundan çıkardığım kural basit: kendi katmanının bir altını da bil. Her gün oraya
+                            inmen gerekmiyor. Ama bir şey tuhaflaştığında nereye bakacağını bilmen gerekiyor.
+                        </figcaption>
+                    </figure>
+
+                    <h2 id="duvarlar">Bazı duvarlar gerçek</h2>
+
+                    <p>Kısıtların bir kısmı bütçedir. Konuşursan, ikna edersen değişir.</p>
+
+                    <p>Bir kısmı ise doğa kanunudur. Ne kadar uğraşırsan uğraş değişmez.</p>
+
+                    <p>
+                        Bu ikisini karıştırmak, gördüğüm en pahalı hata: aşılmayacak bir duvara aylarca emek
+                        harcamak. Yazılımda sık karşıma çıkan üç duvar var.
+                    </p>
+
+                    <ul>
+                        <li>Bir programın sonsuza kadar çalışıp çalışmayacağını önceden söyleyen bir program yazılamaz. Bu 1936'da kanıtlandı. Kod analiz araçlarının neden hep "olabilir" dediğinin sebebi bu.</li>
+                        <li>Işık hızı bir alt sınır koyar. Grace Hopper derslerinde öğrencilerine 30 santimlik teller dağıtırmış: ışık bir nanosaniyede işte bu kadar yol alıyor. İstanbul'dan Frankfurt'a gidip gelen bir istek, o mesafenin gerektirdiği süreden hızlı olamaz.</li>
+                        <li>Amdahl yasası: işin paralelleşmeyen kısmı, hızlanmanın tavanını tek başına belirler.</li>
+                    </ul>
+
+                    <figure class="figure" data-amdahl>
+                        <div class="figure-head">
+                            <p class="figure-title">Şekil 2 &mdash; Etkileşimli</p>
+                            <p>Amdahl yasası. Kaydıracı oynat: işin ne kadarı paralelleşirse hızlanmanın tavanı nereye çıkıyor?</p>
+                        </div>
+                        <div class="chart-controls">
+                            <label for="amdahl-p">Paralelleşebilen oran</label>
+                            <input type="range" id="amdahl-p" min="50" max="95" step="1" value="90"
+                                   aria-label="İşin paralelleşebilen oranı, yüzde">
+                            <span class="chart-value" data-oran>%90</span>
+                        </div>
+                        <div class="chart-canvas">
+                            <svg viewBox="0 0 640 260" role="img" aria-label="Çekirdek sayısına göre hızlanma eğrisi ve teorik üst sınır">
+                                <line class="chart-limit" x1="44" y1="26" x2="616" y2="26"></line>
+                                <text class="chart-label" x="50" y="20" data-sinir-etiket>10.0× teorik üst sınır</text>
+                                <line class="chart-axis" x1="44" y1="214" x2="616" y2="214"></line>
+                                <text class="chart-label" x="40" y="218" text-anchor="end">1×</text>
+                                <path class="chart-curve" d=""></path>
+                                <text class="chart-label" x="44" y="232" text-anchor="middle">1</text>
+                                <text class="chart-label" x="139" y="232" text-anchor="middle">2</text>
+                                <text class="chart-label" x="235" y="232" text-anchor="middle">4</text>
+                                <text class="chart-label" x="330" y="232" text-anchor="middle">8</text>
+                                <text class="chart-label" x="425" y="232" text-anchor="middle">16</text>
+                                <text class="chart-label" x="521" y="232" text-anchor="middle">32</text>
+                                <text class="chart-label" x="616" y="232" text-anchor="middle">64</text>
+                                <text class="chart-label" x="330" y="252" text-anchor="middle">çekirdek sayısı</text>
+                            </svg>
+                        </div>
+                        <div class="chart-readout">
+                            <div><span class="readout-label">Teorik üst sınır</span><span class="readout-value" data-cikti="tavan">10.0×</span></div>
+                            <div><span class="readout-label">64 çekirdekle</span><span class="readout-value" data-cikti="64">8.8×</span></div>
+                            <div><span class="readout-label">Çekirdek başına verim</span><span class="readout-value" data-cikti="verim">%14</span></div>
+                        </div>
+                        <figcaption class="figure-caption" data-ozet></figcaption>
+                    </figure>
+
+                    <p>
+                        Kaydıracı oynatınca şunu görüyorsun: işin %90'ı paralelleşiyorsa, kaç çekirdek
+                        koyarsan koy 10 kattan fazla hızlanamıyorsun. Sonsuz çekirdek bile yetmiyor.
+                    </p>
+
+                    <p>
+                        Bunu bir kez gördükten sonra "sunucu ekleriz" cümlesi kulağa farklı geliyor. Eklemeden
+                        önce sorulacak soru şu: işin ne kadarı gerçekten paralelleşiyor?
+                    </p>
+
+                    <h2 id="karmasiklik">Karmaşıklık faiz gibi birikir</h2>
+
+                    <p>Fred Brooks 1987'de karmaşıklığı ikiye ayırmıştı.</p>
+
+                    <p>
+                        Bir kısmı problemin kendisinden geliyor. Muhasebe yazılımı karmaşıksa bunun sebebi
+                        muhasebenin karmaşık olması. Diğer kısmı ise bizim araçlarımızdan geliyor: kötü bir
+                        dil, dağınık bir kurulum, anlaşılmaz bir kütüphane.
+                    </p>
+
+                    <p>
+                        Araçlar iyileştikçe ikinci kısım azalıyor. Ama birinci kısım yerinde duruyor.
+                        Brooks'un söylediği şuydu: tek bir yeni teknoloji gelip yazılımı on kat
+                        kolaylaştırmayacak. Kırk yıl geçti, hâlâ haklı görünüyor.
+                    </p>
+
+                    <p>
+                        Buna Meir Lehman'ın gözlemini ekleyin: kullanılan bir yazılım sürekli değişmek
+                        zorundadır ve her değişiklikte biraz daha karmaşıklaşır. Bunu durdurmanın tek yolu,
+                        sadeleştirmek için ayrıca zaman ayırmak. Yani karmaşıklık bir hata değil, faiz gibi
+                        bir şey: ödemezsen büyüyor.
+                    </p>
+
+                    <p>
+                        Bir de Melvin Conway'in 1968'de yazdığı şey var: bir sistemi tasarlayan ekip, farkında
+                        olmadan kendi yapısını sisteme kopyalar. Üç ayrı ekip varsa sistem de üç parçaya
+                        ayrılır. Mimari tartışması sandığın şey, çoğu zaman ekiplerin nasıl bölündüğü
+                        tartışmasıdır.
+                    </p>
+
+                    <h2 id="kirilinca">Bir şeyler kırılınca öğreniyoruz</h2>
+
+                    <p>
+                        Henry Petroski'nin söylediği ilk bakışta rahatsız edici ama doğru: mühendislik
+                        bilgisinin çoğu, işler ters gittiğinde ortaya çıkıyor.
+                    </p>
+
+                    <p>
+                        Çalışan bir sistem sana çok şey söylemez. Hangi önlemin gereksiz olduğunu, hangi
+                        payın fazla olduğunu bilemezsin. Ama çöken bir sistem nerede yanıldığını tam olarak
+                        gösterir.
+                    </p>
+
+                    <div class="table-scroll">
+                        <table>
+                            <thead>
+                                <tr><th>Vaka</th><th>Ne oldu</th><th>Aklımda kalan</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Therac-25<br>1985&ndash;87</td>
+                                    <td>Kanser tedavisinde kullanılan bir ışın cihazı. Eskiden mekanik parçaların yaptığı güvenlik kontrolü yazılıma devredildi. Nadir görülen bir zamanlama hatası, hastalara aşırı doz verilmesine yol açtı.</td>
+                                    <td>"Nadir" demek "imkânsız" demek değil. Yazılım hatası artık sadece ekranda kalmıyor.</td>
+                                </tr>
+                                <tr>
+                                    <td>Ariane 5<br>1996</td>
+                                    <td>Eski rokette çalışan kod, yeni rokete olduğu gibi konuldu. Yeni roket daha hızlıydı; bir sayı beklenenden büyük çıktı ve program çöktü. İki yedek birim de aynı yazılımı çalıştırdığı için ikisi birden düştü. Roket 40 saniyede kayboldu.</td>
+                                    <td>Yedek, ancak farklıysa yedektir. Başka bir yerden alınan kod, yeni yerinde yeniden test edilir.</td>
+                                </tr>
+                                <tr>
+                                    <td>Knight Capital<br>2012</td>
+                                    <td>Yeni kod sekiz sunucudan yedisine kuruldu, biri atlandı. O sunucuda yıllardır uyuyan eski bir kod parçası çalışmaya başladı. 45 dakikada 460 milyon doların üzerinde zarar.</td>
+                                    <td>Kodu yazmak işin yarısı; nasıl kurulduğu da sistemin parçası. Silinmeyen eski kod bir gün uyanır.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p>
+                        Ortadaki satır benim favorim. Ariane roketinde iki tane yedek birim vardı; yani "biri
+                        bozulursa diğeri devreye girer" diye tasarlanmıştı. Ama ikisinde de aynı yazılım
+                        çalışıyordu. Aynı hatalı veri geldi ve ikisi aynı anda çöktü.
+                    </p>
+
+                    <p>
+                        Buradan çıkan ders şu: iki kopya çalıştırmak, o kopyaların ortak hatasına karşı seni
+                        korumaz.
+                    </p>
+
+                    <blockquote class="pull-quote">
+                        Başarılı bir teknoloji için gerçeklik halkla ilişkilerin önünde gelmelidir; çünkü
+                        doğa kandırılamaz.
+                        <cite>Richard Feynman, Challenger raporuna eklediği notta</cite>
+                    </blockquote>
+
+                    <p>
+                        Bu yüzden iyi ekipler hata sonrası toplantılarını suçlu arama seansına çevirmiyor.
+                        Sorulan soru "kim yaptı" değil, "bu hata üretime kadar nasıl geldi".
+                    </p>
+
+                    <h2 id="yeterince-iyi">Yeterince iyi olan, iyidir</h2>
+
+                    <p>Mühendislik en iyi çözümü bulmaz. Savunabileceğin çözümü bulur.</p>
+
+                    <p>
+                        Herbert Simon buna "yetinmecilik" demiş. İnsanlar gerçek hayatta en iyi seçeneği
+                        aramaz; yeterli gördükleri ilk seçeneği alır. Çünkü aramanın kendisi de zaman ve para
+                        harcıyor.
+                    </p>
+
+                    <p>
+                        Knuth'un meşhur cümlesini çoğu kişi yarım alıntılıyor: "Erken optimizasyon tüm
+                        kötülüklerin anasıdır." Devamı şöyle: "…ama kritik %3'te fırsatı kaçırmamalıyız."
+                        İkinci yarısı olmadan bu söz tembelliğe dönüşüyor. O %3'ün hangi kısım olduğunu da
+                        tahminle bulamazsın; ölçmen gerekir.
+                    </p>
+
+                    <div class="note-block">
+                        <span class="note-label">Yeterince iyi'nin testi</span>
+                        <p>
+                            Bir çözümün yeterince iyi olduğunu şuradan anlıyorum: <strong>hangi durumda
+                            bozulacağını yazabiliyorsam</strong> yeterince iyidir. Yazamıyorsam elimde bir
+                            çözüm yok, sadece henüz karşılaşmadığım bir hata var.
+                        </p>
+                    </div>
+
+                    <p>Son madde en önemlisi: kararı sen veriyorsun ama sonucunu kullanıcı yaşıyor.</p>
+
+                    <p>
+                        Fizyoterapi projesindeki o tolerans sayısını ben seçtim. Yanlış seçseydim bedelini
+                        ben değil, ekranın karşısındaki hasta ödeyecekti.
+                    </p>
+
+                    <p>
+                        Bugün yazılım ışın dozu ayarlıyor, fren basıncı hesaplıyor, kredi başvurusu
+                        değerlendiriyor. Bu yüzden işin sıkıcı görünen kısımları &mdash; hatayı sessizce
+                        yutmamak, varsayımını bir yere yazmak, ölçmediğin bir şeye "çalışıyor" dememek
+                        &mdash; aslında işin süsü değil, kendisi.
+                    </p>
+
+                    <p>
+                        Başa dönersek: mühendislik, eksik bilgiyle ve kısıtlı imkânla, başkasının taşıyacağı
+                        bir riski üstlenip çalışan bir şey kurmaktır. "Çalışan kod" ile arasındaki fark da
+                        burada. Çalışan kod bir gözlemdir: bugün çalıştı. Mühendislik ise bir iddiadır: hangi
+                        şartlarda çalışacağını, ne zaman bozulacağını ve bozulduğunda ne olacağını da
+                        söylersin.
+                    </p>
+
+                    <div class="takeaways">
+                        <h2>Kendime not ettiklerim</h2>
+                        <ol>
+                            <li>Doğru cevabın olmadığı yerde iş başlar.</li>
+                            <li>Neyden vazgeçtiğini söyleyemiyorsan karar vermemişsindir.</li>
+                            <li>Her katman bir söz verir. O söz garanti değildir.</li>
+                            <li>Bütçe kısıtıyla doğa kanununu karıştırma.</li>
+                            <li>İki kopya aynı hatayı taşıyorsa yedek sayılmaz.</li>
+                            <li>Ölçmeden optimize etme.</li>
+                            <li>Ne zaman bozulacağını yazamıyorsan henüz hazır değildir.</li>
+                        </ol>
+                    </div>
+
+                    <h2 id="devami">Devamını okumak istersen</h2>
+
+                    <p>Buradaki fikirlerin çoğunu şu metinlerden aldım. Hepsi ücretsiz:</p>
+
+                    <ul>
+                        <li><a href="https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/" target="_blank" rel="noopener noreferrer">Joel Spolsky &mdash; The Law of Leaky Abstractions</a>: soyutlamanın nereden sızdığı fikrinin kaynağı. On dakikalık bir yazı.</li>
+                        <li><a href="https://www.melconway.com/Home/Committees_Paper.html" target="_blank" rel="noopener noreferrer">Melvin Conway &mdash; How Do Committees Invent?</a>: ekip yapısının sisteme kopyalandığını anlatan 1968 tarihli asıl makale.</li>
+                        <li><a href="https://web.mit.edu/6.033/2014/wwwdocs/papers/therac.pdf" target="_blank" rel="noopener noreferrer">Therac-25 kazalarının incelemesi</a>: yazılım güvenliği üzerine okuduğum en sarsıcı metin.</li>
+                        <li><a href="https://sci.esa.int/web/cluster/-/38889-ariane-501-report-by-board-of-inquiry" target="_blank" rel="noopener noreferrer">Ariane 5 soruşturma raporu</a>: kısa, net ve bir hata raporunun nasıl yazılması gerektiğinin örneği.</li>
+                        <li><a href="https://www.nasa.gov/history/rogersrep/v2appf.htm" target="_blank" rel="noopener noreferrer">Feynman'ın Challenger raporuna eklediği not</a>: yukarıdaki alıntının geçtiği birkaç sayfa.</li>
+                    </ul>
+
+                    <p class="source-note">
+                        <strong>Yapay zekâ notu:</strong> Bu yazıyı yapay zekâ yardımıyla derlediğimi belirtmek
+                        isterim. Kaynakları taramakta ve metni toparlamakta yardım aldım.
+                    </p>
+                </div>
+
+                <div class="post-footer">
+                    <p>
+                        Bu listeyi kendim için tutuyorum, zamanla değişiyor. Eksik bulduğun ya da
+                        katılmadığın bir madde varsa
+                        <a href="mailto:necmeddincunedioglu@gmail.com">yaz</a>, memnun olurum.
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo"><img src="img/logo-160.jpg" alt="NC Logo" width="65" height="65"></div>
+                    <div class="social-links">
+                        <a href="https://github.com/necmeddinn" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/necmeddincunedioglu/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/necmeddin_1?s=21" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/necmeddin_1?igsh=MTdobDNxcmhlMzJ6dg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@necmeddin_1" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="rss.xml" aria-label="RSS akışı"><i class="fas fa-rss"></i></a>
+                        <a href="mailto:necmeddincunedioglu@gmail.com" aria-label="E-posta gönder"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year">2023</span> Necmeddin Cunedioğlu. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/okuma.js"></script>
+    <script src="js/sekil.js"></script>
+</body>
+</html>

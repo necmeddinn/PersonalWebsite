@@ -64,8 +64,25 @@ Hazır parçalar:
 | Vurgu alıntısı | `<blockquote class="pull-quote">… <cite>Kaynak</cite></blockquote>` |
 | Kapanış listesi | `<div class="takeaways"><h2>…</h2><ol>…</ol></div>` |
 | Kaynak notu | `<p class="source-note">…</p>` |
+| Şekil çerçevesi | `<figure class="figure">` + `.figure-head` (başlık/açıklama) + `<figcaption class="figure-caption">` |
+| Tablo | `<div class="table-scroll"><table>…</table></div>` — dar ekranda kendi içinde yatay kayar |
 
-Bölüm `<h2>`leri kendiliğinden `01`, `02` diye numaralanır; `.takeaways` içindeki başlık numaralanmaz.
+Bölüm `<h2>`leri kendiliğinden `01`, `02` diye numaralanır; `.takeaways` içindeki başlık
+numaralanmaz.
+
+### Etkileşimli şekiller
+
+`js/sekil.js` ekli olduğunda iki şekil kendiliğinden çalışır. İkisi de yalnızca ilgili öğe
+sayfada varsa devreye girer, yoksa hiçbir şey yapmaz.
+
+- **Soyutlama merdiveni (akordiyon):** `<figure class="figure" data-katmanlar>` içinde
+  `.layer` blokları. Her blokta bir `.layer-toggle` düğmesi (`aria-controls` ile gövdeye bağlı)
+  ve `hidden` başlayan bir `.layer-body`. Hep bir katman açık kalır.
+- **Amdahl grafiği:** `<figure class="figure" data-amdahl>` içinde bir `input[type=range]`,
+  `.chart-curve` yolu olan bir SVG ve `data-cikti="tavan|64|verim"` taşıyan okuma kutuları.
+  Eğri, üst sınır çizgisi ve özet metni kaydıraç oynadıkça yeniden hesaplanır.
+
+Örnek: `yazi-muhendislik-temelleri.html`.
 
 ## Tasarım
 
@@ -115,7 +132,8 @@ Bölüm `<h2>`leri kendiliğinden `01`, `02` diye numaralanır; `.takeaways` iç
     ├── quotes.js            # Günün sözü (quotes.json)
     ├── projelerim.js        # Proje filtreleme
     ├── posts.js             # data/posts.json'u okuyup listeleri basar; etiket süzgeci, boş durum
-    └── okuma.js             # Okuma ilerleme çubuğu, içindekiler takibi, tıklayınca yüklenen video
+    ├── okuma.js             # Okuma ilerleme çubuğu, içindekiler takibi, tıklayınca yüklenen video
+    └── sekil.js             # Etkileşimli şekiller (soyutlama merdiveni, Amdahl grafiği)
 ```
 
 ## Notlar

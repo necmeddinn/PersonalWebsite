@@ -2,6 +2,22 @@
   "_aciklama": "Sitedeki tüm içeriğin kaynağı. Yeni içerik eklemek için bu listeye bir nesne ekleyip ilgili HTML dosyasını oluştur, sonra tools/uret.py çalıştır. tur: 'yazi' (Yazılar sayfası) veya 'teknik' (Teknik sayfası). durum alanı isteğe bağlıdır: fikir | gelisiyor | olgun.",
   "icerikler": [
     {
+      "slug": "muhendislik-temelleri",
+      "url": "yazi-muhendislik-temelleri.html",
+      "tur": "teknik",
+      "baslik": "Kısıt Altında İnşa Etmek",
+      "ozet": "Mühendislik bir hesap mı, yoksa bir karar mı? Bir projede tek bir sayıya karar vermek zorunda kaldığımda anladıklarım: seçim yapmak, katmanların sızdığı yerler, aşılamayan duvarlar ve kırılan sistemlerden geriye kalanlar.",
+      "tarih": "2026-08-25",
+      "etiketler": [
+        "mühendislik",
+        "temeller",
+        "soyutlama",
+        "sistem tasarımı"
+      ],
+      "sure": 9,
+      "durum": "olgun"
+    },
+    {
       "slug": "nasil-konusulur",
       "url": "yazi-nasil-konusulur.html",
       "tur": "yazi",
