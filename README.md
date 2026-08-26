@@ -8,7 +8,7 @@ JavaScript ile statik olarak geliştirilmiştir; herhangi bir build adımı gere
 - **Ana Sayfa**: Kısa tanıtım, son yazılar (içerik varsa) ve hızlı erişim kartları
 - **Yazılar**: Teknik olmayan yazıların akışı; etiketle süzülebilir ve aranabilir
 - **Teknik**: Yazılım tarafındaki yazılar ve notlar; aynı süzgeç/arama düzeni
-- **Hakkımda**: Hikaye, deneyim & projeler, eğitim, yetenekler
+- **Hakkımda**: Anlatı biçiminde tanıtım — neyle uğraştığım, nasıl çalıştığım, kısa yol haritası ve araçlar
 - **Projelerim**: Filtrelenebilir proje galerisi (Yapay Zeka / Web Uygulaması) ve proje detay sayfaları
 
 İletişim kanalları ayrı bir sayfada değil, her sayfanın altındaki footer'da.
