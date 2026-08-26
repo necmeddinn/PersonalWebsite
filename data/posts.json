@@ -2,6 +2,21 @@
   "_aciklama": "Sitedeki tüm içeriğin kaynağı. Yeni içerik eklemek için bu listeye bir nesne ekleyip ilgili HTML dosyasını oluştur, sonra tools/uret.py çalıştır. tur: 'yazi' (Yazılar sayfası) veya 'teknik' (Teknik sayfası). durum alanı isteğe bağlıdır: fikir | gelisiyor | olgun.",
   "icerikler": [
     {
+      "slug": "celik-gibi-gorunmek",
+      "url": "yazi-celik-gibi-gorunmek.html",
+      "tur": "yazi",
+      "baslik": "Çelik Gibi Görünmek",
+      "ozet": "Sosyal medyanın \"disiplin\" içeriği Stoacılığı ve Robert Greene'i tek bir zırh reçetesine indirgiyor. Dört yanlış eşitleme, kaynakların kendi kusurları ve sahada işleyen beş test.",
+      "tarih": "2026-08-27",
+      "etiketler": [
+        "stoacılık",
+        "kişisel gelişim",
+        "eleştiri"
+      ],
+      "sure": 8,
+      "durum": "olgun"
+    },
+    {
       "slug": "ustbilis",
       "url": "yazi-ustbilis.html",
       "tur": "yazi",
