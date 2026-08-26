@@ -5,7 +5,7 @@ JavaScript ile statik olarak geliştirilmiştir; herhangi bir build adımı gere
 
 ## İçerik
 
-- **Ana Sayfa**: Kısa tanıtım, son yazılar (içerik varsa) ve hızlı erişim kartları
+- **Ana Sayfa**: Kısa tanıtım, son yazılar, "Şu sıralar" bloğu ve hızlı erişim kartları
 - **Yazılar**: Teknik olmayan yazıların akışı; etiketle süzülebilir ve aranabilir
 - **Teknik**: Yazılım tarafındaki yazılar ve notlar; aynı süzgeç/arama düzeni
 - **Hakkımda**: Anlatı biçiminde tanıtım — neyle uğraştığım, nasıl çalıştığım, kısa yol haritası ve araçlar
@@ -129,7 +129,6 @@ sayfada varsa devreye girer, yoksa hiçbir şey yapmaz.
 └── js/
     ├── script.js            # Menü, navbar scroll, kart animasyonları, yıl güncelleme
     ├── theme.js             # Tema değiştirici
-    ├── quotes.js            # Günün sözü (quotes.json)
     ├── projelerim.js        # Proje filtreleme
     ├── posts.js             # data/posts.json'u okuyup listeleri basar; etiket süzgeci, boş durum
     ├── okuma.js             # Okuma ilerleme çubuğu, içindekiler takibi, tıklayınca yüklenen video

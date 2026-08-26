@@ -284,19 +284,17 @@ ul {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3.3rem;
     font-weight: var(--font-weight-bold);
-    margin-bottom: 1rem;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.9rem;
 }
 
 .hero .subtitle {
-    font-size: 1.5rem;
-    color: var(--light-text);
-    margin-bottom: 2rem;
+    font-size: 1.18rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--accent-color);
+    margin-bottom: 1.4rem;
 }
 
 .cta-buttons {
@@ -306,56 +304,13 @@ ul {
 
 
 .hero-tagline {
-    max-width: 540px;
+    max-width: 560px;
     color: var(--light-text);
     margin-bottom: 2rem;
-    font-size: 1.05rem;
+    font-size: 1.06rem;
+    line-height: 1.8;
 }
 
-
-/* Quote Section */
-.quote-section {
-    padding: 5rem 0;
-    background-color: var(--bg-secondary);
-    text-align: center;
-}
-
-.quote-section h2 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    position: relative;
-    display: inline-block;
-}
-
-.quote-section h2::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 4px;
-    bottom: -10px;
-    left: 25%;
-    background: var(--gradient-primary);
-    border-radius: 2px;
-}
-
-.quote-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 3rem;
-    background-color: var(--bg-color);
-    border-radius: 15px;
-    box-shadow: var(--shadow-md);
-    position: relative;
-}
-
-.quote-icon {
-    font-size: 2rem;
-    color: var(--primary-color);
-    opacity: 0.2;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-}
 
 blockquote {
     font-size: 1.5rem;
@@ -364,22 +319,46 @@ blockquote {
     margin-bottom: 1.5rem;
 }
 
-.quote-author {
-    font-size: 1.1rem;
-    color: var(--light-text);
-    text-align: right;
+/* Şu Sıralar (ana sayfa) */
+.now-block {
+    padding: 4.5rem 0;
+    background-color: var(--bg-secondary);
 }
 
-.quote-date {
-    margin-top: 2rem;
-    font-size: 0.9rem;
+.now-block .container {
+    max-width: 720px;
+}
+
+.now-block h2 {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+}
+
+.now-block p {
     color: var(--light-text);
+    font-size: 1.04rem;
+    line-height: 1.85;
+    margin-bottom: 1.2rem;
+}
+
+.now-block p:last-child {
+    margin-bottom: 0;
+}
+
+.now-block a {
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-soft);
+}
+
+.now-block a:hover {
+    border-bottom-color: var(--accent-color);
 }
 
 /* Quick Links Section */
 .quick-links {
-    padding: 5rem 0;
-    background-color: var(--bg-secondary);
+    padding: 4.5rem 0 5rem;
+    background-color: var(--bg-color);
 }
 
 /* Başlık inline-block olduğu için kapsayıcıdan ortalanır */
@@ -388,22 +367,16 @@ blockquote {
 }
 
 .quick-links h2 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
+    font-size: 1.9rem;
+    margin-bottom: 0.7rem;
     text-align: center;
-    position: relative;
-    display: inline-block;
 }
 
-.quick-links h2::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 4px;
-    bottom: -10px;
-    left: 25%;
-    background: var(--gradient-primary);
-    border-radius: 2px;
+.quick-links .quick-links-intro {
+    color: var(--light-text);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.75;
 }
 
 .links-grid {
@@ -413,11 +386,11 @@ blockquote {
 }
 
 .link-card {
-    background-color: var(--bg-color);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition-normal);
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 1.7rem 1.5rem;
+    transition: var(--transition-fast);
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -426,132 +399,41 @@ blockquote {
 }
 
 .link-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-sm);
 }
 
 .card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-color);
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
 }
 
 .link-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
 }
 
 .link-card p {
     color: var(--light-text);
-}
-
-/* Featured Projects (home) */
-.featured-projects {
-    padding: 5rem 0;
-    background-color: var(--bg-color);
+    font-size: 0.94rem;
+    line-height: 1.65;
 }
 
 .section-heading {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .section-heading h2 {
-    font-size: 2rem;
-    position: relative;
-    display: inline-block;
-}
-
-.section-heading h2::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 3px;
-    bottom: -10px;
-    left: 25%;
-    background: var(--gradient-secondary);
-    border-radius: 2px;
+    font-size: 1.9rem;
+    margin-bottom: 0.6rem;
 }
 
 .section-heading p {
-    margin-top: 1.4rem;
     color: var(--light-text);
-}
-
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.featured-card {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    overflow: hidden;
-    color: var(--text-color);
-    transition: var(--transition-normal);
-    box-shadow: var(--shadow-sm);
-}
-
-.featured-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--accent-color);
-}
-
-.featured-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-}
-
-.featured-card .featured-body {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    flex: 1;
-}
-
-.featured-card h3 {
-    font-size: 1.15rem;
-    line-height: 1.4;
-}
-
-.featured-card p {
-    color: var(--light-text);
-    font-size: 0.95rem;
-    flex: 1;
-}
-
-.featured-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-
-.featured-tags span {
-    font-size: 0.78rem;
-    padding: 0.25rem 0.7rem;
-    border-radius: 50px;
-    background-color: var(--accent-soft);
-    color: var(--accent-color);
-    font-weight: var(--font-weight-medium);
-}
-
-.featured-more {
-    text-align: center;
-    margin-top: 2.5rem;
 }
 
 /* Footer */
@@ -670,10 +552,6 @@ footer {
     
     .menu-toggle.active .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
-    }
-    
-    .quote-container {
-        padding: 1.5rem;
     }
     
     blockquote {
@@ -814,46 +692,17 @@ footer {
     background-color: var(--bg-color);
 }
 
-[data-theme="dark"] .quote-section {
+[data-theme="dark"] .now-block {
     background-color: var(--bg-secondary);
-    color: var(--text-color);
 }
 
-[data-theme="dark"] .quote-container {
-    background-color: var(--bg-color);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-}
-
-[data-theme="dark"] .quote-icon {
-    color: var(--accent-color);
-}
-
-/* Fix for link cards */
 [data-theme="dark"] .link-card {
     background-color: var(--bg-secondary);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-}
-
-[data-theme="dark"] .link-card h3 {
-    color: var(--secondary-color);
-}
-
-[data-theme="dark"] .link-card p {
-    color: var(--light-text);
+    border-color: var(--border-color);
 }
 
 [data-theme="dark"] .link-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
     border-color: var(--accent-color);
-}
-
-[data-theme="dark"] .card-icon {
-    color: var(--accent-color);
-    background-color: var(--accent-soft);
 }
 
 /* Footer styles */
@@ -937,7 +786,7 @@ body {
     transition: background-color 0.4s ease-in-out;
 }
 
-.navbar, .hero, .quote-section, .quick-links, footer, .link-card, .quote-container, .btn {
+.navbar, .hero, .quick-links, footer, .link-card, .btn {
     transition: background-color 0.3s ease,
                 color 0.3s ease,
                 border-color 0.3s ease,

@@ -320,8 +320,8 @@
 
 /* Ana sayfadaki "son yazılar" bloğu */
 .latest-posts {
-    padding: 5rem 0;
-    background-color: var(--bg-secondary);
+    padding: 4.5rem 0;
+    background-color: var(--bg-color);
 }
 
 .latest-posts .container {

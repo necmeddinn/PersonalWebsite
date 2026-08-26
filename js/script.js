@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add animation for project and note cards
     const animateOnScroll = () => {
-        const cards = document.querySelectorAll('.project-card, .note-card, .link-card, .featured-card');
+        const cards = document.querySelectorAll('.project-card, .note-card, .link-card');
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add CSS for animation
         const style = document.createElement('style');
         style.textContent = `
-            .project-card.visible, .note-card.visible, .link-card.visible, .featured-card.visible {
+            .project-card.visible, .note-card.visible, .link-card.visible {
                 opacity: 1 !important;
                 transform: translateY(0) !important;
             }
