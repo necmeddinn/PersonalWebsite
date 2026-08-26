@@ -3,6 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     soyutlamaMerdiveni();
     amdahlGrafigi();
+    kalibrasyonTesti();
 });
 
 // Katmanlardan biri açık kalacak şekilde çalışan akordiyon.
@@ -86,4 +87,87 @@ function amdahlGrafigi() {
 
     kaydirac.addEventListener('input', ciz);
     ciz();
+}
+
+// "Kendini tart" testi: okuyucu hem cevabını hem ne kadar emin olduğunu seçer,
+// sonuçta ikisi karşılaştırılır. Amaç doğru sayısı değil, emin olma ile bilme
+// arasındaki farkı görünür kılmak.
+function kalibrasyonTesti() {
+    const kutu = document.querySelector('[data-kalibrasyon]');
+    if (!kutu) return;
+
+    const sorular = [...kutu.querySelectorAll('.quiz-item')];
+    const dugme = kutu.querySelector('.quiz-go');
+    const sonucAlani = kutu.querySelector('.quiz-result');
+
+    // Bir gruptaki düğmelerden yalnızca biri seçili kalsın.
+    const grupBagla = (grup) => {
+        if (!grup) return;
+        grup.addEventListener('click', (olay) => {
+            const secilen = olay.target.closest('button');
+            if (!secilen || secilen.disabled) return;
+            grup.querySelectorAll('button').forEach((d) => {
+                d.setAttribute('aria-pressed', String(d === secilen));
+            });
+        });
+    };
+
+    sorular.forEach((s) => {
+        grupBagla(s.querySelector('.quiz-cevap'));
+        grupBagla(s.querySelector('.quiz-emin'));
+    });
+
+    const secili = (grup) => grup && grup.querySelector('button[aria-pressed="true"]');
+
+    dugme.addEventListener('click', () => {
+        const eksik = sorular.filter(
+            (s) => !secili(s.querySelector('.quiz-cevap')) || !secili(s.querySelector('.quiz-emin'))
+        );
+        if (eksik.length) {
+            sonucAlani.textContent =
+                'Sonucu görmek için her soruda hem cevabını hem de ne kadar emin olduğunu seç.';
+            eksik[0].scrollIntoView({ block: 'center' });
+            return;
+        }
+
+        let dogruSayisi = 0;
+        let eminAma = 0;
+        let eminSayisi = 0;
+
+        sorular.forEach((s) => {
+            const anahtar = s.dataset.dogru;
+            const cevapGrubu = s.querySelector('.quiz-cevap');
+            const verilen = secili(cevapGrubu);
+            const emin = Number(secili(s.querySelector('.quiz-emin')).dataset.emin);
+            const dogruMu = verilen.dataset.cevap === anahtar;
+
+            if (dogruMu) dogruSayisi++;
+            if (emin === 3) {
+                eminSayisi++;
+                if (!dogruMu) eminAma++;
+            }
+
+            s.dataset.sonuc = dogruMu ? 'dogru' : 'yanlis';
+            cevapGrubu.querySelector('button[data-cevap="' + anahtar + '"]').dataset.anahtar = '1';
+            s.querySelectorAll('button').forEach((d) => (d.disabled = true));
+            s.querySelector('.quiz-exp').hidden = false;
+        });
+
+        let mesaj = sorular.length + ' sorudan ' + dogruSayisi + ' tanesinde haklıydın. ';
+        if (eminAma > 0) {
+            mesaj += '"Eminim" dediğin ' + eminSayisi + ' soruda ' + eminAma +
+                ' kez yanılmışsın \u2014 üstbilişin ölçtüğü şey tam olarak bu boşluk.';
+        } else if (eminSayisi === 0) {
+            mesaj += 'Hiçbirinde "eminim" demedin; temkinli olmak da bir kalibrasyon biçimi.';
+        } else if (dogruSayisi === sorular.length) {
+            mesaj += 'Emin olduğun yerlerde haklıydın. Kalibrasyonun iyi görünüyor.';
+        } else {
+            mesaj += 'Emin olduğun yerlerde yanılmamışsın; yanıldığın yerlerde zaten emin değildin. ' +
+                'Aradaki bu uyum, iyi bir işaret.';
+        }
+
+        sonucAlani.textContent = mesaj;
+        dugme.disabled = true;
+        dugme.textContent = 'Cevaplar açıldı';
+    });
 }

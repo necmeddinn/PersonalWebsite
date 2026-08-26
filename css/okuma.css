@@ -750,3 +750,220 @@ a.stamp:hover {
         padding-right: 0.9rem;
     }
 }
+
+/* ---------- Kendini tart testi ---------- */
+/* blog.css'teki .post-body ol kuralını yenmek için iki sınıflı seçici */
+.post-body .quiz {
+    --dogru: #2f6b46;
+    --yanlis: #a8432e;
+    list-style: none;
+    margin: 0;
+    padding: 0.9rem 1.3rem 0.4rem;
+    counter-reset: soru;
+}
+
+.post-body .quiz .quiz-item {
+    margin-bottom: 0;
+}
+
+[data-theme="dark"] .quiz {
+    --dogru: #7cb894;
+    --yanlis: #dd9078;
+}
+
+.quiz-item {
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.quiz-item:last-child {
+    border-bottom: 0;
+}
+
+.quiz-q {
+    margin: 0 0 0.85rem;
+    font-size: 0.99rem;
+    line-height: 1.65;
+}
+
+.quiz-q::before {
+    counter-increment: soru;
+    content: counter(soru, decimal-leading-zero);
+    font-size: 0.72rem;
+    color: var(--accent-color);
+    margin-right: 0.6rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.quiz-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+}
+
+.quiz-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.quiz-label {
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--light-text);
+    margin-right: 0.2rem;
+}
+
+.quiz-group button {
+    padding: 0.32rem 0.85rem;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--light-text);
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.quiz-group button:hover:not(:disabled) {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.quiz-group button[aria-pressed="true"] {
+    background-color: var(--accent-soft);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    font-weight: var(--font-weight-medium);
+}
+
+.quiz-group button:disabled {
+    cursor: default;
+}
+
+.quiz-item[data-sonuc="dogru"] .quiz-cevap button[aria-pressed="true"] {
+    color: var(--dogru);
+    border-color: var(--dogru);
+    background-color: transparent;
+}
+
+.quiz-item[data-sonuc="yanlis"] .quiz-cevap button[aria-pressed="true"] {
+    color: var(--yanlis);
+    border-color: var(--yanlis);
+    background-color: transparent;
+}
+
+.quiz-item[data-sonuc] .quiz-cevap button[data-anahtar] {
+    color: var(--dogru);
+    border-color: var(--dogru);
+}
+
+.quiz-cevap button[data-anahtar]::after {
+    content: ' ✓';
+    color: var(--dogru);
+    font-weight: var(--font-weight-bold);
+}
+
+.quiz-exp {
+    margin: 0.9rem 0 0;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--border-color);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--light-text);
+}
+
+.quiz-foot {
+    padding: 0.4rem 1.3rem 1.3rem;
+}
+
+.quiz-go {
+    font-size: 0.9rem;
+    padding: 0.55rem 1.4rem;
+}
+
+.quiz-result {
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+.quiz-result:empty {
+    margin: 0;
+}
+
+/* ---------- Üç adımlı döngü şeması ---------- */
+.cycle-node {
+    fill: var(--bg-color);
+    stroke: var(--accent-color);
+    stroke-width: 1.5;
+}
+
+.cycle-text {
+    fill: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.cycle-arrow {
+    fill: none;
+    stroke: var(--light-text);
+    stroke-width: 1.5;
+}
+
+.cycle-head {
+    fill: var(--light-text);
+}
+
+.cycle-loop-label {
+    fill: var(--light-text);
+    font-family: var(--font-family);
+    font-size: 11px;
+}
+
+.cycle-notes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.9rem;
+    padding: 0.6rem 1.3rem 1.2rem;
+}
+
+.cycle-notes div {
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--bg-color);
+}
+
+.cycle-notes strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    margin-bottom: 0.4rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.cycle-notes p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--light-text);
+}
+
+@media (max-width: 768px) {
+    .quiz,
+    .quiz-foot,
+    .cycle-notes {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+    }
+
+    .quiz-row {
+        gap: 0.9rem;
+    }
+}

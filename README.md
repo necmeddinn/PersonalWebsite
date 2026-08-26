@@ -81,6 +81,13 @@ sayfada varsa devreye girer, yoksa hiçbir şey yapmaz.
 - **Amdahl grafiği:** `<figure class="figure" data-amdahl>` içinde bir `input[type=range]`,
   `.chart-curve` yolu olan bir SVG ve `data-cikti="tavan|64|verim"` taşıyan okuma kutuları.
   Eğri, üst sınır çizgisi ve özet metni kaydıraç oynadıkça yeniden hesaplanır.
+- **"Kendini tart" testi:** `<figure class="figure" data-kalibrasyon>` içinde `<ol class="quiz">`
+  ve her soru için `<li class="quiz-item" data-dogru="dogru|yanlis">`. Soruda iki düğme grubu
+  bulunur: `.quiz-cevap` (`data-cevap`) ve `.quiz-emin` (`data-emin="1|2|3"`), ayrıca `hidden`
+  başlayan bir `.quiz-exp` açıklaması. Alttaki `.quiz-go` düğmesi cevapları açar ve
+  `.quiz-result` içine emin olma / doğru bilme karşılaştırmasını yazar.
+- **Üç adımlı döngü şeması** (JS gerekmez): `.chart-canvas` içinde `.cycle-node`, `.cycle-text`,
+  `.cycle-arrow`, `.cycle-head` sınıflı bir SVG; altında `.cycle-notes` kart ızgarası.
 
 Örnek: `yazi-muhendislik-temelleri.html`.
 

@@ -2,6 +2,21 @@
   "_aciklama": "Sitedeki tüm içeriğin kaynağı. Yeni içerik eklemek için bu listeye bir nesne ekleyip ilgili HTML dosyasını oluştur, sonra tools/uret.py çalıştır. tur: 'yazi' (Yazılar sayfası) veya 'teknik' (Teknik sayfası). durum alanı isteğe bağlıdır: fikir | gelisiyor | olgun.",
   "icerikler": [
     {
+      "slug": "ustbilis",
+      "url": "yazi-ustbilis.html",
+      "tur": "yazi",
+      "baslik": "Bildiğini Nereden Biliyorsun?",
+      "ozet": "Bir konuyu bildiğini sanıp sonra tıkanmak, çoğu zaman bilgi eksikliği değil bir ölçüm hatası. Üstbiliş (metakognitif farkındalık) nedir, neden işe yarar ve nasıl uygulanır — üç soruluk küçük bir denemeyle birlikte.",
+      "tarih": "2026-08-26",
+      "etiketler": [
+        "üstbiliş",
+        "öğrenme",
+        "çalışma yöntemleri"
+      ],
+      "sure": 7,
+      "durum": "olgun"
+    },
+    {
       "slug": "muhendislik-temelleri",
       "url": "yazi-muhendislik-temelleri.html",
       "tur": "teknik",

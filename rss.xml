@@ -5,8 +5,16 @@
     <link>https://necmeddincunedioglu.com/</link>
     <description>Yazılım, yapay zeka ve ilgimi çeken diğer konular üzerine yazılar ve notlar.</description>
     <language>tr</language>
-    <lastBuildDate>Tue, 25 Aug 2026 20:18:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 16:16:49 +0000</lastBuildDate>
     <atom:link href="https://necmeddincunedioglu.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Bildiğini Nereden Biliyorsun?</title>
+      <link>https://necmeddincunedioglu.com/yazi-ustbilis.html</link>
+      <guid isPermaLink="true">https://necmeddincunedioglu.com/yazi-ustbilis.html</guid>
+      <pubDate>Wed, 26 Aug 2026 09:00:00 +0000</pubDate>
+      <category>Yazı</category>
+      <description>Bir konuyu bildiğini sanıp sonra tıkanmak, çoğu zaman bilgi eksikliği değil bir ölçüm hatası. Üstbiliş (metakognitif farkındalık) nedir, neden işe yarar ve nasıl uygulanır — üç soruluk küçük bir denemeyle birlikte.</description>
+    </item>
     <item>
       <title>Kısıt Altında İnşa Etmek</title>
       <link>https://necmeddincunedioglu.com/yazi-muhendislik-temelleri.html</link>
