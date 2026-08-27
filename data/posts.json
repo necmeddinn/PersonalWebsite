@@ -55,16 +55,16 @@
       "url": "yazi-celik-gibi-gorunmek.html",
       "tur": "yazi",
       "baslik": "Çelik Gibi Görünmek",
-      "ozet": "Sosyal medyanın \"disiplin\" içeriği Stoacılığı ve Robert Greene'i tek bir zırh reçetesine indirgiyor. Dört yanlış eşitleme, kaynakların kendi kusurları ve sahada işleyen beş test.",
+      "ozet": "Sosyal medyadan görüp on kitap okudum: Marcus Aurelius, Epiktetos, Seneca, Holiday, Greene, Gracián, Sun Tzu. Fark ettiğim şey kitaplarla ilgili değildi — aynı satırları okuyan iki ayrı kitle var. Neye katılıyorum, nerede duruyorum.",
       "tarih": "2026-08-27",
       "etiketler": [
         "stoacılık",
         "kişisel gelişim",
         "eleştiri"
       ],
-      "sure": 8,
+      "sure": 10,
       "durum": "gelisiyor",
-      "_not": "Yayından alındı 2026-08-27; güncellenip tekrar yayınlanacak. Geri almak için bu kaydı \"icerikler\" listesine taşı ve yazı dosyasındaki robots/noindex satırını sil."
+      "_not": "Güncellendi 2026-08-27, hâlâ yayında değil. Yayına almak için bu kaydı \"icerikler\" listesine taşı, yazı dosyasındaki robots/noindex satırını sil, tools/uret.py çalıştır."
     }
   ]
 }
