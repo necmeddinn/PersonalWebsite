@@ -44,6 +44,14 @@ Tüm içerik listesi tek bir dosyadan okunur: `data/posts.json`.
 - İçerik listesi boşken ana sayfadaki "Son Yazılar" bölümü kendiliğinden gizlenir.
 5. `python3 tools/uret.py` çalıştır — `sitemap.xml` ve `rss.xml` yeniden üretilir.
 
+### Bir yazıyı yayından almak (silmeden)
+
+Kaydı `icerikler` listesinden çıkarıp `_taslaklar` listesine taşı. Ne `js/posts.js` ne de
+`tools/uret.py` bu listeyi okur; yazı listelerden, ana sayfadan, `sitemap.xml` ve `rss.xml`
+dosyalarından düşer ama HTML dosyası ve tüm metadata yerinde kalır. Yazı dosyasına da
+`<meta name="robots" content="noindex">` ekle. Geri almak için kaydı `icerikler`e taşı,
+noindex satırını sil ve `python3 tools/uret.py` çalıştır.
+
 ## Uzun yazı ve izleme notu düzeni
 
 Uzun yazılar için ek bir okuma düzeni var. Kullanmak için sayfaya `css/okuma.css` ile

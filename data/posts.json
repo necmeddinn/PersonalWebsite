@@ -1,21 +1,6 @@
 {
-  "_aciklama": "Sitedeki tüm içeriğin kaynağı. Yeni içerik eklemek için bu listeye bir nesne ekleyip ilgili HTML dosyasını oluştur, sonra tools/uret.py çalıştır. tur: 'yazi' (Yazılar sayfası) veya 'teknik' (Teknik sayfası). durum alanı isteğe bağlıdır: fikir | gelisiyor | olgun.",
+  "_aciklama": "Sitedeki tüm içeriğin kaynağı. Yeni içerik eklemek için bu listeye bir nesne ekleyip ilgili HTML dosyasını oluştur, sonra tools/uret.py çalıştır. tur: 'yazi' (Yazılar sayfası) veya 'teknik' (Teknik sayfası). durum alanı isteğe bağlıdır: fikir | gelisiyor | olgun. Yayından alınan içerikler \"_taslaklar\" listesinde bekler; site bu listeyi okumaz.",
   "icerikler": [
-    {
-      "slug": "celik-gibi-gorunmek",
-      "url": "yazi-celik-gibi-gorunmek.html",
-      "tur": "yazi",
-      "baslik": "Çelik Gibi Görünmek",
-      "ozet": "Sosyal medyanın \"disiplin\" içeriği Stoacılığı ve Robert Greene'i tek bir zırh reçetesine indirgiyor. Dört yanlış eşitleme, kaynakların kendi kusurları ve sahada işleyen beş test.",
-      "tarih": "2026-08-27",
-      "etiketler": [
-        "stoacılık",
-        "kişisel gelişim",
-        "eleştiri"
-      ],
-      "sure": 8,
-      "durum": "olgun"
-    },
     {
       "slug": "ustbilis",
       "url": "yazi-ustbilis.html",
@@ -62,6 +47,24 @@
       ],
       "sure": 6,
       "durum": "olgun"
+    }
+  ],
+  "_taslaklar": [
+    {
+      "slug": "celik-gibi-gorunmek",
+      "url": "yazi-celik-gibi-gorunmek.html",
+      "tur": "yazi",
+      "baslik": "Çelik Gibi Görünmek",
+      "ozet": "Sosyal medyanın \"disiplin\" içeriği Stoacılığı ve Robert Greene'i tek bir zırh reçetesine indirgiyor. Dört yanlış eşitleme, kaynakların kendi kusurları ve sahada işleyen beş test.",
+      "tarih": "2026-08-27",
+      "etiketler": [
+        "stoacılık",
+        "kişisel gelişim",
+        "eleştiri"
+      ],
+      "sure": 8,
+      "durum": "gelisiyor",
+      "_not": "Yayından alındı 2026-08-27; güncellenip tekrar yayınlanacak. Geri almak için bu kaydı \"icerikler\" listesine taşı ve yazı dosyasındaki robots/noindex satırını sil."
     }
   ]
 }
