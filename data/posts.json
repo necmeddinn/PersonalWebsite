@@ -2,6 +2,21 @@
   "_aciklama": "Sitedeki tüm içeriğin kaynağı. Yeni içerik eklemek için bu listeye bir nesne ekleyip ilgili HTML dosyasını oluştur, sonra tools/uret.py çalıştır. tur: 'yazi' (Yazılar sayfası) veya 'teknik' (Teknik sayfası). durum alanı isteğe bağlıdır: fikir | gelisiyor | olgun. Yayından alınan içerikler \"_taslaklar\" listesinde bekler; site bu listeyi okumaz.",
   "icerikler": [
     {
+      "slug": "celik-gibi-gorunmek",
+      "url": "yazi-celik-gibi-gorunmek.html",
+      "tur": "yazi",
+      "baslik": "Çelik Gibi Görünmek",
+      "ozet": "Sosyal medyadan görüp on kitap okudum: Marcus Aurelius, Epiktetos, Seneca, Holiday, Greene, Gracián, Sun Tzu. Fark ettiğim şey kitaplarla ilgili değildi — aynı satırları okuyan iki ayrı kitle var. Neye katılıyorum, nerede duruyorum.",
+      "tarih": "2026-08-27",
+      "etiketler": [
+        "stoacılık",
+        "kişisel gelişim",
+        "eleştiri"
+      ],
+      "sure": 8,
+      "durum": "olgun"
+    },
+    {
       "slug": "ustbilis",
       "url": "yazi-ustbilis.html",
       "tur": "yazi",
@@ -49,22 +64,5 @@
       "durum": "olgun"
     }
   ],
-  "_taslaklar": [
-    {
-      "slug": "celik-gibi-gorunmek",
-      "url": "yazi-celik-gibi-gorunmek.html",
-      "tur": "yazi",
-      "baslik": "Çelik Gibi Görünmek",
-      "ozet": "Sosyal medyadan görüp on kitap okudum: Marcus Aurelius, Epiktetos, Seneca, Holiday, Greene, Gracián, Sun Tzu. Fark ettiğim şey kitaplarla ilgili değildi — aynı satırları okuyan iki ayrı kitle var. Neye katılıyorum, nerede duruyorum.",
-      "tarih": "2026-08-27",
-      "etiketler": [
-        "stoacılık",
-        "kişisel gelişim",
-        "eleştiri"
-      ],
-      "sure": 10,
-      "durum": "gelisiyor",
-      "_not": "Güncellendi 2026-08-27, hâlâ yayında değil. Yayına almak için bu kaydı \"icerikler\" listesine taşı, yazı dosyasındaki robots/noindex satırını sil, tools/uret.py çalıştır."
-    }
-  ]
+  "_taslaklar": []
 }
